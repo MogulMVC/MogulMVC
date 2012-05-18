@@ -1,0 +1,48 @@
+.picker-wrapper, .slide-wrapper{
+  float:left;
+  position:relative;
+}
+
+.picker-indicator, .slide-indicator {
+  left:0;
+  position:absolute;
+  top:0;
+}
+
+.picker, .slide{
+  cursor:crosshair;
+  float:left;
+}
+
+.cp-vorkin{
+  float:left;
+}
+
+.cp-vorkin .picker{
+  height:145px;
+  width:145px;
+}
+
+.cp-vorkin .slide{
+  height:145px;
+  width:20px;
+}
+
+.cp-vorkin .slide-wrapper{
+  margin-left:5px;
+}
+
+.cp-vorkin .picker-indicator{
+  background-color:#ffffff;
+  border-radius:3px;
+  border:1px solid black;
+  height:3px;
+  width:3px;
+}
+
+.cp-vorkin .slide-indicator{
+  background-color:black; 
+  height:2px;
+  left:0px;
+  width:100%;
+}
