@@ -1,6 +1,6 @@
 <?php if(!defined("SERVER_ROOT")){header("/error_404");exit;}
 
-define('FRAMEWORK_VERSION', "120516");
+define('FRAMEWORK_VERSION', "120520");
 define('FRAMEWORK_CSS', 'css');
 define('FRAMEWORK_IMG', 'img');
 define('FRAMEWORK_JS', 'js');
