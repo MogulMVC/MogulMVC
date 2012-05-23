@@ -3,7 +3,7 @@
 //Application
 define("APPLICATION_COMPANY", "Application Company");
 define("APPLICATION_NAME", "Application Name");
-define("APPLICATION_VERSION", "120505");
+define("APPLICATION_VERSION", "120522");
 
 //Environment
 define("APPLICATION_ENVIRONMENT", "development");

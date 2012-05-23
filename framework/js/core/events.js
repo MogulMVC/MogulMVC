@@ -93,6 +93,6 @@ $(window).resize(function() {
   sidebarScale();
 });
 
-$(document).mousemove(function(e){
-  sidebarTriggerProximity(e);
+$(document).mousemove(function(event){
+  sidebarTriggerProximity(event);
 });
