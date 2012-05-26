@@ -1,6 +1,8 @@
 <?php if(!defined("SERVER_ROOT")){header("/error_404");exit;}
 
-define('FRAMEWORK_VERSION', "120522");
+date_default_timezone_set('America/New_York'); 
+
+define('FRAMEWORK_VERSION', "120526");
 define('FRAMEWORK_CSS', 'css');
 define('FRAMEWORK_IMG', 'img');
 define('FRAMEWORK_JS', 'js');
