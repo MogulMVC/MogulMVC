@@ -1,0 +1,35 @@
+#!/bin/bash
+
+############################## Install ##############################
+
+#Install LAMP
+sudo apt-get -y install lamp-server^
+
+#Install Other
+sudo apt-get -y install apachetop curl htop imagemagick libcurl3 libcurl3-dev php-apc php-pear php5 php5-curl php5-dev php5-imagick pure-ftpd
+
+#Only for development
+sudo apt-get -y install phpmyadmin
+
+############################## Confiure ##############################
+
+#Enable mod rewrite
+sudo a2enmod rewrite
+
+#Change Apache user
+#sudo vi /etc/apache2/envvars
+
+#Change default directory and the second AllowOverride to All
+#sudo vi /etc/apache2/sites-available/default
+
+#Configure PHP
+#Don't go over 2047M until using PHP 5.4
+#sudo vi /etc/php5/apache2/php.ini
+
+  #display_errors = On
+
+  #post_max_size = 2047M
+  
+  #upload_max_filesize = 2047M
+
+  #apc.rfc1867 = On
