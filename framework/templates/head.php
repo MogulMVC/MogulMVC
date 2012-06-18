@@ -98,6 +98,4 @@
 
   </head>
 
-  <body> 
-
-    <div id="wrapper">
+  <body>

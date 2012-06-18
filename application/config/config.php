@@ -14,14 +14,15 @@ define("APPLICATION_APIS", "apis");
 define("APPLICATION_CONTROLLERS", "controllers");
 define("APPLICATION_CSS", "css");
 define("APPLICATION_IMG", "img");
-define("APPLICATION_JS", "js");
 define("APPLICATION_JOBS", "jobs");
+define("APPLICATION_JS", "js");
 define("APPLICATION_LIB", "lib");
 define("APPLICATION_MODELS", "models");
 define("APPLICATION_SWF", "swf");
 define("APPLICATION_UPLOADS", "uploads");
 define("APPLICATION_VID", "vid");
 define("APPLICATION_VIEWS", "views");
+define("APPLICATION_VOS", "vos");
 
 //Controllers
 define("APPLICATION_DEFAULT_CONTROLLER", "elements.php");

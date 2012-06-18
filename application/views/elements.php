@@ -47,46 +47,46 @@
 </nav><!--toolbar-->
 
 
-  <div id="sidebar_trigger_left"></div>
-  <ul id="sidebar" style="left:-360px">
+<div id="sidebar_trigger_left"></div>
+<ul id="sidebar" style="left:-360px">
 
-    <a onclick="$(window).scrollTo('#section_progress_indicators', speedSlow, {offset:-97});">
-      <li>
-	<span>Progress Indicators</span>
-      </li>
-    </a>
-    
-    <a onclick="$(window).scrollTo('#section_buttons', speedSlow, {offset:-97});">
-      <li>
-	<span>Buttons</span>
-      </li>
-    </a>
-    
-    <a onclick="$(window).scrollTo('#section_tabs', speedSlow, {offset:-97});">
-      <li>
-	<span>Tabs</span>
-      </li>
-    </a>
-    
-    <a onclick="$(window).scrollTo('#section_inputs', speedSlow, {offset:-97});">
-      <li>
-	<span>Inputs</span>
-      </li>
-    </a>
-    
-    <a onclick="$(window).scrollTo('#section_popup_container', speedSlow, {offset:-97});">
-      <li>
-	<span>Popup Container</span>
-      </li>
-    </a>
+  <a onclick="$(window).scrollTo('#section_progress_indicators', speedSlow, {offset:-97});">
+    <li>
+      <span>Progress Indicators</span>
+    </li>
+  </a>
+  
+  <a onclick="$(window).scrollTo('#section_buttons', speedSlow, {offset:-97});">
+    <li>
+      <span>Buttons</span>
+    </li>
+  </a>
+  
+  <a onclick="$(window).scrollTo('#section_tabs', speedSlow, {offset:-97});">
+    <li>
+      <span>Tabs</span>
+    </li>
+  </a>
+  
+  <a onclick="$(window).scrollTo('#section_inputs', speedSlow, {offset:-97});">
+    <li>
+      <span>Inputs</span>
+    </li>
+  </a>
+  
+  <a onclick="$(window).scrollTo('#section_popup_container', speedSlow, {offset:-97});">
+    <li>
+      <span>Popup Container</span>
+    </li>
+  </a>
 
-    <a onclick="$(window).scrollTo('#section_video_player', speedSlow, {offset:-97});">
-      <li>
-	<span>Video Player</span>
-      </li>
-    </a>
+  <a onclick="$(window).scrollTo('#section_video_player', speedSlow, {offset:-97});">
+    <li>
+      <span>Video Player</span>
+    </li>
+  </a>
 
-  </ul><!--sidebar-->
+</ul><!--sidebar-->
 
 
 <div class="content_spacer"></div><!--content_spacer-->

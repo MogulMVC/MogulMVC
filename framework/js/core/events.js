@@ -63,7 +63,7 @@ $(window).load(function(){
   listFadeIn();
   
   /*Fade in all images*/
-  $("#wrapper img").animate({opacity: 1}, speedSlow);
+  $("#MMainWindow img").animate({opacity: 1}, speedSlow);
   
   /*Draggable*/
   $(".popup_container").draggable();
