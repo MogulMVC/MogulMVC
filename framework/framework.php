@@ -9,15 +9,16 @@ require_once(SERVER_ROOT . '/' . FRAMEWORK . '/core/database.php');
 require_once(SERVER_ROOT . '/' . FRAMEWORK . '/core/environment.php');
 
 //Used to load all the other libraries
-require_once(SERVER_ROOT . '/' . FRAMEWORK . '/' .FRAMEWORK_LIB . '/load.php');
+require_once(SERVER_ROOT . '/' . FRAMEWORK . '/' .FRAMEWORK_LIB . '/MLoad.php');
 
 //Load needed core libraries
-//string.php must come first
-library_framework_load('string.php');
+//MStrings.php must come first
+MLoad::library_framework('MStrings.php');
+
 //The rest are alphabetical
-library_framework_load('cli.php');
-library_framework_load('errors.php');
-library_framework_load('url.php');
+MLoad::library_framework('MCLI.php');
+MLoad::library_framework('MErrors.php');
+MLoad::library_framework('MURL.php');
 
 //Autoload the libraries defined in the application autoload
 require_once(SERVER_ROOT . '/' . APPLICATION . '/config/autoload.php');

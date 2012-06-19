@@ -12,7 +12,7 @@ class error_404 {
   function index() {
     /** Required Page Elements */
     $data['page_title'] = "Error 404";
-    view_load("error_404.php", $data);
+    MLoad::view("error_404.php", $data);
   }
 
 }

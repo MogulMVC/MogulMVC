@@ -23,7 +23,7 @@
 
   <button class="button left" tip="nw" title="I'm an &lt;button&gt; tag.">Button</button>
 
-  <a class="left"><img src="<?php echo icon_framework_load("embed_16x16.png");?>" alt="Embed" class="toolbar_icon"/>Toolbar Link with Icon</a>
+  <a class="left"><img src="<?php echo MLoad::icon_framework("embed_16x16.png");?>" alt="Embed" class="toolbar_icon"/>Toolbar Link with Icon</a>
 
   <div class="right">
     <span class="button_red left" tip="ne" title="I'm an &lt;span&gt; tag.">Button Red</span>
@@ -415,7 +415,7 @@
 	<div class="popup_preview_container">
 
 	  <div id="elements_popup_error" class="hidden">
-	    <?php element_framework_load("error_upload.php");?>
+	    <?php //MLoad::element_framework("error_upload.php");?>
 	  </div><!--elements_popup_error-->
 
 	  <div id="elements_popup_preview_bg" class="preview_bg">
@@ -438,7 +438,7 @@
   
   <fieldset id="section_video_player" class="text_centered">
     <p class="widget_title">Video Player</p>
-  	<?php video_player("427", "240");?>
+    <?php MSWF::video_player("427", "240");?>
   </fieldset>
 
 </div><!--content_900-->

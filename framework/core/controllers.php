@@ -1,12 +1,12 @@
 <?php if(!defined("SERVER_ROOT")){header("/error_404");exit;}
 
 /********** Via the CLI **********/
-if(cli_is()){
+if(MCLI::cli_is()){
 
   $URI_ARRAY = array();
 
   foreach($_SERVER['argv'] as $argument){
-    $argument_safe = string_sub_before($argument, "?");
+    $argument_safe = MString::sub_before($argument, "?");
     array_push($URI_ARRAY, $argument_safe);
   }
 
@@ -14,8 +14,8 @@ if(cli_is()){
 
 /********** Via the Web **********/
 
-if(!cli_is()){
-  $URI = string_sub_before($_SERVER['REQUEST_URI'], "?");
+if(!MCLI::cli_is()){
+  $URI = MStrings::sub_before($_SERVER['REQUEST_URI'], "?");
   $URI_ARRAY = explode("/", $URI);
 }
 
@@ -56,7 +56,7 @@ elseif($CLASS == APPLICATION_ACTIONS){
 
   //Check if the controller and class exist
   if(!file_exists(SERVER_ROOT."/".APPLICATION."/".APPLICATION_ACTIONS."/".$FUNCTION.".php")){
-    error_404_show();
+    MErrors::error_404();
   }
 
   //Run the action
@@ -70,7 +70,7 @@ elseif($CLASS == APPLICATION_APIS){
 
   //Check if the controller and class exist
   if(!file_exists(SERVER_ROOT."/".APPLICATION."/".APPLICATION_APIS."/".$FUNCTION.".php")){
-    error_404_show();
+    MErrors::error_404();
   }
 
   require_once(SERVER_ROOT."/".APPLICATION."/".APPLICATION_APIS."/".$FUNCTION.".php");
@@ -83,7 +83,7 @@ elseif($CLASS == APPLICATION_JOBS){
 
   //Check if the controller and class exist
   if(!file_exists(SERVER_ROOT."/".APPLICATION."/".APPLICATION_JOBS."/".$FUNCTION.".php")){
-    error_404_show();
+    MErrors::error_404();
   }
 
   require_once(SERVER_ROOT."/".APPLICATION."/".APPLICATION_JOBS."/".$FUNCTION.".php");
@@ -99,7 +99,7 @@ else{
 
   //Check if the controller and class exist
   if(!file_exists(SERVER_ROOT."/".APPLICATION."/".APPLICATION_CONTROLLERS."/".$CLASS.".php")){
-    error_404_show();
+    MErrors::error_404();
   }
 
   //Instantiate the controller object
@@ -111,7 +111,7 @@ else{
 
     //Check if the function exists
     if(!method_exists($OBJECT, $FUNCTION)){
-      error_404_show();
+      MErrors::error_404();
     }
 
     $OBJECT->$FUNCTION();
