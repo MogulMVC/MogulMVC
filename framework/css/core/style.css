@@ -1,6 +1,17 @@
-/*************/
-/* Variables */
-/*************/
+.shadow_top {
+  background: url("/framework/img/global/shadow_top.png") repeat-x;
+  clear: both;
+  height: 2.4em;
+  margin: 0 auto;
+  width: 100%; }
+
+.shadow_bottom {
+  background: url("/framework/img/global/shadow_bottom.png") repeat-x;
+  clear: both;
+  height: 2.4em;
+  margin: 0 auto;
+  width: 100%; }
+
 /***************************/
 /* Overridable Properties */
 /***************************/
@@ -16,9 +27,9 @@
     border-color: none;
     box-shadow: none; }
 
-/*********************/
-/* Global Properties */
-/*********************/
+/***********/
+/* Globals */
+/***********/
 * {
   -moz-user-select: -moz-none;
   -o-user-select: none;
@@ -171,7 +182,6 @@ li {
     opacity: 0;
     /*Images are faded in with JS*/ }
 
-/* Header */
 #header_placeholder {
   background: #141414;
   height: 2.85em;
@@ -322,7 +332,6 @@ a#header_tools {
   top: 41px;
   z-index: 1200; }
 
-/* Toolbar */
 #toolbar_placeholder {
   background: #c8c8c8;
   height: 2.4em;
@@ -417,7 +426,6 @@ h1.toolbar_title {
   top: 71px;
   z-index: 500; }
 
-/* Hidden BG */
 .hidden_bg_full {
   background: #232323;
   overflow: hidden;
@@ -432,7 +440,6 @@ h1.toolbar_title {
 #hidden_content {
   text-align: center; }
 
-/* Sidebar */
 #sidebar_trigger_left {
   height: 100%;
   left: 0;
@@ -572,7 +579,6 @@ h1.toolbar_title {
   margin-right: .35em;
   margin: .2em; }
 
-/* Stage */
 #stage {
   background-color: #646464;
   background-position: 50% 0%;
@@ -588,7 +594,6 @@ h1.toolbar_title {
   opacity: 0;
   width: 100%; }
 
-/* Content */
 #content_list {
   margin: 0 auto;
   min-width: 900px;
@@ -630,7 +635,6 @@ h1.toolbar_title {
 /************/
 /* Elements */
 /************/
-/* Buttons / Inputs */
 .button, button, input[type="button"], input[type="submit"], #sidebar a.button, .button_red, input[type="reset"], .button_r, .button_orange, .button_o, .button_yellow, .button_y, .button_green, .button_g, .button_blue, .button_b, .button_violet, .button_v, .button_upload {
   background: #e6e6e6;
   background: -moz-linear-gradient(top, #e6e6e6 0%, #c8c8c8 100%);
@@ -772,7 +776,6 @@ a.button, #sidebar a.button, a.button_red, a.button_r, a.button_orange, a.button
   line-height: 1.45em;
   margin: .2em; }
 
-/* Tabs */
 .tab, .tab_selected {
   -moz-user-select: none;
   -o-user-select: none;
@@ -882,7 +885,6 @@ a.button, #sidebar a.button, a.button_red, a.button_r, a.button_orange, a.button
   position: relative;
   text-align: left; }
 
-/* Tips */
 .tip {
   font-size: .85em;
   padding: .4em;
@@ -994,7 +996,6 @@ a.button, #sidebar a.button, a.button_red, a.button_r, a.button_orange, a.button
   margin-top: -5px;
   top: 50%; }
 
-/* List Containers */
 .list_summary {
   display: list-item;
   height: 2em;
@@ -1253,23 +1254,6 @@ a.button, #sidebar a.button, a.button_red, a.button_r, a.button_orange, a.button
   margin-right: 1.6em;
   width: .1em; }
 
-.shadow_top {
-  background: url("/framework/img/global/shadow_top.png") repeat-x;
-  clear: both;
-  height: 2.4em;
-  margin: 0 auto;
-  width: 100%; }
-
-.shadow_bottom {
-  background: url("/framework/img/global/shadow_bottom.png") repeat-x;
-  clear: both;
-  height: 2.4em;
-  margin: 0 auto;
-  width: 100%; }
-
-/*********/
-/* Icons */
-/*********/
 .icon_complete {
   background-image: url("/framework/img/icons/complete_150x150.png");
   background-repeat: no-repeat;
@@ -1362,9 +1346,6 @@ a.button, #sidebar a.button, a.button_red, a.button_r, a.button_orange, a.button
   .icon_arrow_right:hover {
     background-position: 0 -16px; }
 
-/**************************/
-/* Overriding Properties */
-/**************************/
 a.bold, h1.bold, h2.bold, h3.bold, h4.bold, h5.bold, h6.bold, input.bold, label.bold, p.bold, span.bold, textarea.bold {
   font-weight: bold; }
 a.red, h1.red, h2.red, h3.red, h4.red, h5.red, h6.red, input.red, label.red, p.red, span.red, textarea.red {

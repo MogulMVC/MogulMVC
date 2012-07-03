@@ -1,0 +1,82 @@
+.list_summary{
+  display:list-item;
+  height:2em;
+  text-overflow:ellipsis;
+  width:100%;
+}
+
+.list_title{
+  display:inline;
+  margin:0;
+}
+
+.list_citation{
+  margin-left:.4em;
+}
+
+.list_options{
+  display:inline-block;
+  min-width:300px;
+}
+
+.list_item_container{
+  border-radius:.4em;
+  opacity:0;
+  padding:1.2em;
+  position:relative;
+
+  &.red{
+    background:#dcc3c3;
+    color:#323232;
+    
+    &:hover{
+      background:#e1d5d5;
+    }
+  }
+
+  &.yellow{
+    background:#faf5b4;
+    color:#323232;
+    
+    &:hover{
+      background:#f0edcd;
+    }
+  }
+
+  &.green{
+    background:#c3dcc3;
+    color:#323232;
+    
+    &:hover{
+      background:#d5e1d5;
+    }
+  }
+
+  &.blue{
+    background:#b4d2f0;
+    color:#323232;
+    
+    &:hover{
+      background:#cddceb;
+    }
+  }
+
+  &:hover{
+    background:#e6e6e6;
+  }
+
+}
+
+.list_item_container_sub{
+  background:#c8c8c8;
+  border-radius:.4em;
+  padding:.4em;
+  position:relative;
+}
+
+.list_info_container{
+  -o-text-overflow:ellipsis;
+  display:block;
+  overflow:hidden;
+  text-overflow:ellipsis;
+}

@@ -215,22 +215,22 @@
       <tr>
 	<td class="text_right" style="width:70px;"><span class="bold">&lt;a&gt;</span></td>
 	<td>
-	  <a  id="animated_button_a" class="button left" onclick="$(this).htmlAnimate('The text is now much longer and the button has animated to accomidate the new text.', 1000);$('#animated_button_a_reset').fadeIn(250);" tip="w" title="I'm an &lt;a&gt; tag.">Change Text</a>
-	  <a id="animated_button_a_reset" onclick="$('#animated_button_a').htmlAnimate('Change Text', 1000);$(this).fadeOut(250);" class="hidden right">Reset</a>
+	  <a  id="animated_button_a" class="button left" onclick="$(this).MHTMLAnimate('The text is now much longer and the button has animated to accomidate the new text.', 1000);$('#animated_button_a_reset').fadeIn(250);" tip="w" title="I'm an &lt;a&gt; tag.">Change Text</a>
+	  <a id="animated_button_a_reset" onclick="$('#animated_button_a').MHTMLAnimate('Change Text', 1000);$(this).fadeOut(250);" class="hidden right">Reset</a>
 	</td>
       </tr>
       <tr>
 	<td class="text_right"><span class="bold">&lt;div&gt;</span></td>
 	<td>
-	  <div id="animated_button_div" class="button left" onclick="$(this).htmlAnimate('The text is now much longer and the button has animated to accomidate the new text.', 1000);$('#animated_button_div_reset').fadeIn(250);" tip="w" title="I'm a &lt;div&gt; tag.">Change Text</div>
-	  <a id="animated_button_div_reset" onclick="$('#animated_button_div').htmlAnimate('Change Text', 1000);$(this).fadeOut(250);" class="hidden right">Reset</a>
+	  <div id="animated_button_div" class="button left" onclick="$(this).MHTMLAnimate('The text is now much longer and the button has animated to accomidate the new text.', 1000);$('#animated_button_div_reset').fadeIn(250);" tip="w" title="I'm a &lt;div&gt; tag.">Change Text</div>
+	  <a id="animated_button_div_reset" onclick="$('#animated_button_div').MHTMLAnimate('Change Text', 1000);$(this).fadeOut(250);" class="hidden right">Reset</a>
 	</td>
       </tr>
       <tr>
 	<td class="text_right"><span class="bold">&lt;span&gt;</span></td>
 	<td>
-	  <span id="animated_button_span" class="button left" onclick="$(this).htmlAnimate('The text is now much longer and the button has animated to accomidate the new text.', 1000);$('#animated_button_span_reset').fadeIn(250);" tip="w" title="I'm a &lt;span&gt; tag.">Change Text</span>
-	  <a id="animated_button_span_reset" onclick="$('#animated_button_span').htmlAnimate('Change Text', 1000);$(this).fadeOut(250);" class="hidden right">Reset</a>
+	  <span id="animated_button_span" class="button left" onclick="$(this).MHTMLAnimate('The text is now much longer and the button has animated to accomidate the new text.', 1000);$('#animated_button_span_reset').fadeIn(250);" tip="w" title="I'm a &lt;span&gt; tag.">Change Text</span>
+	  <a id="animated_button_span_reset" onclick="$('#animated_button_span').MHTMLAnimate('Change Text', 1000);$(this).fadeOut(250);" class="hidden right">Reset</a>
 	</td>
       </tr>
     </table>

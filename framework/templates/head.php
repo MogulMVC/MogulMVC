@@ -69,7 +69,7 @@
 
       /* Custom/Forked JavaScript/jQuery Libraries */
       MLoad::js_framework_include("core/jquery.tip.js");
-      MLoad::js_framework_include("core/jquery.htmlAnimate.js");
+      MLoad::js_framework_include("core/jquery.MHTMLAnimate.js");
 
       MLoad::js_framework_include("core/config.js");
       MLoad::js_framework_include("core/functions.js");
