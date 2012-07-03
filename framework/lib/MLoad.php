@@ -18,9 +18,7 @@ class MLoad {
 
   public static function library_framework($library) {
 
-    if(empty($library)){
-      echo "Error - No library selected.";
-    }else{
+    if(!empty($library)){
       require_once(SERVER_ROOT."/".FRAMEWORK."/".FRAMEWORK_LIB."/".$library);
     }
 
@@ -32,9 +30,7 @@ class MLoad {
 
   public static function library_application($library) {
 
-    if(empty($library)){
-      echo "Error - No library selected.";
-    }else{
+    if(!empty($library)){
       require_once(SERVER_ROOT."/".APPLICATION."/".APPLICATION_LIB."/".$library);
     }
 
@@ -44,33 +40,27 @@ class MLoad {
     self::library_application($library);
   }
 
-  /********** Models **********/
+  /********** Models / VOs **********/
 
-  public static function model($model, $data = ""){
+  public static function model($model){
 
-    if(!empty($data)){
-      foreach($data as $key => $value){
-	$$key = $value;
-      }
+    if(!empty($model)){
+      require_once(SERVER_ROOT."/".APPLICATION."/".APPLICATION_MODELS."/".$model);
     }
-
-    require_once(SERVER_ROOT."/".APPLICATION."/".APPLICATION_MODELS."/".$model);
-
+    
   }
 
   public static function vo($vo){
   
-    require_once(SERVER_ROOT."/".APPLICATION."/".APPLICATION_VOS."/".$vo);
+    if(!empty($vo)){
+      require_once(SERVER_ROOT."/".APPLICATION."/".APPLICATION_VOS."/".$vo);
+    }
     
   }
 
   /********** Views **********/
 
   public static function view($view, $data = "") {
-
-      if(empty($view)) {
-	exit("View not set.");
-      }
 
       if(!empty($data)){
 	foreach($data as $key => $value){
@@ -96,8 +86,9 @@ class MLoad {
 	require($header);
       }
 
-
-      require(SERVER_ROOT."/".APPLICATION."/".APPLICATION_VIEWS."/".$view);
+      if(!empty($view)) {
+	require(SERVER_ROOT."/".APPLICATION."/".APPLICATION_VIEWS."/".$view);
+      }
       
       if(!empty($footer)){
 	require($footer);
@@ -107,10 +98,6 @@ class MLoad {
   }
 
   public static function frame($frame, $data = "") {
-
-      if (empty($frame)) {
-	  exit("View not set.");
-      }
 
       if(!empty($data)){
 	foreach($data as $key => $value){
@@ -124,7 +111,9 @@ class MLoad {
       
       require(SERVER_ROOT."/".FRAMEWORK."/".FRAMEWORK_TEMPLATES."/".FRAMEWORK_HEAD);
 
-      require(SERVER_ROOT."/".APPLICATION."/".APPLICATION_VIEWS."/".$frame);
+      if(!empty($frame)) {
+	require(SERVER_ROOT."/".APPLICATION."/".APPLICATION_VIEWS."/".$frame);
+      }
 
       require(SERVER_ROOT."/".FRAMEWORK."/".FRAMEWORK_TEMPLATES."/".FRAMEWORK_FOOT);
 
@@ -132,105 +121,140 @@ class MLoad {
 
   public static function element_framework($element, $data = ""){
 
-      if (empty($element)) {
-	  exit("Element not set.");
-      }
-
       if(!empty($data)){
 	foreach($data as $key => $value){
 	  $$key = $value;
 	}
       }
-
-      require(SERVER_ROOT."/".FRAMEWORK."/".FRAMEWORK_TEMPLATES."/".$element);
+      
+      if (empty($element)) {
+	require(SERVER_ROOT."/".FRAMEWORK."/".FRAMEWORK_TEMPLATES."/".$element);
+      }
 
   }
 
   public static function element_application($element, $data = ""){
 
-      if (empty($element)) {
-	  exit("Element not set.");
-      }
-
       if(!empty($data)){
 	foreach($data as $key => $value){
 	  $$key = $value;
 	}
       }
 
-      require(SERVER_ROOT."/".APPLICATION."/".APPLICATION_VIEWS."/".$element);
-
+      if (empty($element)) {
+	require(SERVER_ROOT."/".APPLICATION."/".APPLICATION_VIEWS."/".$element);
+      }
+      
   }
 
   /********** CSS **********/
 
   public static function css_framework($css){
-    if(file_exists(SERVER_ROOT."/".FRAMEWORK."/" .FRAMEWORK_CSS."/".$css)){
-      array_push($GLOBALS["LOAD_CSS_FRAMEWORK"], $css);
+  
+    if(!file_exists(SERVER_ROOT."/".FRAMEWORK."/" .FRAMEWORK_CSS."/".$css)){
+      exit("Error - ".$css." not found.");
     }
+  
+    array_push($GLOBALS["LOAD_CSS_FRAMEWORK"], $css);
+    
   }
 
   public static function css_framework_include($css){
-    if(file_exists(SERVER_ROOT."/".FRAMEWORK."/" .FRAMEWORK_CSS."/".$css)){
-      $src = "/".FRAMEWORK."/" .FRAMEWORK_CSS."/".$css;
-      echo '<link href="'.$src.'?'.FRAMEWORK_VERSION.'" type="text/css" rel="stylesheet" />';
+  
+    if(!file_exists(SERVER_ROOT."/".FRAMEWORK."/" .FRAMEWORK_CSS."/".$css)){
+      exit("Error - ".$css." not found.");
     }
+
+    $src = "/".FRAMEWORK."/" .FRAMEWORK_CSS."/".$css;
+    echo '<link href="'.$src.'?'.FRAMEWORK_VERSION.'" type="text/css" rel="stylesheet" />';
+    
   }
 
   public static function css_application($css){
-    if(file_exists(SERVER_ROOT."/".APPLICATION."/" .APPLICATION_CSS."/".$css)){
-      array_push($GLOBALS["LOAD_CSS_APPLICATION"], $css);
+  
+    if(!file_exists(SERVER_ROOT."/".APPLICATION."/" .APPLICATION_CSS."/".$css)){
+      exit("Error - ".$css." not found.");
     }
+    
+    array_push($GLOBALS["LOAD_CSS_APPLICATION"], $css);
+  
   }
 
   public static function css_application_include($css){
-    if(file_exists(SERVER_ROOT."/".APPLICATION."/" .APPLICATION_CSS."/".$css)){
-      $src = "/".APPLICATION."/" .APPLICATION_CSS."/".$css;
-      echo '<link href="'.$src.'?'.APPLICATION_VERSION.'" type="text/css" rel="stylesheet" />';
+  
+    if(!file_exists(SERVER_ROOT."/".APPLICATION."/" .APPLICATION_CSS."/".$css)){
+      exit("Error - ".$css." not found.");
     }
+  
+    $src = "/".APPLICATION."/" .APPLICATION_CSS."/".$css;
+    echo '<link href="'.$src.'?'.APPLICATION_VERSION.'" type="text/css" rel="stylesheet" />';
+
   }
 
   /********** JavaScript **********/
 
   public static function js_framework($js){
-    if(file_exists(SERVER_ROOT."/".FRAMEWORK."/" .FRAMEWORK_JS."/".$js)){
-      array_push($GLOBALS["LOAD_JS_FRAMEWORK"], $js);
+  
+    if(!file_exists(SERVER_ROOT."/".FRAMEWORK."/" .FRAMEWORK_JS."/".$js)){
+      exit("Error - ".$js." not found.");
     }
+  
+    array_push($GLOBALS["LOAD_JS_FRAMEWORK"], $js);
+
   }
 
   public static function js_framework_include($js){
-    if(file_exists(SERVER_ROOT."/".FRAMEWORK."/" .FRAMEWORK_JS."/".$js)){
-      $src = "/".FRAMEWORK."/" .FRAMEWORK_JS."/".$js;
-      echo '<script src="'.$src.'?'.FRAMEWORK_VERSION.'" type="text/javascript"></script>';
-      return '<script src="'.$src.'?'.FRAMEWORK_VERSION.'" type="text/javascript"></script>';
+  
+    if(!file_exists(SERVER_ROOT."/".FRAMEWORK."/" .FRAMEWORK_JS."/".$js)){
+      exit("Error - ".$js." not found.");
     }
+ 
+    $src = "/".FRAMEWORK."/" .FRAMEWORK_JS."/".$js;
+    echo '<script src="'.$src.'?'.FRAMEWORK_VERSION.'" type="text/javascript"></script>';
+
   }
 
   public static function js_application($js){
-    if(file_exists(SERVER_ROOT."/".APPLICATION."/" .APPLICATION_JS."/".$js)){
-      array_push($GLOBALS["LOAD_JS_APPLICATION"], $js);
+  
+    if(!file_exists(SERVER_ROOT."/".APPLICATION."/" .APPLICATION_JS."/".$js)){
+      exit("Error - ".$js." not found.");
     }
+  
+    array_push($GLOBALS["LOAD_JS_APPLICATION"], $js);
+
   }
 
   public static function js_application_include($js){
-    if(file_exists(SERVER_ROOT."/".APPLICATION."/" .APPLICATION_JS."/".$js)){
-      $src = "/".APPLICATION."/" .APPLICATION_JS."/".$js;
-      echo '<script src="'.$src.'?'.APPLICATION_VERSION.'" type="text/javascript"></script>';
+  
+    if(!file_exists(SERVER_ROOT."/".APPLICATION."/" .APPLICATION_JS."/".$js)){
+      exit("Error - ".$js." not found.");
     }
+    
+    $src = "/".APPLICATION."/" .APPLICATION_JS."/".$js;
+    echo '<script src="'.$src.'?'.APPLICATION_VERSION.'" type="text/javascript"></script>';
+  
   }
 
   /********** Images **********/
 
   public static function img_framework($img){
-    if(file_exists(SERVER_ROOT."/".FRAMEWORK."/".FRAMEWORK_IMG."/".$img)){
-      return "/".FRAMEWORK."/".FRAMEWORK_IMG."/".$img."?".FRAMEWORK_VERSION;
+  
+    if(!file_exists(SERVER_ROOT."/".FRAMEWORK."/".FRAMEWORK_IMG."/".$img)){
+      exit("Error - ".$img." not found.");
     }
+    
+    return "/".FRAMEWORK."/".FRAMEWORK_IMG."/".$img."?".FRAMEWORK_VERSION;
+    
   }
 
   public static function img_application($img){
-    if(file_exists(SERVER_ROOT."/".APPLICATION."/".APPLICATION_IMG."/".$img)){
-      return "/".APPLICATION."/".APPLICATION_IMG."/".$img."?".APPLICATION_VERSION;
+  
+    if(!file_exists(SERVER_ROOT."/".APPLICATION."/".APPLICATION_IMG."/".$img)){
+      exit("Error - ".$img." not found.");
     }
+      
+    return "/".APPLICATION."/".APPLICATION_IMG."/".$img."?".APPLICATION_VERSION;
+    
   }
 
   public static function icon_framework($icon){

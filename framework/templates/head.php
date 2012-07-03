@@ -68,7 +68,7 @@
       MLoad::js_framework_include("3rdparty/colorpicker.js");
 
       /* Custom/Forked JavaScript/jQuery Libraries */
-      MLoad::js_framework_include("core/jquery.tip.js");
+      MLoad::js_framework_include("core/jquery.MTip.js");
       MLoad::js_framework_include("core/jquery.MHTMLAnimate.js");
 
       MLoad::js_framework_include("core/config.js");
