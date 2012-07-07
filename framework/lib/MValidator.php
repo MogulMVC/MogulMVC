@@ -22,7 +22,7 @@ class MValidator {
   
     $valid = false;
     
-    $color = preg_replace('/[^0-9a-zA-Z\n]/', '', $color);
+    $color = preg_replace('/[^0-9a-fA-F\n]/', '', $color);
     
     if(strlen($color) == 3 || strlen($color) == 6){
       $valid = true;
