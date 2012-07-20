@@ -1026,6 +1026,9 @@ a.button, #sidebar a.button, a.button_red, a.button_r, a.button_orange, a.button
 .list_options {
   display: inline-block;
   min-width: 300px; }
+  .list_options a, .list_options img, .list_options span {
+    margin-left: 2px;
+    margin-right: 2px; }
 
 .list_item_container {
   border-radius: .4em;

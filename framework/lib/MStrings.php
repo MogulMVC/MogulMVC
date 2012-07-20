@@ -37,9 +37,13 @@ class MStrings {
 
   }
 
-  public static function url($string){
+  public static function url($string, $nofollow = true){
 
-    $string = preg_replace("/(http:\/\/[^\s]+)/", "<a href=\"$1\">$1</a>", $string);
+    if($nofollow){
+      $string = preg_replace("/(http:\/\/[^\s]+)/", "<a href=\"$1\" rel=\"nofollow\">$1</a>", $string);
+    }else{
+      $string = preg_replace("/(http:\/\/[^\s]+)/", "<a href=\"$1\">$1</a>", $string);
+    }
 
     return $string;
 

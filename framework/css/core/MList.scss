@@ -17,6 +17,12 @@
 .list_options{
   display:inline-block;
   min-width:300px;
+  
+  a, img, span{
+    margin-left:2px;
+    margin-right:2px;
+  }
+  
 }
 
 .list_item_container{
