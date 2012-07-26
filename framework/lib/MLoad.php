@@ -127,7 +127,7 @@ class MLoad {
 	}
       }
       
-      if (empty($element)) {
+      if(!empty($element)) {
 	require(SERVER_ROOT."/".FRAMEWORK."/".FRAMEWORK_TEMPLATES."/".$element);
       }
 
@@ -141,7 +141,7 @@ class MLoad {
 	}
       }
 
-      if (empty($element)) {
+      if(!empty($element)) {
 	require(SERVER_ROOT."/".APPLICATION."/".APPLICATION_VIEWS."/".$element);
       }
       

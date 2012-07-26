@@ -266,6 +266,11 @@ function toolbarMessageFadeOut() {
   $(".toolbar_message").delay(5000).fadeOut(speedSlow);
 }
 
+function toolbarPlaceholderScale(){
+  var toolbar_height = $("#toolbar").height();
+  $("#toolbar_placeholder").height(toolbar_height);
+}
+
 function listFadeIn() {
   var i = 0;
   $(".list_item_container").each(function() {

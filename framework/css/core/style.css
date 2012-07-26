@@ -1231,33 +1231,35 @@ a.button, #sidebar a.button, a.button_red, a.button_r, a.button_orange, a.button
   height: .8em;
   width: 100%; }
 
-.progress_bg {
-  background: #969696;
-  border-radius: 2em;
-  box-shadow: inset 0 0.2em 0.35em rgba(0, 0, 0, 0.25);
-  font-weight: bold;
-  height: 1.6em;
-  line-height: 1.6em;
-  overflow: hidden;
-  position: relative;
-  text-shadow: 0 0 0.4em rgba(0, 0, 0, 0.5);
-  width: 100%; }
-  .progress_bg .progress_fg {
-    background: #004b96;
-    background: -moz-linear-gradient(left, #004b96 0%, #007dfa 50%, #004b96 100%);
-    background: -ms-linear-gradient(left, #004b96 0%, #007dfa 50%, #004b96 100%);
-    background: -o-linear-gradient(left, #004b96 0%, #007dfa 50%, #004b96 100%);
-    background: -webkit-linear-gradient(left, #004b96 0%, #007dfa 50%, #004b96 100%);
-    background: linear-gradient(left, #004b96 0%, #007dfa 50%, #004b96 100%);
+.progress_container {
+  margin: 4px; }
+  .progress_container .progress_bg {
+    background: #969696;
     border-radius: 2em;
-    box-shadow: inset 0 0 0.4em rgba(0, 0, 0, 0.5);
-    color: #ffffff;
-    height: 100%;
-    width: 0%; }
-    .progress_bg .progress_fg .progress_indicator {
-      left: 50%;
-      margin-left: -12px;
-      position: absolute; }
+    box-shadow: inset 0 0.2em 0.35em rgba(0, 0, 0, 0.25);
+    font-weight: bold;
+    height: 1.6em;
+    line-height: 1.6em;
+    overflow: hidden;
+    position: relative;
+    text-shadow: 0 0 0.4em rgba(0, 0, 0, 0.5);
+    width: 100%; }
+    .progress_container .progress_bg .progress_fg {
+      background: #004b96;
+      background: -moz-linear-gradient(left, #004b96 0%, #007dfa 50%, #004b96 100%);
+      background: -ms-linear-gradient(left, #004b96 0%, #007dfa 50%, #004b96 100%);
+      background: -o-linear-gradient(left, #004b96 0%, #007dfa 50%, #004b96 100%);
+      background: -webkit-linear-gradient(left, #004b96 0%, #007dfa 50%, #004b96 100%);
+      background: linear-gradient(left, #004b96 0%, #007dfa 50%, #004b96 100%);
+      border-radius: 2em;
+      box-shadow: inset 0 0 0.4em rgba(0, 0, 0, 0.5);
+      color: #ffffff;
+      height: 100%;
+      width: 0%; }
+      .progress_container .progress_bg .progress_fg .progress_indicator {
+        left: 50%;
+        margin-left: -12px;
+        position: absolute; }
 
 .page_link_container {
   text-align: center; }
