@@ -9,43 +9,43 @@ $(document).ready(function() {
   /*Tabs*/
   $(".eztab_group").easytabs({updateHash:false});
   
-  /*Tooltips*/
-  $("[tip=n]").MTip({
+  /*Tootips*/
+  $("[MTip=N]").MTip({
     gravity: "N",
     delayIn: speedSlow
   });
   
-  $("[tip=nw]").MTip({
+  $("[MTip=NW]").MTip({
     gravity: "NW",
     delayIn: speedSlow
   });
     
-  $("[tip=ne]").MTip({
+  $("[MTip=NE]").MTip({
     gravity: "NE",
     delayIn: speedSlow
   });
 
-  $("[tip=s]").MTip({
+  $("[MTip=S]").MTip({
     gravity: "S",
     delayIn: speedSlow
   });
   
-  $("[tip=sw]").MTip({
+  $("[MTip=SW]").MTip({
     gravity: "SW",
     delayIn: speedSlow
   });
     
-  $("[tip=se]").MTip({
+  $("[MTip=SE]").MTip({
     gravity: "SE",
     delayIn: speedSlow
   });
   
-  $("[tip=w]").MTip({
+  $("[MTip=W]").MTip({
     gravity: "W",
     delayIn: speedSlow
   });
   
-  $("[tip=e]").MTip({
+  $("[MTip=E]").MTip({
     gravity: "E",
     delayIn: speedSlow
   });
