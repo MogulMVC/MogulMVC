@@ -1,4 +1,4 @@
-.icon_complete{
+.MIconComplete{
   background-image:url("/framework/img/icons/complete_150x150.png");
   background-repeat:no-repeat;
   height:150px;
@@ -6,7 +6,7 @@
   width:150px;
 }
 
-.icon_warning{
+.MIconWarning{
   background-image:url("/framework/img/icons/warning_150x150.png");
   background-repeat:no-repeat;
   height:150px;
@@ -14,7 +14,7 @@
   width:150px;
 }
 
-.icon_loading_black_150{
+.MIconLoadingBlack150{
   background-image:url("/framework/img/icons/loading_black_150x150.gif");
   background-repeat:no-repeat;
   height:150px;
@@ -22,7 +22,7 @@
   width:150px;
 }
 
-.icon_loading_black_50{
+.MIconLoadingBlack50{
   background-image:url("/framework/img/icons/loading_black_50x50.gif");
   background-repeat:no-repeat;
   height:50px;
@@ -30,7 +30,7 @@
   width:50px;
 }
 
-.icon_loading_white_50{
+.MIconLoadingWhite50{
   background-image:url("/framework/img/icons/loading_white_50x50.gif");
   background-repeat:no-repeat;
   height:50px;
@@ -38,21 +38,21 @@
   width:50px;
 }
 
-.icon_loading_black_16{
+.MIconLoadingBlack16{
   background-image:url("/framework/img/icons/loading_black_16x16.gif");
   background-repeat:no-repeat;
   height:16px;
   width:16px;
 }
 
-.icon_loading_button{ @extend .icon_loading_black_16;
+.MIconLoadingButton{ @extend .MIconLoadingBlack16;
   float:left;
   margin-right:.8em;
   margin-top:.1em;
   opacity:.35;
 }
 
-.icon_close{
+.MIconClose{
   background-image:url("/framework/img/icons/close_16x16.png");
   background-position:0 0;
   background-repeat:no-repeat;
@@ -71,7 +71,7 @@
 
 }
 
-.icon_arrow_left{
+.MIconArrowLeft{
   background-image:url("/framework/img/icons/arrow_left_16x16.png");
   background-position:0 0;
   background-repeat:no-repeat;
@@ -90,7 +90,7 @@
   
 }
 
-.icon_arrow_right{
+.MIconArrowRight{
   background-image:url("/framework/img/icons/arrow_right_16x16.png");
   background-position:0 0;
   background-repeat:no-repeat;

@@ -1,4 +1,4 @@
-.tab{ @extend .glow;
+.MTab{ @extend .MGlow;
   -moz-user-select:none;
   -o-user-select:none;
   -webkit-user-select:none;
@@ -17,7 +17,7 @@
   user-select:none;
 }
 
-.tab_selected{ @extend .tab;
+.MTabSelected{ @extend .MTab;
   background:#e6e6e6;
 
   &:hover{
@@ -27,7 +27,7 @@
   }
 }
 
-.tab_body{
+.MTabBody{
   background:#e6e6e6;
   background:-moz-linear-gradient(top, #e6e6e6 0%, #c8c8c8 100%);
   background:-ms-linear-gradient(top, #e6e6e6 0%,#c8c8c8 100%);
@@ -53,20 +53,15 @@
   
 }
 
-.tab_body_selected{
+.MTabBodySelected{
   display:table;
 }
 
-.tab_body_sidebar{
+.MTabBodySidebar{
   color:#323232;
   display:none;
   margin:0 auto;
   text-align:left;
-}
-
-.tab_textarea{
-  height:135px;
-  width:848px;
 }
 
 .eztab_container{
@@ -75,7 +70,7 @@
   text-align:left;
 }
 
-.eztab{ @extend .glow;
+.eztab{ @extend .MGlow;
   -moz-user-select:none;
   -o-user-select:none;
   -webkit-user-select:none;

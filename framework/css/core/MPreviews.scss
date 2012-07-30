@@ -1,4 +1,4 @@
-.preview_bg{
+.MPreviewBG{
   background-color:#323232;
   box-shadow:$shadow_small;
   display:inline-block;
@@ -7,7 +7,7 @@
   position:relative;
 }
 
-.background_preview_bg{
+.MBackgroundPreviewBG{
   background-color:#323232;
   box-shadow:$shadow_small;
   height:145px;
@@ -17,15 +17,7 @@
   width:560px;
 }
 
-.background_preview{
+.MBackgroundPreview{
   max-height:145px;
   max-width:550px;
-}
-
-.background_preview_color{
-  background-color:#646464;
-  height:145px;
-  margin-right:.8em;
-  position:relative;
-  width:145px;
 }

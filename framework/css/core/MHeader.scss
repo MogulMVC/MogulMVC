@@ -1,11 +1,11 @@
-#header_placeholder{
+#MHeaderPlaceholder{
   background:#141414;
   height:2.85em;
   margin:0 auto;
   width:100%;
 }
 
-#header{
+#MHeader{
   background:#141414;
   background:-moz-linear-gradient(top, #232323 0%, #141414 100%);
   background:-ms-linear-gradient(top, #232323 0%,#141414 100%);
@@ -54,12 +54,12 @@
   
 }
 
-.header_spacer{
+.MHeaderSpacer{
   height:36px;
   width:.4em;
 }
 
-.header_seperator{
+.MHeaderSeperator{
   background:#646464;
   height:100%;
   margin-left:.4em;
@@ -69,7 +69,7 @@
 
 /* Header Unique Items */
 
-a#header_home{
+a#MHeaderHome{
   margin-top:.3em;
   padding:0;
   width:86px;
@@ -82,12 +82,12 @@ a#header_home{
   
 }
 
-#header_search{
+#MHeaderSearch{
   margin-top:6px;
   width:300px;
 }
 
-#header_user_photo{
+#MHeaderUserPhoto{
   background:#646464;
   border:.1em solid #646464;
   height:24px;
@@ -95,7 +95,7 @@ a#header_home{
   width:24px;
 }
 
-a#header_menu{
+a#MHeaderMenu{
   background-color:transparent;
   background-image:url("/framework/img/global/header_menu.png");
   background-position:0 0;
@@ -119,7 +119,7 @@ a#header_menu{
   
 }
 
-a#header_tools{
+a#MHeaderTools{
   background-color:transparent;
   background-image:url("/framework/img/global/header_tools.png");
   background-position:0 0;
@@ -143,7 +143,7 @@ a#header_tools{
   
 }
 
-#header_menu_dropdown{
+#MHeaderMenuDropdown{
   background:#ffffff;
   padding:0;
   position:fixed;
@@ -152,7 +152,7 @@ a#header_tools{
   z-index:1200;
 }
 
-#header_menu_dropdown li{
+#MHeaderMenuDropdown li{
   color:#323232;
   font-weight:bold;
   height:40px;
@@ -173,7 +173,7 @@ a#header_tools{
   
 }
 
-#header_login{
+#MHeaderLogin{
   position:fixed;
   right:.4em;
   top:41px;

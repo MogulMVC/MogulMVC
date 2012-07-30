@@ -1,4 +1,4 @@
-#sidebar_trigger_left{
+#MSidebarTriggerLeft{
   height:100%;
   left:0;
   position:fixed;
@@ -7,7 +7,7 @@
   z-index:100;
 }
 
-#sidebar_trigger_right{
+#MSidebarTriggerRight{
   height:100%;
   position:fixed;
   right:0;
@@ -16,7 +16,7 @@
   z-index:100;
 }
 
-#sidebar_trigger_left_indicator{
+#MSidebarTriggerLeftIndicator{
   background:-moz-linear-gradient(left, rgba(0,125,250,1) 0%, rgba(0,125,250,0) 100%);
   background:-ms-linear-gradient(left, rgba(0,125,250,1) 0%,rgba(0,125,250,0) 100%);
   background:-o-linear-gradient(left, rgba(0,125,250,1) 0%,rgba(0,125,250,0) 100%);
@@ -30,7 +30,7 @@
   z-index:150;
 }
 
-#sidebar_trigger_right_indicator{
+#MSidebarTriggerRightIndicator{
   background:-moz-linear-gradient(right, rgba(0,125,250,1) 0%, rgba(0,125,250,0) 100%);
   background:-ms-linear-gradient(right, rgba(0,125,250,1) 0%,rgba(0,125,250,0) 100%);
   background:-o-linear-gradient(right, rgba(0,125,250,1) 0%,rgba(0,125,250,0) 100%);
@@ -44,12 +44,12 @@
   z-index:150;
 }
 
-#sidebar_container{
+#MSidebarContainer{
   min-width:352px;
   width:352px;
 }
 
-#sidebar{
+#MSidebar{
   background:#f0f0f0;
   border-left:solid 1px #646464;
   border-right:solid 1px #646464;
@@ -62,23 +62,23 @@
   z-index:200;
 }
 
-.sidebar_left{
+.MSidebarLeft{
   left:0px;
 }
 
-.sidebar_left_hidden{
+.MSidebarLeftHidden{
   left:-360px;
 }
 
-.sidebar_right{
+.MSidebarRight{
   right:0px;
 }
 
-.sidebar_right_hidden{
+.MSidebarRightHidden{
   right:-360px;
 }
 
-.sidebar_menu{
+.MSidebarMenu{
   background:#c8c8c8;
   background:-moz-linear-gradient(top, #e6e6e6 0%, #c8c8c8 100%);
   background:-ms-linear-gradient(top, #e6e6e6 0%,#c8c8c8 100%);
@@ -92,7 +92,7 @@
   text-align:center;
 }
 
-#sidebar_menu_fixed{ @extend .sidebar_menu;
+#MSidebarMenuFixed{ @extend .MSidebarMenu;
   left:0px;
   padding-bottom:0px;
   position:fixed;
@@ -100,21 +100,21 @@
   z-index:50;
 }
 
-#sidebar_menu_fixed_placeholder{@extend .sidebar_menu;
+#MSidebarMenuFixedPlaceholder{@extend .MSidebarMenu;
   padding-bottom:0px;
 }
 
-#sidebar a{
+#MSidebar a{
   color:#323232;
   
   &:hover{
     color:#ffffff;
   }
   
-  &.button{@extend .button;}
+  &.MButton{@extend .MButton;}
 }
 
-#sidebar li{
+#MSidebar li{
   color:#323232;
   height:54px;
   line-height:54px;
@@ -135,7 +135,7 @@
   
 }
 
-#sidebar li.blue{
+#MSidebar li.blue{
   background:#b4d2f0;
   color:#323232;
   
@@ -151,15 +151,15 @@
   
 }
 
-#sidebar li span:first-child{
+#MSidebar li span:first-child{
   margin-left:20px;
 }
 
-#sidebar span{
+#MSidebar span{
   font-weight:bold;
 }
 
-.sidebar_thumbnail{
+.MSidebarThumbnail{
   height:3.95em;
   margin-left:.35em;
   margin-right:.35em;

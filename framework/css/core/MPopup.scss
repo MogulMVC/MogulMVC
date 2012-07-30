@@ -1,4 +1,4 @@
-.popup_container{ @extend .widget_container;
+.MPopupContainer{ @extend .MWidgetContainer;
   box-shadow:$shadow_large;
   left:50%;
   margin-left:-27.4em;
@@ -8,21 +8,21 @@
   z-index:1600;
 }
 
-.popup_menu{
+.MPopupMenu{
   height:35px;
 }
 
-.popup_list{
+.MPopupList{
   overflow-x:hidden;
   overflow-y:auto;
 }
 
-.popup_preview_container{
+.MPopupPreviewContainer{
   text-align:center;
   width:100%;
 }
 
-.popup_preview{
+.MPopupPreview{
   max-height:400px;
   max-width:640px;
 }

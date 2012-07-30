@@ -43,7 +43,7 @@ body{
   text-align:center;
 }
 
-fieldset{ @extend .widget_container;}
+fieldset{ @extend .MWidgetContainer;}
 
 legend{
   background:#ffffff;
@@ -68,7 +68,7 @@ img{
   border-style:none;
 }
 
-button{ @extend .button;
+button{ @extend .MButton;
   cursor:pointer;
   font-size:1em;
   
@@ -134,9 +134,9 @@ input{
     margin-right:.4em;
   }
   
-  &[type="button"], &[type="submit"]{ @extend .button;}
+  &[type="button"], &[type="submit"]{ @extend .MButton;}
   
-  &[type="reset"]{ @extend .button_red;}
+  &[type="reset"]{ @extend .MButtonRed;}
 
 }
 

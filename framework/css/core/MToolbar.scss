@@ -1,11 +1,11 @@
-#toolbar_placeholder{
+#MToolbarPlaceholder{
   background:#c8c8c8;
   height:2.4em;
   margin:0 auto;
   width:100%;
 }
 
-#toolbar{
+#MToolbar{
   background:#c8c8c8;
   background:-moz-linear-gradient(top, #e6e6e6 0%, #c8c8c8 100%);
   background:-ms-linear-gradient(top, #e6e6e6 0%,#c8c8c8 100%);
@@ -50,11 +50,11 @@
   
   }
   
-  a.button, button.button, div.button, span.button, select{
+  a.MButton, button.MButton, div.MButton, span.MButton, select{
     margin-top:.4em;
   }
   
-  button img{
+  MButton img{
     margin-left:-10px;
     margin-right:.4em;
     margin-top:.1em;
@@ -66,16 +66,16 @@
   
 }
 
-h1.toolbar_title{
+h1.MToolbarTitle{
   font-size:1em;
   margin:0;
 }
 
-.toolbar_icon{
+.MToolbarIcon{
   margin-right:.4em;
 }
   
-.toolbar_seperator{
+.MToolbarSeperator{
   background:#646464;
   height:100%;
   margin-left:.4em;
@@ -83,12 +83,12 @@ h1.toolbar_title{
   width:.1em;
 } 
 
-.toolbar_spacer{
+.MToolbarSpacer{
   height:100%;
   width:.4em;
 }
 
-.toolbar_message{
+.MToolbarMessage{
   background:#141414;
   background:-moz-linear-gradient(top, #232323 0%, #141414 100%);
   background:-ms-linear-gradient(top, #232323 0%,#141414 100%);

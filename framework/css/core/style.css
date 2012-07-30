@@ -15,15 +15,15 @@
 /***************************/
 /* Overridable Properties */
 /***************************/
-.glow, .button, button, input[type="button"], input[type="submit"], #sidebar a.button, .button_red, input[type="reset"], .button_r, .button_orange, .button_o, .button_yellow, .button_y, .button_green, .button_g, .button_blue, .button_b, .button_violet, .button_v, .button_upload, .tab, .tab_selected, .eztab {
+.MGlow, .MButton, button, input[type="button"], input[type="submit"], #MSidebar a.MButton, .MButtonRed, input[type="reset"], .MButtonR, .MButtonOrange, .MButtonO, .MButtonYellow, .MButtonY, .MButtonGreen, .MButtonG, .MButtonBlue, .MButtonB, .MButtonViolet, .MButtonV, .MButtonUpload, .MTab, .MTabSelected, .eztab {
   -moz-transition: box-shadow 0.25s;
   -o-transition: box-shadow 0.25s;
   -webkit-transition: box-shadow 0.25s;
   transition: box-shadow 0.25s; }
-  .glow:hover, .button:hover, button:hover, input[type="button"]:hover, input[type="submit"]:hover, #sidebar a.button:hover, .button_red:hover, input[type="reset"]:hover, .button_r:hover, .button_orange:hover, .button_o:hover, .button_yellow:hover, .button_y:hover, .button_green:hover, .button_g:hover, .button_blue:hover, .button_b:hover, .button_violet:hover, .button_v:hover, .button_upload:hover, .tab:hover, .tab_selected:hover, .eztab:hover {
+  .MGlow:hover, .MButton:hover, button:hover, input[type="button"]:hover, input[type="submit"]:hover, #MSidebar a.MButton:hover, .MButtonRed:hover, input[type="reset"]:hover, .MButtonR:hover, .MButtonOrange:hover, .MButtonO:hover, .MButtonYellow:hover, .MButtonY:hover, .MButtonGreen:hover, .MButtonG:hover, .MButtonBlue:hover, .MButtonB:hover, .MButtonViolet:hover, .MButtonV:hover, .MButtonUpload:hover, .MTab:hover, .MTabSelected:hover, .eztab:hover {
     border-color: #007dfa;
     box-shadow: 0 0 0.4em #007dfa; }
-  .glow:active, .button:active, button:active, input[type="button"]:active, input[type="submit"]:active, #sidebar a.button:active, .button_red:active, input[type="reset"]:active, .button_r:active, .button_orange:active, .button_o:active, .button_yellow:active, .button_y:active, .button_green:active, .button_g:active, .button_blue:active, .button_b:active, .button_violet:active, .button_v:active, .button_upload:active, .tab:active, .tab_selected:active, .eztab:active {
+  .MGlow:active, .MButton:active, button:active, input[type="button"]:active, input[type="submit"]:active, #MSidebar a.MButton:active, .MButtonRed:active, input[type="reset"]:active, .MButtonR:active, .MButtonOrange:active, .MButtonO:active, .MButtonYellow:active, .MButtonY:active, .MButtonGreen:active, .MButtonG:active, .MButtonBlue:active, .MButtonB:active, .MButtonViolet:active, .MButtonV:active, .MButtonUpload:active, .MTab:active, .MTabSelected:active, .eztab:active {
     border-color: none;
     box-shadow: none; }
 
@@ -182,13 +182,13 @@ li {
     opacity: 0;
     /*Images are faded in with JS*/ }
 
-#header_placeholder {
+#MHeaderPlaceholder {
   background: #141414;
   height: 2.85em;
   margin: 0 auto;
   width: 100%; }
 
-#header {
+#MHeader {
   background: #141414;
   background: -moz-linear-gradient(top, #232323 0%, #141414 100%);
   background: -ms-linear-gradient(top, #232323 0%, #141414 100%);
@@ -206,7 +206,7 @@ li {
   top: 0;
   width: 100%;
   z-index: 900; }
-  #header a {
+  #MHeader a {
     -moz-user-select: none;
     -o-user-select: none;
     -webkit-user-select: none;
@@ -219,21 +219,21 @@ li {
     padding-right: .35em;
     padding-top: .35em;
     user-select: none; }
-    #header a:hover {
+    #MHeader a:hover {
       background-color: #646464;
       border-radius: .3em;
       box-shadow: inset 0 0.2em 0.35em rgba(0, 0, 0, 0.25);
       color: #ffffff;
       text-shadow: 0 0 0.4em rgba(0, 0, 0, 0.5); }
-  #header img {
+  #MHeader img {
     opacity: 1;
     /*Header images should not be faded in*/ }
 
-.header_spacer {
+.MHeaderSpacer {
   height: 36px;
   width: .4em; }
 
-.header_seperator {
+.MHeaderSeperator {
   background: #646464;
   height: 100%;
   margin-left: .4em;
@@ -241,27 +241,27 @@ li {
   width: .1em; }
 
 /* Header Unique Items */
-a#header_home {
+a#MHeaderHome {
   margin-top: .3em;
   padding: 0;
   width: 86px; }
-  a#header_home:hover {
+  a#MHeaderHome:hover {
     background: none;
     box-shadow: none;
     text-shadow: none; }
 
-#header_search {
+#MHeaderSearch {
   margin-top: 6px;
   width: 300px; }
 
-#header_user_photo {
+#MHeaderUserPhoto {
   background: #646464;
   border: .1em solid #646464;
   height: 24px;
   margin-top: .4em;
   width: 24px; }
 
-a#header_menu {
+a#MHeaderMenu {
   background-color: transparent;
   background-image: url("/framework/img/global/header_menu.png");
   background-position: 0 0;
@@ -270,7 +270,7 @@ a#header_menu {
   margin: 0;
   padding: 0;
   width: 22px; }
-  a#header_menu:hover {
+  a#MHeaderMenu:hover {
     background-color: transparent;
     background-image: url("/framework/img/global/header_menu.png");
     background-position: 0 -36px;
@@ -281,7 +281,7 @@ a#header_menu {
     padding: 0;
     text-shadow: none; }
 
-a#header_tools {
+a#MHeaderTools {
   background-color: transparent;
   background-image: url("/framework/img/global/header_tools.png");
   background-position: 0 0;
@@ -290,7 +290,7 @@ a#header_tools {
   margin: 0;
   padding: 0;
   width: 22px; }
-  a#header_tools:hover {
+  a#MHeaderTools:hover {
     background-color: transparent;
     background-image: url("/framework/img/global/header_tools.png");
     background-position: 0 -36px;
@@ -301,7 +301,7 @@ a#header_tools {
     padding: 0;
     text-shadow: none; }
 
-#header_menu_dropdown {
+#MHeaderMenuDropdown {
   background: #ffffff;
   padding: 0;
   position: fixed;
@@ -309,7 +309,7 @@ a#header_tools {
   top: 41px;
   z-index: 1200; }
 
-#header_menu_dropdown li {
+#MHeaderMenuDropdown li {
   color: #323232;
   font-weight: bold;
   height: 40px;
@@ -317,7 +317,7 @@ a#header_tools {
   overflow: hidden;
   padding-left: 1.6em;
   padding-right: 1.6em; }
-  #header_menu_dropdown li:hover {
+  #MHeaderMenuDropdown li:hover {
     background: #141414;
     background: -moz-linear-gradient(top, #232323 0%, #141414 100%);
     background: -ms-linear-gradient(top, #232323 0%, #141414 100%);
@@ -326,19 +326,19 @@ a#header_tools {
     background: linear-gradient(top, #232323 0%, #141414 100%);
     color: #ffffff; }
 
-#header_login {
+#MHeaderLogin {
   position: fixed;
   right: .4em;
   top: 41px;
   z-index: 1200; }
 
-#toolbar_placeholder {
+#MToolbarPlaceholder {
   background: #c8c8c8;
   height: 2.4em;
   margin: 0 auto;
   width: 100%; }
 
-#toolbar {
+#MToolbar {
   background: #c8c8c8;
   background: -moz-linear-gradient(top, #e6e6e6 0%, #c8c8c8 100%);
   background: -ms-linear-gradient(top, #e6e6e6 0%, #c8c8c8 100%);
@@ -358,7 +358,7 @@ a#header_tools {
   top: 2.85em;
   width: 100%;
   z-index: 1000; }
-  #toolbar a {
+  #MToolbar a {
     -moz-user-select: none;
     -o-user-select: none;
     -webkit-user-select: none;
@@ -371,40 +371,40 @@ a#header_tools {
     padding-right: .4em;
     padding-top: .2em;
     user-select: none; }
-    #toolbar a:hover {
+    #MToolbar a:hover {
       background: #646464;
       border-radius: .3em;
       box-shadow: inset 0 0.2em 0.35em rgba(0, 0, 0, 0.25);
       color: #ffffff;
       text-shadow: 0 0 0.4em rgba(0, 0, 0, 0.5); }
-  #toolbar a.button, #toolbar #sidebar a.button, #sidebar #toolbar a.button, #toolbar a.button_red, #toolbar a.button_r, #toolbar a.button_orange, #toolbar a.button_o, #toolbar a.button_yellow, #toolbar a.button_y, #toolbar a.button_green, #toolbar a.button_g, #toolbar a.button_blue, #toolbar a.button_b, #toolbar a.button_violet, #toolbar a.button_v, #toolbar a.button_upload, #toolbar button, #toolbar button.button_red, #toolbar button.button_r, #toolbar button.button_orange, #toolbar button.button_o, #toolbar button.button_yellow, #toolbar button.button_y, #toolbar button.button_green, #toolbar button.button_g, #toolbar button.button_blue, #toolbar button.button_b, #toolbar button.button_violet, #toolbar button.button_v, #toolbar button.button_upload, #toolbar div.button, #toolbar div.button_red, #toolbar div.button_r, #toolbar div.button_orange, #toolbar div.button_o, #toolbar div.button_yellow, #toolbar div.button_y, #toolbar div.button_green, #toolbar div.button_g, #toolbar div.button_blue, #toolbar div.button_b, #toolbar div.button_violet, #toolbar div.button_v, #toolbar div.button_upload, #toolbar span.button, #toolbar span.button_red, #toolbar span.button_r, #toolbar span.button_orange, #toolbar span.button_o, #toolbar span.button_yellow, #toolbar span.button_y, #toolbar span.button_green, #toolbar span.button_g, #toolbar span.button_blue, #toolbar span.button_b, #toolbar span.button_violet, #toolbar span.button_v, #toolbar span.button_upload, #toolbar select {
+  #MToolbar a.MButton, #MToolbar #MSidebar a.MButton, #MSidebar #MToolbar a.MButton, #MToolbar a.MButtonRed, #MToolbar a.MButtonR, #MToolbar a.MButtonOrange, #MToolbar a.MButtonO, #MToolbar a.MButtonYellow, #MToolbar a.MButtonY, #MToolbar a.MButtonGreen, #MToolbar a.MButtonG, #MToolbar a.MButtonBlue, #MToolbar a.MButtonB, #MToolbar a.MButtonViolet, #MToolbar a.MButtonV, #MToolbar a.MButtonUpload, #MToolbar button, #MToolbar button.MButtonRed, #MToolbar button.MButtonR, #MToolbar button.MButtonOrange, #MToolbar button.MButtonO, #MToolbar button.MButtonYellow, #MToolbar button.MButtonY, #MToolbar button.MButtonGreen, #MToolbar button.MButtonG, #MToolbar button.MButtonBlue, #MToolbar button.MButtonB, #MToolbar button.MButtonViolet, #MToolbar button.MButtonV, #MToolbar button.MButtonUpload, #MToolbar div.MButton, #MToolbar div.MButtonRed, #MToolbar div.MButtonR, #MToolbar div.MButtonOrange, #MToolbar div.MButtonO, #MToolbar div.MButtonYellow, #MToolbar div.MButtonY, #MToolbar div.MButtonGreen, #MToolbar div.MButtonG, #MToolbar div.MButtonBlue, #MToolbar div.MButtonB, #MToolbar div.MButtonViolet, #MToolbar div.MButtonV, #MToolbar div.MButtonUpload, #MToolbar span.MButton, #MToolbar span.MButtonRed, #MToolbar span.MButtonR, #MToolbar span.MButtonOrange, #MToolbar span.MButtonO, #MToolbar span.MButtonYellow, #MToolbar span.MButtonY, #MToolbar span.MButtonGreen, #MToolbar span.MButtonG, #MToolbar span.MButtonBlue, #MToolbar span.MButtonB, #MToolbar span.MButtonViolet, #MToolbar span.MButtonV, #MToolbar span.MButtonUpload, #MToolbar select {
     margin-top: .4em; }
-  #toolbar button img {
+  #MToolbar MButton img {
     margin-left: -10px;
     margin-right: .4em;
     margin-top: .1em; }
-  #toolbar img {
+  #MToolbar img {
     vertical-align: top; }
 
-h1.toolbar_title {
+h1.MToolbarTitle {
   font-size: 1em;
   margin: 0; }
 
-.toolbar_icon {
+.MToolbarIcon {
   margin-right: .4em; }
 
-.toolbar_seperator {
+.MToolbarSeperator {
   background: #646464;
   height: 100%;
   margin-left: .4em;
   margin-right: .4em;
   width: .1em; }
 
-.toolbar_spacer {
+.MToolbarSpacer {
   height: 100%;
   width: .4em; }
 
-.toolbar_message {
+.MToolbarMessage {
   background: #141414;
   background: -moz-linear-gradient(top, #232323 0%, #141414 100%);
   background: -ms-linear-gradient(top, #232323 0%, #141414 100%);
@@ -426,12 +426,12 @@ h1.toolbar_title {
   top: 71px;
   z-index: 500; }
 
-.hidden_bg_full {
+.MHiddenBGFull {
   background: #232323;
   overflow: hidden;
   width: 100%; }
 
-.hidden_bg_min {
+.MHiddenBGMin {
   background: #232323;
   height: 0;
   overflow: hidden;
@@ -440,7 +440,7 @@ h1.toolbar_title {
 #hidden_content {
   text-align: center; }
 
-#sidebar_trigger_left {
+#MSidebarTriggerLeft {
   height: 100%;
   left: 0;
   position: fixed;
@@ -448,7 +448,7 @@ h1.toolbar_title {
   width: .8em;
   z-index: 100; }
 
-#sidebar_trigger_right {
+#MSidebarTriggerRight {
   height: 100%;
   position: fixed;
   right: 0;
@@ -456,7 +456,7 @@ h1.toolbar_title {
   width: .8em;
   z-index: 100; }
 
-#sidebar_trigger_left_indicator {
+#MSidebarTriggerLeftIndicator {
   background: -moz-linear-gradient(left, #007dfa 0%, rgba(0, 125, 250, 0) 100%);
   background: -ms-linear-gradient(left, #007dfa 0%, rgba(0, 125, 250, 0) 100%);
   background: -o-linear-gradient(left, #007dfa 0%, rgba(0, 125, 250, 0) 100%);
@@ -469,7 +469,7 @@ h1.toolbar_title {
   width: .8em;
   z-index: 150; }
 
-#sidebar_trigger_right_indicator {
+#MSidebarTriggerRightIndicator {
   background: -moz-linear-gradient(right, #007dfa 0%, rgba(0, 125, 250, 0) 100%);
   background: -ms-linear-gradient(right, #007dfa 0%, rgba(0, 125, 250, 0) 100%);
   background: -o-linear-gradient(right, #007dfa 0%, rgba(0, 125, 250, 0) 100%);
@@ -482,11 +482,11 @@ h1.toolbar_title {
   width: .8em;
   z-index: 150; }
 
-#sidebar_container {
+#MSidebarContainer {
   min-width: 352px;
   width: 352px; }
 
-#sidebar {
+#MSidebar {
   background: #f0f0f0;
   border-left: solid 1px #646464;
   border-right: solid 1px #646464;
@@ -498,19 +498,19 @@ h1.toolbar_title {
   width: 350px;
   z-index: 200; }
 
-.sidebar_left {
+.MSidebarLeft {
   left: 0px; }
 
-.sidebar_left_hidden {
+.MSidebarLeftHidden {
   left: -360px; }
 
-.sidebar_right {
+.MSidebarRight {
   right: 0px; }
 
-.sidebar_right_hidden {
+.MSidebarRightHidden {
   right: -360px; }
 
-.sidebar_menu, #sidebar_menu_fixed, #sidebar_menu_fixed_placeholder {
+.MSidebarMenu, #MSidebarMenuFixed, #MSidebarMenuFixedPlaceholder {
   background: #c8c8c8;
   background: -moz-linear-gradient(top, #e6e6e6 0%, #c8c8c8 100%);
   background: -ms-linear-gradient(top, #e6e6e6 0%, #c8c8c8 100%);
@@ -523,22 +523,22 @@ h1.toolbar_title {
   padding: .35em;
   text-align: center; }
 
-#sidebar_menu_fixed {
+#MSidebarMenuFixed {
   left: 0px;
   padding-bottom: 0px;
   position: fixed;
   width: 343px;
   z-index: 50; }
 
-#sidebar_menu_fixed_placeholder {
+#MSidebarMenuFixedPlaceholder {
   padding-bottom: 0px; }
 
-#sidebar a {
+#MSidebar a {
   color: #323232; }
-  #sidebar a:hover {
+  #MSidebar a:hover {
     color: #ffffff; }
 
-#sidebar li {
+#MSidebar li {
   color: #323232;
   height: 54px;
   line-height: 54px;
@@ -546,7 +546,7 @@ h1.toolbar_title {
   overflow: hidden;
   padding-right: 1.6em;
   width: 330px; }
-  #sidebar li:hover {
+  #MSidebar li:hover {
     background: #141414;
     background: -moz-linear-gradient(top, #232323 0%, #141414 100%);
     background: -ms-linear-gradient(top, #232323 0%, #141414 100%);
@@ -555,10 +555,10 @@ h1.toolbar_title {
     background: linear-gradient(top, #232323 0%, #141414 100%);
     color: #ffffff; }
 
-#sidebar li.blue {
+#MSidebar li.blue {
   background: #b4d2f0;
   color: #323232; }
-  #sidebar li.blue:hover {
+  #MSidebar li.blue:hover {
     background: #647382;
     background: -moz-linear-gradient(top, #6b7a89 0%, #647382 100%);
     background: -ms-linear-gradient(top, #6b7a89 0%, #647382 100%);
@@ -567,19 +567,19 @@ h1.toolbar_title {
     background: linear-gradient(top, #6b7a89 0%, #647382 100%);
     color: #ffffff; }
 
-#sidebar li span:first-child {
+#MSidebar li span:first-child {
   margin-left: 20px; }
 
-#sidebar span {
+#MSidebar span {
   font-weight: bold; }
 
-.sidebar_thumbnail {
+.MSidebarThumbnail {
   height: 3.95em;
   margin-left: .35em;
   margin-right: .35em;
   margin: .2em; }
 
-#stage {
+#MStage {
   background-color: #646464;
   background-position: 50% 0%;
   background-repeat: no-repeat;
@@ -588,54 +588,54 @@ h1.toolbar_title {
   text-align: center;
   width: 100%; }
 
-#stage_image {
+#MStageImage {
   background-position: 50% 50%;
   background-repeat: no-repeat;
   opacity: 0;
   width: 100%; }
 
-#content_list {
+#MContentList {
   margin: 0 auto;
   min-width: 900px;
   width: 80%; }
 
-.content_900 {
+.MContent900 {
   margin: 0 auto;
   width: 900px; }
 
-.content_870 {
+.MContent870 {
   margin: 0 auto;
   width: 870px; }
 
-.content_840 {
+.MContent840 {
   margin: 0 auto;
   width: 840px; }
 
-.content_740 {
+.MContent740 {
   margin: 0 auto;
   width: 740px; }
 
-.content_610 {
+.MContent610 {
   text-align: left;
   width: 610px; }
 
-.content_200 {
+.MContent200 {
   text-align: center;
   width: 200px; }
 
-.content_spacer {
+.MContentSpacer {
   clear: both;
   height: 0;
   padding-top: 1.2em;
   padding-bottom: 1.2em; }
 
-.table_spacer {
+.MTableSpacer {
   height: 2.4em; }
 
 /************/
 /* Elements */
 /************/
-.button, button, input[type="button"], input[type="submit"], #sidebar a.button, .button_red, input[type="reset"], .button_r, .button_orange, .button_o, .button_yellow, .button_y, .button_green, .button_g, .button_blue, .button_b, .button_violet, .button_v, .button_upload {
+.MButton, button, input[type="button"], input[type="submit"], #MSidebar a.MButton, .MButtonRed, input[type="reset"], .MButtonR, .MButtonOrange, .MButtonO, .MButtonYellow, .MButtonY, .MButtonGreen, .MButtonG, .MButtonBlue, .MButtonB, .MButtonViolet, .MButtonV, .MButtonUpload {
   background: #e6e6e6;
   background: -moz-linear-gradient(top, #e6e6e6 0%, #c8c8c8 100%);
   background: -ms-linear-gradient(top, #e6e6e6 0%, #c8c8c8 100%);
@@ -654,22 +654,22 @@ h1.toolbar_title {
   overflow: hidden;
   padding-left: 1.250em;
   padding-right: 1.250em; }
-  .button:hover, button:hover, input[type="button"]:hover, input[type="submit"]:hover, #sidebar a.button:hover, .button_red:hover, input[type="reset"]:hover, .button_r:hover, .button_orange:hover, .button_o:hover, .button_yellow:hover, .button_y:hover, .button_green:hover, .button_g:hover, .button_blue:hover, .button_b:hover, .button_violet:hover, .button_v:hover, .button_upload:hover {
+  .MButton:hover, button:hover, input[type="button"]:hover, input[type="submit"]:hover, #MSidebar a.MButton:hover, .MButtonRed:hover, input[type="reset"]:hover, .MButtonR:hover, .MButtonOrange:hover, .MButtonO:hover, .MButtonYellow:hover, .MButtonY:hover, .MButtonGreen:hover, .MButtonG:hover, .MButtonBlue:hover, .MButtonB:hover, .MButtonViolet:hover, .MButtonV:hover, .MButtonUpload:hover {
     border-color: #007dfa;
     color: #323232; }
-  .button:active, button:active, input[type="button"]:active, input[type="submit"]:active, #sidebar a.button:active, .button_red:active, input[type="reset"]:active, .button_r:active, .button_orange:active, .button_o:active, .button_yellow:active, .button_y:active, .button_green:active, .button_g:active, .button_blue:active, .button_b:active, .button_violet:active, .button_v:active, .button_upload:active {
+  .MButton:active, button:active, input[type="button"]:active, input[type="submit"]:active, #MSidebar a.MButton:active, .MButtonRed:active, input[type="reset"]:active, .MButtonR:active, .MButtonOrange:active, .MButtonO:active, .MButtonYellow:active, .MButtonY:active, .MButtonGreen:active, .MButtonG:active, .MButtonBlue:active, .MButtonB:active, .MButtonViolet:active, .MButtonV:active, .MButtonUpload:active {
     background: #646464;
     border-color: #323232;
     box-shadow: inset 0 0.2em 0.35em rgba(0, 0, 0, 0.25);
     color: #ffffff; }
-  .button[disabled], button[disabled], input[disabled][type="button"], input[disabled][type="submit"], #sidebar a[disabled].button, [disabled].button_red, input[disabled][type="reset"], [disabled].button_r, [disabled].button_orange, [disabled].button_o, [disabled].button_yellow, [disabled].button_y, [disabled].button_green, [disabled].button_g, [disabled].button_blue, [disabled].button_b, [disabled].button_violet, [disabled].button_v, [disabled].button_upload, .button[disabled]:hover, button[disabled]:hover, input[disabled][type="button"]:hover, input[disabled][type="submit"]:hover, #sidebar a[disabled].button:hover, [disabled].button_red:hover, input[disabled][type="reset"]:hover, [disabled].button_r:hover, [disabled].button_orange:hover, [disabled].button_o:hover, [disabled].button_yellow:hover, [disabled].button_y:hover, [disabled].button_green:hover, [disabled].button_g:hover, [disabled].button_blue:hover, [disabled].button_b:hover, [disabled].button_violet:hover, [disabled].button_v:hover, [disabled].button_upload:hover, .button[disabled]:active, button[disabled]:active, input[disabled][type="button"]:active, input[disabled][type="submit"]:active, #sidebar a[disabled].button:active, [disabled].button_red:active, input[disabled][type="reset"]:active, [disabled].button_r:active, [disabled].button_orange:active, [disabled].button_o:active, [disabled].button_yellow:active, [disabled].button_y:active, [disabled].button_green:active, [disabled].button_g:active, [disabled].button_blue:active, [disabled].button_b:active, [disabled].button_violet:active, [disabled].button_v:active, [disabled].button_upload:active {
+  .MButton[disabled], button[disabled], input[disabled][type="button"], input[disabled][type="submit"], #MSidebar a[disabled].MButton, [disabled].MButtonRed, input[disabled][type="reset"], [disabled].MButtonR, [disabled].MButtonOrange, [disabled].MButtonO, [disabled].MButtonYellow, [disabled].MButtonY, [disabled].MButtonGreen, [disabled].MButtonG, [disabled].MButtonBlue, [disabled].MButtonB, [disabled].MButtonViolet, [disabled].MButtonV, [disabled].MButtonUpload, .MButton[disabled]:hover, button[disabled]:hover, input[disabled][type="button"]:hover, input[disabled][type="submit"]:hover, #MSidebar a[disabled].MButton:hover, [disabled].MButtonRed:hover, input[disabled][type="reset"]:hover, [disabled].MButtonR:hover, [disabled].MButtonOrange:hover, [disabled].MButtonO:hover, [disabled].MButtonYellow:hover, [disabled].MButtonY:hover, [disabled].MButtonGreen:hover, [disabled].MButtonG:hover, [disabled].MButtonBlue:hover, [disabled].MButtonB:hover, [disabled].MButtonViolet:hover, [disabled].MButtonV:hover, [disabled].MButtonUpload:hover, .MButton[disabled]:active, button[disabled]:active, input[disabled][type="button"]:active, input[disabled][type="submit"]:active, #MSidebar a[disabled].MButton:active, [disabled].MButtonRed:active, input[disabled][type="reset"]:active, [disabled].MButtonR:active, [disabled].MButtonOrange:active, [disabled].MButtonO:active, [disabled].MButtonYellow:active, [disabled].MButtonY:active, [disabled].MButtonGreen:active, [disabled].MButtonG:active, [disabled].MButtonBlue:active, [disabled].MButtonB:active, [disabled].MButtonViolet:active, [disabled].MButtonV:active, [disabled].MButtonUpload:active {
     background: #e6e6e6;
     border-color: #969696;
     box-shadow: none;
     color: #969696;
     text-shadow: none; }
 
-.button_red, input[type="reset"], .button_r {
+.MButtonRed, input[type="reset"], .MButtonR {
   background: #960000;
   background: -moz-linear-gradient(top, #fa0000 0%, #960000 100%);
   background: -ms-linear-gradient(top, #fa0000 0%, #960000 100%);
@@ -678,12 +678,12 @@ h1.toolbar_title {
   background: linear-gradient(top, #fa0000 0%, #960000 100%);
   color: #ffffff;
   text-shadow: 0 0 .4em #323232; }
-  .button_red:hover, input[type="reset"]:hover, .button_r:hover {
+  .MButtonRed:hover, input[type="reset"]:hover, .MButtonR:hover {
     color: #ffffff; }
-  .button_red:active, input[type="reset"]:active, .button_r:active {
+  .MButtonRed:active, input[type="reset"]:active, .MButtonR:active {
     color: #ffffff; }
 
-.button_orange, .button_o {
+.MButtonOrange, .MButtonO {
   background: #963c00;
   background: -moz-linear-gradient(top, #fa6400 0%, #963c00 100%);
   background: -ms-linear-gradient(top, #fa6400 0%, #963c00 100%);
@@ -692,12 +692,12 @@ h1.toolbar_title {
   background: linear-gradient(top, #fa6400 0%, #963c00 100%);
   color: #ffffff;
   text-shadow: 0 0 .4em #323232; }
-  .button_orange:hover, .button_o:hover {
+  .MButtonOrange:hover, .MButtonO:hover {
     color: #ffffff; }
-  .button_orange:active, .button_o:active {
+  .MButtonOrange:active, .MButtonO:active {
     color: #ffffff; }
 
-.button_yellow, .button_y {
+.MButtonYellow, .MButtonY {
   background: #fac800;
   background: -moz-linear-gradient(top, #fafa00 0%, #fac800 100%);
   background: -ms-linear-gradient(top, #fafa00 0%, #fac800 100%);
@@ -705,12 +705,12 @@ h1.toolbar_title {
   background: -webkit-linear-gradient(top, #fafa00 0%, #fac800 100%);
   background: linear-gradient(top, #fafa00 0%, #fac800 100%);
   color: #000000; }
-  .button_yellow:hover, .button_y:hover {
+  .MButtonYellow:hover, .MButtonY:hover {
     color: #000000; }
-  .button_yellow:active, .button_y:active {
+  .MButtonYellow:active, .MButtonY:active {
     color: #ffffff; }
 
-.button_green, .button_g {
+.MButtonGreen, .MButtonG {
   background: #009600;
   background: -moz-linear-gradient(top, #00fa00 0%, #009600 100%);
   background: -ms-linear-gradient(top, #00fa00 0%, #009600 100%);
@@ -719,12 +719,12 @@ h1.toolbar_title {
   background: linear-gradient(top, #00fa00 0%, #009600 100%);
   color: #ffffff;
   text-shadow: 0 0 .4em #323232; }
-  .button_green:hover, .button_g:hover {
+  .MButtonGreen:hover, .MButtonG:hover {
     color: #ffffff; }
-  .button_green:active, .button_g:active {
+  .MButtonGreen:active, .MButtonG:active {
     color: #ffffff; }
 
-.button_blue, .button_b {
+.MButtonBlue, .MButtonB {
   background: #004b96;
   background: -moz-linear-gradient(top, #007dfa 0%, #004b96 100%);
   background: -ms-linear-gradient(top, #007dfa 0%, #004b96 100%);
@@ -733,12 +733,12 @@ h1.toolbar_title {
   background: linear-gradient(top, #007dfa 0%, #004b96 100%);
   color: #ffffff;
   text-shadow: 0 0 .4em #323232; }
-  .button_blue:hover, .button_b:hover {
+  .MButtonBlue:hover, .MButtonB:hover {
     color: #ffffff; }
-  .button_blue:active, .button_b:active {
+  .MButtonBlue:active, .MButtonB:active {
     color: #ffffff; }
 
-.button_violet, .button_v {
+.MButtonViolet, .MButtonV {
   background: #4b0096;
   background: -moz-linear-gradient(top, #7d00fa 0%, #4b0096 100%);
   background: -ms-linear-gradient(top, #7d00fa 0%, #4b0096 100%);
@@ -747,50 +747,36 @@ h1.toolbar_title {
   background: linear-gradient(top, #7d00fa 0%, #4b0096 100%);
   color: #ffffff;
   text-shadow: 0 0 .4em #323232; }
-  .button_violet:hover, .button_v:hover {
+  .MButtonViolet:hover, .MButtonV:hover {
     color: #ffffff; }
-  .button_violet:active, .button_v:active {
-    color: #ffffff; }
-
-.button_violet, .button_v {
-  background: #4b0096;
-  background: -moz-linear-gradient(top, #7d00fa 0%, #4b0096 100%);
-  background: -ms-linear-gradient(top, #7d00fa 0%, #4b0096 100%);
-  background: -o-linear-gradient(top, #7d00fa 0%, #4b0096 100%);
-  background: -webkit-linear-gradient(top, #7d00fa 0%, #4b0096 100%);
-  background: linear-gradient(top, #7d00fa 0%, #4b0096 100%);
-  color: #ffffff;
-  text-shadow: 0 0 .4em #323232; }
-  .button_violet:hover, .button_v:hover {
-    color: #ffffff; }
-  .button_violet:active, .button_v:active {
+  .MButtonViolet:active, .MButtonV:active {
     color: #ffffff; }
 
-.button_upload {
+.MButtonUpload {
   cursor: default;
   margin: 0 auto;
   overflow: hidden;
   position: relative;
   text-align: center; }
 
-.button_upload_form, .button_upload_frame {
+.MButtonUploadForm, .MButtonUploadFrame {
   left: 0;
   top: -0.2em;
   position: absolute;
   width: 100%;
   opacity: 0; }
 
-button, button.button_red, button.button_r, button.button_orange, button.button_o, button.button_yellow, button.button_y, button.button_green, button.button_g, button.button_blue, button.button_b, button.button_violet, button.button_v, button.button_upload {
+MButton.MButton, MButton.MButtonRed, MButton.MButtonR, MButton.MButtonOrange, MButton.MButtonO, MButton.MButtonYellow, MButton.MButtonY, MButton.MButtonGreen, MButton.MButtonG, MButton.MButtonBlue, MButton.MButtonB, MButton.MButtonViolet, MButton.MButtonV, MButton.MButtonUpload {
   height: 1.6em;
   line-height: 1;
   margin: .2em; }
 
-a.button, #sidebar a.button, a.button_red, a.button_r, a.button_orange, a.button_o, a.button_yellow, a.button_y, a.button_green, a.button_g, a.button_blue, a.button_b, a.button_violet, a.button_v, a.button_upload, div.button, div.button_red, div.button_r, div.button_orange, div.button_o, div.button_yellow, div.button_y, div.button_green, div.button_g, div.button_blue, div.button_b, div.button_violet, div.button_v, div.button_upload, span.button, span.button_red, span.button_r, span.button_orange, span.button_o, span.button_yellow, span.button_y, span.button_green, span.button_g, span.button_blue, span.button_b, span.button_violet, span.button_v, span.button_upload {
+a.MButton, #MSidebar a.MButton, a.MButtonRed, a.MButtonR, a.MButtonOrange, a.MButtonO, a.MButtonYellow, a.MButtonY, a.MButtonGreen, a.MButtonG, a.MButtonBlue, a.MButtonB, a.MButtonViolet, a.MButtonV, a.MButtonUpload, div.MButton, div.MButtonRed, div.MButtonR, div.MButtonOrange, div.MButtonO, div.MButtonYellow, div.MButtonY, div.MButtonGreen, div.MButtonG, div.MButtonBlue, div.MButtonB, div.MButtonViolet, div.MButtonV, div.MButtonUpload, span.MButton, span.MButtonRed, span.MButtonR, span.MButtonOrange, span.MButtonO, span.MButtonYellow, span.MButtonY, span.MButtonGreen, span.MButtonG, span.MButtonBlue, span.MButtonB, span.MButtonViolet, span.MButtonV, span.MButtonUpload {
   height: 1.45em;
   line-height: 1.45em;
   margin: .2em; }
 
-.tab, .tab_selected {
+.MTab, .MTabSelected {
   -moz-user-select: none;
   -o-user-select: none;
   -webkit-user-select: none;
@@ -808,14 +794,14 @@ a.button, #sidebar a.button, a.button_red, a.button_r, a.button_orange, a.button
   padding-right: .8em;
   user-select: none; }
 
-.tab_selected {
+.MTabSelected {
   background: #e6e6e6; }
-  .tab_selected:hover {
+  .MTabSelected:hover {
     box-shadow: none;
     cursor: default;
     border-color: #646464; }
 
-.tab_body {
+.MTabBody {
   background: #e6e6e6;
   background: -moz-linear-gradient(top, #e6e6e6 0%, #c8c8c8 100%);
   background: -ms-linear-gradient(top, #e6e6e6 0%, #c8c8c8 100%);
@@ -834,21 +820,17 @@ a.button, #sidebar a.button, a.button_red, a.button_r, a.button_orange, a.button
   padding: 1.6em;
   text-align: left;
   width: 100%; }
-  .tab_body textarea {
+  .MTabBody textarea {
     resize: none; }
 
-.tab_body_selected {
+.MTabBodySelected {
   display: table; }
 
-.tab_body_sidebar {
+.MTabBodySidebar {
   color: #323232;
   display: none;
   margin: 0 auto;
   text-align: left; }
-
-.tab_textarea {
-  height: 135px;
-  width: 848px; }
 
 .eztab_container {
   margin: 0;
@@ -1010,68 +992,77 @@ a.button, #sidebar a.button, a.button_red, a.button_r, a.button_orange, a.button
   margin-top: -5px;
   top: 50%; }
 
-.list_summary {
+.MListSummary {
   display: list-item;
   height: 2em;
   text-overflow: ellipsis;
   width: 100%; }
 
-.list_title {
+.MListTitle {
   display: inline;
   margin: 0; }
 
-.list_citation {
+.MListCitation {
   margin-left: .4em; }
 
-.list_options {
+.MListOptions {
   display: inline-block;
+  float: right;
   min-width: 300px; }
-  .list_options a, .list_options img, .list_options span {
+  .MListOptions a, .MListOptions img, .MListOptions span {
     margin-left: 2px;
     margin-right: 2px; }
 
-.list_item_container {
+.MListItemContainer {
   border-radius: .4em;
   opacity: 0;
   padding: 1.2em;
   position: relative; }
-  .list_item_container.red {
+  .MListItemContainer.red {
     background: #dcc3c3;
     color: #323232; }
-    .list_item_container.red:hover {
+    .MListItemContainer.red:hover {
       background: #e1d5d5; }
-  .list_item_container.yellow {
+  .MListItemContainer.yellow {
     background: #faf5b4;
     color: #323232; }
-    .list_item_container.yellow:hover {
+    .MListItemContainer.yellow:hover {
       background: #f0edcd; }
-  .list_item_container.green {
+  .MListItemContainer.green {
     background: #c3dcc3;
     color: #323232; }
-    .list_item_container.green:hover {
+    .MListItemContainer.green:hover {
       background: #d5e1d5; }
-  .list_item_container.blue {
+  .MListItemContainer.blue {
     background: #b4d2f0;
     color: #323232; }
-    .list_item_container.blue:hover {
+    .MListItemContainer.blue:hover {
       background: #cddceb; }
-  .list_item_container:hover {
+  .MListItemContainer:hover {
     background: #e6e6e6; }
 
-.list_item_container_sub {
+.MListItemContainerSub {
   background: #c8c8c8;
   border-radius: .4em;
   padding: .4em;
   position: relative; }
 
-.list_info_container {
+.MListInfoContainer {
   -o-text-overflow: ellipsis;
   display: block;
   overflow: hidden;
   text-overflow: ellipsis; }
 
+.MListItemNotification {
+  background: #323232;
+  border-radius: 4px;
+  color: white;
+  font-weight: bold;
+  padding-left: 8px;
+  padding-right: 8px; }
+
 /* Widgets */
-.widget_container, fieldset, .hover_form, .hover_message, .popup_container {
+.MWidgetContainer, fieldset, .MHoverForm, .MHoverMessage, .MPopupContainer {
   background: #e6e6e6;
   background: -moz-linear-gradient(top, #e6e6e6 0%, #c8c8c8 100%);
   background: -ms-linear-gradient(top, #e6e6e6 0%, #c8c8c8 100%);
@@ -1087,7 +1078,7 @@ a.button, #sidebar a.button, a.button_red, a.button_r, a.button_orange, a.button
   padding: 1.6em;
   text-align: left; }
 
-.widget_container_wide {
+.MWidgetContainerWide {
   background: #c8c8c8;
   color: #323232;
   margin: 0 auto;
@@ -1100,7 +1091,7 @@ a.button, #sidebar a.button, a.button_red, a.button_r, a.button_orange, a.button
   text-align: center;
   display: block; }
 
-.hover_form {
+.MHoverForm {
   box-shadow: 0 1.2em 2.4em -0.8em rgba(0, 0, 0, 0.5);
   left: 50%;
   margin-left: -12em;
@@ -1110,7 +1101,7 @@ a.button, #sidebar a.button, a.button_red, a.button_r, a.button_orange, a.button
   width: 24em;
   z-index: 500; }
 
-.hover_message {
+.MHoverMessage {
   border-radius: .4em;
   box-shadow: 0 1.2em 2.4em -0.8em rgba(0, 0, 0, 0.5);
   left: 50%;
@@ -1123,7 +1114,7 @@ a.button, #sidebar a.button, a.button_red, a.button_r, a.button_orange, a.button
   width: 36.4em;
   z-index: 500; }
 
-.popup_container {
+.MPopupContainer {
   box-shadow: 0 1.2em 2.4em -0.8em rgba(0, 0, 0, 0.5);
   left: 50%;
   margin-left: -27.4em;
@@ -1132,22 +1123,22 @@ a.button, #sidebar a.button, a.button_red, a.button_r, a.button_orange, a.button
   width: 54.8em;
   z-index: 1600; }
 
-.popup_menu {
+.MPopupMenu {
   height: 35px; }
 
-.popup_list {
+.MPopupList {
   overflow-x: hidden;
   overflow-y: auto; }
 
-.popup_preview_container {
+.MPopupPreviewContainer {
   text-align: center;
   width: 100%; }
 
-.popup_preview {
+.MPopupPreview {
   max-height: 400px;
   max-width: 640px; }
 
-.preview_bg {
+.MPreviewBG {
   background-color: #323232;
   box-shadow: 0 0.2em 0.35em rgba(0, 0, 0, 0.25);
   display: inline-block;
@@ -1155,7 +1146,7 @@ a.button, #sidebar a.button, a.button_red, a.button_r, a.button_orange, a.button
   min-width: 11.75em;
   position: relative; }
 
-.background_preview_bg {
+.MBackgroundPreviewBG {
   background-color: #323232;
   box-shadow: 0 0.2em 0.35em rgba(0, 0, 0, 0.25);
   height: 145px;
@@ -1164,18 +1155,11 @@ a.button, #sidebar a.button, a.button_red, a.button_r, a.button_orange, a.button
   text-align: center;
   width: 560px; }
 
-.background_preview {
+.MBackgroundPreview {
   max-height: 145px;
   max-width: 550px; }
 
-.background_preview_color {
-  background-color: #646464;
-  height: 145px;
-  margin-right: .8em;
-  position: relative;
-  width: 145px; }
-
-.loading_bg {
+.MLoadingBG {
   display: none;
   height: 11.75em;
   left: 50%;
@@ -1185,7 +1169,7 @@ a.button, #sidebar a.button, a.button_red, a.button_r, a.button_orange, a.button
   top: 50%;
   width: 11.75em; }
 
-.modal_bg, .modal_bg_black, .modal_bg_white {
+.MModalBG, .MModalBGBlack, .MModalBGWhite {
   height: 150%;
   left: 0;
   opacity: .8;
@@ -1194,20 +1178,20 @@ a.button, #sidebar a.button, a.button_red, a.button_r, a.button_orange, a.button
   width: 150%;
   z-index: 1500; }
 
-.modal_bg_black {
+.MModalBGBlack {
   background-color: #000000; }
 
-.modal_bg_white {
+.MModalBGWhite {
   background-color: #ffffff; }
 
-.ratings_bg {
+.MRatingsBarBG {
   background: #960000;
   border-radius: 2em;
   box-shadow: inset 0 1px 0.2em rgba(0, 0, 0, 0.5);
   height: .8em;
   overflow: hidden;
   width: 100%; }
-  .ratings_bg .ratings_fg {
+  .MRatingsBarBG .MRatingsBarFG {
     background: #009600;
     background: -moz-linear-gradient(left, #009600 0%, #00fa00 50%, #009600 100%);
     background: -ms-linear-gradient(left, #009600 0%, #00fa00 50%, #009600 100%);
@@ -1219,7 +1203,7 @@ a.button, #sidebar a.button, a.button_red, a.button_r, a.button_orange, a.button
     height: 100%;
     width: 0%; }
 
-.ratings_warning {
+.MRatingsBarWarning {
   background: #faC800;
   background: -moz-linear-gradient(left, #fac800 0%, #fafa00 50%, #fac800 100%);
   background: -ms-linear-gradient(left, #fac800 0%, #fafa00 50%, #fac800 100%);
@@ -1231,9 +1215,9 @@ a.button, #sidebar a.button, a.button_red, a.button_r, a.button_orange, a.button
   height: .8em;
   width: 100%; }
 
-.progress_container {
+.MProgressBarContainer {
   margin: 4px; }
-  .progress_container .progress_bg {
+  .MProgressBarContainer .MProgressBG {
     background: #969696;
     border-radius: 2em;
     box-shadow: inset 0 0.2em 0.35em rgba(0, 0, 0, 0.25);
@@ -1244,7 +1228,7 @@ a.button, #sidebar a.button, a.button_red, a.button_r, a.button_orange, a.button
     position: relative;
     text-shadow: 0 0 0.4em rgba(0, 0, 0, 0.5);
     width: 100%; }
-    .progress_container .progress_bg .progress_fg {
+    .MProgressBarContainer .MProgressBG .MProgressBarFG {
       background: #004b96;
       background: -moz-linear-gradient(left, #004b96 0%, #007dfa 50%, #004b96 100%);
       background: -ms-linear-gradient(left, #004b96 0%, #007dfa 50%, #004b96 100%);
@@ -1256,71 +1240,71 @@ a.button, #sidebar a.button, a.button_red, a.button_r, a.button_orange, a.button
       color: #ffffff;
       height: 100%;
       width: 0%; }
-      .progress_container .progress_bg .progress_fg .progress_indicator {
+      .MProgressBarContainer .MProgressBG .MProgressBarFG .MProgressBarIndicator {
         left: 50%;
         margin-left: -12px;
         position: absolute; }
 
-.page_link_container {
+.MPaginationContainer {
   text-align: center; }
-  .page_link_container a, .page_link_container span {
+  .MPaginationContainer a, .MPaginationContainer span {
     padding: .4em; }
 
-.vr {
+.MVR {
   background: #646464;
   height: 100%;
   margin-left: 1.6em;
   margin-right: 1.6em;
   width: .1em; }
 
-.icon_complete {
+.MIconComplete {
   background-image: url("/framework/img/icons/complete_150x150.png");
   background-repeat: no-repeat;
   height: 150px;
   margin-right: 1.2em;
   width: 150px; }
 
-.icon_warning {
+.MIconWarning {
   background-image: url("/framework/img/icons/warning_150x150.png");
   background-repeat: no-repeat;
   height: 150px;
   margin-right: 1.2em;
   width: 150px; }
 
-.icon_loading_black_150 {
+.MIconLoadingBlack150 {
   background-image: url("/framework/img/icons/loading_black_150x150.gif");
   background-repeat: no-repeat;
   height: 150px;
   margin-right: 1.2em;
   width: 150px; }
 
-.icon_loading_black_50 {
+.MIconLoadingBlack50 {
   background-image: url("/framework/img/icons/loading_black_50x50.gif");
   background-repeat: no-repeat;
   height: 50px;
   margin: 3.95em;
   width: 50px; }
 
-.icon_loading_white_50 {
+.MIconLoadingWhite50 {
   background-image: url("/framework/img/icons/loading_white_50x50.gif");
   background-repeat: no-repeat;
   height: 50px;
   margin: 3.95em;
   width: 50px; }
 
-.icon_loading_black_16, .icon_loading_button {
+.MIconLoadingBlack16, .MIconLoadingButton {
   background-image: url("/framework/img/icons/loading_black_16x16.gif");
   background-repeat: no-repeat;
   height: 16px;
   width: 16px; }
 
-.icon_loading_button {
+.MIconLoadingButton {
   float: left;
   margin-right: .8em;
   margin-top: .1em;
   opacity: .35; }
 
-.icon_close {
+.MIconClose {
   background-image: url("/framework/img/icons/close_16x16.png");
   background-position: 0 0;
   background-repeat: no-repeat;
@@ -1332,10 +1316,10 @@ a.button, #sidebar a.button, a.button_red, a.button_r, a.button_orange, a.button
   top: .4em;
   width: 16px;
   z-index: 5; }
-  .icon_close:hover {
+  .MIconClose:hover {
     background-position: 0 -16px; }
 
-.icon_arrow_left {
+.MIconArrowLeft {
   background-image: url("/framework/img/icons/arrow_left_16x16.png");
   background-position: 0 0;
   background-repeat: no-repeat;
@@ -1347,10 +1331,10 @@ a.button, #sidebar a.button, a.button_red, a.button_r, a.button_orange, a.button
   top: .4em;
   width: 16px;
   z-index: 5; }
-  .icon_arrow_left:hover {
+  .MIconArrowLeft:hover {
     background-position: 0 -16px; }
 
-.icon_arrow_right {
+.MIconArrowRight {
   background-image: url("/framework/img/icons/arrow_right_16x16.png");
   background-position: 0 0;
   background-repeat: no-repeat;
@@ -1362,7 +1346,7 @@ a.button, #sidebar a.button, a.button_red, a.button_r, a.button_orange, a.button
   top: .4em;
   width: 16px;
   z-index: 5; }
-  .icon_arrow_right:hover {
+  .MIconArrowRight:hover {
     background-position: 0 -16px; }
 
 a.bold, h1.bold, h2.bold, h3.bold, h4.bold, h5.bold, h6.bold, input.bold, label.bold, p.bold, span.bold, textarea.bold {

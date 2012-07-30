@@ -1,21 +1,22 @@
-.list_summary{
+.MListSummary{
   display:list-item;
   height:2em;
   text-overflow:ellipsis;
   width:100%;
 }
 
-.list_title{
+.MListTitle{
   display:inline;
   margin:0;
 }
 
-.list_citation{
+.MListCitation{
   margin-left:.4em;
 }
 
-.list_options{
+.MListOptions{
   display:inline-block;
+  float:right;
   min-width:300px;
   
   a, img, span{
@@ -25,7 +26,7 @@
   
 }
 
-.list_item_container{
+.MListItemContainer{
   border-radius:.4em;
   opacity:0;
   padding:1.2em;
@@ -73,16 +74,26 @@
 
 }
 
-.list_item_container_sub{
+.MListItemContainerSub{
   background:#c8c8c8;
   border-radius:.4em;
   padding:.4em;
   position:relative;
 }
 
-.list_info_container{
+.MListInfoContainer{
   -o-text-overflow:ellipsis;
   display:block;
   overflow:hidden;
   text-overflow:ellipsis;
+}
+
+
+.MListItemNotification{
+  background:#323232;
+  border-radius:4px;
+  color:white;
+  font-weight:bold;
+  padding-left:8px;
+  padding-right:8px;
 }

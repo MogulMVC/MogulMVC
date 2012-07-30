@@ -66,24 +66,24 @@ $(window).load(function(){
   $("#MMainWindow img").animate({opacity: 1}, speedSlow);
   
   /*Draggable*/
-  $(".popup_container").draggable();
-  $(".hover_form").draggable();
-  $(".hover_message").draggable();
+  $(".MPopupContainer").draggable();
+  $(".MHoverForm").draggable();
+  $(".MHoverMessage").draggable();
 
-  $(".popup_container").addTouch();
-  $(".hover_form").addTouch();
-  $(".hover_message").addTouch();
+  $(".MPopupContainer").addTouch();
+  $(".MHoverForm").addTouch();
+  $(".MHoverMessage").addTouch();
 
   /*Sidebar*/
   sidebarMenuPlaceholderHeight();
   sidebarMenuTop();
 
-  $("#sidebar").mouseenter(function() {
-      $("#sidebar").css("overflow-y", "auto");
+  $("#MSidebar").mouseenter(function() {
+      $("#MSidebar").css("overflow-y", "auto");
   });
 
-  $("#sidebar").mouseleave(function() {
-      $("#sidebar").css("overflow-y", "hidden");
+  $("#MSidebar").mouseleave(function() {
+      $("#MSidebar").css("overflow-y", "hidden");
   });
 
 });

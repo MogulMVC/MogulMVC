@@ -1,4 +1,4 @@
-.ratings_bg{
+.MRatingsBarBG{
   background:#960000;
   border-radius:2em;
   box-shadow:inset 0 1px .2em rgba(0,0,0,.5);
@@ -6,7 +6,7 @@
   overflow:hidden;
   width:100%;
   
-  .ratings_fg{
+  .MRatingsBarFG{
     background:#009600;
     background:-moz-linear-gradient(left, #009600 0%, #00fa00 50%, #009600 100%);
     background:-ms-linear-gradient(left, #009600 0%, #00fa00 50%, #009600 100%);
@@ -21,7 +21,7 @@
   
 }
 
-.ratings_warning{
+.MRatingsBarWarning{
   background:#faC800;
   background:-moz-linear-gradient(left, #fac800 0%, #fafa00 50%, #fac800 100%);
   background:-ms-linear-gradient(left, #fac800 0%, #fafa00 50%, #fac800 100%);
@@ -34,10 +34,10 @@
   width:100%
 }
 
-.progress_container{
+.MProgressBarContainer{
   margin:4px;
   
-  .progress_bg{
+  .MProgressBG{
   background:#969696;
   border-radius:2em;
   box-shadow:$shadow_inset_bg;
@@ -49,7 +49,7 @@
   text-shadow:0 0 .4em rgba(0,0,0,.5);
   width:100%;
   
-    .progress_fg{
+    .MProgressBarFG{
       background:#004b96;
       background:-moz-linear-gradient(left, #004b96 0%, #007Dfa 50%, #004b96 100%);
       background:-ms-linear-gradient(left, #004b96 0%,#007Dfa 50%,#004b96 100%);
@@ -62,7 +62,7 @@
       height:100%;
       width:0%;
       
-      .progress_indicator{
+      .MProgressBarIndicator{
 	left:50%;
 	margin-left:-12px;
 	position:absolute;

@@ -36,18 +36,18 @@ function passwordToggle(id) {
 
 function slideHiddenBG(default_toggle_value,new_toggle_value){
   
-  var hidden_bg_toggle = document.getElementById("hidden_bg_toggle");
+  var hidden_bg_toggle = document.getElementById("MHiddenBGToggle");
   
-  if(document.getElementById("hidden_bg").clientHeight == 0){
+  if(document.getElementById("MHiddenBG").clientHeight == 0){
     hidden_bg_toggle.innerHTML = default_toggle_value;
     
-    var hidden_content_height = document.getElementById("hidden_content").clientHeight;
+    var hidden_content_height = document.getElementById("MHiddenContent").clientHeight;
     
-    $("#hidden_bg").animate({height: hidden_content_height},speedSlow, function() {
-      $("#hidden_bg").css("height","auto");
+    $("#MHiddenBG").animate({height: hidden_content_height},speedSlow, function() {
+      $("#MHiddenBG").css("height","auto");
     });
     
-    $("#hidden_content").animate({opacity: 1}, speedSlow);
+    $("#MHiddenContent").animate({opacity: 1}, speedSlow);
     
     $("#toolbar_resize_container").show();
     
@@ -59,9 +59,9 @@ function slideHiddenBG(default_toggle_value,new_toggle_value){
     
     hidden_bg_toggle.innerHTML = new_toggle_value;
     
-    $("#hidden_bg").animate({height: "0px",},speedSlow);
+    $("#MHiddenBG").animate({height: "0px",},speedSlow);
     
-    $("#hidden_content").animate({opacity: 0}, speedSlow);
+    $("#MHiddenContent").animate({opacity: 0}, speedSlow);
     
     $("#toolbar_resize_container").animate({width: "0px",},speedSlow, function() {
       $("#toolbar_resize_container").hide();
@@ -72,22 +72,22 @@ function slideHiddenBG(default_toggle_value,new_toggle_value){
 
 function sidebarMenuPlaceholderHeight() {
   
-  if(document.getElementById("sidebar_menu_fixed")){
+  if(document.getElementById("MSidebarMenuFixed")){
 
     /*Placeholder height*/
-    var sidebar_menu_fixed_height = $("#sidebar_menu_fixed").height();
-    $("#sidebar_menu_fixed_placeholder").height(sidebar_menu_fixed_height);
+    var sidebar_menu_fixed_height = $("#MSidebarMenuFixed").height();
+    $("#MSidebarMenuFixedPlaceholder").height(sidebar_menu_fixed_height);
     
   }
 }
 
 function sidebarMenuTop() {
 
-  if(document.getElementById("sidebar_menu_fixed")){
+  if(document.getElementById("MSidebarMenuFixed")){
 
     /*Top Position*/
-    var headerHeight = $("#header").height();
-    var toolbarHeight = $("#toolbar").height();
+    var headerHeight = $("#MHeader").height();
+    var toolbarHeight = $("#MToolbar").height();
     
     if(isNaN(headerHeight)){
       headerHeight = 0;
@@ -99,7 +99,7 @@ function sidebarMenuTop() {
     
     var sidebarMenuTop = headerHeight + toolbarHeight;
     
-    $("#sidebar_menu_fixed").css("top", sidebarMenuTop);
+    $("MSidebarMenuFixed").css("top", sidebarMenuTop);
     
   }
   
@@ -111,8 +111,8 @@ function sidebarScale() {
   sidebarMenuTop();
 
   var windowHeight = $(window).height();
-  var headerHeight = $("#header").height();
-  var toolbarHeight = $("#toolbar").height();
+  var headerHeight = $("#MHeader").height();
+  var toolbarHeight = $("#MToolbar").height();
 
   if(isNaN(headerHeight)){
     headerHeight = 0;
@@ -123,47 +123,47 @@ function sidebarScale() {
   }
   
   var sidebarHeight = windowHeight - headerHeight - toolbarHeight;
-  $("#sidebar").css("top", headerHeight + toolbarHeight);
-  $("#sidebar").css("height", sidebarHeight);
+  $("#MSidebar").css("top", headerHeight + toolbarHeight);
+  $("#MSidebar").css("height", sidebarHeight);
 }
 
 function sidebarRightShow() {
   
   sidebarScale();
   
-  $("#sidebar_container").animate({minWidth: 352}, speedNorm);
-  $("#sidebar").animate({right: 0}, speedNorm);
-  $(".icon_arrow_left").hide();
+  $("#MSidebarContainer").animate({minWidth: 352}, speedNorm);
+  $("#MSidebar").animate({right: 0}, speedNorm);
+  $(".MIconArrowLeft").hide();
 }
 
 function sidebarRightHide() {  
-  $("#sidebar_container").animate({minWidth: 0}, speedNorm);
-  $("#sidebar").animate({right: -360}, speedNorm);
-  $(".icon_arrow_left").show();
+  $("#MSidebarContainer").animate({minWidth: 0}, speedNorm);
+  $("#MSidebar").animate({right: -360}, speedNorm);
+  $(".MIconArrowLeft").show();
 }
 
 function sidebarLeftShow() {
   
   sidebarScale();
   
-  $("#sidebar_container").animate({minWidth: 352}, speedNorm);
-  $("#sidebar").animate({left: 0}, speedNorm);
-  $(".icon_arrow_right").hide();
+  $("#MSidebarContainer").animate({minWidth: 352}, speedNorm);
+  $("#MSidebar").animate({left: 0}, speedNorm);
+  $(".MIconArrowRight").hide();
 }
 
 function sidebarLeftHide() {
-  $("#sidebar_container").animate({minWidth: 0}, speedNorm);
-  $("#sidebar").animate({left: -360}, speedNorm);
-  $(".icon_arrow_right").show();
+  $("#MSidebarContainer").animate({minWidth: 0}, speedNorm);
+  $("#MSidebar").animate({left: -360}, speedNorm);
+  $(".MIconArrowRight").show();
 }
 
 function sidebarTriggerIndicatorSet(){
-  if(document.getElementById("sidebar_trigger_left") && !document.getElementById("sidebar_trigger_left_indicator")){
-    $("#sidebar_trigger_left").append('<div id="sidebar_trigger_left_indicator"></div>');
+  if(document.getElementById("MSidebarTriggerLeft") && !document.getElementById("MSidebarTriggerLeftIndicator")){
+    $("#MSidebarTriggerLeft").append('<div id="MSidebarTriggerLeftIndicator"></div>');
   }
   
-  if(document.getElementById("sidebar_trigger_right") && !document.getElementById("sidebar_trigger_right_indicator")){
-    $("#sidebar_trigger_right").append('<div id="sidebar_trigger_right_indicator"></div>');
+  if(document.getElementById("SidebarTriggerRight") && !document.getElementById("SidebarTriggerRightIndicator")){
+    $("#SidebarTriggerRight").append('<div id="SidebarTriggerRightIndicator"></div>');
   }
 }
 
@@ -178,31 +178,31 @@ function sidebarTriggerProximity(event) {
   var indicationDistanceStart = 150;
   
   //Left
-  if(document.getElementById("sidebar_trigger_left_indicator")){
+  if(document.getElementById("MSidebarTriggerLeftIndicator")){
 
-    var indicatorWidth = $("#sidebar_trigger_left_indicator").width();
+    var indicatorWidth = $("#MSidebarTriggerLeftIndicator").width();
 
     if(mouseX < indicationDistanceStart && mouseX != 0){
       var percentAwayDecimal = mouseX / indicationDistanceStart;
       var indicatorCSSLeft = -(percentAwayDecimal * indicatorWidth);
-      $("#sidebar_trigger_left_indicator").css("left", indicatorCSSLeft);
+      $("#MSidebarTriggerLeftIndicator").css("left", indicatorCSSLeft);
     }else{
-      $("#sidebar_trigger_left_indicator").css("left", -indicatorWidth);
+      $("#MSidebarTriggerLeftIndicator").css("left", -indicatorWidth);
     }
   
   }
   
   //Right
-  if(document.getElementById("sidebar_trigger_right_indicator")){
+  if(document.getElementById("SidebarTriggerRightIndicator")){
     
-    var indicatorWidth = $("#sidebar_trigger_right_indicator").width();
+    var indicatorWidth = $("#SidebarTriggerRightIndicator").width();
     
     if(mouseX > windowWidth - indicationDistanceStart && mouseX != windowWidth){
       var percentAwayDecimal = (windowWidth - mouseX) / indicationDistanceStart;
       var indicatorCSSLeft = -(percentAwayDecimal * indicatorWidth);
-      $("#sidebar_trigger_right_indicator").css("right", indicatorCSSLeft);
+      $("#SidebarTriggerRightIndicator").css("right", indicatorCSSLeft);
     }else{
-      $("#sidebar_trigger_right_indicator").css("right", -indicatorWidth);
+      $("#SidebarTriggerRightIndicator").css("right", -indicatorWidth);
     }
     
   }
@@ -213,9 +213,9 @@ function tabSwitch(tabGroup, tabContainer, tabId) {
   
   //$(".tab_body" + "." + tabGroup).removeClass("tab_body_selected");
   //$(".tab_body_sidebar" + "." + tabGroup).removeClass("tab_body_selected");
-  $(".tab_body" + "." + tabGroup).css({"display":"none"});
-  $(".tab_body_sidebar" + "." + tabGroup).css({"display":"none"});
-  $(".tab" + "." + tabGroup).removeClass("tab_selected");
+  $(".MTabBody" + "." + tabGroup).css({"display":"none"});
+  $(".MTabBodySidebar" + "." + tabGroup).css({"display":"none"});
+  $(".MTab" + "." + tabGroup).removeClass("tab_selected");
   
   //$("#" + tabContainer).addClass("tab_body_selected");
   $("#" + tabContainer).css({"display":"block"});
@@ -257,29 +257,29 @@ function searchableHide(string){
 }
 
 function toolbarPosition(){
-  if(!document.getElementById("header") && !document.getElementById("header_placeholder")){
-    $("#toolbar").css("top", "0px");
+  if(!document.getElementById("MHeader") && !document.getElementById("MHeaderPlaceholder")){
+    $("#MToolbar").css("top", "0px");
   }
 }
 
 function toolbarMessageFadeOut() {
-  $(".toolbar_message").delay(5000).fadeOut(speedSlow);
+  $(".MToolbarMessage").delay(5000).fadeOut(speedSlow);
 }
 
 function toolbarPlaceholderScale(){
-  var toolbar_height = $("#toolbar").height();
-  $("#toolbar_placeholder").height(toolbar_height);
+  var toolbar_height = $("#MToolbar").height();
+  $("#MToolbarPlaceholder").height(toolbar_height);
 }
 
 function listFadeIn() {
   var i = 0;
-  $(".list_item_container").each(function() {
+  $(".MListItemContainer").each(function() {
     $(this).delay(i).animate({opacity: 1}, speedNorm);   
     i = i + 50;
   });
   
   var i = 0;
-  $("#sidebar li").each(function() {
+  $("#MSidebar li").each(function() {
     $(this).delay(i).animate({opacity: 1}, speedNorm);
     i = i + 50;
   }); 
