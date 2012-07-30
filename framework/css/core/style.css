@@ -881,13 +881,13 @@ a.MButton, #MSidebar a.MButton, a.MButtonRed, a.MButtonR, a.MButtonOrange, a.MBu
   position: relative;
   text-align: left; }
 
-.tip {
+.MTip {
   font-size: .85em;
   padding: .4em;
   position: absolute;
   z-index: 15000; }
 
-.tip-inner {
+.MTipInner {
   -moz-border-radius: .3em;
   -webkit-border-radius: .3em;
   background: #141414;
@@ -905,26 +905,26 @@ a.MButton, #MSidebar a.MButton, a.MButtonRed, a.MButtonR, a.MButtonOrange, a.MBu
   padding: 0 8px 0 8px;
   text-align: center; }
 
-.tip-arrow {
+.MTipArrow {
   border: .4em dashed #141414;
   height: 0;
   line-height: 0;
   position: absolute;
   width: 0; }
 
-.tip-arrow-n {
+.MTipArrowN {
   border-bottom-color: #141414; }
 
-.tip-arrow-s {
+.MTipArrowS {
   border-top-color: #141414; }
 
-.tip-arrow-e {
+.MTipArrowE {
   border-left-color: #141414; }
 
-.tip-arrow-w {
+.MTipArrowW {
   border-right-color: #141414; }
 
-.tip-n .tip-arrow {
+.MTipN .MTipArrow {
   border-bottom-style: solid;
   border-left-color: transparent;
   border-right-color: transparent;
@@ -933,7 +933,7 @@ a.MButton, #MSidebar a.MButton, a.MButtonRed, a.MButtonR, a.MButtonOrange, a.MBu
   margin-left: -5px;
   top: 0; }
 
-.tip-nw .tip-arrow {
+.MTipNW .MTipArrow {
   border-bottom-style: solid;
   border-left-color: transparent;
   border-right-color: transparent;
@@ -941,7 +941,7 @@ a.MButton, #MSidebar a.MButton, a.MButtonRed, a.MButtonR, a.MButtonOrange, a.MBu
   left: .8em;
   top: 0; }
 
-.tip-ne .tip-arrow {
+.MTipNE .MTipArrow {
   border-bottom-style: solid;
   border-left-color: transparent;
   border-right-color: transparent;
@@ -949,7 +949,7 @@ a.MButton, #MSidebar a.MButton, a.MButtonRed, a.MButtonR, a.MButtonOrange, a.MBu
   right: .8em;
   top: 0; }
 
-.tip-s .tip-arrow {
+.MTipS .MTipArrow {
   border-bottom: none;
   border-left-color: transparent;
   border-right-color: transparent;
@@ -958,7 +958,7 @@ a.MButton, #MSidebar a.MButton, a.MButtonRed, a.MButtonR, a.MButtonOrange, a.MBu
   left: 50%;
   margin-left: -5px; }
 
-.tip-sw .tip-arrow {
+.MTipSW .MTipArrow {
   border-bottom: none;
   border-left-color: transparent;
   border-right-color: transparent;
@@ -966,7 +966,7 @@ a.MButton, #MSidebar a.MButton, a.MButtonRed, a.MButtonR, a.MButtonOrange, a.MBu
   bottom: 0;
   left: .8em; }
 
-.tip-se .tip-arrow {
+.MTipSE .MTipArrow {
   border-bottom: none;
   border-left-color: transparent;
   border-right-color: transparent;
@@ -974,7 +974,7 @@ a.MButton, #MSidebar a.MButton, a.MButtonRed, a.MButtonR, a.MButtonOrange, a.MBu
   bottom: 0;
   right: .8em; }
 
-.tip-e .tip-arrow {
+.MTipE .MTipArrow {
   border-bottom-color: transparent;
   border-left-style: solid;
   border-right: none;
@@ -983,7 +983,7 @@ a.MButton, #MSidebar a.MButton, a.MButtonRed, a.MButtonR, a.MButtonOrange, a.MBu
   right: 0;
   top: 50%; }
 
-.tip-w .tip-arrow {
+.MTipW .MTipArrow {
   border-bottom-color: transparent;
   border-left: none;
   border-right-style: solid;

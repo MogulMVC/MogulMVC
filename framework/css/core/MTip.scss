@@ -1,11 +1,11 @@
-.tip{
+.MTip{
   font-size:.85em;
   padding:.4em;
   position:absolute;
   z-index:15000;
 }
 
-.tip-inner{
+.MTipInner{
   -moz-border-radius:.3em;
   -webkit-border-radius:.3em;
   background:#141414;
@@ -24,7 +24,7 @@
   text-align:center;
 }
 
-.tip-arrow{
+.MTipArrow{
   border:.4em dashed #141414;
   height:0;
   line-height:0;
@@ -32,23 +32,23 @@
   width:0;
 }
 
-.tip-arrow-n{
+.MTipArrowN{
   border-bottom-color:#141414;
 }
 
-.tip-arrow-s{
+.MTipArrowS{
   border-top-color:#141414;
 }
 
-.tip-arrow-e{
+.MTipArrowE{
   border-left-color:#141414;
 }
 
-.tip-arrow-w{
+.MTipArrowW{
   border-right-color:#141414;
 }
 
-.tip-n .tip-arrow{
+.MTipN .MTipArrow{
   border-bottom-style:solid;
   border-left-color:transparent;
   border-right-color:transparent;
@@ -58,7 +58,7 @@
   top:0;
 }
 
-.tip-nw .tip-arrow{
+.MTipNW .MTipArrow{
   border-bottom-style:solid;
   border-left-color:transparent;
   border-right-color:transparent;
@@ -67,7 +67,7 @@
   top:0;
 }
 
-.tip-ne .tip-arrow{
+.MTipNE .MTipArrow{
   border-bottom-style:solid;
   border-left-color:transparent;
   border-right-color:transparent;
@@ -76,7 +76,7 @@
   top:0;
 }
 
-.tip-s .tip-arrow{
+.MTipS .MTipArrow{
   border-bottom:none;
   border-left-color:transparent;
   border-right-color:transparent;
@@ -86,7 +86,7 @@
   margin-left:-5px;
 }
 
-.tip-sw .tip-arrow{
+.MTipSW .MTipArrow{
   border-bottom:none;
   border-left-color:transparent;
   border-right-color:transparent;
@@ -95,7 +95,7 @@
   left:.8em;
 }
 
-.tip-se .tip-arrow{
+.MTipSE .MTipArrow{
   border-bottom:none;
   border-left-color:transparent;
   border-right-color:transparent;
@@ -104,7 +104,7 @@
   right:.8em;
 }
 
-.tip-e .tip-arrow{
+.MTipE .MTipArrow{
   border-bottom-color:transparent;
   border-left-style:solid;
   border-right:none;
@@ -114,7 +114,7 @@
   top:50%;
 }
 
-.tip-w .tip-arrow{
+.MTipW .MTipArrow{
   border-bottom-color:transparent;
   border-left:none;
   border-right-style:solid;

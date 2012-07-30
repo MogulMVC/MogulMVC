@@ -11,42 +11,42 @@ $(document).ready(function() {
   
   /*Tooltips*/
   $("[tip=n]").MTip({
-    gravity: "n",
+    gravity: "N",
     delayIn: speedSlow
   });
   
   $("[tip=nw]").MTip({
-    gravity: "nw",
+    gravity: "NW",
     delayIn: speedSlow
   });
     
   $("[tip=ne]").MTip({
-    gravity: "ne",
+    gravity: "NE",
     delayIn: speedSlow
   });
 
   $("[tip=s]").MTip({
-    gravity: "s",
+    gravity: "S",
     delayIn: speedSlow
   });
   
   $("[tip=sw]").MTip({
-    gravity: "sw",
+    gravity: "SW",
     delayIn: speedSlow
   });
     
   $("[tip=se]").MTip({
-    gravity: "se",
+    gravity: "SE",
     delayIn: speedSlow
   });
   
   $("[tip=w]").MTip({
-    gravity: "w",
+    gravity: "W",
     delayIn: speedSlow
   });
   
   $("[tip=e]").MTip({
-    gravity: "e",
+    gravity: "E",
     delayIn: speedSlow
   });
   

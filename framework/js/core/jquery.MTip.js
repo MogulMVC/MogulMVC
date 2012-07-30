@@ -22,8 +22,8 @@
             if (title && this.enabled) {
                 var $tip = this.tip();
                 
-                $tip.find('.tip-inner')[this.options.html ? 'html' : 'text'](title);
-                $tip[0].className = 'tip'; // reset classname in case of dynamic gravity
+                $tip.find('.MTipInner')[this.options.html ? 'html' : 'text'](title);
+                $tip[0].className = 'MTip'; // reset classname in case of dynamic gravity
                 $tip.remove().css({top: 0, left: 0, visibility: 'hidden', display: 'block'}).prependTo(document.body);
                 
                 var pos = $.extend({}, this.$element.offset(), {
@@ -37,30 +37,30 @@
                 
                 var tp;
                 switch (gravity.charAt(0)) {
-                    case 'n':
+                    case 'N':
                         tp = {top: pos.top + pos.height + this.options.offset, left: pos.left + pos.width / 2 - actualWidth / 2};
                         break;
-                    case 's':
+                    case 'S':
                         tp = {top: pos.top - actualHeight - this.options.offset, left: pos.left + pos.width / 2 - actualWidth / 2};
                         break;
-                    case 'e':
+                    case 'E':
                         tp = {top: pos.top + pos.height / 2 - actualHeight / 2, left: pos.left - actualWidth - this.options.offset};
                         break;
-                    case 'w':
+                    case 'W':
                         tp = {top: pos.top + pos.height / 2 - actualHeight / 2, left: pos.left + pos.width + this.options.offset};
                         break;
                 }
                 
                 if (gravity.length == 2) {
-                    if (gravity.charAt(1) == 'w') {
+                    if (gravity.charAt(1) == 'W') {
                         tp.left = pos.left + pos.width / 2 - 15;
                     } else {
                         tp.left = pos.left + pos.width / 2 - actualWidth + 15;
                     }
                 }
                 
-                $tip.css(tp).addClass('tip-' + gravity);
-                $tip.find('.tip-arrow')[0].className = 'tip-arrow tip-arrow-' + gravity.charAt(0);
+                $tip.css(tp).addClass('MTip' + gravity);
+                $tip.find('.MTipArrow')[0].className = 'MTipArrow MTipArrow' + gravity.charAt(0);
                 if (this.options.className) {
                     $tip.addClass(maybeCall(this.options.className, this.$element[0]));
                 }
@@ -103,7 +103,7 @@
         
         tip: function() {
             if (!this.$tip) {
-                this.$tip = $('<div class="tip"></div>').html('<div class="tip-arrow"></div><div class="tip-inner shadow_large"></div>');
+                this.$tip = $('<div class="MTip"></div>').html('<div class="MTipArrow"></div><div class="MTipInner shadow_large"></div>');
             }
             return this.$tip;
         },
@@ -124,9 +124,9 @@
     $.fn.MTip = function(options) {
         
         if (options === true) {
-            return this.data('tip');
+            return this.data('MTip');
         } else if (typeof options == 'string') {
-            var tip = this.data('tip');
+            var tip = this.data('MTip');
             if (tip) tip[options]();
             return this;
         }
@@ -134,10 +134,10 @@
         options = $.extend({}, $.fn.MTip.defaults, options);
         
         function get(ele) {
-            var tip = $.data(ele, 'tip');
+            var tip = $.data(ele, 'MTip');
             if (!tip) {
                 tip = new Tip(ele, $.fn.MTip.elementOptions(ele, options));
-                $.data(ele, 'tip', tip);
+                $.data(ele, 'MTip', tip);
             }
             return tip;
         }
@@ -200,11 +200,11 @@
     };
     
     $.fn.MTip.autoNS = function() {
-        return $(this).offset().top > ($(document).scrollTop() + $(window).height() / 2) ? 's' : 'n';
+        return $(this).offset().top > ($(document).scrollTop() + $(window).height() / 2) ? 'S' : 'N';
     };
     
     $.fn.MTip.autoWE = function() {
-        return $(this).offset().left > ($(document).scrollLeft() + $(window).width() / 2) ? 'e' : 'w';
+        return $(this).offset().left > ($(document).scrollLeft() + $(window).width() / 2) ? 'E' : 'W';
     };
     
     /**
@@ -229,10 +229,10 @@
 			    boundLeft = $(document).scrollLeft() + margin,
 			    $this = $(this);
 
-			if ($this.offset().top < boundTop) dir.ns = 'n';
-			if ($this.offset().left < boundLeft) dir.ew = 'w';
-			if ($(window).width() + $(document).scrollLeft() - $this.offset().left < margin) dir.ew = 'e';
-			if ($(window).height() + $(document).scrollTop() - $this.offset().top < margin) dir.ns = 's';
+			if ($this.offset().top < boundTop) dir.ns = 'N';
+			if ($this.offset().left < boundLeft) dir.ew = 'W';
+			if ($(window).width() + $(document).scrollLeft() - $this.offset().left < margin) dir.ew = 'E';
+			if ($(window).height() + $(document).scrollTop() - $this.offset().top < margin) dir.ns = 'S';
 
 			return dir.ns + (dir.ew ? dir.ew : '');
 		}
