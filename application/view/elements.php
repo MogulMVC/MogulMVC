@@ -23,7 +23,7 @@
 
   <button class="MButton left" MTip="NW" title="I'm an &lt;button&gt; tag.">Button</button>
 
-  <a class="left"><img src="<?php echo MLoad::icon_framework("embed_16x16.png");?>" alt="Embed" class="toolbar_icon"/>Toolbar Link with Icon</a>
+  <a class="left"><img src="<?php echo MLoad::icon_framework('embed_16x16.png');?>" alt="Embed" class="toolbar_icon"/>Toolbar Link with Icon</a>
 
   <div class="right">
     <span class="MButtonRed left" MTip="NE" title="I'm an &lt;span&gt; tag.">Button Red</span>
@@ -415,7 +415,7 @@
 	<div class="MPopupPreviewContainer">
 
 	  <div id="elements_popup_error" class="hidden">
-	    <?php MLoad::element_framework("error_upload.php");?>
+	    <?php MLoad::element_framework('error_upload.php');?>
 	  </div><!--elements_popup_error-->
 
 	  <div id="elements_popup_preview_bg" class="MPreviewBG">
@@ -439,7 +439,7 @@
   
   <fieldset id="section_video_player" class="text_centered">
     <p class="MWidgetTitle">Video Player</p>
-    <?php MSWF::video_player("427", "240");?>
+    <?php MSWF::video_player('427', '240');?>
   </fieldset>
 
 </div><!--MContent900-->

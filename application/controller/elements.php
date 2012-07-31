@@ -11,12 +11,12 @@ class elements {
 
   function index(){
 
-    MLoad::lib_framework("MMessages.php");
-    MLoad::lib_framework("MSWF.php");
+    MLoad::lib_framework('MMessages.php');
+    MLoad::lib_framework('MSWF.php');
 
     /** Required Page Elements */
-    $data['page_title'] = "Elements";
-    MLoad::view("elements.php", $data);
+    $data['page_title'] = 'Elements';
+    MLoad::view('elements.php', $data);
   }
 
 }
