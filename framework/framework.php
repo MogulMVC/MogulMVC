@@ -1,5 +1,12 @@
 <?php if(!defined("SERVER_ROOT")){header("/error_404");exit;}
 
+/**
+*
+* Gather all the required libraries
+* @Author Alan James - alanjames1987@gmail.com
+*
+*/
+
 //Order Matters
 require_once(SERVER_ROOT . '/' . FRAMEWORK . '/core/config.php');
 require_once(SERVER_ROOT . '/' . APPLICATION . '/config/config.php');
