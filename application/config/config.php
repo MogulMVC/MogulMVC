@@ -9,27 +9,28 @@ define("APPLICATION_VERSION", "120601");
 define("APPLICATION_ENVIRONMENT", "development");
 
 //Directories
-define("APPLICATION_ACTIONS", "actions");
-define("APPLICATION_APIS", "apis");
-define("APPLICATION_CONTROLLERS", "controllers");
+define("APPLICATION_ACTION", "action");
+define("APPLICATION_API", "api");
+define("APPLICATION_CONTROLLER", "controller");
 define("APPLICATION_CSS", "css");
+define("APPLICATION_DOC", "doc");
 define("APPLICATION_IMG", "img");
-define("APPLICATION_JOBS", "jobs");
+define("APPLICATION_JOB", "job");
 define("APPLICATION_JS", "js");
 define("APPLICATION_LIB", "lib");
-define("APPLICATION_MODELS", "models");
+define("APPLICATION_MODEL", "model");
 define("APPLICATION_SWF", "swf");
-define("APPLICATION_UPLOADS", "uploads");
+define("APPLICATION_UPLOAD", "upload");
 define("APPLICATION_VID", "vid");
-define("APPLICATION_VIEWS", "views");
-define("APPLICATION_VOS", "vos");
+define("APPLICATION_VIEW", "view");
+define("APPLICATION_VO", "vo");
 
 //Controllers
 define("APPLICATION_DEFAULT_CONTROLLER", "elements.php");
 define("APPLICATION_ERROR_404_CONTROLLER", "error_404.php");
 define("APPLICATION_ROBOTS_TXT_CONTROLLER", "robots.php");
 
-//File locations start within the APPLICATION_VIEWS folder
+//File locations start within the APPLICATION_VIEW folder
 define("APPLICATION_HEADER", "includes/header.php");
 define("APPLICATION_FOOTER", "includes/footer.php");
 

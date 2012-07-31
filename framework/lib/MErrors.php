@@ -12,7 +12,7 @@ class MErrors {
 
     header('HTTP/1.0 404 Not Found');
 
-    require_once(SERVER_ROOT . "/" . APPLICATION . "/" . APPLICATION_CONTROLLERS . "/" . APPLICATION_ERROR_404_CONTROLLER);
+    require_once(SERVER_ROOT . "/" . APPLICATION . "/" . APPLICATION_CONTROLLER . "/" . APPLICATION_ERROR_404_CONTROLLER);
 
     $error_404_class = basename(APPLICATION_ERROR_404_CONTROLLER, ".php");
 

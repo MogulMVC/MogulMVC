@@ -47,63 +47,63 @@ if($CLASS == "favicon.ico"){
 /**Robots.txt*/
 elseif($CLASS == "robots.txt"){
   header('Content-Type: text');
-  require(SERVER_ROOT."/". APPLICATION."/".APPLICATION_CONTROLLERS."/".APPLICATION_ROBOTS_TXT_CONTROLLER);
+  require(SERVER_ROOT."/". APPLICATION."/".APPLICATION_CONTROLLER."/".APPLICATION_ROBOTS_TXT_CONTROLLER);
   exit;
 }
 
-/**Actions*/
-elseif($CLASS == APPLICATION_ACTIONS){
+/**Action*/
+elseif($CLASS == APPLICATION_ACTION){
 
   //Check if the controller and class exist
-  if(!file_exists(SERVER_ROOT."/".APPLICATION."/".APPLICATION_ACTIONS."/".$FUNCTION.".php")){
+  if(!file_exists(SERVER_ROOT."/".APPLICATION."/".APPLICATION_ACTION."/".$FUNCTION.".php")){
     MErrors::error_404();
   }
 
   //Run the action
-  require_once(SERVER_ROOT."/".APPLICATION."/".APPLICATION_ACTIONS."/".$FUNCTION.".php");
+  require_once(SERVER_ROOT."/".APPLICATION."/".APPLICATION_ACTION."/".$FUNCTION.".php");
 
   exit;
 }
 
-/**Apis*/
-elseif($CLASS == APPLICATION_APIS){
+/**Api*/
+elseif($CLASS == APPLICATION_API){
 
   //Check if the controller and class exist
-  if(!file_exists(SERVER_ROOT."/".APPLICATION."/".APPLICATION_APIS."/".$FUNCTION.".php")){
+  if(!file_exists(SERVER_ROOT."/".APPLICATION."/".APPLICATION_API."/".$FUNCTION.".php")){
     MErrors::error_404();
   }
 
-  require_once(SERVER_ROOT."/".APPLICATION."/".APPLICATION_APIS."/".$FUNCTION.".php");
+  require_once(SERVER_ROOT."/".APPLICATION."/".APPLICATION_API."/".$FUNCTION.".php");
 
   exit;
 }
 
-/**Cron Jobs*/
-elseif($CLASS == APPLICATION_JOBS){
+/**Cron Job*/
+elseif($CLASS == APPLICATION_JOB){
 
   //Check if the controller and class exist
-  if(!file_exists(SERVER_ROOT."/".APPLICATION."/".APPLICATION_JOBS."/".$FUNCTION.".php")){
+  if(!file_exists(SERVER_ROOT."/".APPLICATION."/".APPLICATION_JOB."/".$FUNCTION.".php")){
     MErrors::error_404();
   }
 
-  require_once(SERVER_ROOT."/".APPLICATION."/".APPLICATION_JOBS."/".$FUNCTION.".php");
+  require_once(SERVER_ROOT."/".APPLICATION."/".APPLICATION_JOB."/".$FUNCTION.".php");
 
   exit;
 }
 
-/**Controllers*/
+/**Controller*/
 else{
 
   //Used to route
   require_once("routes.php");
 
   //Check if the controller and class exist
-  if(!file_exists(SERVER_ROOT."/".APPLICATION."/".APPLICATION_CONTROLLERS."/".$CLASS.".php")){
+  if(!file_exists(SERVER_ROOT."/".APPLICATION."/".APPLICATION_CONTROLLER."/".$CLASS.".php")){
     MErrors::error_404();
   }
 
   //Instantiate the controller object
-  require_once(SERVER_ROOT."/".APPLICATION."/".APPLICATION_CONTROLLERS."/".$CLASS.".php");
+  require_once(SERVER_ROOT."/".APPLICATION."/".APPLICATION_CONTROLLER."/".$CLASS.".php");
   $OBJECT = new $CLASS();
 
   //If function is set

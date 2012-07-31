@@ -9,7 +9,7 @@
 class MSWF {
 
   public static function video_player($width = "640", $height = "360", $file = "", $file_hd = "", $thumbnail = "", $autostart = FALSE){
-    require(SERVER_ROOT . "/" . FRAMEWORK . "/" . FRAMEWORK_TEMPLATES . "/video_player.php");
+    require(SERVER_ROOT . "/" . FRAMEWORK . "/" . FRAMEWORK_TEMPLATE . "/video_player.php");
   }
 
 }

@@ -16,7 +16,7 @@ class MLoad {
 
   /********** Libraries **********/
 
-  public static function library_framework($library) {
+  public static function lib_framework($library) {
 
     if(!empty($library)){
       require_once(SERVER_ROOT."/".FRAMEWORK."/".FRAMEWORK_LIB."/".$library);
@@ -24,11 +24,7 @@ class MLoad {
 
   }
 
-  public static function lib_framework($library) {
-    self::library_framework($library);
-  }
-
-  public static function library_application($library) {
+  public static function lib_application($library) {
 
     if(!empty($library)){
       require_once(SERVER_ROOT."/".APPLICATION."/".APPLICATION_LIB."/".$library);
@@ -36,16 +32,12 @@ class MLoad {
 
   }
 
-  public static function lib_application($library) {
-    self::library_application($library);
-  }
-
   /********** Models / VOs **********/
 
   public static function model($model){
 
     if(!empty($model)){
-      require_once(SERVER_ROOT."/".APPLICATION."/".APPLICATION_MODELS."/".$model);
+      require_once(SERVER_ROOT."/".APPLICATION."/".APPLICATION_MODEL."/".$model);
     }
     
   }
@@ -53,7 +45,7 @@ class MLoad {
   public static function vo($vo){
   
     if(!empty($vo)){
-      require_once(SERVER_ROOT."/".APPLICATION."/".APPLICATION_VOS."/".$vo);
+      require_once(SERVER_ROOT."/".APPLICATION."/".APPLICATION_VO."/".$vo);
     }
     
   }
@@ -70,31 +62,31 @@ class MLoad {
 
       $header = "";
       if(APPLICATION_HEADER != ""){
-	$header = SERVER_ROOT."/".APPLICATION."/".APPLICATION_VIEWS."/".APPLICATION_HEADER;
+	$header = SERVER_ROOT."/".APPLICATION."/".APPLICATION_VIEW."/".APPLICATION_HEADER;
       }
 
       $footer = "";
       if(APPLICATION_FOOTER != ""){
-	$footer = SERVER_ROOT."/".APPLICATION."/".APPLICATION_VIEWS."/".APPLICATION_FOOTER;
+	$footer = SERVER_ROOT."/".APPLICATION."/".APPLICATION_VIEW."/".APPLICATION_FOOTER;
       }
 
       //Construst the Page
 
-      require(SERVER_ROOT."/".FRAMEWORK."/".FRAMEWORK_TEMPLATES."/".FRAMEWORK_HEAD);
+      require(SERVER_ROOT."/".FRAMEWORK."/".FRAMEWORK_TEMPLATE."/".FRAMEWORK_HEAD);
 
       if(!empty($header)){
 	require($header);
       }
 
       if(!empty($view)) {
-	require(SERVER_ROOT."/".APPLICATION."/".APPLICATION_VIEWS."/".$view);
+	require(SERVER_ROOT."/".APPLICATION."/".APPLICATION_VIEW."/".$view);
       }
       
       if(!empty($footer)){
 	require($footer);
       }
 
-      require(SERVER_ROOT."/".FRAMEWORK."/".FRAMEWORK_TEMPLATES."/".FRAMEWORK_FOOT);
+      require(SERVER_ROOT."/".FRAMEWORK."/".FRAMEWORK_TEMPLATE."/".FRAMEWORK_FOOT);
   }
 
   public static function frame($frame, $data = "") {
@@ -109,13 +101,13 @@ class MLoad {
 
       self::css_framework("style_frame.css");
       
-      require(SERVER_ROOT."/".FRAMEWORK."/".FRAMEWORK_TEMPLATES."/".FRAMEWORK_HEAD);
+      require(SERVER_ROOT."/".FRAMEWORK."/".FRAMEWORK_TEMPLATE."/".FRAMEWORK_HEAD);
 
       if(!empty($frame)) {
-	require(SERVER_ROOT."/".APPLICATION."/".APPLICATION_VIEWS."/".$frame);
+	require(SERVER_ROOT."/".APPLICATION."/".APPLICATION_VIEW."/".$frame);
       }
 
-      require(SERVER_ROOT."/".FRAMEWORK."/".FRAMEWORK_TEMPLATES."/".FRAMEWORK_FOOT);
+      require(SERVER_ROOT."/".FRAMEWORK."/".FRAMEWORK_TEMPLATE."/".FRAMEWORK_FOOT);
 
   }
 
@@ -128,7 +120,7 @@ class MLoad {
       }
       
       if(!empty($element)) {
-	require(SERVER_ROOT."/".FRAMEWORK."/".FRAMEWORK_TEMPLATES."/".$element);
+	require(SERVER_ROOT."/".FRAMEWORK."/".FRAMEWORK_TEMPLATE."/".$element);
       }
 
   }
@@ -142,7 +134,7 @@ class MLoad {
       }
 
       if(!empty($element)) {
-	require(SERVER_ROOT."/".APPLICATION."/".APPLICATION_VIEWS."/".$element);
+	require(SERVER_ROOT."/".APPLICATION."/".APPLICATION_VIEW."/".$element);
       }
       
   }

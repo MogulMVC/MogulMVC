@@ -8,7 +8,7 @@ define('FRAMEWORK_IMG', 'img');
 define('FRAMEWORK_JS', 'js');
 define('FRAMEWORK_LIB', 'lib');
 define('FRAMEWORK_SWF', 'swf');
-define('FRAMEWORK_TEMPLATES', 'templates');
+define('FRAMEWORK_TEMPLATE', 'template');
 define('FRAMEWORK_VID', 'vid');
 
 define("FRAMEWORK_HEAD", "head.php");
