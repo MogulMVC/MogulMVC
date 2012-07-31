@@ -1085,7 +1085,7 @@ a.MButton, #MSidebar a.MButton, a.MButtonRed, a.MButtonR, a.MButtonOrange, a.MBu
   padding: 1.6em;
   text-align: left; }
 
-.widget_title {
+.MWidgetTitle {
   font-weight: bold;
   margin: -5px auto 0.8em auto;
   text-align: center;
@@ -1217,7 +1217,7 @@ a.MButton, #MSidebar a.MButton, a.MButtonRed, a.MButtonR, a.MButtonOrange, a.MBu
 
 .MProgressBarContainer {
   margin: 4px; }
-  .MProgressBarContainer .MProgressBG {
+  .MProgressBarContainer .MProgressBarBG {
     background: #969696;
     border-radius: 2em;
     box-shadow: inset 0 0.2em 0.35em rgba(0, 0, 0, 0.25);
@@ -1228,7 +1228,7 @@ a.MButton, #MSidebar a.MButton, a.MButtonRed, a.MButtonR, a.MButtonOrange, a.MBu
     position: relative;
     text-shadow: 0 0 0.4em rgba(0, 0, 0, 0.5);
     width: 100%; }
-    .MProgressBarContainer .MProgressBG .MProgressBarFG {
+    .MProgressBarContainer .MProgressBarBG .MProgressBarFG {
       background: #004b96;
       background: -moz-linear-gradient(left, #004b96 0%, #007dfa 50%, #004b96 100%);
       background: -ms-linear-gradient(left, #004b96 0%, #007dfa 50%, #004b96 100%);
@@ -1240,7 +1240,7 @@ a.MButton, #MSidebar a.MButton, a.MButtonRed, a.MButtonR, a.MButtonOrange, a.MBu
       color: #ffffff;
       height: 100%;
       width: 0%; }
-      .MProgressBarContainer .MProgressBG .MProgressBarFG .MProgressBarIndicator {
+      .MProgressBarContainer .MProgressBarBG .MProgressBarFG .MProgressBarIndicator {
         left: 50%;
         margin-left: -12px;
         position: absolute; }

@@ -1,6 +1,6 @@
 <div id="MMainWindow">
 
-<div id="header_placeholder"></div>
-<header id="header">
+<div id="MHeaderPlaceholder"></div>
+<header id="MHeader">
 
-</header><!--header-->
+</header><!--MHeader-->

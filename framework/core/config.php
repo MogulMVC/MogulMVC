@@ -2,7 +2,7 @@
 
 date_default_timezone_set('America/New_York');
 
-define('FRAMEWORK_VERSION', "120721");
+define('FRAMEWORK_VERSION', "120730");
 define('FRAMEWORK_CSS', 'css');
 define('FRAMEWORK_IMG', 'img');
 define('FRAMEWORK_JS', 'js');

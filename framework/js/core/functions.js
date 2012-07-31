@@ -215,11 +215,11 @@ function tabSwitch(tabGroup, tabContainer, tabId) {
   //$(".tab_body_sidebar" + "." + tabGroup).removeClass("tab_body_selected");
   $(".MTabBody" + "." + tabGroup).css({"display":"none"});
   $(".MTabBodySidebar" + "." + tabGroup).css({"display":"none"});
-  $(".MTab" + "." + tabGroup).removeClass("tab_selected");
+  $(".MTab" + "." + tabGroup).removeClass("MTabSelected");
   
   //$("#" + tabContainer).addClass("tab_body_selected");
   $("#" + tabContainer).css({"display":"block"});
-  $("#" + tabId).addClass("tab_selected");
+  $("#" + tabId).addClass("MTabSelected");
 
 }
 
