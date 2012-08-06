@@ -1,12 +1,5 @@
 <?php if(!defined("SERVER_ROOT")){header("/error_404");exit;}
 
-/**
-*
-* Gather all the required libraries
-* @Author Alan James - alanjames1987@gmail.com
-*
-*/
-
 //Order Matters
 require_once(SERVER_ROOT . '/' . FRAMEWORK . '/core/config.php');
 require_once(SERVER_ROOT . '/' . APPLICATION . '/config/config.php');
@@ -35,6 +28,6 @@ require_once(SERVER_ROOT . '/' . FRAMEWORK . '/core/autoload.php');
 require_once(SERVER_ROOT . '/' . FRAMEWORK . '/core/constants.php');
 require_once(SERVER_ROOT . '/' . APPLICATION . '/config/constants.php');
 
-require_once(SERVER_ROOT . '/' . FRAMEWORK . '/core/controllers.php');
+require_once(SERVER_ROOT . '/' . FRAMEWORK . '/core/dispatcher.php');
 
 ?>

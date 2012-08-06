@@ -65,6 +65,9 @@ $(window).load(function(){
   /*Fade in all images*/
   $("#MMainWindow img").animate({opacity: 1}, speedSlow);
   
+  //Fade in the stage image
+  $("#MStageImage").delay(speedNorm).animate({opacity: 1}, speedSlow);
+  
   /*Draggable*/
   $(".MPopupContainer").draggable();
   $(".MHoverForm").draggable();
@@ -79,11 +82,11 @@ $(window).load(function(){
   sidebarMenuTop();
 
   $("#MSidebar").mouseenter(function() {
-      $("#MSidebar").css("overflow-y", "auto");
+    $("#MSidebar").css("overflow-y", "auto");
   });
 
   $("#MSidebar").mouseleave(function() {
-      $("#MSidebar").css("overflow-y", "hidden");
+    $("#MSidebar").css("overflow-y", "hidden");
   });
 
 });

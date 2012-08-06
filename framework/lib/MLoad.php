@@ -99,7 +99,7 @@ class MLoad {
 
       //Construst the Frame
 
-      self::css_framework("style_frame.css");
+      self::css_framework("core/style_frame.css");
       
       require(SERVER_ROOT."/".FRAMEWORK."/".FRAMEWORK_TEMPLATE."/".FRAMEWORK_HEAD);
 
@@ -144,7 +144,7 @@ class MLoad {
   public static function css_framework($css){
   
     if(!file_exists(SERVER_ROOT."/".FRAMEWORK."/" .FRAMEWORK_CSS."/".$css)){
-      exit("Error - ".$css." not found.");
+      exit("error - ".$css." not found.");
     }
   
     array_push($GLOBALS["LOAD_CSS_FRAMEWORK"], $css);
@@ -154,7 +154,7 @@ class MLoad {
   public static function css_framework_include($css){
   
     if(!file_exists(SERVER_ROOT."/".FRAMEWORK."/" .FRAMEWORK_CSS."/".$css)){
-      exit("Error - ".$css." not found.");
+      exit("error - ".$css." not found.");
     }
 
     $src = "/".FRAMEWORK."/" .FRAMEWORK_CSS."/".$css;
@@ -165,7 +165,7 @@ class MLoad {
   public static function css_application($css){
   
     if(!file_exists(SERVER_ROOT."/".APPLICATION."/" .APPLICATION_CSS."/".$css)){
-      exit("Error - ".$css." not found.");
+      exit("error - ".$css." not found.");
     }
     
     array_push($GLOBALS["LOAD_CSS_APPLICATION"], $css);
@@ -175,7 +175,7 @@ class MLoad {
   public static function css_application_include($css){
   
     if(!file_exists(SERVER_ROOT."/".APPLICATION."/" .APPLICATION_CSS."/".$css)){
-      exit("Error - ".$css." not found.");
+      exit("error - ".$css." not found.");
     }
   
     $src = "/".APPLICATION."/" .APPLICATION_CSS."/".$css;
@@ -188,7 +188,7 @@ class MLoad {
   public static function js_framework($js){
   
     if(!file_exists(SERVER_ROOT."/".FRAMEWORK."/" .FRAMEWORK_JS."/".$js)){
-      exit("Error - ".$js." not found.");
+      exit("error - ".$js." not found.");
     }
   
     array_push($GLOBALS["LOAD_JS_FRAMEWORK"], $js);
@@ -198,7 +198,7 @@ class MLoad {
   public static function js_framework_include($js){
   
     if(!file_exists(SERVER_ROOT."/".FRAMEWORK."/" .FRAMEWORK_JS."/".$js)){
-      exit("Error - ".$js." not found.");
+      exit("error - ".$js." not found.");
     }
  
     $src = "/".FRAMEWORK."/" .FRAMEWORK_JS."/".$js;
@@ -209,7 +209,7 @@ class MLoad {
   public static function js_application($js){
   
     if(!file_exists(SERVER_ROOT."/".APPLICATION."/" .APPLICATION_JS."/".$js)){
-      exit("Error - ".$js." not found.");
+      exit("error - ".$js." not found.");
     }
   
     array_push($GLOBALS["LOAD_JS_APPLICATION"], $js);
@@ -219,7 +219,7 @@ class MLoad {
   public static function js_application_include($js){
   
     if(!file_exists(SERVER_ROOT."/".APPLICATION."/" .APPLICATION_JS."/".$js)){
-      exit("Error - ".$js." not found.");
+      exit("error - ".$js." not found.");
     }
     
     $src = "/".APPLICATION."/" .APPLICATION_JS."/".$js;
@@ -232,7 +232,7 @@ class MLoad {
   public static function img_framework($img){
   
     if(!file_exists(SERVER_ROOT."/".FRAMEWORK."/".FRAMEWORK_IMG."/".$img)){
-      exit("Error - ".$img." not found.");
+      exit("error - ".$img." not found.");
     }
     
     return "/".FRAMEWORK."/".FRAMEWORK_IMG."/".$img."?".FRAMEWORK_VERSION;
@@ -242,7 +242,7 @@ class MLoad {
   public static function img_application($img){
   
     if(!file_exists(SERVER_ROOT."/".APPLICATION."/".APPLICATION_IMG."/".$img)){
-      exit("Error - ".$img." not found.");
+      exit("error - ".$img." not found.");
     }
       
     return "/".APPLICATION."/".APPLICATION_IMG."/".$img."?".APPLICATION_VERSION;

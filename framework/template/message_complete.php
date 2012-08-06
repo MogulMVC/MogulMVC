@@ -1,7 +1,7 @@
 <?php if(!defined("SERVER_ROOT")){header("/error_404");exit;}?>
 
-<div class="hover_message widget_container">  
-  <div class="icon_complete left"/></div>
+<div class="MHoverMessage">  
+  <div class="MIconComplete left"/></div>
   <h3 id="complete_title" class="bold"><?php echo $title; ?></h3>
   <p id="complete_description"><?php echo $description; ?></p>
 </div>

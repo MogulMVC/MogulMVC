@@ -301,6 +301,9 @@ a#MHeaderTools {
     padding: 0;
     text-shadow: none; }
 
+#MHeaderToolsWide {
+  height: 100%; }
+
 #MHeaderMenuDropdown {
   background: #ffffff;
   padding: 0;

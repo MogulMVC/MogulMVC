@@ -13,7 +13,7 @@ $DB_PASS_COUNT = count($DB_PASS);
 $DB_NAME_COUNT = count($DB_NAME);
 
 if ($DB_HOST_COUNT != $DB_USER_COUNT || $DB_USER_COUNT != $DB_PASS_COUNT || $DB_PASS_COUNT != $DB_NAME_COUNT) {
-  exit('Error - Inconsistent number of databases entries.');
+  exit('error - Inconsistent number of databases entries.');
 }
 
 if ($DB_HOST_COUNT > 0) {

@@ -14,11 +14,11 @@ define('FRAMEWORK', 'framework');
 define('APPLICATION', 'application');
 
 if(!is_dir(SERVER_ROOT."/".FRAMEWORK)){
-  exit('Error - No framework installed.');
+  exit('error - No framework installed.');
 }
 
 if(!is_dir(SERVER_ROOT."/".APPLICATION)){
-  exit('Error - No application installed.');
+  exit('error - No application installed.');
 }
 
 require_once(SERVER_ROOT."/".FRAMEWORK.'/framework.php');

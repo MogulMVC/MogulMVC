@@ -1,3 +1,9 @@
+<?php 
+
+  MMessages::complete('Title', 'Description');
+
+?>
+
 <script type="text/javascript">
   $(document).ready(function() {
 
@@ -145,10 +151,10 @@
       </tr>
 
       <tr>
-	<td><a class="MButton" MTip="S" title="I'm an &lt;a&gt; tag disabled." disabled="true"><span class='icon_loading_button'></span>Button Loading</a></td>
-	<td><button MTip="S" title="I'm a &lt;button&gt; tag disabled." disabled="true"><span class='icon_loading_button'></span>Button Loading</button></td>
-	<td><div class="MButton" MTip="S" title="I'm a &lt;div&gt; tag disabled." disabled="true"><span class='icon_loading_button'></span>Button Loading</div></td>
-	<td><span class="MButton" MTip="S" title="I'm a &lt;span&gt; tag disabled." disabled="true"><span class='icon_loading_button'></span>Button Loading</span></td>
+	<td><a class="MButton" MTip="S" title="I'm an &lt;a&gt; tag disabled." disabled="true"><span class='MIconLoadingButton'></span>Button Loading</a></td>
+	<td><button MTip="S" title="I'm a &lt;button&gt; tag disabled." disabled="true"><span class='MIconLoadingButton'></span>Button Loading</button></td>
+	<td><div class="MButton" MTip="S" title="I'm a &lt;div&gt; tag disabled." disabled="true"><span class='MIconLoadingButton'></span>Button Loading</div></td>
+	<td><span class="MButton" MTip="S" title="I'm a &lt;span&gt; tag disabled." disabled="true"><span class='MIconLoadingButton'></span>Button Loading</span></td>
       </tr>
 
       <tr>

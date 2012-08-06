@@ -99,7 +99,7 @@ function sidebarMenuTop() {
     
     var sidebarMenuTop = headerHeight + toolbarHeight;
     
-    $("MSidebarMenuFixed").css("top", sidebarMenuTop);
+    $("#MSidebarMenuFixed").css("top", sidebarMenuTop);
     
   }
   
