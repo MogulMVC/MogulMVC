@@ -37,15 +37,8 @@ if(empty($URI_ARRAY[2])){
 
 /********** Choices Choices, So Many Choices **********/
 
-/**Favicon.ico*/
-if($CLASS == "favicon.ico"){
-  header('Content-type: image/png');
-  require(SERVER_ROOT."/". APPLICATION."/".APPLICATION_IMG."/".APPLICATION_FAVICON);
-  exit;
-}
-
 /**Robots.txt*/
-elseif($CLASS == "robots.txt"){
+if($CLASS == "robots.txt"){
   header('Content-Type: text');
   require(SERVER_ROOT."/". APPLICATION."/".APPLICATION_CONTROLLER."/".APPLICATION_ROBOTS_TXT_CONTROLLER);
   exit;

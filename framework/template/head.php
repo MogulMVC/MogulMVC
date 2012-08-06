@@ -25,9 +25,13 @@
 	<meta name="keywords" content="<?php echo $page_keywords; ?>" />
     <?php endif; ?>
 
+    <?php if(defined('APPLICATION_FAVICON') && constant('APPLICATION_FAVICON') !== ''): ?>
+      <link rel="shortcut icon" href="<?php echo '/' . APPLICATION . '/' . APPLICATION_IMG . '/' . APPLICATION_FAVICON; ?>" />
+    <?php endif; ?>
+    
     <?php
     
-      require(SERVER_ROOT . "/" . APPLICATION . '/config/autoload.php');
+      require(SERVER_ROOT . '/' . APPLICATION . '/config/autoload.php');
     
       /** CSS */
     
