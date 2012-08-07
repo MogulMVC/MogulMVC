@@ -3,7 +3,7 @@
 /**
 *
 * Start the application compilation process
-* Generate error messages if problems happen
+* Generates error messages if problems happen
 * @Author Alan James - alanjames1987@gmail.com
 *
 */

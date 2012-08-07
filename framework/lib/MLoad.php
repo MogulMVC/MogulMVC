@@ -202,7 +202,7 @@ class MLoad {
     }
  
     $src = "/".FRAMEWORK."/" .FRAMEWORK_JS."/".$js;
-    echo '<script src="'.$src.'?'.FRAMEWORK_VERSION.'" type="text/javascript"></script>';
+    echo '<script src="'.$src.'?'.FRAMEWORK_VERSION.'"></script>';
 
   }
 
@@ -223,7 +223,7 @@ class MLoad {
     }
     
     $src = "/".APPLICATION."/" .APPLICATION_JS."/".$js;
-    echo '<script src="'.$src.'?'.APPLICATION_VERSION.'" type="text/javascript"></script>';
+    echo '<script src="'.$src.'?'.APPLICATION_VERSION.'"></script>';
   
   }
 

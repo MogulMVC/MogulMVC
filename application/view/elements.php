@@ -1,9 +1,3 @@
-<?php 
-
-  MMessages::complete('Title', 'Description');
-
-?>
-
 <script type="text/javascript">
   $(document).ready(function() {
 
