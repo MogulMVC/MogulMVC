@@ -1,4 +1,4 @@
-<?php if(!defined("SERVER_ROOT")){header("/error_404");exit;}
+<?php if(!defined('SERVER_ROOT')){header('/error_404');exit;}
 
 /**
 *
@@ -8,14 +8,14 @@
 
 class MMath {
  
-  public static function linear_regression($x, $y) {
+  public static function linear_regression($x, $y){
 
     // calculate number points
     $n = count($x);
 
     // ensure both arrays of points are the same size
-    if ($n != count($y)) {
-      trigger_error("linear_regression(): Number of elements in coordinate arrays do not match.", E_USER_ERROR);
+    if($n != count($y)){
+      trigger_error('linear_regression(): Number of elements in coordinate arrays do not match.', E_USER_ERROR);
     }
 
     // calculate sums
@@ -25,7 +25,7 @@ class MMath {
     $xx_sum = 0;
     $xy_sum = 0;
 
-    for($i = 0; $i < $n; $i++) {
+    for($i = 0; $i < $n; $i++){
       $xy_sum+=($x[$i]*$y[$i]);
       $xx_sum+=($x[$i]*$x[$i]);
     }
@@ -37,7 +37,7 @@ class MMath {
     $b = ($y_sum - ($m * $x_sum)) / $n;
 
     // return result
-    return array("slope"=>$m, "intercept"=>$b);
+    return array('slope'=>$m, 'intercept'=>$b);
 
   }
 

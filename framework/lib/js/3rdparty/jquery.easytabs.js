@@ -9,9 +9,9 @@
  *
  * Date: Tue Jan 26 16:30:00 2012 -0500
  */
-( function($) {
+( function($){
 
-  $.easytabs = function(container, options) {
+  $.easytabs = function(container, options){
 
         // Attach to plugin anything that should be available via
         // the $container.data('easytabs') object
@@ -68,13 +68,13 @@
     // Functions available via easytabs object
     // =============================================================
 
-    plugin.init = function() {
+    plugin.init = function(){
 
       plugin.settings = settings = $.extend({}, defaults, options);
 
       // Add jQuery UI's crazy class names to markup,
       // so that markup will match theme CSS
-      if ( settings.uiTabs ) {
+      if( settings.uiTabs ){
         settings.tabActiveClass = 'ui-tabs-selected';
         settings.containerClass = 'ui-tabs ui-widget ui-widget-content ui-corner-all';
         settings.tabsClass = 'ui-tabs-nav ui-helper-reset ui-helper-clearfix ui-widget-header ui-corner-all';
@@ -83,12 +83,12 @@
       }
 
       // If collapsible is true and defaultTab specified, assume user wants defaultTab showing (not collapsed)
-      if ( settings.collapsible && options.defaultTab !== undefined && options.collpasedByDefault === undefined ) {
+      if( settings.collapsible && options.defaultTab !== undefined && options.collpasedByDefault === undefined ){
         settings.collapsedByDefault = false;
       }
 
       // Convert 'normal', 'fast', and 'slow' animation speed settings to their respective speed in milliseconds
-      if ( typeof(settings.animationSpeed) === 'string' ) {
+      if( typeof(settings.animationSpeed) === 'string' ){
         settings.animationSpeed = animationSpeeds[settings.animationSpeed];
       }
 
@@ -119,7 +119,7 @@
 
     // Set transitions for switching between tabs based on options.
     // Could be used to update transitions if settings are changes.
-    plugin.setTransitions = function() {
+    plugin.setTransitions = function(){
       transitions = ( settings.animate ) ? {
           show: settings.transitionIn,
           hide: settings.transitionOut,
@@ -141,7 +141,7 @@
     // Find and instantiate tabs and panels.
     // Could be used to reset tab and panel collection if markup is
     // modified.
-    plugin.getTabs = function() {
+    plugin.getTabs = function(){
       var $matchingPanel;
 
       // Find the initial set of elements matching the setting.tabs
@@ -164,7 +164,7 @@
         $tab.data('easytabs', {});
 
         // If the tab has a `data-target` attribute, and is thus an ajax tab
-        if ( targetId !== undefined && targetId !== null ) {
+        if( targetId !== undefined && targetId !== null ){
           $tab.data('easytabs').ajax = $a.attr('href');
         } else {
           targetId = $a.attr('href');
@@ -174,7 +174,7 @@
         $matchingPanel = settings.panelContext.find("#" + targetId);
 
         // If tab has a matching panel, add it to panels
-        if ( $matchingPanel.length ) {
+        if( $matchingPanel.length ){
 
           // Store panel height before hiding
           $matchingPanel.data('easytabs', {
@@ -197,14 +197,14 @@
     };
 
     // Select tab and fire callback
-    plugin.selectTab = function($clicked, callback) {
+    plugin.selectTab = function($clicked, callback){
       var url = window.location,
           hash = url.hash.match(/^[^\?]*/)[0],
           $targetPanel = $clicked.parent().data('easytabs').panel,
           ajaxUrl = $clicked.parent().data('easytabs').ajax;
 
       // Tab is collapsible and active => toggle collapsed state
-      if( settings.collapsible && ! skipUpdateToHash && ($clicked.hasClass(settings.tabActiveClass) || $clicked.hasClass(settings.collapsedClass)) ) {
+      if( settings.collapsible && ! skipUpdateToHash && ($clicked.hasClass(settings.tabActiveClass) || $clicked.hasClass(settings.collapsedClass)) ){
         plugin.toggleTabCollapse($clicked, $targetPanel, ajaxUrl, callback);
 
       // Tab is not active and panel is not active => select tab
@@ -212,14 +212,14 @@
         activateTab($clicked, $targetPanel, ajaxUrl, callback);
 
       // Cache is disabled => reload (e.g reload an ajax tab).
-      } else if ( ! settings.cache ){
+      } else if( ! settings.cache ){
         activateTab($clicked, $targetPanel, ajaxUrl, callback);
       }
 
     };
 
     // Toggle tab collapsed state and fire callback
-    plugin.toggleTabCollapse = function($clicked, $targetPanel, ajaxUrl, callback) {
+    plugin.toggleTabCollapse = function($clicked, $targetPanel, ajaxUrl, callback){
       plugin.panels.stop(true,true);
 
       if( fire($container,"easytabs:before", [$clicked, $targetPanel, settings]) ){
@@ -229,7 +229,7 @@
         if( $clicked.hasClass(settings.collapsedClass) ){
 
           // If ajax panel and not already cached
-          if( ajaxUrl && (!settings.cache || !$clicked.parent().data('easytabs').cached) ) {
+          if( ajaxUrl && (!settings.cache || !$clicked.parent().data('easytabs').cached) ){
             $container.trigger('easytabs:ajax:beforeSend', [$clicked, $targetPanel]);
 
             $targetPanel.load(ajaxUrl, function(response, status, xhr){
@@ -273,22 +273,22 @@
 
 
     // Find tab with target panel matching value
-    plugin.matchTab = function(hash) {
+    plugin.matchTab = function(hash){
       return plugin.tabs.find("[href='" + hash + "'],[data-target='" + hash + "']").first();
     };
 
     // Find panel with `id` matching value
-    plugin.matchInPanel = function(hash) {
+    plugin.matchInPanel = function(hash){
       return ( hash ? plugin.panels.filter(':has(' + hash + ')').first() : [] );
     };
 
     // Select matching tab when URL hash changes
-    plugin.selectTabFromHashChange = function() {
+    plugin.selectTabFromHashChange = function(){
       var hash = window.location.hash.match(/^[^\?]*/)[0],
           $tab = plugin.matchTab(hash),
           $panel;
 
-      if ( settings.updateHash ) {
+      if( settings.updateHash ){
 
         // If hash directly matches tab
         if( $tab.length ){
@@ -299,18 +299,18 @@
           $panel = plugin.matchInPanel(hash);
 
           // If panel contains element matching hash
-          if ( $panel.length ) {
+          if( $panel.length ){
             hash = '#' + $panel.attr('id');
             $tab = plugin.matchTab(hash);
             skipUpdateToHash = true;
             plugin.selectTab( $tab );
 
           // If default tab is not active...
-          } else if ( ! $defaultTab.hasClass(settings.tabActiveClass) && ! settings.cycle ) {
+          } else if( ! $defaultTab.hasClass(settings.tabActiveClass) && ! settings.cycle ){
 
             // ...and hash is blank or matches a parent of the tab container or
             // if the last tab (before the hash updated) was one of the other tabs in this container.
-            if ( hash === '' || plugin.matchTab(lastHash).length || $container.closest(hash).length ) {
+            if( hash === '' || plugin.matchTab(lastHash).length || $container.closest(hash).length ){
               skipUpdateToHash = true;
               plugin.selectTab( $defaultTabLink );
             }
@@ -325,7 +325,7 @@
         tabNumber = tabNumber % plugin.tabs.length;
         $tab = $( plugin.tabs[tabNumber] ).children("a").first();
         skipUpdateToHash = true;
-        plugin.selectTab( $tab, function() {
+        plugin.selectTab( $tab, function(){
           setTimeout(function(){ plugin.cycleTabs(tabNumber + 1); }, settings.cycle);
         });
       }
@@ -337,19 +337,19 @@
         var $tab;
 
         // Find tab container that matches selector (like 'li#tab-one' which contains tab link)
-        if ( ($tab = plugin.tabs.filter(tabSelector)).length === 0 ) {
+        if( ($tab = plugin.tabs.filter(tabSelector)).length === 0 ){
 
           // Find direct tab link that matches href (like 'a[href="#panel-1"]')
-          if ( ($tab = plugin.tabs.find("a[href='" + tabSelector + "']")).length === 0 ) {
+          if( ($tab = plugin.tabs.find("a[href='" + tabSelector + "']")).length === 0 ){
 
             // Find direct tab link that matches selector (like 'a#tab-1')
-            if ( ($tab = plugin.tabs.find("a" + tabSelector)).length === 0 ) {
+            if( ($tab = plugin.tabs.find("a" + tabSelector)).length === 0 ){
 
               // Find direct tab link that matches data-target (lik 'a[data-target="#panel-1"]')
-              if ( ($tab = plugin.tabs.find("[data-target='" + tabSelector + "']")).length === 0 ) {
+              if( ($tab = plugin.tabs.find("[data-target='" + tabSelector + "']")).length === 0 ){
 
                 // Find direct tab link that ends in the matching href (like 'a[href$="#panel-1"]', which would also match http://example.com/currentpage/#panel-1)
-                if ( ($tab = plugin.tabs.find("a[href$='" + tabSelector + "']")).length === 0 ) {
+                if( ($tab = plugin.tabs.find("a[href$='" + tabSelector + "']")).length === 0 ){
 
                   $.error('Tab \'' + tabSelector + '\' does not exist in tab set');
                 }
@@ -369,14 +369,14 @@
     // =============================================================
 
     // Triggers an event on an element and returns the event result
-    var fire = function(obj, name, data) {
+    var fire = function(obj, name, data){
       var event = $.Event(name);
       obj.trigger(event, data);
       return event.result !== false;
     }
 
     // Add CSS classes to markup (if specified), called by init
-    var addClasses = function() {
+    var addClasses = function(){
       $container.addClass(settings.containerClass);
       plugin.tabs.parent().addClass(settings.tabsClass);
       plugin.tabs.addClass(settings.tabClass);
@@ -400,14 +400,14 @@
 
         // If one of the panels contains the element matching the hash,
         // make it active on page-load
-        if ( $panel.length ) {
+        if( $panel.length ){
           hash = '#' + $panel.attr('id');
           $defaultTab = plugin.matchTab(hash).parent();
 
         // Otherwise, make the default tab the one that's active on page-load
         } else {
           $defaultTab = plugin.tabs.parent().find(settings.defaultTab);
-          if ( $defaultTab.length === 0 ) {
+          if( $defaultTab.length === 0 ){
             $.error("The specified default tab ('" + settings.defaultTab + "') could not be found in the tab set.");
           }
         }
@@ -419,11 +419,11 @@
     };
 
     // Activate defaultTab (or collapse by default), called by setDefaultTab
-    var activateDefaultTab = function($selectedTab) {
+    var activateDefaultTab = function($selectedTab){
       var defaultPanel,
           defaultAjaxUrl;
 
-      if ( settings.collapsible && $selectedTab.length === 0 && settings.collapsedByDefault ) {
+      if( settings.collapsible && $selectedTab.length === 0 && settings.collapsedByDefault ){
         $defaultTab
           .addClass(settings.collapsedClass)
           .children()
@@ -434,7 +434,7 @@
         defaultPanel = $( $defaultTab.data('easytabs').panel );
         defaultAjaxUrl = $defaultTab.data('easytabs').ajax;
 
-        if ( defaultAjaxUrl && (!settings.cache || !$defaultTab.data('easytabs').cached) ) {
+        if( defaultAjaxUrl && (!settings.cache || !$defaultTab.data('easytabs').cached) ){
           $container.trigger('easytabs:ajax:beforeSend', [$defaultTabLink, defaultPanel]);
           defaultPanel.load(defaultAjaxUrl, function(response, status, xhr){
             $defaultTab.data('easytabs').cached = true;
@@ -455,8 +455,8 @@
 
     // Bind tab-select funtionality to namespaced click event, called by
     // init
-    var bindToTabClicks = function() {
-      plugin.tabs.children("a").bind("click.easytabs", function(e) {
+    var bindToTabClicks = function(){
+      plugin.tabs.children("a").bind("click.easytabs", function(e){
 
         // Stop cycling when a tab is clicked
         settings.cycle = false;
@@ -485,7 +485,7 @@
     //
     // TODO: This could probably be broken out into many more modular
     // functions
-    var activateTab = function($clicked, $targetPanel, ajaxUrl, callback) {
+    var activateTab = function($clicked, $targetPanel, ajaxUrl, callback){
       plugin.panels.stop(true,true);
 
       if( fire($container,"easytabs:before", [$clicked, $targetPanel, settings]) ){
@@ -497,7 +497,7 @@
             showPanel,
             hash = window.location.hash.match(/^[^\?]*/)[0];
 
-        if (settings.animate) {
+        if(settings.animate){
           targetHeight = getHeightForHidden($targetPanel);
           visibleHeight = $visiblePanel.length ? setAndReturnHeight($visiblePanel) : 0;
           heightDifference = targetHeight - visibleHeight;
@@ -508,20 +508,20 @@
         lastHash = hash;
 
         // TODO: Move this function elsewhere
-        showPanel = function() {
+        showPanel = function(){
           // At this point, the previous panel is hidden, and the new one will be selected
           $container.trigger("easytabs:midTransition", [$clicked, $targetPanel, settings]);
 
           // Gracefully animate between panels of differing heights, start height change animation *after* panel change if panel needs to contract,
           // so that there is no chance of making the visible panel overflowing the height of the target panel
-          if (settings.animate && settings.transitionIn == 'fadeIn') {
-            if (heightDifference < 0)
+          if(settings.animate && settings.transitionIn == 'fadeIn'){
+            if(heightDifference < 0)
               $panelContainer.animate({
                 height: $panelContainer.height() + heightDifference
               }, transitions.halfSpeed ).css({ 'min-height': '' });
           }
 
-          if ( settings.updateHash && ! skipUpdateToHash ) {
+          if( settings.updateHash && ! skipUpdateToHash ){
             //window.location = url.toString().replace((url.pathname + hash), (url.pathname + $clicked.attr("href")));
             // Not sure why this behaves so differently, but it's more straight forward and seems to have less side-effects
             window.location.hash = '#' + $targetPanel.attr('id');
@@ -540,7 +540,7 @@
           });
         };
 
-        if ( ajaxUrl && (!settings.cache || !$clicked.parent().data('easytabs').cached) ) {
+        if( ajaxUrl && (!settings.cache || !$clicked.parent().data('easytabs').cached) ){
           $container.trigger('easytabs:ajax:beforeSend', [$clicked, $targetPanel]);
           $targetPanel.load(ajaxUrl, function(response, status, xhr){
             $clicked.parent().data('easytabs').cached = true;
@@ -550,8 +550,8 @@
 
         // Gracefully animate between panels of differing heights, start height change animation *before* panel change if panel needs to expand,
         // so that there is no chance of making the target panel overflowing the height of the visible panel
-        if( settings.animate && settings.transitionOut == 'fadeOut' ) {
-          if( heightDifference > 0 ) {
+        if( settings.animate && settings.transitionOut == 'fadeOut' ){
+          if( heightDifference > 0 ){
             $panelContainer.animate({
               height: ( $panelContainer.height() + heightDifference )
             }, transitions.halfSpeed );
@@ -569,7 +569,7 @@
         plugin.panels.filter("." + settings.panelActiveClass).removeClass(settings.panelActiveClass);
         $targetPanel.addClass(settings.panelActiveClass);
 
-        if( $visiblePanel.length ) {
+        if( $visiblePanel.length ){
           $visiblePanel
             [transitions.hide](transitions.speed, settings.transitionOutEasing, showPanel);
         } else {
@@ -583,7 +583,7 @@
     // differing heights, called by activateTab
     var getHeightForHidden = function($targetPanel){
 
-      if ( $targetPanel.data('easytabs') && $targetPanel.data('easytabs').lastHeight ) {
+      if( $targetPanel.data('easytabs') && $targetPanel.data('easytabs').lastHeight ){
         return $targetPanel.data('easytabs').lastHeight;
       }
 
@@ -614,10 +614,10 @@
     // Since the height of the visible panel may have been manipulated due to interaction,
     // we want to re-cache the visible height on each tab change, called
     // by activateTab
-    var setAndReturnHeight = function($visiblePanel) {
+    var setAndReturnHeight = function($visiblePanel){
       var height = $visiblePanel.outerHeight();
 
-      if( $visiblePanel.data('easytabs') ) {
+      if( $visiblePanel.data('easytabs') ){
         $visiblePanel.data('easytabs').lastHeight = height;
       } else {
         $visiblePanel.data('easytabs', {lastHeight: height});
@@ -635,7 +635,7 @@
         $(window).hashchange( function(){
           plugin.selectTabFromHashChange();
         });
-      } else if ($.address && typeof $.address.change === 'function') { // back-button with jquery.address plugin http://www.asual.com/jquery/address/docs/
+      } else if($.address && typeof $.address.change === 'function'){ // back-button with jquery.address plugin http://www.asual.com/jquery/address/docs/
         $.address.change( function(){
           plugin.selectTabFromHashChange();
         });
@@ -645,7 +645,7 @@
     // Begin cycling if set in options, called by init
     var initCycle = function(){
       var tabNumber;
-      if (settings.cycle) {
+      if(settings.cycle){
         tabNumber = plugin.tabs.index($defaultTab);
         setTimeout( function(){ plugin.cycleTabs(tabNumber + 1); }, settings.cycle);
       }
@@ -656,21 +656,21 @@
 
   };
 
-  $.fn.easytabs = function(options) {
+  $.fn.easytabs = function(options){
     var args = arguments;
 
-    return this.each(function() {
+    return this.each(function(){
       var $this = $(this),
           plugin = $this.data('easytabs');
 
       // Initialization was called with $(el).easytabs( { options } );
-      if (undefined === plugin) {
+      if(undefined === plugin){
         plugin = new $.easytabs(this, options);
         $this.data('easytabs', plugin);
       }
 
       // User called public method
-      if ( plugin.publicMethods[options] ){
+      if( plugin.publicMethods[options] ){
         return plugin.publicMethods[options](Array.prototype.slice.call( args, 1 ));
       }
     });

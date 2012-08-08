@@ -1,4 +1,4 @@
-<?php if(!defined("SERVER_ROOT")){header("/error_404");exit;}
+<?php if(!defined('SERVER_ROOT')){header('/error_404');exit;}
 
 //Order Matters
 require_once(SERVER_ROOT . '/' . FRAMEWORK . '/core/config.php');

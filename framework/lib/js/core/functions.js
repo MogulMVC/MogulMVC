@@ -1,7 +1,7 @@
-function cookieSet(name, value, expires, path, domain, secure) {
+function cookieSet(name, value, expires, path, domain, secure){
   var today = new Date();
   today.setTime( today.getTime() );
-  if ( expires ){
+  if( expires ){
     expires = expires * 1000 * 60 * 60 * 24;
   }
   var expires_date = new Date( today.getTime() + (expires) );
@@ -14,18 +14,18 @@ function cookieSet(name, value, expires, path, domain, secure) {
 
 function cookieGet(name){
 var i,x,y,ARRcookies=document.cookie.split(";");
-for (i=0;i<ARRcookies.length;i++){
+for(i=0;i<ARRcookies.length;i++){
   x=ARRcookies[i].substr(0,ARRcookies[i].indexOf("="));
   y=ARRcookies[i].substr(ARRcookies[i].indexOf("=")+1);
   x=x.replace(/^\s+|\s+$/g,"");
-  if (x==name)
+  if(x==name)
     {
     return unescape(y);
     }
   }
 }
 
-function passwordToggle(id) {
+function passwordToggle(id){
    var element = document.getElementById(id);
    if(element.type == "password"){
       element.type = "text";
@@ -43,7 +43,7 @@ function slideHiddenBG(default_toggle_value,new_toggle_value){
     
     var hidden_content_height = document.getElementById("MHiddenContent").clientHeight;
     
-    $("#MHiddenBG").animate({height: hidden_content_height},speedSlow, function() {
+    $("#MHiddenBG").animate({height: hidden_content_height},speedSlow, function(){
       $("#MHiddenBG").css("height","auto");
     });
     
@@ -51,7 +51,7 @@ function slideHiddenBG(default_toggle_value,new_toggle_value){
     
     $("#toolbar_resize_container").show();
     
-    $("#toolbar_resize_container").animate({width: "146px",},speedSlow, function() {
+    $("#toolbar_resize_container").animate({width: "146px",},speedSlow, function(){
       $("#toolbar_resize_container").css("width","auto");
     });
     
@@ -63,14 +63,14 @@ function slideHiddenBG(default_toggle_value,new_toggle_value){
     
     $("#MHiddenContent").animate({opacity: 0}, speedSlow);
     
-    $("#toolbar_resize_container").animate({width: "0px",},speedSlow, function() {
+    $("#toolbar_resize_container").animate({width: "0px",},speedSlow, function(){
       $("#toolbar_resize_container").hide();
     });
     
   }
 }
 
-function sidebarMenuPlaceholderHeight() {
+function sidebarMenuPlaceholderHeight(){
   
   if(document.getElementById("MSidebarMenuFixed")){
 
@@ -81,7 +81,7 @@ function sidebarMenuPlaceholderHeight() {
   }
 }
 
-function sidebarMenuTop() {
+function sidebarMenuTop(){
 
   if(document.getElementById("MSidebarMenuFixed")){
 
@@ -105,7 +105,7 @@ function sidebarMenuTop() {
   
 }
 
-function sidebarScale() {
+function sidebarScale(){
   
   sidebarMenuPlaceholderHeight();
   sidebarMenuTop();
@@ -127,7 +127,7 @@ function sidebarScale() {
   $("#MSidebar").css("height", sidebarHeight);
 }
 
-function sidebarRightShow() {
+function sidebarRightShow(){
   
   sidebarScale();
   
@@ -136,13 +136,13 @@ function sidebarRightShow() {
   $(".MIconArrowLeft").hide();
 }
 
-function sidebarRightHide() {  
+function sidebarRightHide(){  
   $("#MSidebarContainer").animate({minWidth: 0}, speedNorm);
   $("#MSidebar").animate({right: -360}, speedNorm);
   $(".MIconArrowLeft").show();
 }
 
-function sidebarLeftShow() {
+function sidebarLeftShow(){
   
   sidebarScale();
   
@@ -151,7 +151,7 @@ function sidebarLeftShow() {
   $(".MIconArrowRight").hide();
 }
 
-function sidebarLeftHide() {
+function sidebarLeftHide(){
   $("#MSidebarContainer").animate({minWidth: 0}, speedNorm);
   $("#MSidebar").animate({left: -360}, speedNorm);
   $(".MIconArrowRight").show();
@@ -167,7 +167,7 @@ function sidebarTriggerIndicatorSet(){
   }
 }
 
-function sidebarTriggerProximity(event) {
+function sidebarTriggerProximity(event){
   
   sidebarTriggerIndicatorSet();
   
@@ -209,7 +209,7 @@ function sidebarTriggerProximity(event) {
   
 }
 
-function tabSwitch(tabGroup, tabContainer, tabId) {
+function tabSwitch(tabGroup, tabContainer, tabId){
   
   //$(".tab_body" + "." + tabGroup).removeClass("tab_body_selected");
   //$(".tab_body_sidebar" + "." + tabGroup).removeClass("tab_body_selected");
@@ -223,7 +223,7 @@ function tabSwitch(tabGroup, tabContainer, tabId) {
 
 }
 
-function listSelect(id) {
+function listSelect(id){
   if(document.getElementById("checkbox_" + id).checked){
     $("#list_item_container_" + id).addClass("blue");
   }else{
@@ -231,11 +231,11 @@ function listSelect(id) {
   }
 }
 
-function scrollBottom() {
+function scrollBottom(){
   var scrollBottom = $(window).scrollTop() + $(window).height();
   var documentHeight = $(document).height();
 
-  if (scrollBottom == documentHeight){
+  if(scrollBottom == documentHeight){
     return true;
   }
 }
@@ -262,7 +262,7 @@ function toolbarPosition(){
   }
 }
 
-function toolbarMessageFadeOut() {
+function toolbarMessageFadeOut(){
   $(".MToolbarMessage").delay(5000).fadeOut(speedSlow);
 }
 
@@ -271,15 +271,15 @@ function toolbarPlaceholderScale(){
   $("#MToolbarPlaceholder").height(toolbar_height);
 }
 
-function listFadeIn() {
+function listFadeIn(){
   var i = 0;
-  $(".MListItemContainer").each(function() {
+  $(".MListItemContainer").each(function(){
     $(this).delay(i).animate({opacity: 1}, speedNorm);   
     i = i + 50;
   });
   
   var i = 0;
-  $("#MSidebar li").each(function() {
+  $("#MSidebar li").each(function(){
     $(this).delay(i).animate({opacity: 1}, speedNorm);
     i = i + 50;
   }); 
@@ -287,7 +287,7 @@ function listFadeIn() {
 
 function promptSet(){
   
-    $("[prompt]").each(function(index) {
+    $("[prompt]").each(function(index){
     
     //Set the prompt
     var originalPrompt = $(this).attr("prompt");
@@ -295,7 +295,7 @@ function promptSet(){
     $(this).val(originalPrompt);
     
     //Set the focus
-    $(this).focus(function() {
+    $(this).focus(function(){
       
       var currentPrompt = $(this).val();
       
@@ -306,7 +306,7 @@ function promptSet(){
     });
   
     //Set the blur
-    $(this).blur(function() {
+    $(this).blur(function(){
       
       var currentPrompt = $(this).val();
       
@@ -322,7 +322,7 @@ function promptSet(){
 
 function promptPasswordSet(){
   
-    $("[promptPassword]").each(function(index) {
+    $("[promptPassword]").each(function(index){
     
     //Set the prompt
     var originalPrompt = $(this).attr("promptPassword");
@@ -330,7 +330,7 @@ function promptPasswordSet(){
     $(this).val(originalPrompt);
     
     //Set the focus
-    $(this).focus(function() {
+    $(this).focus(function(){
       
       var currentPrompt = $(this).val();
       
@@ -342,7 +342,7 @@ function promptPasswordSet(){
     });
   
     //Set the blur
-    $(this).blur(function() {
+    $(this).blur(function(){
       
       var currentPrompt = $(this).val();
       
@@ -357,7 +357,7 @@ function promptPasswordSet(){
 
 }
 
-function locationReset() {
+function locationReset(){
   var answer = confirm("All your changes will be disgarded.\nAre you sure you want to reset?");
   
   if(answer){

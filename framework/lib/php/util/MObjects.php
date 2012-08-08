@@ -1,4 +1,4 @@
-<?php if(!defined("SERVER_ROOT")){header("/error_404");exit;}
+<?php if(!defined('SERVER_ROOT')){header('/error_404');exit;}
  
 /**
 *
@@ -12,7 +12,7 @@ class MObjects {
 
     foreach ($array as $key => $value){
     
-      if (is_array($value)){
+      if(is_array($value)){
 	$obj->$key = new stdClass();
 	array_to_obj($value, $obj->$key);
       }

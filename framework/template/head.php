@@ -1,4 +1,4 @@
-<?php if(!defined("SERVER_ROOT")){header("/error_404");exit;}?>
+<?php if(!defined('SERVER_ROOT')){header('/error_404');exit;}?>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -17,11 +17,11 @@
       <meta name="title" content="<?php echo APPLICATION_NAME; ?>" />
     <?php endif;?>
 
-    <?php if (!empty($page_description)): ?>
+    <?php if(!empty($page_description)): ?>
 	<meta name="description" content="<?php echo $page_description; ?>" />
     <?php endif; ?>
 
-    <?php if (!empty($page_keywords)): ?>
+    <?php if(!empty($page_keywords)): ?>
 	<meta name="keywords" content="<?php echo $page_keywords; ?>" />
     <?php endif; ?>
 
@@ -34,10 +34,7 @@
       require(SERVER_ROOT . '/' . APPLICATION . '/config/autoload.php');
     
       /** CSS */
-    
-      /* Third Party CSS */ 
-      MLoad::css_framework_include("3rdparty/colorpicker.css");
-
+ 
       /* Custom/Forked CSS */
       MLoad::css_framework_include("core/style.css");
 
@@ -69,7 +66,6 @@
       MLoad::js_framework_include("3rdparty/jquery.hashchange.js");
       MLoad::js_framework_include("3rdparty/jquery.easytabs.js");
       MLoad::js_framework_include("3rdparty/jquery.scrollTo.js");
-      MLoad::js_framework_include("3rdparty/colorpicker.js");
       MLoad::js_framework_include("3rdparty/html5shiv.js");
 
       /* Custom/Forked JavaScript/jQuery Libraries */

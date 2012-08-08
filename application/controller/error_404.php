@@ -9,7 +9,7 @@
 
 class error_404 {
 
-  function index() {
+  function index(){
     /** Required Page Elements */
     $data['page_title'] = 'Error 404';
     MLoad::view('error_404.php', $data);
