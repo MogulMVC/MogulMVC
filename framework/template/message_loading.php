@@ -1,4 +1,4 @@
-<?php if(!defined("SERVER_ROOT")){header("/error_404");exit;}?>
+<?php if(!defined('SERVER_ROOT')){header('/error_404');exit;}?>
 
 <div class="MHoverMessage">  
   <div class="MIconLoadingBlack150 left"/></div>

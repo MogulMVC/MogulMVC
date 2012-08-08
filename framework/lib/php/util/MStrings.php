@@ -1,4 +1,4 @@
-<?php if(!defined("SERVER_ROOT")){header("/error_404");exit;}
+<?php if(!defined('SERVER_ROOT')){header('/error_404');exit;}
 
 /**
 *
@@ -14,7 +14,7 @@ class MStrings {
 
     $string = NULL;
 
-    for($i=0; $i<$length; $i++) {
+    for($i=0; $i<$length; $i++){
       $random_number = rand(0, 61);
 
       $random_character = $possible_characters[$random_number];

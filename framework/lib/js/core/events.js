@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function(){
 
   $("input").attr("autocomplete", "off");
   
@@ -81,17 +81,17 @@ $(window).load(function(){
   sidebarMenuPlaceholderHeight();
   sidebarMenuTop();
 
-  $("#MSidebar").mouseenter(function() {
+  $("#MSidebar").mouseenter(function(){
     $("#MSidebar").css("overflow-y", "auto");
   });
 
-  $("#MSidebar").mouseleave(function() {
+  $("#MSidebar").mouseleave(function(){
     $("#MSidebar").css("overflow-y", "hidden");
   });
 
 });
 
-$(window).resize(function() {
+$(window).resize(function(){
   toolbarPosition();
   sidebarScale();
 });

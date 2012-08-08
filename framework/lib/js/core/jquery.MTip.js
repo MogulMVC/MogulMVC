@@ -3,13 +3,13 @@
 // (c) 2008-2010 jason frame [jason@onehackoranother.com]
 // released under the MIT license
 
-(function($) {
+(function($){
     
-    function maybeCall(thing, ctx) {
+    function maybeCall(thing, ctx){
         return (typeof thing == 'function') ? (thing.call(ctx)) : thing;
     };
     
-    function Tip(element, options) {
+    function Tip(element, options){
         this.$element = $(element);
         this.options = options;
         this.enabled = true;
@@ -17,9 +17,9 @@
     };
     
     Tip.prototype = {
-        show: function() {
+        show: function(){
             var title = this.getTitle();
-            if (title && this.enabled) {
+            if(title && this.enabled){
                 var $tip = this.tip();
                 
                 $tip.find('.MTipInner')[this.options.html ? 'html' : 'text'](title);
@@ -36,7 +36,7 @@
                     gravity = maybeCall(this.options.gravity, this.$element[0]);
                 
                 var tp;
-                switch (gravity.charAt(0)) {
+                switch (gravity.charAt(0)){
                     case 'N':
                         tp = {top: pos.top + pos.height + this.options.offset, left: pos.left + pos.width / 2 - actualWidth / 2};
                         break;
@@ -51,8 +51,8 @@
                         break;
                 }
                 
-                if (gravity.length == 2) {
-                    if (gravity.charAt(1) == 'W') {
+                if(gravity.length == 2){
+                    if(gravity.charAt(1) == 'W'){
                         tp.left = pos.left + pos.width / 2 - 15;
                     } else {
                         tp.left = pos.left + pos.width / 2 - actualWidth + 15;
@@ -61,11 +61,11 @@
                 
                 $tip.css(tp).addClass('MTip' + gravity);
                 $tip.find('.MTipArrow')[0].className = 'MTipArrow MTipArrow' + gravity.charAt(0);
-                if (this.options.className) {
+                if(this.options.className){
                     $tip.addClass(maybeCall(this.options.className, this.$element[0]));
                 }
                 
-                if (this.options.fade) {
+                if(this.options.fade){
                     $tip.stop().css({opacity: 0, display: 'block', visibility: 'visible'}).animate({opacity: this.options.opacity});
                 } else {
                     $tip.css({visibility: 'visible', opacity: this.options.opacity});
@@ -73,99 +73,99 @@
             }
         },
         
-        hide: function() {
-            if (this.options.fade) {
-                this.tip().stop().fadeOut(function() { $(this).remove(); });
+        hide: function(){
+            if(this.options.fade){
+                this.tip().stop().fadeOut(function(){ $(this).remove(); });
             } else {
                 this.tip().remove();
             }
         },
         
-        fixTitle: function() {
+        fixTitle: function(){
             var $e = this.$element;
-            if ($e.attr('title') || typeof($e.attr('original-title')) != 'string') {
+            if($e.attr('title') || typeof($e.attr('original-title')) != 'string'){
                 $e.attr('original-title', $e.attr('title') || '').removeAttr('title');
             }
         },
         
-        getTitle: function() {
+        getTitle: function(){
             var title, $e = this.$element, o = this.options;
             this.fixTitle();
             var title, o = this.options;
-            if (typeof o.title == 'string') {
+            if(typeof o.title == 'string'){
                 title = $e.attr(o.title == 'title' ? 'original-title' : o.title);
-            } else if (typeof o.title == 'function') {
+            } else if(typeof o.title == 'function'){
                 title = o.title.call($e[0]);
             }
             title = ('' + title).replace(/(^\s*|\s*$)/, "");
             return title || o.fallback;
         },
         
-        tip: function() {
-            if (!this.$tip) {
+        tip: function(){
+            if(!this.$tip){
                 this.$tip = $('<div class="MTip"></div>').html('<div class="MTipArrow"></div><div class="MTipInner shadow_large"></div>');
             }
             return this.$tip;
         },
         
-        validate: function() {
-            if (!this.$element[0].parentNode) {
+        validate: function(){
+            if(!this.$element[0].parentNode){
                 this.hide();
                 this.$element = null;
                 this.options = null;
             }
         },
         
-        enable: function() { this.enabled = true; },
-        disable: function() { this.enabled = false; },
-        toggleEnabled: function() { this.enabled = !this.enabled; }
+        enable: function(){ this.enabled = true; },
+        disable: function(){ this.enabled = false; },
+        toggleEnabled: function(){ this.enabled = !this.enabled; }
     };
     
-    $.fn.MTip = function(options) {
+    $.fn.MTip = function(options){
         
-        if (options === true) {
+        if(options === true){
             return this.data('MTip');
-        } else if (typeof options == 'string') {
+        } else if(typeof options == 'string'){
             var tip = this.data('MTip');
-            if (tip) tip[options]();
+            if(tip) tip[options]();
             return this;
         }
         
         options = $.extend({}, $.fn.MTip.defaults, options);
         
-        function get(ele) {
+        function get(ele){
             var tip = $.data(ele, 'MTip');
-            if (!tip) {
+            if(!tip){
                 tip = new Tip(ele, $.fn.MTip.elementOptions(ele, options));
                 $.data(ele, 'MTip', tip);
             }
             return tip;
         }
         
-        function enter() {
+        function enter(){
             var tip = get(this);
             tip.hoverState = 'in';
-            if (options.delayIn == 0) {
+            if(options.delayIn == 0){
                 tip.show();
             } else {
                 tip.fixTitle();
-                setTimeout(function() { if (tip.hoverState == 'in') tip.show(); }, options.delayIn);
+                setTimeout(function(){ if (tip.hoverState == 'in') tip.show(); }, options.delayIn);
             }
         };
         
-        function leave() {
+        function leave(){
             var tip = get(this);
             tip.hoverState = 'out';
-            if (options.delayOut == 0) {
+            if(options.delayOut == 0){
                 tip.hide();
             } else {
-                setTimeout(function() { if (tip.hoverState == 'out') tip.hide(); }, options.delayOut);
+                setTimeout(function(){ if (tip.hoverState == 'out') tip.hide(); }, options.delayOut);
             }
         };
         
-        if (!options.live) this.each(function() { get(this); });
+        if(!options.live) this.each(function(){ get(this); });
         
-        if (options.trigger != 'manual') {
+        if(options.trigger != 'manual'){
             var binder   = options.live ? 'live' : 'bind',
                 eventIn  = options.trigger == 'hover' ? 'mouseenter' : 'focus',
                 eventOut = options.trigger == 'hover' ? 'mouseleave' : 'blur';
@@ -195,15 +195,15 @@
     // For example, you could store the gravity in a 'tip-gravity' attribute:
     // return $.extend({}, options, {gravity: $(ele).attr('tip-gravity') || 'n' });
     // (remember - do not modify 'options' in place!)
-    $.fn.MTip.elementOptions = function(ele, options) {
+    $.fn.MTip.elementOptions = function(ele, options){
         return $.metadata ? $.extend({}, options, $(ele).metadata()) : options;
     };
     
-    $.fn.MTip.autoNS = function() {
+    $.fn.MTip.autoNS = function(){
         return $(this).offset().top > ($(document).scrollTop() + $(window).height() / 2) ? 'S' : 'N';
     };
     
-    $.fn.MTip.autoWE = function() {
+    $.fn.MTip.autoWE = function(){
         return $(this).offset().left > ($(document).scrollLeft() + $(window).width() / 2) ? 'E' : 'W';
     };
     
@@ -222,17 +222,17 @@
      *        that element's tooltip to be 'se', preserving the southern
      *        component.
      */
-     $.fn.MTip.autoBounds = function(margin, prefer) {
-		return function() {
+     $.fn.MTip.autoBounds = function(margin, prefer){
+		return function(){
 			var dir = {ns: prefer[0], ew: (prefer.length > 1 ? prefer[1] : false)},
 			    boundTop = $(document).scrollTop() + margin,
 			    boundLeft = $(document).scrollLeft() + margin,
 			    $this = $(this);
 
-			if ($this.offset().top < boundTop) dir.ns = 'N';
-			if ($this.offset().left < boundLeft) dir.ew = 'W';
-			if ($(window).width() + $(document).scrollLeft() - $this.offset().left < margin) dir.ew = 'E';
-			if ($(window).height() + $(document).scrollTop() - $this.offset().top < margin) dir.ns = 'S';
+			if($this.offset().top < boundTop) dir.ns = 'N';
+			if($this.offset().left < boundLeft) dir.ew = 'W';
+			if($(window).width() + $(document).scrollLeft() - $this.offset().left < margin) dir.ew = 'E';
+			if($(window).height() + $(document).scrollTop() - $this.offset().top < margin) dir.ns = 'S';
 
 			return dir.ns + (dir.ew ? dir.ew : '');
 		}

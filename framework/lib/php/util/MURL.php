@@ -1,4 +1,4 @@
-<?php if(!defined("SERVER_ROOT")){header("/error_404");exit;}
+<?php if(!defined('SERVER_ROOT')){header('/error_404');exit;}
 
 /**
 *
@@ -8,11 +8,11 @@
 
 class MURL {
 
-  public static function current() {
+  public static function current(){
     return "http://" . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
   }
 
-  public static function segment($segment) {
+  public static function segment($segment){
     $uri = explode("/",  $_SERVER['REQUEST_URI']);
 
     if(!empty($uri[$segment])){
