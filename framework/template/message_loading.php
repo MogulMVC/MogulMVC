@@ -6,10 +6,10 @@
   <p id="loading_description"><?php echo $description; ?></p>
 </div>
 
-<?php if($bg == "white"):?>
-  <div class="modal_bg_white"></div>
+<?php if($bg == 'white'):?>
+  <div class="MModelBGWhite"></div>
 <?php endif;?>
 
-<?php if($bg == "black"):?>
-  <div class="modal_bg_black"></div>
+<?php if($bg == 'black'):?>
+  <div class="MModelBGBlack"></div>
 <?php endif;?>

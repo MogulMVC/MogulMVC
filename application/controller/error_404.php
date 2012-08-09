@@ -7,7 +7,7 @@
 *
 */
 
-class error_404 {
+class Error_404 {
 
   function index(){
     /** Required Page Elements */

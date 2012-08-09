@@ -1,6 +1,6 @@
 <?php if(!defined('SERVER_ROOT')){header('/error_404');exit;}
 
-require_once(SERVER_ROOT . "/" . APPLICATION . '/config/database.php');
+require_once(SERVER_ROOT . '/' . APPLICATION . '/config/database.php');
 
 if($DB_WARN == FALSE){
   //Framework wide error_reporting will be set in the environment core file

@@ -7,7 +7,7 @@
 *
 */
 
-class elements {
+class Elements {
 
   function index(){
 

@@ -28,7 +28,6 @@ define('APPLICATION_VO', 'model/vo');
 //Controllers
 define('APPLICATION_DEFAULT_CONTROLLER', 'elements.php');
 define('APPLICATION_ERROR_404_CONTROLLER', 'error_404.php');
-define('APPLICATION_ROBOTS_TXT_CONTROLLER', 'robots.php');
 
 //File locations start within the APPLICATION_VIEW folder
 define('APPLICATION_HEADER', 'inc/header.php');

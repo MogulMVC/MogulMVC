@@ -12,7 +12,7 @@ class MTime {
   {
 
     // start with a blank string
-    $hms = "";
+    $hms = '';
     
     // do the hours first: there are 3600 seconds in an hour, so if we divide
     // the total number of seconds by 3600 and throw away the remainder, we're
@@ -30,17 +30,17 @@ class MTime {
 
     // add hours to $hms
     if($hours > 0){
-      $hms .= str_pad($hours, 2, "0", STR_PAD_LEFT). ":";
+      $hms .= str_pad($hours, 2, '0', STR_PAD_LEFT). ':';
     }
     
     // add minutes to $hms
     if($hours > 0 || $minutes > 0){
-      $hms .= str_pad($minutes, 2, "0", STR_PAD_LEFT). ":";
+      $hms .= str_pad($minutes, 2, '0', STR_PAD_LEFT). ':';
     }
     
     // add seconds to $hms
     if($minutes > 0 || $seconds > 0){
-      $hms .= str_pad($seconds, 2, "0", STR_PAD_LEFT);
+      $hms .= str_pad($seconds, 2, '0', STR_PAD_LEFT);
     }
 
     return $hms;

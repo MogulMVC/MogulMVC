@@ -16,6 +16,8 @@ class MErrors {
 
     $error_404_class = basename(APPLICATION_ERROR_404_CONTROLLER, '.php');
 
+    $error_404_class = ucfirst($error_404_class);
+    
     if(!is_object($error_404_class)){
       $error_object = new $error_404_class();
     }

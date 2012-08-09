@@ -36,7 +36,7 @@
       /** CSS */
  
       /* Custom/Forked CSS */
-      MLoad::css_framework_include("core/style.css");
+      MLoad::css_framework_include('core/style.css');
 
       //Autoload CSS
       foreach($AUTOLOAD_CSS_FRAMEWORK as $CSS){
@@ -60,21 +60,20 @@
       /** JavaScript */
       
       /* Third Party JavaScript/jQuery Libraries */
-      MLoad::js_framework_include("3rdparty/jquery.js");
-      MLoad::js_framework_include("3rdparty/jquery.ui.js");
-      MLoad::js_framework_include("3rdparty/jquery.ui.touch.js");
-      MLoad::js_framework_include("3rdparty/jquery.hashchange.js");
-      MLoad::js_framework_include("3rdparty/jquery.easytabs.js");
-      MLoad::js_framework_include("3rdparty/jquery.scrollTo.js");
-      MLoad::js_framework_include("3rdparty/html5shiv.js");
+      MLoad::js_framework_include('3rdparty/jquery.js');
+      MLoad::js_framework_include('3rdparty/jquery.ui.js');
+      MLoad::js_framework_include('3rdparty/jquery.ui.touch.js');
+      MLoad::js_framework_include('3rdparty/jquery.hashchange.js');
+      MLoad::js_framework_include('3rdparty/jquery.easytabs.js');
+      MLoad::js_framework_include('3rdparty/jquery.scrollTo.js');
+      MLoad::js_framework_include('3rdparty/html5shiv.js');
 
       /* Custom/Forked JavaScript/jQuery Libraries */
-      MLoad::js_framework_include("core/jquery.MTip.js");
-      MLoad::js_framework_include("core/jquery.MHTMLAnimate.js");
+      MLoad::js_framework_include('core/jquery.MTip.js');
 
-      MLoad::js_framework_include("core/config.js");
-      MLoad::js_framework_include("core/functions.js");
-      MLoad::js_framework_include("core/events.js");
+      MLoad::js_framework_include('core/config.js');
+      MLoad::js_framework_include('core/functions.js');
+      MLoad::js_framework_include('core/events.js');
 
       //Autoload Framework JavaScript
       foreach($AUTOLOAD_JS_FRAMEWORK as $JS){
@@ -87,12 +86,12 @@
       }
 
       //Include all JavaScript file that were loaded with the js_framework_load function
-      foreach($GLOBALS["LOAD_JS_FRAMEWORK"] as $JS){
+      foreach($GLOBALS['LOAD_JS_FRAMEWORK'] as $JS){
 	MLoad::js_framework_include($JS);
       }
       
       //Include all JavaScript file that were loaded with the js_application_load function
-      foreach($GLOBALS["LOAD_JS_APPLICATION"] as $JS){
+      foreach($GLOBALS['LOAD_JS_APPLICATION'] as $JS){
 	MLoad::js_application_include($JS);
       }
 	
