@@ -1,15 +1,15 @@
 .MButton{ @extend .MGlow;
-  background:#e6e6e6;
-  background:-moz-linear-gradient(top, #e6e6e6 0%, #c8c8c8 100%);
-  background:-ms-linear-gradient(top, #e6e6e6 0%,#c8c8c8 100%);
-  background:-o-linear-gradient(top, #e6e6e6 0%,#c8c8c8 100%);
-  background:-webkit-linear-gradient(top, #e6e6e6 0%,#c8c8c8 100%);
-  background:linear-gradient(top, #e6e6e6 0%,#c8c8c8 100%);
-  border-color:#646464;
+  background:$mono_5;
+  background:-moz-linear-gradient(top, $mono_5 0%, #c8c8c8 100%);
+  background:-ms-linear-gradient(top, $mono_5 0%,#c8c8c8 100%);
+  background:-o-linear-gradient(top, $mono_5 0%,#c8c8c8 100%);
+  background:-webkit-linear-gradient(top, $mono_5 0%,#c8c8c8 100%);
+  background:linear-gradient(top, $mono_5 0%,#c8c8c8 100%);
+  border-color:$mono_3;
   border-radius:.3em;
   border-style:solid;
   border-width:.1em;
-  color:#323232;
+  color:$mono_2;
   cursor:pointer;
   display:inline-block;
   font-size:1em;
@@ -19,74 +19,74 @@
   padding-right:1.250em;
 
   &:hover{
-    border-color:#007dfa;
-    color:#323232;
+    border-color:$blue_2;
+    color:$mono_2;
   }
   
   &:active{
-    background:#646464;
-    border-color:#323232;
+    background:$mono_3;
+    border-color:$mono_2;
     box-shadow:$shadow_inset_bg;
-    color:#ffffff;
+    color:$mono_6;
   }
   
   &[disabled], &[disabled]:hover, &[disabled]:active{
-    background:#e6e6e6;
-    border-color:#969696;
+    background:$mono_5;
+    border-color:$mono_4;
     box-shadow:none;
-    color:#969696;
+    color:$mono_4;
     text-shadow:none;
   }
   
 }
 
 .MButtonRed, .MButtonR{ @extend .MButton;
-  background:#960000;
-  background:-moz-linear-gradient(top, #fa0000 0%, #960000 100%);
-  background:-ms-linear-gradient(top, #fa0000 0%,#960000 100%);
-  background:-o-linear-gradient(top, #fa0000 0%,#960000 100%);
-  background:-webkit-linear-gradient(top, #fa0000 0%,#960000 100%);
-  background:linear-gradient(top, #fa0000 0%,#960000 100%);
-  color:#ffffff;
-  text-shadow:0 0 .4em #323232;
+  background:$red_1;
+  background:-moz-linear-gradient(top, $red_2 0%, $red_1 100%);
+  background:-ms-linear-gradient(top, $red_2 0%,$red_1 100%);
+  background:-o-linear-gradient(top, $red_2 0%,$red_1 100%);
+  background:-webkit-linear-gradient(top, $red_2 0%,$red_1 100%);
+  background:linear-gradient(top, $red_2 0%,$red_1 100%);
+  color:$mono_6;
+  text-shadow:0 0 .4em $mono_2;
   
   &:hover{
-    color:#ffffff;
+    color:$mono_6;
   }
   
   &:active{
-    color:#ffffff;
+    color:$mono_6;
   }
   
 }
 
 .MButtonOrange, .MButtonO{ @extend .MButton;
-  background:#963c00;
-  background:-moz-linear-gradient(top, #fa6400 0%, #963c00 100%);
-  background:-ms-linear-gradient(top, #fa6400 0%,#963c00 100%);
-  background:-o-linear-gradient(top, #fa6400 0%,#963c00 100%);
-  background:-webkit-linear-gradient(top, #fa6400 0%,#963c00 100%);
-  background:linear-gradient(top, #fa6400 0%,#963c00 100%);
-  color:#ffffff;
-  text-shadow:0 0 .4em #323232;
+  background:$orange_1;
+  background:-moz-linear-gradient(top, $orange_2 0%, $orange_1 100%);
+  background:-ms-linear-gradient(top, $orange_2 0%,$orange_1 100%);
+  background:-o-linear-gradient(top, $orange_2 0%,$orange_1 100%);
+  background:-webkit-linear-gradient(top, $orange_2 0%,$orange_1 100%);
+  background:linear-gradient(top, $orange_2 0%,$orange_1 100%);
+  color:$mono_6;
+  text-shadow:0 0 .4em $mono_2;
   
   &:hover{
-    color:#ffffff;
+    color:$mono_6;
   }
   
   &:active{
-    color:#ffffff;
+    color:$mono_6;
   }
   
 }
 
 .MButtonYellow, .MButtonY{ @extend .MButton;
   background:#fac800;
-  background:-moz-linear-gradient(top, #fafa00 0%, #fac800 100%);
-  background:-ms-linear-gradient(top, #fafa00 0%,#fac800 100%);
-  background:-o-linear-gradient(top, #fafa00 0%,#fac800 100%);
-  background:-webkit-linear-gradient(top, #fafa00 0%,#fac800 100%);
-  background:linear-gradient(top, #fafa00 0%,#fac800 100%);
+  background:-moz-linear-gradient(top, $yellow_2 0%, #fac800 100%);
+  background:-ms-linear-gradient(top, $yellow_2 0%,#fac800 100%);
+  background:-o-linear-gradient(top, $yellow_2 0%,#fac800 100%);
+  background:-webkit-linear-gradient(top, $yellow_2 0%,#fac800 100%);
+  background:linear-gradient(top, $yellow_2 0%,#fac800 100%);
   color:#000000;
   
   &:hover{
@@ -94,65 +94,65 @@
   }
   
   &:active{
-    color:#ffffff;
+    color:$mono_6;
   }
   
 }
 
 .MButtonGreen, .MButtonG{ @extend .MButton;
-  background:#009600;
-  background:-moz-linear-gradient(top, #00FA00 0%, #009600 100%);
-  background:-ms-linear-gradient(top, #00FA00 0%,#009600 100%);
-  background:-o-linear-gradient(top, #00FA00 0%,#009600 100%);
-  background:-webkit-linear-gradient(top, #00FA00 0%,#009600 100%);
-  background:linear-gradient(top, #00FA00 0%,#009600 100%);
-  color:#ffffff;
-  text-shadow:0 0 .4em #323232;
+  background:$green_1;
+  background:-moz-linear-gradient(top, $green_2 0%, $green_1 100%);
+  background:-ms-linear-gradient(top, $green_2 0%,$green_1 100%);
+  background:-o-linear-gradient(top, $green_2 0%,$green_1 100%);
+  background:-webkit-linear-gradient(top, $green_2 0%,$green_1 100%);
+  background:linear-gradient(top, $green_2 0%,$green_1 100%);
+  color:$mono_6;
+  text-shadow:0 0 .4em $mono_2;
   
   &:hover{
-    color:#ffffff;
+    color:$mono_6;
   }
   
   &:active{
-    color:#ffffff;
+    color:$mono_6;
   }
   
 }
 
 .MButtonBlue, .MButtonB{ @extend .MButton;
-  background:#004b96;
-  background:-moz-linear-gradient(top, #007Dfa 0%, #004b96 100%);
-  background:-ms-linear-gradient(top, #007Dfa 0%,#004b96 100%);
-  background:-o-linear-gradient(top, #007Dfa 0%,#004b96 100%);
-  background:-webkit-linear-gradient(top, #007Dfa 0%,#004b96 100%);
-  background:linear-gradient(top, #007Dfa 0%,#004b96 100%);
-  color:#ffffff;
-  text-shadow:0 0 .4em #323232;
+  background:$blue_1;
+  background:-moz-linear-gradient(top, $blue_2 0%, $blue_1 100%);
+  background:-ms-linear-gradient(top, $blue_2 0%,$blue_1 100%);
+  background:-o-linear-gradient(top, $blue_2 0%,$blue_1 100%);
+  background:-webkit-linear-gradient(top, $blue_2 0%,$blue_1 100%);
+  background:linear-gradient(top, $blue_2 0%,$blue_1 100%);
+  color:$mono_6;
+  text-shadow:0 0 .4em $mono_2;
   
   &:hover{
-    color:#ffffff;
+    color:$mono_6;
   }
   &:active{
-    color:#ffffff;
+    color:$mono_6;
   }
   
 }
 
 .MButtonViolet, .MButtonV{ @extend .MButton;
-  background:#4b0096;
-  background:-moz-linear-gradient(top, #7D00FA 0%, #4b0096 100%);
-  background:-ms-linear-gradient(top, #7D00FA 0%,#4b0096 100%);
-  background:-o-linear-gradient(top, #7D00FA 0%,#4b0096 100%);
-  background:-webkit-linear-gradient(top, #7D00FA 0%,#4b0096 100%);
-  background:linear-gradient(top, #7D00FA 0%,#4b0096 100%);
-  color:#ffffff;
-  text-shadow:0 0 .4em #323232;
+  background:$violet_1;
+  background:-moz-linear-gradient(top, $violet_2 0%, $violet_1 100%);
+  background:-ms-linear-gradient(top, $violet_2 0%,$violet_1 100%);
+  background:-o-linear-gradient(top, $violet_2 0%,$violet_1 100%);
+  background:-webkit-linear-gradient(top, $violet_2 0%,$violet_1 100%);
+  background:linear-gradient(top, $violet_2 0%,$violet_1 100%);
+  color:$mono_6;
+  text-shadow:0 0 .4em $mono_2;
   
   &:hover{
-    color:#ffffff;
+    color:$mono_6;
   }
   &:active{
-    color:#ffffff;
+    color:$mono_6;
   }
   
 }

@@ -34,7 +34,7 @@
 
   &.red{
     background:#dcc3c3;
-    color:#323232;
+    color:$mono_2;
     
     &:hover{
       background:#e1d5d5;
@@ -43,7 +43,7 @@
 
   &.yellow{
     background:#faf5b4;
-    color:#323232;
+    color:$mono_2;
     
     &:hover{
       background:#f0edcd;
@@ -52,7 +52,7 @@
 
   &.green{
     background:#c3dcc3;
-    color:#323232;
+    color:$mono_2;
     
     &:hover{
       background:#d5e1d5;
@@ -61,7 +61,7 @@
 
   &.blue{
     background:#b4d2f0;
-    color:#323232;
+    color:$mono_2;
     
     &:hover{
       background:#cddceb;
@@ -69,7 +69,7 @@
   }
 
   &:hover{
-    background:#e6e6e6;
+    background:$mono_5;
   }
 
 }
@@ -90,7 +90,7 @@
 
 
 .MListItemNotification{
-  background:#323232;
+  background:$mono_2;
   border-radius:4px;
   color:white;
   font-weight:bold;

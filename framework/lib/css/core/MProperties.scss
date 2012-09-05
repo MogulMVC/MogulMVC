@@ -5,7 +5,7 @@ a, h1, h2, h3, h4, h5, h6, input, label, p, span, textarea,{
   }
 
   &.red{
-    color:#960000;
+    color:$red_1;
   }
 
   &.yellow{
@@ -13,23 +13,23 @@ a, h1, h2, h3, h4, h5, h6, input, label, p, span, textarea,{
   }
 
   &.green{
-    color:#009600;
+    color:$green_1;
   }
 
   &.blue{
-    color:#004b96;
+    color:$blue_1;
   }
 
   &.violet{
-    color:#4b0096;
+    color:$violet_1;
   }
 
   &.black{
-    color:#0a0a0a;
+    color:$mono_1;
   }
   
   &.white{
-    color:#ffffff;
+    color:$mono_6;
   }
 
 }
@@ -107,13 +107,21 @@ a, h1, h2, h3, h4, h5, h6, input, label, p, span, textarea,{
 }
 
 .table_border{
-  border:.1em solid #646464;
+  border:.1em solid $mono_3;
   border-collapse:collapse;
   margin:0;
   
   td{
-    border:.1em solid #646464;
+    border:.1em solid $mono_3;
     margin:0;
   }
   
+}
+
+.table_center{
+  
+  td{
+    text-align:center;
+  }
+
 }

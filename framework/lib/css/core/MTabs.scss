@@ -3,13 +3,13 @@
   -o-user-select:none;
   -webkit-user-select:none;
   background:#c8c8c8;
-  border-color:#646464;
+  border-color:$mono_3;
   border-style:solid;
   border-top-left-radius:.4em;
   border-top-right-radius:.4em;
   border-width:.1em 1px 0 1px;
   box-shadow:$shadow_small;
-  color:#323232;
+  color:$mono_2;
   cursor:pointer;
   margin-right:.4em;
   padding-left:.8em;
@@ -18,28 +18,28 @@
 }
 
 .MTabSelected{ @extend .MTab;
-  background:#e6e6e6;
+  background:$mono_5;
 
   &:hover{
     box-shadow:none;
     cursor:default;
-    border-color:#646464;
+    border-color:$mono_3;
   }
 }
 
 .MTabBody{
-  background:#e6e6e6;
-  background:-moz-linear-gradient(top, #e6e6e6 0%, #c8c8c8 100%);
-  background:-ms-linear-gradient(top, #e6e6e6 0%,#c8c8c8 100%);
-  background:-o-linear-gradient(top, #e6e6e6 0%,#c8c8c8 100%);
-  background:-webkit-linear-gradient(top, #e6e6e6 0%,#c8c8c8 100%);
-  background:linear-gradient(top, #e6e6e6 0%,#c8c8c8 100%);
-  border-color:#646464;
+  background:$mono_5;
+  background:-moz-linear-gradient(top, $mono_5 0%, #c8c8c8 100%);
+  background:-ms-linear-gradient(top, $mono_5 0%,#c8c8c8 100%);
+  background:-o-linear-gradient(top, $mono_5 0%,#c8c8c8 100%);
+  background:-webkit-linear-gradient(top, $mono_5 0%,#c8c8c8 100%);
+  background:linear-gradient(top, $mono_5 0%,#c8c8c8 100%);
+  border-color:$mono_3;
   border-radius:0 .4em .4em .4em;
   border-style:solid;
   border-width:0 1px 1px 1px;
   box-shadow:$shadow_small;
-  color:#323232;
+  color:$mono_2;
   display:none;
   margin:-1px;
   margin:0 auto;
@@ -58,7 +58,7 @@
 }
 
 .MTabBodySidebar{
-  color:#323232;
+  color:$mono_2;
   display:none;
   margin:0 auto;
   text-align:left;
@@ -75,32 +75,32 @@
   -o-user-select:none;
   -webkit-user-select:none;
   background:#C8C8C8;
-  border-color:#646464;
+  border-color:$mono_3;
   border-style:solid;
   border-top-left-radius:.4em;
   border-top-right-radius:.4em;
   border-width:.1em 1px 0 1px;
   box-shadow:$shadow_small;
-  color:#323232;
+  color:$mono_2;
   cursor:pointer;
   display:inline-block;
   padding:0;
   user-select:none;
   
   a{
-    color:#323232;
+    color:$mono_2;
     display:block;
     padding-left:.8em;
     padding-right:.8em;
   }
   
   &.active{
-    background:#e6e6e6;
+    background:$mono_5;
     position:relative;
     
     &:hover{
       box-shadow:$shadow_small;
-      border-color:#646464;
+      border-color:$mono_3;
     }
     
   }
@@ -108,13 +108,13 @@
 }
 
 .eztab_body_container{
-  background:#e6e6e6;
-  background:-moz-linear-gradient(top, #e6e6e6 0%, #c8c8c8 100%);
-  background:-ms-linear-gradient(top, #e6e6e6 0%,#c8c8c8 100%);
-  background:-o-linear-gradient(top, #e6e6e6 0%,#c8c8c8 100%);
-  background:-webkit-linear-gradient(top, #e6e6e6 0%,#c8c8c8 100%);
-  background:linear-gradient(top, #e6e6e6 0%,#c8c8c8 100%);
-  border-color:#646464;
+  background:$mono_5;
+  background:-moz-linear-gradient(top, $mono_5 0%, #c8c8c8 100%);
+  background:-ms-linear-gradient(top, $mono_5 0%,#c8c8c8 100%);
+  background:-o-linear-gradient(top, $mono_5 0%,#c8c8c8 100%);
+  background:-webkit-linear-gradient(top, $mono_5 0%,#c8c8c8 100%);
+  background:linear-gradient(top, $mono_5 0%,#c8c8c8 100%);
+  border-color:$mono_3;
   border-radius:0 .4em .4em .4em;
   border-style:solid;
   border-width:0 1px 1px 1px;
