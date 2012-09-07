@@ -6,7 +6,7 @@ $AUTOLOAD_PHP_APPLICATION = array();
 $AUTOLOAD_CSS_FRAMEWORK = array();
 $AUTOLOAD_CSS_APPLICATION = array();
 
-$AUTOLOAD_JS_FRAMEWORK = array();
+$AUTOLOAD_JS_FRAMEWORK = array('core/jquery.MHTMLAnimate.js');
 $AUTOLOAD_JS_APPLICATION = array();
 
 ?>

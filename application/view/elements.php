@@ -12,6 +12,7 @@
   });
 </script>
 
+<?php /** MToolbar */?>
 <div id="MToolbarPlaceholder"></div>
 <nav id="MToolbar">
   <div class="MToolbarSpacer left"></div>
@@ -46,10 +47,11 @@
 
 </nav><!--MToolbar-->
 
+<?php /** MSidebar */?>
 <div id="MSidebarTriggerLeft"></div>
 <ul id="MSidebar" class="MSidebarLeftHidden">
 
-  <a onclick="$(window).scrollTo('#section_progress_indicators', speedSlow, {offset:-97});">
+  <a onclick="$(window).scrollTo('#section_bar_indicators', speedSlow, {offset:-97});">
     <li>
       <span>Progress Indicators</span>
     </li>
@@ -79,22 +81,37 @@
     </li>
   </a>
 
-  <a onclick="$(window).scrollTo('#section_video_player', speedSlow, {offset:-97});">
-    <li>
-      <span>Video Player</span>
-    </li>
-  </a>
-
 </ul><!--sidebar-->
 
 <div class="MContentSpacer"></div><!--MContentSpacer-->
 
 <div class="MContent900">
   
-  <!--Progress Indicators-->
-  <fieldset id="section_progress_indicators">
-    <p class="MWidgetTitle">Progress Indicators</p>
+  <?php /** Sliders */?>
+  <fieldset id="section_slider">
+  
+    <p class="MWidgetTitle">Slider</p>
+  
+    <input type="range" min="1" max="10" value="0" class="width_full"/>
+  
+    <div class="MContentSpacer"></div>
+  
+    <div class="MSlider width_full"></div>
+    
+  </fieldset><!--section_slider-->
+  
+  <div class="MContentSpacer"></div>
+  
+  <?php /** Bars */?>
+  <fieldset id="section_bar_indicators">
+    <p class="MWidgetTitle">Bar Indicators</p>
 
+    <progress max="100" value="40" class="width_full">
+      <strong>40%</strong>
+    </progress>
+    
+    <div class="MContentSpacer"></div>
+    
     <div class="MProgressBarContainer">
       <div id="progress_bg" class="MProgressBarBG">
 	<div id="progress_fg" class="MProgressBarFG" style="width:40%">
@@ -113,11 +130,11 @@
 
     <div id="ratings_warning" class="MRatingsBarWarning" MTip="S" title="Not Enough Data"></div>
 
-  </fieldset>
+  </fieldset><!--section_bar_indicators-->
 
   <div class="MContentSpacer"></div>
 
-  <!--Buttons-->
+  <?php /** Buttons */?>
   <fieldset id="section_buttons" class="text_centered">
     <p class="MWidgetTitle">Basic Buttons</p>
 
@@ -268,11 +285,11 @@
       <span>Button Upload</span>
     </div><!--button_upload-->
 
-  </fieldset>
+  </fieldset><!--section_buttons-->
 
   <div class="MContentSpacer"></div>
 
-  <!--Tabs-->
+  <?php /** Tabs */?>
   <fieldset id="section_tabs">
     <p class="MWidgetTitle">Tabs</p>
 
@@ -316,11 +333,11 @@
 
     </div><!--tab_group_2-->
 
-  </fieldset>
+  </fieldset><!--section_tabs-->
 
   <div class="MContentSpacer"></div>
 
-  <!--Input-->
+  <?php /** Inputs */?>
   <fieldset id="section_inputs">
     <p class="MWidgetTitle">Input</p>
 
@@ -374,10 +391,11 @@
     <div class="MContentSpacer"></div>
     <textarea class="width_full" prompt="Textarea Disabled" disabled="true"></textarea>
 
-  </fieldset>
+  </fieldset><!--section_inputs-->
 
   <div class="MContentSpacer"></div>
 
+  <?php /** Popups */?>
   <fieldset id="section_popup_container">
     <p class="MWidgetTitle">Popup Container</p>
 
@@ -433,15 +451,8 @@
     </div><!--elements_popup-->
 
     <a onclick="$('#elements_popup').show();">Show Popup Container</a>
-  </fieldset>
+  </fieldset><!--section_popup_container-->
   
-  <div class="MContentSpacer"></div>
-  
-  <fieldset id="section_video_player" class="text_centered">
-    <p class="MWidgetTitle">Video Player</p>
-    <?php MSWF::video_player('427', '240');?>
-  </fieldset>
-
 </div><!--MContent900-->
 
 <div class="MContentSpacer"></div>
