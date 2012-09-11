@@ -80,7 +80,7 @@ class MLoad{
 
       //Construst the Page
 
-      require(SERVER_ROOT.'/'.FRAMEWORK.'/'.FRAMEWORK_TEMPLATE.'/'.FRAMEWORK_HEAD);
+      require(SERVER_ROOT.'/'.FRAMEWORK.'/'.FRAMEWORK_VIEW.'/'.FRAMEWORK_HEAD);
 
       if(!empty($header)){
         require($header);
@@ -96,7 +96,7 @@ class MLoad{
         require($footer);
       }
 
-      require(SERVER_ROOT.'/'.FRAMEWORK.'/'.FRAMEWORK_TEMPLATE.'/'.FRAMEWORK_FOOT);
+      require(SERVER_ROOT.'/'.FRAMEWORK.'/'.FRAMEWORK_VIEW.'/'.FRAMEWORK_FOOT);
 
     }
 
@@ -116,7 +116,7 @@ class MLoad{
 
       self::css_framework('core/style_frame.css');
 
-      require(SERVER_ROOT.'/'.FRAMEWORK.'/'.FRAMEWORK_TEMPLATE.'/'.FRAMEWORK_HEAD);
+      require(SERVER_ROOT.'/'.FRAMEWORK.'/'.FRAMEWORK_VIEW.'/'.FRAMEWORK_HEAD);
 
       if(!file_exists(SERVER_ROOT.'/'.APPLICATION.'/'.APPLICATION_VIEW.'/'.$frame)){
         trigger_error('error - '.$frame.' not found.', E_USER_ERROR);
@@ -124,7 +124,7 @@ class MLoad{
 
       require(SERVER_ROOT.'/'.APPLICATION.'/'.APPLICATION_VIEW.'/'.$frame);
 
-      require(SERVER_ROOT.'/'.FRAMEWORK.'/'.FRAMEWORK_TEMPLATE.'/'.FRAMEWORK_FOOT);
+      require(SERVER_ROOT.'/'.FRAMEWORK.'/'.FRAMEWORK_VIEW.'/'.FRAMEWORK_FOOT);
 
     }
 
@@ -140,11 +140,11 @@ class MLoad{
 
     if(!empty($element)){
 
-      if(!file_exists(SERVER_ROOT.'/'.FRAMEWORK.'/'.FRAMEWORK_TEMPLATE.'/'.$element)){
+      if(!file_exists(SERVER_ROOT.'/'.FRAMEWORK.'/'.FRAMEWORK_VIEW.'/'.$element)){
         trigger_error('error - '.$element.' not found.', E_USER_ERROR);
       }
 
-      require(SERVER_ROOT.'/'.FRAMEWORK.'/'.FRAMEWORK_TEMPLATE.'/'.$element);
+      require(SERVER_ROOT.'/'.FRAMEWORK.'/'.FRAMEWORK_VIEW.'/'.$element);
     }
 
   }
