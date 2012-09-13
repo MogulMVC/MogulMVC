@@ -28,6 +28,9 @@ require_once(SERVER_ROOT . '/' . FRAMEWORK . '/core/autoload.php');
 require_once(SERVER_ROOT . '/' . FRAMEWORK . '/core/constants.php');
 require_once(SERVER_ROOT . '/' . APPLICATION . '/config/constants.php');
 
+require_once(SERVER_ROOT . '/' . APPLICATION . '/config/variables.php');
+
+//The dispatcher runs the selected class
 require_once(SERVER_ROOT . '/' . FRAMEWORK . '/core/dispatcher.php');
 
 ?>
