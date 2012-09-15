@@ -1,4 +1,7 @@
-<?php if(!defined('SERVER_ROOT')){header('/error_404');exit;}
+<?php
+if (!defined('SERVER_ROOT')) {header('/error_404');
+	exit ;
+}
 
 //Application
 define('APPLICATION_COMPANY', 'Application Company');
@@ -29,6 +32,7 @@ define('APPLICATION_VO', 'model/vo');
 define('APPLICATION_DEFAULT_CONTROLLER', 'elements.php');
 define('APPLICATION_ERROR_404_CONTROLLER', 'error_404.php');
 
+//Templates
 //File locations start within the APPLICATION_VIEW folder
 define('APPLICATION_HEADER', 'inc/header.php');
 define('APPLICATION_FOOTER', 'inc/footer.php');
@@ -36,5 +40,4 @@ define('APPLICATION_FOOTER', 'inc/footer.php');
 //Favicon
 //File locations start within the APPLICATION_IMG folder
 define('APPLICATION_FAVICON', 'favicon.ico');
-
 ?>

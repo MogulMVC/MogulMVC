@@ -1,4 +1,7 @@
-<?php if(!defined('SERVER_ROOT')){header('/error_404');exit;}
+<?php
+if (!defined('SERVER_ROOT')) {header('/error_404');
+	exit ;
+}
 
 date_default_timezone_set('America/New_York');
 
@@ -13,5 +16,4 @@ define('FRAMEWORK_VIEW', 'view');
 
 define("FRAMEWORK_HEAD", "head.php");
 define("FRAMEWORK_FOOT", "foot.php");
-
 ?>
