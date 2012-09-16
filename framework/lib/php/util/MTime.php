@@ -1,7 +1,4 @@
 <?php
-if (!defined('SERVER_ROOT')) {header('/error_404');
-	exit ;
-}
 
 /**
  *
@@ -13,21 +10,10 @@ class MTime {
 
 	public static function sec2hms($sec) {
 
-		// start with a blank string
 		$hms = '';
 
-		// do the hours first: there are 3600 seconds in an hour, so if we divide
-		// the total number of seconds by 3600 and throw away the remainder, we're
-		// left with the number of hours in those seconds
 		$hours = intval($sec / 3600);
-
-		// dividing the total seconds by 60 will give us the number of minutes
-		// in total, but we're interested in *minutes past the hour* and to get
-		// this, we have to divide by 60 again and then use the remainder
-		$minutes = intval($sec / 60) % 60;
-
-		// seconds past the minute are found by dividing the total number of seconds
-		// by 60 and using the remainder
+			$minutes = intval($sec / 60) % 60;
 		$seconds = $sec % 60;
 
 		//Padding
