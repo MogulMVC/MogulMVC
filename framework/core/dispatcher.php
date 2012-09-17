@@ -50,7 +50,7 @@ if ($CLASS == 'robots.txt') {
 /**Action*/
 elseif ($CLASS == APPLICATION_ACTION) {
 
-	//Check if the controller and class exist
+	//Check if the action exists
 	if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_ACTION . '/' . $FUNCTION . '.php')) {
 		MErrors::error_404();
 	}
@@ -64,7 +64,7 @@ elseif ($CLASS == APPLICATION_ACTION) {
 /**Api*/
 elseif ($CLASS == APPLICATION_API) {
 
-	//Check if the controller and class exist
+	//Check if the api exists
 	if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_API . '/' . $FUNCTION . '.php')) {
 		MErrors::error_404();
 	}
@@ -77,7 +77,7 @@ elseif ($CLASS == APPLICATION_API) {
 /**Cron Job*/
 elseif ($CLASS == APPLICATION_JOB) {
 
-	//Check if the controller and class exist
+	//Check if the job exists
 	if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_JOB . '/' . $FUNCTION . '.php')) {
 		MErrors::error_404();
 	}
@@ -93,7 +93,7 @@ else {
 	//Used to route
 	require_once ('routes.php');
 
-	//Check if the controller and class exist
+	//Check if the controller exist
 	if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_CONTROLLER . '/' . $CLASS . '.php')) {
 		MErrors::error_404();
 	}
@@ -101,6 +101,7 @@ else {
 	//Instantiate the controller object
 	require_once (SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_CONTROLLER . '/' . $CLASS . '.php');
 
+	//All classes start with a capital letter
 	$CLASS = ucfirst($CLASS);
 
 	$OBJECT = new $CLASS();
