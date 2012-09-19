@@ -93,6 +93,9 @@ else {
 	//Used to route
 	require_once ('routes.php');
 
+	//All classes start with a capital letter
+	$CLASS = ucfirst($CLASS);
+
 	//Check if the controller exist
 	if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_CONTROLLER . '/' . $CLASS . '.php')) {
 		MErrors::error_404();
@@ -100,9 +103,6 @@ else {
 
 	//Instantiate the controller object
 	require_once (SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_CONTROLLER . '/' . $CLASS . '.php');
-
-	//All classes start with a capital letter
-	$CLASS = ucfirst($CLASS);
 
 	$OBJECT = new $CLASS();
 

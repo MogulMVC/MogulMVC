@@ -14,9 +14,9 @@ class MErrors {
 
 		require_once (SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_CONTROLLER . '/' . APPLICATION_ERROR_404_CONTROLLER);
 
-		$error_404_class = basename(APPLICATION_ERROR_404_CONTROLLER, '.php');
-
 		$error_404_class = ucfirst($error_404_class);
+
+		$error_404_class = basename(APPLICATION_ERROR_404_CONTROLLER, '.php');
 
 		if (!is_object($error_404_class)) {
 			$error_object = new $error_404_class();
