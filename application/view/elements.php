@@ -77,11 +77,9 @@
 			</ul><!--sidebar-->
 		</td>
 
-		<td class="width_full">
+		<td class="width_full" style="padding:30px;">
 					
 			<div class="width_full">
-			
-				<div class="MContentSpacer"></div>
 			
 				<?php /** Sliders */ ?>
 				<fieldset id="section_slider">
