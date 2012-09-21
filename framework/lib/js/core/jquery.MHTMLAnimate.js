@@ -1,26 +1,32 @@
-(function($)
-{
-  
-  $.fn.MHTMLAnimate = function(html, speed, callback)
-  {
-    return this.each(function()
-    {
+(function($) {
 
-      var element = $(this);
-      var current = {width: element.width()+'px', height: element.height()+'px'};
-      var final = {width: this.style.width, height: this.style.height};
+	$.fn.MHTMLAnimate = function(html, speed, callback) {
+		return this.each(function() {
 
-      element.html(html);
+			var element = $(this);
+			var current = {
+				width : element.width() + 'px',
+				height : element.height() + 'px'
+			};
+			var final = {
+				width : this.style.width,
+				height : this.style.height
+			};
 
-      var next = {width: element.width()+'px', height: element.height()+'px'};
+			element.html(html);
 
-      element.css(current).animate(next, speed, function()
-      {
-	element.css(final);
-	if($.isFunction(callback))callback();
-      });
-      
-    });
-  };
+			var next = {
+				width : element.width() + 'px',
+				height : element.height() + 'px'
+			};
 
-})(jQuery);
+			element.css(current).animate(next, speed, function() {
+				element.css(final);
+				if ($.isFunction(callback))
+					callback();
+			});
+
+		});
+	};
+
+})(jQuery); 
