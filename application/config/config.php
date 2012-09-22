@@ -6,7 +6,7 @@ if (!defined('SERVER_ROOT')) {header('/error_404');
 //Application
 define('APPLICATION_COMPANY', 'Application Company');
 define('APPLICATION_NAME', 'Application Name');
-define('APPLICATION_VERSION', '120601');
+define('APPLICATION_VERSION', '120922');
 
 //Environment
 define('APPLICATION_ENVIRONMENT', 'development');
