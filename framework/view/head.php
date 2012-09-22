@@ -75,11 +75,7 @@ if (!defined('SERVER_ROOT')) {header('/error_404');
 	MLoad::js_framework_include('3rdparty/html5shiv.js');
 	
 	// Custom/Forked JavaScript/jQuery Libraries
-	MLoad::js_framework_include('core/jquery.MTip.js');
-	
-	MLoad::js_framework_include('core/config.js');
-	MLoad::js_framework_include('core/functions.js');
-	MLoad::js_framework_include('core/setup.js');
+	MLoad::js_framework_include('core/script.js');
 	
 	// Autoload Framework JavaScript
 	foreach ($AUTOLOAD_JS_FRAMEWORK as $JS) {

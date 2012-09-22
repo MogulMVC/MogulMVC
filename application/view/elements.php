@@ -351,18 +351,18 @@
 			
 					<div class="MContentSpacer"></div>
 			
-					<div class="eztab_group">
+					<div class="MTabWidget">
 			
-						<ul class="eztab_container">
-							<li class="eztab">
+						<ul class="MTabContainer">
+							<li class="MTab">
 								<a href="#tab_group2_1">Tab 1</a>
 							</li>
-							<li class="eztab">
+							<li class="MTab">
 								<a href="#tab_group2_2">Tab 2</a>
 							</li>
 						</ul><!--tabs_container-->
 			
-						<div class="eztab_body_container">
+						<div class="MTabBodyContainer">
 			
 							<div id="tab_group2_1">
 								<p>
@@ -382,9 +382,9 @@
 								</p>
 							</div>
 			
-						</div><!--tab_body_container-->
+						</div><!--MTabBodyContainer-->
 			
-					</div><!--tab_group_2-->
+					</div><!--MTabWidget-->
 			
 				</fieldset><!--section_tabs-->
 			
