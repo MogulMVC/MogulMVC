@@ -27,15 +27,31 @@
 		<span class="bold left">Toolbar Label:</span>
 		<a class="left">Toolbar Link</a>
 		<a class="left" onclick="$('#element_toolbar_message').show();">Show Toolbar Message</a>
-	</div><!--display_options-->
+	</div><!-- display_options -->
 
-</nav><!--MToolbar-->
+</nav><!-- MToolbar -->
 
 <div id="MSystemMessageContainer">
-	<div class="MToolbarMessage shown">
-		<span onclick="$(this).partent().hide();" class="MIconClose"/></span>
+	<div class="MSystemMessage">
+		<span onclick="$(this).parent().hide();" class="MIconClose"/></span>
 		<span class="bold">The framework fades toolbar messages out after 5 seconds.</span>
 	</div>
+	
+	<div class="MSystemMessage">
+		<span onclick="$(this).parent().hide();" class="MIconClose"/></span>
+		<span class="bold">The framework fades toolbar messages out after 5 seconds.</span>
+	</div>
+	
+	<div class="MSystemMessage">
+		<span onclick="$(this).parent().hide();" class="MIconClose"/></span>
+		<span class="bold">The framework fades toolbar messages out after 5 seconds.</span>
+	</div>
+	
+	<div class="MSystemMessage">
+		<span onclick="$(this).parent().hide();" class="MIconClose"/></span>
+		<span class="bold">The framework fades toolbar messages out after 5 seconds.</span>
+	</div>
+</div><!-- MSystemMessageContainer -->
 
 <table>
 
@@ -74,7 +90,7 @@
 				<span>Popup Container</span>
 			</li> </a>
 
-		</ul><!--sidebar--></td>
+		</ul><!-- sidebar --></td>
 
 		<td class="width_full" style="padding:30px;">
 		<div class="width_full">
@@ -92,7 +108,7 @@
 
 				<div class="MSlider width_full"></div>
 
-			</fieldset><!--section_slider-->
+			</fieldset><!-- section_slider -->
 
 			<div class="MContentSpacer"></div>
 
@@ -112,8 +128,8 @@
 					<div id="progress_bg" class="MProgressBarBG">
 						<div id="progress_fg" class="MProgressBarFG" style="width:40%">
 							<span id="progress_indicator" class="MProgressBarIndicator">40%</span>
-						</div><!--progress_fg-->
-					</div><!--progress_bg-->
+						</div><!-- progress_fg -->
+					</div><!-- progress_bg -->
 				</div>
 
 				<div class="MContentSpacer"></div>
@@ -126,7 +142,7 @@
 
 				<div id="ratings_warning" class="MRatingsBarWarning" MTip="S" title="Not Enough Data"></div>
 
-			</fieldset><!--section_bar_indicators-->
+			</fieldset><!-- section_bar_indicators -->
 
 			<div class="MContentSpacer"></div>
 
@@ -313,22 +329,22 @@
 				<form action="/action_button_upload_action" target="button_upload_frame_left" method="post" enctype="multipart/form-data" class="left" MTip="S" title="A very complex button floated left.">
 					<input type="hidden" id="button_upload_data_left" name="data"/>
 					<input type="file" id="button_upload_file_left" name="file" onchange="upload()"/>
-				</form><!--button_upload_form_left-->
+				</form><!-- button_upload_form_left -->
 				<iframe id="button_upload_frame_left" name="button_upload_frame_left" class="hidden"></iframe>
 
 				<form action="/action_button_upload_action" target="button_upload_frame_right" method="post" enctype="multipart/form-data" MTip="S" title="A very complex button.">
 					<input type="hidden" id="button_upload_data_right" name="data"/>
 					<input type="file" id="button_upload_file_right" name="file" onchange="upload()"/>
-				</form><!--button_upload_form_right-->
+				</form><!-- button_upload_form_right -->
 				<iframe id="button_upload_frame_right" name="button_upload_frame_right" class="hidden"></iframe>
 
 				<form action="/action_button_upload_action" target="button_upload_frame" method="post" enctype="multipart/form-data" class="right" MTip="S" title="A very complex button floated right.">
 					<input type="hidden" id="button_upload_data" name="data"/>
 					<input type="file" id="button_upload_file" name="file" onchange="upload()"/>
-				</form><!--button_upload_form-->
+				</form><!-- button_upload_form -->
 				<iframe id="button_upload_frame" name="button_upload_frame" class="hidden"></iframe>
 
-			</fieldset><!--section_buttons-->
+			</fieldset><!-- section_buttons -->
 
 			<div class="MContentSpacer"></div>
 
@@ -349,7 +365,7 @@
 						<li class="MTab">
 							<a href="#tab_group2_2">Tab 2</a>
 						</li>
-					</ul><!--tabs_container-->
+					</ul><!-- tabs_container -->
 
 					<div class="MTabBodyContainer">
 
@@ -371,11 +387,11 @@
 							</p>
 						</div>
 
-					</div><!--MTabBodyContainer-->
+					</div><!-- MTabBodyContainer -->
 
-				</div><!--MTabWidget-->
+				</div><!-- MTabWidget -->
 
-			</fieldset><!--section_tabs-->
+			</fieldset><!-- section_tabs -->
 
 			<div class="MContentSpacer"></div>
 
@@ -425,15 +441,14 @@
 				<div class="MContentSpacer"></div>
 				<hr />
 				<div class="MContentSpacer"></div>
-				<textarea class="width_full" prompt="Textarea"></textarea>										
+				<textarea class="width_full" prompt="Textarea"></textarea>																																										
 			
- <div class="MContentSpacer"></div>
+				<div class="MContentSpacer"></div>
 				<textarea class="width_full input_invisible" prompt="Textarea with No Border"></textarea>
 				<div class="MContentSpacer"></div>
-				<textarea class="width_full" prompt="Textarea Disabled" disabled="true"></textarea>												
-			
+				<textarea class="width_full" prompt="Textarea Disabled" disabled="true"></textarea>																																												
 
-			</fieldset><!--section_inputs-->
+			</fieldset><!-- section_inputs -->
 
 			<div class="MContentSpacer"></div>
 
@@ -472,9 +487,9 @@
 
 								<span>Upload</span>
 
-							</div><!--elements_popup_form_container-->
+							</div><!-- elements_popup_form_container -->
 
-						</div><!--popup_menu-->
+						</div><!-- popup_menu -->
 
 						<hr class="clear"/>
 						<br />
@@ -483,24 +498,24 @@
 
 							<div id="elements_popup_error" class="hidden">
 								<?php MLoad::element_framework('error_upload.php'); ?>
-							</div><!--elements_popup_error-->
+							</div><!-- elements_popup_error -->
 
 							<div id="elements_popup_preview_bg" class="MPreviewBG">
 								<div id="elements_popup_icon_loading" class="MLoadingBG">
 									<div class="MIconLoadingWhite50"></div>
-								</div><!--elements_popup_icon_loading-->
+								</div><!-- elements_popup_icon_loading -->
 								<img src="" id="elements_popup_preview" class="MPopupPreview"/>
-							</div><!--elements_popup_preview_bg-->
+							</div><!-- elements_popup_preview_bg -->
 
-						</div><!--MPopupPreviewContainer-->
+						</div><!-- MPopupPreviewContainer -->
 
-					</div><!--MPopupContainer-->
+					</div><!-- MPopupContainer -->
 
 					<div onclick="$('#elements_popup').hide();" class="MModalBGBlack"></div>
-				</div><!--elements_popup-->
+				</div><!-- elements_popup -->
 
 				<a onclick="$('#elements_popup').show();">Show Popup Container</a>
-			</fieldset><!--section_popup_container-->
+			</fieldset><!-- section_popup_container -->
 
 			<div class="MContentSpacer"></div>
 			<div class="MContentSpacer"></div>
