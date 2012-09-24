@@ -432,21 +432,21 @@
 				<hr />
 				<div class="MContentSpacer"></div>
 
-				<input class="width_full" type="text" prompt="Input Text"/>
+				<input class="width_full" type="text" placeholder="Input Text"/>
 				<div class="MContentSpacer"></div>
-				<input class="width_full input_invisible" type="text" prompt="Input with No Border"/>
+				<input class="width_full input_invisible" type="text" placeholder="Input with No Border"/>
 				<div class="MContentSpacer"></div>
-				<input class="width_full" type="text" prompt="Input Text Disabled" disabled="true"/>
+				<input class="width_full" type="text" placeholder="Input Text Disabled" disabled="true"/>
 
 				<div class="MContentSpacer"></div>
 				<hr />
 				<div class="MContentSpacer"></div>
-				<textarea class="width_full" prompt="Textarea"></textarea>																																										
+				<textarea class="width_full" placeholder="Textarea"></textarea>																																										
 			
 				<div class="MContentSpacer"></div>
-				<textarea class="width_full input_invisible" prompt="Textarea with No Border"></textarea>
+				<textarea class="width_full input_invisible" placeholder="Textarea with No Border"></textarea>
 				<div class="MContentSpacer"></div>
-				<textarea class="width_full" prompt="Textarea Disabled" disabled="true"></textarea>																																												
+				<textarea class="width_full" placeholder="Textarea Disabled" disabled="true"></textarea>																																												
 
 			</fieldset><!-- section_inputs -->
 
