@@ -20,7 +20,6 @@ class MURL {
 		} else {
 			return NULL;
 		}
-
 	}
 
 	public static function curl($url) {
