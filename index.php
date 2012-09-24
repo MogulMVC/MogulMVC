@@ -21,5 +21,5 @@ if (!is_dir(SERVER_ROOT . "/" . APPLICATION)) {
 	exit('error - No application installed.');
 }
 
-require_once (SERVER_ROOT . "/" . FRAMEWORK . '/framework.php');
+require_once (SERVER_ROOT . "/" . FRAMEWORK . '/bootstrapper.php');
 ?>
