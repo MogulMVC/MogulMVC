@@ -6,7 +6,7 @@ if (!defined('SERVER_ROOT')) {header('/error_404');
 //Application
 define('APPLICATION_COMPANY', 'Application Company');
 define('APPLICATION_NAME', 'Application Name');
-define('APPLICATION_VERSION', '120922');
+define('APPLICATION_VERSION', '120925');
 
 //Environment
 define('APPLICATION_ENVIRONMENT', 'development');
@@ -29,8 +29,8 @@ define('APPLICATION_VIEW', 'view');
 define('APPLICATION_VO', 'model/vo');
 
 //Controllers
-define('APPLICATION_DEFAULT_CONTROLLER', 'elements.php');
-define('APPLICATION_ERROR_404_CONTROLLER', 'error_404.php');
+define('APPLICATION_DEFAULT_CONTROLLER', 'Elements.php');
+define('APPLICATION_ERROR_404_CONTROLLER', 'Error_404.php');
 
 //Templates
 //File locations start within the APPLICATION_VIEW folder
