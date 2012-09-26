@@ -8,6 +8,10 @@
 
 class MURL {
 
+	public static function base(){
+		return 'http://' . $_SERVER['SERVER_NAME'];
+	}
+
 	public static function current() {
 		return 'http://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
 	}

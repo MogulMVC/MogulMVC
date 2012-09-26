@@ -36,17 +36,17 @@
 		<span onclick="$(this).parent().hide();" class="MIconClose"/></span>
 		<span class="bold">The framework fades toolbar messages out after 5 seconds.</span>
 	</div>
-	
+
 	<div class="MSystemMessage">
 		<span onclick="$(this).parent().hide();" class="MIconClose"/></span>
 		<span class="bold">The framework fades toolbar messages out after 5 seconds.</span>
 	</div>
-	
+
 	<div class="MSystemMessage">
 		<span onclick="$(this).parent().hide();" class="MIconClose"/></span>
 		<span class="bold">The framework fades toolbar messages out after 5 seconds.</span>
 	</div>
-	
+
 	<div class="MSystemMessage">
 		<span onclick="$(this).parent().hide();" class="MIconClose"/></span>
 		<span class="bold">The framework fades toolbar messages out after 5 seconds.</span>
@@ -441,12 +441,15 @@
 				<div class="MContentSpacer"></div>
 				<hr />
 				<div class="MContentSpacer"></div>
-				<textarea class="width_full" placeholder="Textarea"></textarea>																																										
+				<textarea class="width_full" placeholder="Textarea"></textarea>																																																						
 			
-				<div class="MContentSpacer"></div>
+ <div class="MContentSpacer"></div>
 				<textarea class="width_full input_invisible" placeholder="Textarea with No Border"></textarea>
 				<div class="MContentSpacer"></div>
-				<textarea class="width_full" placeholder="Textarea Disabled" disabled="true"></textarea>																																												
+				<textarea class="width_full" placeholder="Textarea Disabled" disabled="true"></textarea>																																																								
+
+
+
 
 			</fieldset><!-- section_inputs -->
 
@@ -516,6 +519,37 @@
 
 				<a onclick="$('#elements_popup').show();">Show Popup Container</a>
 			</fieldset><!-- section_popup_container -->
+
+			<div class="MContentSpacer"></div>
+
+			<fieldset>
+
+				<div class="MContentSpacer"></div>
+				<p class="MWidgetTitle">
+					List Items
+				</p>
+
+				<ul>
+
+					<li class="MListItem">
+						<span>List Item</span>
+					</li>
+
+					<li class="MListItem">
+						<span>List Item</span>
+					</li>
+
+					<li class="MListItem">
+						<span>List Item</span>
+					</li>
+
+					<li class="MListItem">
+						<span>List Item</span>
+					</li>
+
+				</ul>
+				
+			</fieldset>
 
 			<div class="MContentSpacer"></div>
 			<div class="MContentSpacer"></div>

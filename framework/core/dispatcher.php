@@ -40,14 +40,31 @@ if (empty($URI_ARRAY[2])) {
 
 /********** Choices Choices, So Many Choices **********/
 
-/**Robots.txt*/
+// Robots.txt
 if ($CLASS == 'robots.txt') {
 	header('Content-Type: text');
 	require (SERVER_ROOT . '/' . APPLICATION . '/config/robots.txt');
 	exit ;
 }
 
-/**Action*/
+// Application Manifest
+elseif ($CLASS == 'application' && $FUNCTION == 'index') {
+	header("Content-Type:text/xml");
+
+	// Output an XML file describing the application
+	// Must be written this way
+	echo '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<application>
+	<name>' . APPLICATION_NAME . '</name>
+	<description>' . APPLICATION_DESCRIPTION . '</description>
+	<id>' . APPLICATION_ID . '</id>
+	<icon>' . MURL::base() . '/' . APPLICATION . '/' . APPLICATION_IMG . '/' . APPLICATION_ICON . '</icon>
+</application>';
+
+	exit ;
+}
+
+// Action
 elseif ($CLASS == APPLICATION_ACTION) {
 
 	//Check if the action exists
@@ -61,10 +78,10 @@ elseif ($CLASS == APPLICATION_ACTION) {
 	exit ;
 }
 
-/**Api*/
+// Api
 elseif ($CLASS == APPLICATION_API) {
 
-	//Check if the api exists
+	// Check if the api exists
 	if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_API . '/' . $FUNCTION . '.php')) {
 		MErrors::error_404();
 	}
@@ -74,10 +91,10 @@ elseif ($CLASS == APPLICATION_API) {
 	exit ;
 }
 
-/**Cron Job*/
+// Cron Job
 elseif ($CLASS == APPLICATION_JOB) {
 
-	//Check if the job exists
+	// Check if the job exists
 	if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_JOB . '/' . $FUNCTION . '.php')) {
 		MErrors::error_404();
 	}
@@ -87,29 +104,29 @@ elseif ($CLASS == APPLICATION_JOB) {
 	exit ;
 }
 
-/**Controller*/
+// Controller
 else {
 
-	//Used to route
+	// Used to route
 	require_once ('routes.php');
 
-	//All classes start with a capital letter
+	// All classes start with a capital letter
 	$CLASS = ucfirst($CLASS);
 
-	//Check if the controller exist
+	// Check if the controller exist
 	if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_CONTROLLER . '/' . $CLASS . '.php')) {
 		MErrors::error_404();
 	}
 
-	//Instantiate the controller object
+	// Instantiate the controller object
 	require_once (SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_CONTROLLER . '/' . $CLASS . '.php');
 
 	$OBJECT = new $CLASS();
 
-	//If function is set
+	// If function is set
 	if (!empty($FUNCTION)) {
 
-		//Check if the function exists
+		// Check if the function exists
 		if (!method_exists($OBJECT, $FUNCTION)) {
 			MErrors::error_404();
 		}

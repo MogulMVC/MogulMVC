@@ -6,6 +6,8 @@ if (!defined('SERVER_ROOT')) {header('/error_404');
 //Application
 define('APPLICATION_COMPANY', 'Application Company');
 define('APPLICATION_NAME', 'Application Name');
+define('APPLICATION_DESCRIPTION', 'Application Description');
+define('APPLICATION_ID', 'SomeUniqueID');
 define('APPLICATION_VERSION', '120925');
 
 //Environment
@@ -39,5 +41,10 @@ define('APPLICATION_FOOTER', 'inc/footer.php');
 
 //Favicon
 //File locations start within the APPLICATION_IMG folder
+//16x16 ico file
 define('APPLICATION_FAVICON', 'favicon.ico');
+
+//File locations start within the APPLICATION_IMG folder
+// 64x64 png file
+define('APPLICATION_ICON', 'icon.png');
 ?>
