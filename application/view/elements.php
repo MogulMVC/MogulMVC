@@ -82,7 +82,7 @@
 					Slider
 				</p>
 
-				<input type="range" min="0" max="100" value="0" class="width_full" onchange='MProgressBar.setPercent("#someProgress", this.value);MRatingsBar.setPercent("#someMeter", this.value);'/>
+				<input type="range" min="0" max="100" value="40" class="width_full" onchange='MProgressBar.setPercent("#someProgress", this.value);MRatingsBar.setPercent("#someMeter", this.value);'/>
 
 				<div class="MContentSpacer"></div>
 
@@ -417,8 +417,10 @@
 			<?php /** Popups */ ?>
 			<fieldset id="section_popup_container">
 				<p class="MWidgetTitle">
-					Popup Container
+					Popup
 				</p>
+
+				<button class="MButtonBlue" onclick="$('#elements_popup').show();">Show Popup Container</button>
 
 				<div id="elements_popup" class="hidden">
 
@@ -427,7 +429,7 @@
 						<span class="MIconClose" onclick="$('#elements_popup').hide();"></span>
 
 						<p class="MWidgetTitle">
-							Popup Container
+							Popup
 						</p>
 
 						<div class="MPopupMenu">
@@ -437,40 +439,24 @@
 							</button>
 
 							<form id="elements_popup_form" name="elements_popup_form" class="MButtonUploadForm"  action="/action_image" target="elements_popup_frame" method="post" enctype="multipart/form-data">
-
 								<input type="hidden" id="elements_popup_version" name="version"/>
 								<input type="file" id="elements_popup_file" name="file" onchange="massEditPosterUpload()"/>
-
 							</form>
 
 							<iframe id="elements_popup_frame" name="elements_popup_frame" class="hidden"></iframe>
 
-						</div><!-- popup_menu -->
+						</div><!-- MPopupMenu -->
 
 						<hr class="clear"/>
 						<br />
 
-						<div class="MPopupPreviewContainer">
-
-							<div id="elements_popup_error" class="hidden">
-								<?php MLoad::element_framework('error_upload.php'); ?>
-							</div><!-- elements_popup_error -->
-
-							<div id="elements_popup_preview_bg" class="MPreviewBG">
-								<div id="elements_popup_icon_loading" class="MLoadingBG">
-									<div class="MIconLoadingWhite50"></div>
-								</div><!-- elements_popup_icon_loading -->
-								<img src="" id="elements_popup_preview" class="MPopupPreview"/>
-							</div><!-- elements_popup_preview_bg -->
-
-						</div><!-- MPopupPreviewContainer -->
+						<p class="text_centered bold">Content Goes Here</p>
 
 					</div><!-- MPopupContainer -->
 
 					<div onclick="$('#elements_popup').hide();" class="MModalBGBlack"></div>
 				</div><!-- elements_popup -->
 
-				<a onclick="$('#elements_popup').show();">Show Popup Container</a>
 			</fieldset><!-- section_popup_container -->
 
 			<div class="MContentSpacer"></div>
