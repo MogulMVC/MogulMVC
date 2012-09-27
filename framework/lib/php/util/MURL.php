@@ -1,14 +1,8 @@
 <?php
 
-/**
- *
- * @Author Alan James - alanjames1987@gmail.com
- *
- */
-
 class MURL {
 
-	public static function base(){
+	public static function base() {
 		return 'http://' . $_SERVER['SERVER_NAME'];
 	}
 

@@ -3,12 +3,6 @@ if (!defined('SERVER_ROOT')) {header('/error_404');
 	exit ;
 }
 
-/**
- *
- * @Author Alan James - alanjames1987@gmail.com
- *
- */
-
 class MMessages {
 
 	public static function complete($title = '', $description = '', $bg = 'none') {

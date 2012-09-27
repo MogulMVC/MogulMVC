@@ -8,7 +8,7 @@ define('APPLICATION_COMPANY', 'Application Company');
 define('APPLICATION_NAME', 'Application Name');
 define('APPLICATION_DESCRIPTION', 'Application Description');
 define('APPLICATION_ID', 'SomeUniqueID');
-define('APPLICATION_VERSION', '120925');
+define('APPLICATION_VERSION', '120927');
 
 //Environment
 define('APPLICATION_ENVIRONMENT', 'development');

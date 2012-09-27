@@ -1,11 +1,5 @@
 <?php
 
-/**
- *
- * @Author Alan James - alanjames1987@gmail.com
- *
- */
-
 class MValidator {
 
 	public static function email($email) {

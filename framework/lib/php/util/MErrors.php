@@ -1,11 +1,5 @@
 <?php
 
-/**
- *
- * @Author Alan James - alanjames1987@gmail.com
- *
- */
-
 class MErrors {
 
 	public static function error_404($display_error = '') {
@@ -17,7 +11,7 @@ class MErrors {
 		$error_404_class = basename(APPLICATION_ERROR_404_CONTROLLER, '.php');
 
 		$error_404_class = ucfirst($error_404_class);
-		
+
 		if (!is_object($error_404_class)) {
 			$error_object = new $error_404_class();
 		}

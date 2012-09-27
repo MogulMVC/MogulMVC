@@ -1,11 +1,5 @@
 <?php
 
-/**
- *
- * @Author Alan James - alanjames1987@gmail.com
- *
- */
-
 class MTime {
 
 	public static function sec2hms($sec) {
@@ -13,7 +7,7 @@ class MTime {
 		$hms = '';
 
 		$hours = intval($sec / 3600);
-			$minutes = intval($sec / 60) % 60;
+		$minutes = intval($sec / 60) % 60;
 		$seconds = $sec % 60;
 
 		//Padding

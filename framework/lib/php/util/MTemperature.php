@@ -1,11 +1,5 @@
 <?php
 
-/**
- *
- * @Author Alan James - alanjames1987@gmail.com
- *
- */
-
 class MTemperature {
 
 	public static function c2f($value) {

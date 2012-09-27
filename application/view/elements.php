@@ -1,11 +1,11 @@
-<div id="MToolbarPlaceholder"></div>
-<nav id="MToolbar">
-	<div class="MToolbarSpacer left"></div>
-	<div class="MToolbarSpacer right"></div>
+<div id="MToolBarPlaceholder"></div>
+<nav id="MToolBar">
+	<div class="MToolBarSpacer left"></div>
+	<div class="MToolBarSpacer right"></div>
 
-	<h1 class="MToolbarTitle left" MTip="NW" title="Toobar titles are always added to an h1 tag.">Toolbar Title</h1>
+	<h1 class="MToolBarTitle left" MTip="NW" title="Toobar titles are always added to an h1 tag.">Toolbar Title</h1>
 
-	<div class="MToolbarSeperator left"></div>
+	<div class="MToolBarSeperator left"></div>
 
 	<button class="MButton left" MTip="NW" title="I'm an &lt;button&gt; tag.">
 		Button
@@ -15,13 +15,13 @@
 
 	<div class="right">
 		<span class="MButtonRed left" MTip="NE" title="I'm an &lt;span&gt; tag.">Button Red</span>
-		<div class="MToolbarSpacer left"></div>
+		<div class="MToolBarSpacer left"></div>
 		<button class="MButtonBlue left" MTip="NE" title="I'm an &lt;button&gt; tag.">
 			Button Blue
 		</button>
 	</div>
 
-	<div class="MToolbarSeperator right"></div>
+	<div class="MToolBarSeperator right"></div>
 
 	<div id="display_options" class="right">
 		<span class="bold left">Toolbar Label:</span>
@@ -29,7 +29,7 @@
 		<a class="left" onclick="MSystemMessage.init('A new message')">New System Message</a>
 	</div><!-- display_options -->
 
-</nav><!-- MToolbar -->
+</nav><!-- MToolBar -->
 
 <div id="MSystemMessageContainer"></div><!-- MSystemMessageContainer -->
 
@@ -40,32 +40,32 @@
 		<td id="MSidebarContainer"><div id="MSidebarTriggerLeft"></div>
 		<ul id="MSidebar" class="MSidebarLeft">
 
-			<a onclick="$(window).scrollTo('#section_slider', speedSlow, {offset:-97});">
+			<a href="#section_slider">
 			<li>
 				<span>Slider</span>
 			</li> </a>
 
-			<a onclick="$(window).scrollTo('#section_bar_indicators', speedSlow, {offset:-97});">
+			<a href="#section_bar_indicators">
 			<li>
 				<span>Progress Indicators</span>
 			</li> </a>
 
-			<a onclick="$(window).scrollTo('#section_buttons', speedSlow, {offset:-97});">
+			<a href="#section_buttons">
 			<li>
 				<span>Buttons</span>
 			</li> </a>
 
-			<a onclick="$(window).scrollTo('#section_tabs', speedSlow, {offset:-97});">
+			<a href="#section_tabs">
 			<li>
 				<span>Tabs</span>
 			</li> </a>
 
-			<a onclick="$(window).scrollTo('#section_inputs', speedSlow, {offset:-97});">
+			<a href="#section_inputs">
 			<li>
 				<span>Inputs</span>
 			</li> </a>
 
-			<a onclick="$(window).scrollTo('#section_popup_container', speedSlow, {offset:-97});">
+			<a href="#section_popup_container">
 			<li>
 				<span>Popup Container</span>
 			</li> </a>
@@ -403,12 +403,12 @@
 				<div class="MContentSpacer"></div>
 				<hr />
 				<div class="MContentSpacer"></div>
-				<textarea class="width_full" placeholder="Textarea"></textarea>																																																																																						
+				<textarea class="width_full" placeholder="Textarea"></textarea>																																																																																										
 			
  				<div class="MContentSpacer"></div>
 				<textarea class="width_full input_invisible" placeholder="Textarea with No Border"></textarea>
 				<div class="MContentSpacer"></div>
-				<textarea class="width_full" placeholder="Textarea Disabled" disabled="true"></textarea>																																																																																								
+				<textarea class="width_full" placeholder="Textarea Disabled" disabled="true"></textarea>																																																																																												
 
 			</fieldset><!-- section_inputs -->
 
@@ -422,7 +422,7 @@
 
 				<div id="elements_popup" class="hidden">
 
-					<div class="MPopupContainer">
+					<div class="MPopup">
 
 						<span class="MIconClose" onclick="$('#elements_popup').hide();"></span>
 
@@ -436,20 +436,14 @@
 								Apply
 							</button>
 
-							<div id="elements_popup_form_container" class="MButtonUpload left">
+							<form id="elements_popup_form" name="elements_popup_form" class="MButtonUploadForm"  action="/action_image" target="elements_popup_frame" method="post" enctype="multipart/form-data">
 
-								<form id="elements_popup_form" name="elements_popup_form" class="MButtonUploadForm"  action="/action_image" target="elements_popup_frame" method="post" enctype="multipart/form-data">
+								<input type="hidden" id="elements_popup_version" name="version"/>
+								<input type="file" id="elements_popup_file" name="file" onchange="massEditPosterUpload()"/>
 
-									<input type="hidden" id="elements_popup_version" name="version"/>
-									<input type="file" id="elements_popup_file" name="file" onchange="massEditPosterUpload()"/>
+							</form>
 
-								</form>
-
-								<iframe id="elements_popup_frame" name="elements_popup_frame" class="hidden"></iframe>
-
-								<span>Upload</span>
-
-							</div><!-- elements_popup_form_container -->
+							<iframe id="elements_popup_frame" name="elements_popup_frame" class="hidden"></iframe>
 
 						</div><!-- popup_menu -->
 
@@ -483,7 +477,6 @@
 
 			<fieldset>
 
-				<div class="MContentSpacer"></div>
 				<p class="MWidgetTitle">
 					List Items
 				</p>

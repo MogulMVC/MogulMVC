@@ -66,7 +66,6 @@ if (!defined('SERVER_ROOT')) {header('/error_404');
 	
 	// Third Party JavaScript/jQuery Libraries
 	MLoad::js_framework_include('3rdparty/jquery.js');
-	MLoad::js_framework_include('3rdparty/jquery.scrollTo.js');
 	MLoad::js_framework_include('3rdparty/jquery.placeholder.js');
 	
 	// Custom/Forked JavaScript/jQuery Libraries

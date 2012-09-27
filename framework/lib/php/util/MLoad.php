@@ -1,11 +1,5 @@
 <?php
 
-/**
- *
- * @Author Alan James - alanjames1987@gmail.com
- *
- */
-
 $GLOBALS['LOAD_CSS_FRAMEWORK'] = array();
 $GLOBALS['LOAD_CSS_APPLICATION'] = array();
 

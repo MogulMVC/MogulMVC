@@ -12,7 +12,6 @@ class Elements {
 	function index() {
 
 		MLoad::php_framework('ui/MMessages.php');
-		MLoad::php_framework('ui/MSWF.php');
 
 		/** Required Page Elements */
 		$data['page_title'] = 'Elements';
