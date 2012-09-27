@@ -31,12 +31,7 @@
 
 </nav><!-- MToolbar -->
 
-<div id="MSystemMessageContainer">
-	<div class="MSystemMessage">
-		<span onclick="$(this).parent().hide();" class="MIconClose"/></span>
-		<span class="bold">The framework fades toolbar messages out after 5 seconds.</span>
-	</div>
-</div><!-- MSystemMessageContainer -->
+<div id="MSystemMessageContainer"></div><!-- MSystemMessageContainer -->
 
 <table>
 
@@ -369,30 +364,30 @@
 				</p>
 
 				<div class="width_full text_centered">
-					<table cellpadding="15" style="margin:0 auto;">
-						<tr>
-							<td>
-							<div class="left" MTip="S" title="I'm a checkbox with label.">
-								<input type="checkbox" id="checkbox1"/>
-								<label for="checkbox1">Checkbox</label>
-							</div></td>
-							<td>
-							<div class="left" MTip="S" title="I'm a radio button with label.">
-								<input type="radio" name="radio" id="radio1"/>
-								<label for="radio1">Radio 1</label>
-							</div>
-							<div class="left" MTip="S" title="I'm a radio button with label." style="margin-left:10px;">
-								<input type="radio" name="radio" id="radio2"/>
-								<label for="radio2">Radio 2</label>
-							</div></td>
-							<td>
-							<select>
-								<option>Select</option>
-								<option>Option 1</option>
-								<option>Option 2</option>
-							</select></td>
-						</tr>
-					</table>
+
+					<div class="MHBoxLayout">
+						<div MTip="S" title="I'm a checkbox with label.">
+							<input type="checkbox" id="checkbox1"/>
+							<label for="checkbox1">Checkbox</label>
+						</div>
+
+						<div MTip="S" title="I'm a radio button with label." style="margin-left:30px;">
+							<input type="radio" name="radio" id="radio1"/>
+							<label for="radio1">Radio 1</label>
+						</div>
+						<div MTip="S" title="I'm a radio button with label." style="margin-left:10px;">
+							<input type="radio" name="radio" id="radio2"/>
+							<label for="radio2">Radio 2</label>
+						</div>
+
+						<select style="margin-left:30px;">
+							<option>Select</option>
+							<option>Option 1</option>
+							<option>Option 2</option>
+						</select>
+
+					</div>
+
 				</div>
 
 				<div class="MContentSpacer"></div>
@@ -408,12 +403,12 @@
 				<div class="MContentSpacer"></div>
 				<hr />
 				<div class="MContentSpacer"></div>
-				<textarea class="width_full" placeholder="Textarea"></textarea>																																																																																		
+				<textarea class="width_full" placeholder="Textarea"></textarea>																																																																																						
 			
  				<div class="MContentSpacer"></div>
 				<textarea class="width_full input_invisible" placeholder="Textarea with No Border"></textarea>
 				<div class="MContentSpacer"></div>
-				<textarea class="width_full" placeholder="Textarea Disabled" disabled="true"></textarea>																																																																																				
+				<textarea class="width_full" placeholder="Textarea Disabled" disabled="true"></textarea>																																																																																								
 
 			</fieldset><!-- section_inputs -->
 
@@ -493,15 +488,16 @@
 					List Items
 				</p>
 
-				<button onclick="MList.deselectAll();">
-					Deselect All
-				</button>
-				<button onclick="MList.selectAll();">
-					Select All
-				</button>
+				<div class="MHBoxLayout text_centered">
+					<button onclick="MList.deselectAll();">
+						Deselect All
+					</button>
+					<button onclick="MList.selectAll();">
+						Select All
+					</button>
+				</div>
 
 				<ul>
-
 					<li class="MListItem">
 						<input type="checkbox" />
 						<span class="bold">List Item</span>
@@ -521,7 +517,6 @@
 						<input type="checkbox" />
 						<span class="bold">List Item</span>
 					</li>
-
 				</ul>
 
 			</fieldset>
