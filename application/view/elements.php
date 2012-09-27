@@ -26,27 +26,12 @@
 	<div id="display_options" class="right">
 		<span class="bold left">Toolbar Label:</span>
 		<a class="left">Toolbar Link</a>
-		<a class="left" onclick="$('#element_toolbar_message').show();">Show Toolbar Message</a>
+		<a class="left" onclick="MSystemMessage.init('A new message')">New System Message</a>
 	</div><!-- display_options -->
 
 </nav><!-- MToolbar -->
 
 <div id="MSystemMessageContainer">
-	<div class="MSystemMessage">
-		<span onclick="$(this).parent().hide();" class="MIconClose"/></span>
-		<span class="bold">The framework fades toolbar messages out after 5 seconds.</span>
-	</div>
-
-	<div class="MSystemMessage">
-		<span onclick="$(this).parent().hide();" class="MIconClose"/></span>
-		<span class="bold">The framework fades toolbar messages out after 5 seconds.</span>
-	</div>
-
-	<div class="MSystemMessage">
-		<span onclick="$(this).parent().hide();" class="MIconClose"/></span>
-		<span class="bold">The framework fades toolbar messages out after 5 seconds.</span>
-	</div>
-
 	<div class="MSystemMessage">
 		<span onclick="$(this).parent().hide();" class="MIconClose"/></span>
 		<span class="bold">The framework fades toolbar messages out after 5 seconds.</span>
@@ -122,7 +107,7 @@
 
 				<div class="MContentSpacer"></div>
 
-				<meter id="someMeter" min="0" max="100" value="20"></meter>
+				<meter id="someMeter" min="0" max="100" value="40"></meter>
 
 			</fieldset><!-- section_bar_indicators -->
 
