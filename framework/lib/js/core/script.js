@@ -70,15 +70,11 @@ var rounded_large = '2em';$(window).load(function() {
 	//$(".MHoverMessage").addTouch();
 
 });
-(function() {
-	
-	$(document).ready(function() {
-		$('input[type="file"]').addClass('MButtonUploadInput');
-		$('input[type="file"]').wrap('<div class="MButtonUpload"></div>');
-		$('.MButtonUpload').append('<span>Select File</span>')
-	});
-	
-})(); (function($) {
+$(document).ready(function() {
+	$('input[type="file"]').addClass('MButtonUploadInput');
+	$('input[type="file"]').wrap('<div class="MButtonUpload"></div>');
+	$('.MButtonUpload').append('<span>Select File</span>')
+}); (function($) {
 
 	$.fn.MComboBox = function(param) {
 		
@@ -104,7 +100,7 @@ var rounded_large = '2em';$(window).load(function() {
 	var MList = {
 		fadeIn : function() {
 			var i = 0;
-			$(".MListItem").each(function() {
+			$('.MListItem').each(function() {
 				$(this).delay(i).animate({
 					opacity : 1
 				}, speedNorm);
@@ -112,7 +108,7 @@ var rounded_large = '2em';$(window).load(function() {
 			});
 
 			var i = 0;
-			$("#MSidebar li").each(function() {
+			$('#MSidebar li').each(function() {
 				$(this).delay(i).animate({
 					opacity : 1
 				}, speedNorm);
@@ -120,44 +116,35 @@ var rounded_large = '2em';$(window).load(function() {
 			});
 		},
 		selectAll : function(selector) {
-			console.log(selector);
-			$(selector + " .MListItem input[type=checkbox]:visible").each(function() {
-				$(this).attr("checked", "checked");
-				MList.updateUI(selector);
+
+			// Set a deault parameter
+			selector = typeof selector !== 'undefined' ? selector : '';
+
+			$(selector + ' .MListItem input[type=checkbox]:visible').each(function() {
+				$(this).attr('checked', 'checked');
+				MList.updateUI();
 			});
 		},
 		deselectAll : function(selector) {
-			console.log(selector);
+
+			// Set a deault parameter
+			selector = typeof selector !== 'undefined' ? selector : '';
+
 			$(selector + ' .MListItem input[type=checkbox]').each(function() {
 				$(this).removeAttr('checked');
-				MList.updateUI(selector);
+				MList.updateUI();
 			});
 		},
-		updateUI : function(selector) {
+		updateUI : function() {
 
-			// Check if anything was passed in
-			if (selector === undefined) {
-				selector = '';
-			}
-
-			$(selector + '.MListItem input[type=checkbox]').each(function(index) {
+			$('.MListItem input[type=checkbox]').each(function(index) {
 
 				// Set the default state
-				if ($(this).is(":checked")) {
-					$(this).closest('.MListItem').addClass('blue');
-				}else{
-					$(this).closest('.MListItem').removeClass('blue');
+				if ($(this).is(':checked')) {
+					$(this).closest('.MListItem').addClass('active');
+				} else {
+					$(this).closest('.MListItem').removeClass('active');
 				}
-
-				// Add a change event listener
-				// A label can change the state of the checkbox so I am using change instead of click
-				$(this).live('change', function() {
-					if ($(this).is(":checked")) {
-						$(this).closest('.MListItem').addClass('blue');
-					} else {
-						$(this).closest('.MListItem').removeClass('blue');
-					}
-				});
 
 			});
 
@@ -171,19 +158,15 @@ var rounded_large = '2em';$(window).load(function() {
 // Setup checked when the page loads
 $(document).ready(function() {
 
-	$('.MListItem input[type=checkbox]').each(function(index) {
+	// Set the default state
+	MList.updateUI();
 
-		// Set the default state
-		MList.updateUI();
+	$('.MListItem input[type=checkbox]').each(function(index) {
 
 		// Add a change event listener
 		// A label can change the state of the checkbox so I am using change instead of click
-		$(this).live('change', function() {
-			if ($(this).is(":checked")) {
-				$(this).closest('.MListItem').addClass('blue');
-			} else {
-				$(this).closest('.MListItem').removeClass('blue');
-			}
+		$(this).change(function() {
+			MList.updateUI();
 		});
 
 	});
@@ -213,19 +196,109 @@ $(window).load(function() {
 		
 	};
 	
-})(jQuery); (function($) {
-
-	$.fn.MProgressBar = function(param) {
-		
-	};
-	
-})(jQuery); (function($) {
-
-	$.fn.MRatingBar = function(param) {
-		
-	};
-	
 })(jQuery); (function(window) {
+
+	var MProgressBar = {
+
+		setPercent : function(selector, value) {
+			$(selector + ' .MProgressBarFG').css('width', value + '%');
+			$(selector + ' .MProgressBarIndicator').html(value + '%');
+		},
+
+		getPercent : function(selector) {
+			// ???
+			$(selector + ' .MProgressBarIndicator').val();
+		}
+	};
+
+	window.MProgressBar = MProgressBar;
+
+})(window);
+
+$(document).ready(function() {
+
+	$("progress").each(function() {
+
+		// Get default settings to reapply later
+		var currentId = $(this).attr('id');
+		var currentPercent = $(this).attr('value');
+
+		var idString = '';
+		if (currentId !== undefined) {
+			idString = 'id=' + currentId;
+		}
+
+		var percentString = '';
+		if (currentPercent !== undefined) {
+			percentString = currentPercent + '%';
+		}
+
+		// Replace with the Mogul progress bar
+		$(this).replaceWith('<div ' + idString + ' class="MProgressBarContainer"><div class="MProgressBarBG"><div class="MProgressBarFG" style="width:' + percentString + '"><span class="MProgressBarIndicator">' + percentString + '</span></div></div></div>');
+
+	});
+
+}); (function(window) {
+
+	var MRatingsBar = {
+
+		setPercent : function(selector, value) {
+			
+			console.log(value);
+			
+			// If a value number is set
+			if (!isNaN(value) && value > 0) {
+				// Set the correct display
+				$(selector).removeClass('MRatingsBarWarning');
+				$(selector).addClass('MRatingsBarBG');
+				$(selector + ' .MRatingsBarFG').show();
+
+				// Set the width
+				$(selector + ' .MRatingsBarFG').css('width', value + '%');
+			} 
+			// If a value number is not set
+			else {
+				$(selector).removeClass('MRatingsBarBG');
+				$(selector).addClass('MRatingsBarWarning');
+				$(selector + ' .MRatingsBarFG').hide();
+			}
+		},
+
+		getPercent : function(selector) {
+			// ???
+			$(selector + ' .MRatingsBar').val();
+		}
+	};
+
+	window.MRatingsBar = MRatingsBar;
+
+})(window);
+
+$(document).ready(function() {
+
+	$("meter").each(function() {
+
+		// Get default settings to reapply later
+		var currentId = $(this).attr('id');
+		var currentPercent = $(this).attr('value');
+
+		var idString = '';
+		if (currentId !== undefined) {
+			idString = 'id=' + currentId;
+		}
+
+		var percentString = '';
+		if (currentPercent !== undefined) {
+			percentString = currentPercent + '%';
+		}
+
+		// Replace with the Mogul progress bar
+		$(this).replaceWith('<div ' + idString + ' class="MRatingsBarBG"><div class="MRatingsBarFG" style="width:' + percentString + '"></div></div>');
+
+	});
+
+});
+(function(window) {
 
 	var MSidebar = {
 		menuPlaceholderHeight : function() {

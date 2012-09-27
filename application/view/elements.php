@@ -102,7 +102,7 @@
 					Slider
 				</p>
 
-				<input type="range" min="1" max="10" value="0" class="width_full"/>
+				<input type="range" min="0" max="100" value="0" class="width_full" onchange='MProgressBar.setPercent("#someProgress", this.value);MRatingsBar.setPercent("#someMeter", this.value);'/>
 
 				<div class="MContentSpacer"></div>
 
@@ -118,29 +118,11 @@
 					Bar Indicators
 				</p>
 
-				<progress max="100" value="40" class="width_full">
-					<strong>40%</strong>
-				</progress>
+				<progress id="someProgress" min="0" max="100" value="40"></progress>
 
 				<div class="MContentSpacer"></div>
 
-				<div class="MProgressBarContainer">
-					<div id="progress_bg" class="MProgressBarBG">
-						<div id="progress_fg" class="MProgressBarFG" style="width:40%">
-							<span id="progress_indicator" class="MProgressBarIndicator">40%</span>
-						</div><!-- progress_fg -->
-					</div><!-- progress_bg -->
-				</div>
-
-				<div class="MContentSpacer"></div>
-
-				<div id="ratings_bg" class="MRatingsBarBG" MTip="S" title="40%">
-					<div id="ratings_fg" class="MRatingsBarFG" style="width:40%"></div>
-				</div>
-
-				<div class="MContentSpacer"></div>
-
-				<div id="ratings_warning" class="MRatingsBarWarning" MTip="S" title="Not Enough Data"></div>
+				<meter id="someMeter" min="0" max="100" value="20"></meter>
 
 			</fieldset><!-- section_bar_indicators -->
 
@@ -332,17 +314,17 @@
 				</form><!-- button_upload_form_left -->
 				<iframe id="button_upload_frame_left" name="button_upload_frame_left" class="hidden"></iframe>
 
-				<form action="/action_button_upload_action" target="button_upload_frame_right" method="post" enctype="multipart/form-data" MTip="S" title="A very complex button.">
-					<input type="hidden" id="button_upload_data_right" name="data"/>
-					<input type="file" id="button_upload_file_right" name="file" onchange="upload()"/>
-				</form><!-- button_upload_form_right -->
-				<iframe id="button_upload_frame_right" name="button_upload_frame_right" class="hidden"></iframe>
-
 				<form action="/action_button_upload_action" target="button_upload_frame" method="post" enctype="multipart/form-data" class="right" MTip="S" title="A very complex button floated right.">
 					<input type="hidden" id="button_upload_data" name="data"/>
 					<input type="file" id="button_upload_file" name="file" onchange="upload()"/>
 				</form><!-- button_upload_form -->
 				<iframe id="button_upload_frame" name="button_upload_frame" class="hidden"></iframe>
+
+				<form action="/action_button_upload_action" target="button_upload_frame_right" method="post" enctype="multipart/form-data" MTip="S" title="A very complex button.">
+					<input type="hidden" id="button_upload_data_right" name="data"/>
+					<input type="file" id="button_upload_file_right" name="file" onchange="upload()"/>
+				</form><!-- button_upload_form_right -->
+				<iframe id="button_upload_frame_right" name="button_upload_frame_right" class="hidden"></iframe>
 
 			</fieldset><!-- section_buttons -->
 
@@ -395,7 +377,7 @@
 
 			<div class="MContentSpacer"></div>
 
-			<?php /** Inputs */ ?>
+			<?php /** Input Text */ ?>
 			<fieldset id="section_inputs">
 				<p class="MWidgetTitle">
 					Input
@@ -441,15 +423,12 @@
 				<div class="MContentSpacer"></div>
 				<hr />
 				<div class="MContentSpacer"></div>
-				<textarea class="width_full" placeholder="Textarea"></textarea>																																																						
+				<textarea class="width_full" placeholder="Textarea"></textarea>																																																																																		
 			
- <div class="MContentSpacer"></div>
+ 				<div class="MContentSpacer"></div>
 				<textarea class="width_full input_invisible" placeholder="Textarea with No Border"></textarea>
 				<div class="MContentSpacer"></div>
-				<textarea class="width_full" placeholder="Textarea Disabled" disabled="true"></textarea>																																																								
-
-
-
+				<textarea class="width_full" placeholder="Textarea Disabled" disabled="true"></textarea>																																																																																				
 
 			</fieldset><!-- section_inputs -->
 
@@ -529,26 +508,37 @@
 					List Items
 				</p>
 
+				<button onclick="MList.deselectAll();">
+					Deselect All
+				</button>
+				<button onclick="MList.selectAll();">
+					Select All
+				</button>
+
 				<ul>
 
 					<li class="MListItem">
-						<span>List Item</span>
+						<input type="checkbox" />
+						<span class="bold">List Item</span>
 					</li>
 
 					<li class="MListItem">
-						<span>List Item</span>
+						<input type="checkbox" />
+						<span class="bold">List Item</span>
 					</li>
 
 					<li class="MListItem">
-						<span>List Item</span>
+						<input type="checkbox" />
+						<span class="bold">List Item</span>
 					</li>
 
 					<li class="MListItem">
-						<span>List Item</span>
+						<input type="checkbox" />
+						<span class="bold">List Item</span>
 					</li>
 
 				</ul>
-				
+
 			</fieldset>
 
 			<div class="MContentSpacer"></div>
