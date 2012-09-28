@@ -424,7 +424,7 @@
 
 				<div id="elements_popup" class="hidden">
 
-					<div id="dragger" class="MPopup">
+					<div class="MPopup">
 
 						<span class="MIconClose" onclick="$('#elements_popup').hide();"></span>
 

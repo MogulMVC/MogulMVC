@@ -74,34 +74,36 @@ var rounded_large = '2em';$(window).load(function() {
 
 	var MDraggableManager = {
 
-		drag : false,
+		setup : function(selector) {
 
-		setup : function(initalizer) {
+			var drag = false;
+			var item = selector;
 
-			$(initalizer).mousedown(function() {
-				MDraggableManager.drag = true;
+			$(item).mousedown(function() {
+				drag = true;
 			});
 
 			$(window).mouseup(function() {
-				MDraggableManager.drag = false;
+				drag = false;
 			});
 
 			$(window).mousemove(function(event) {
-				
-				if (MDraggableManager.drag) {
-					$(initalizer).css({
+				if (drag) {
+
+					console.log(event.pageX);
+
+					$(item).css({
 						position : "absolute",
 						left : event.pageX,
 						top : event.pageY
 					});
 				}
-				
 			});
 
 		}
 	}
 
-	MDraggableManager.prototype = MDraggableManager.prototype;
+	window.MDraggableManager = MDraggableManager;
 
 })();
 $(document).ready(function() {
@@ -211,8 +213,8 @@ $(window).load(function() {
 (function() {
 
 	var MPopup = {
-		init : function(width, height) {
-
+		setup : function(selector, width, height) {
+			
 		},
 		setWidth : function(value) {
 
@@ -220,7 +222,7 @@ $(window).load(function() {
 		setHeight : function(value) {
 
 		}
-	};
+	}
 
 	window.MPopup = MPopup;
 
