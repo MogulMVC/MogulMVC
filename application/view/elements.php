@@ -434,13 +434,13 @@
 
 						<div class="MPopupMenu">
 
-							<button id="elements_popup_button_apply" class="MButtonBlue right" onclick="massEditPosterApply()">
+							<button id="elements_popup_button_apply" class="MButtonBlue right">
 								Apply
 							</button>
 
 							<form id="elements_popup_form" name="elements_popup_form" class="MButtonUploadForm"  action="/action_image" target="elements_popup_frame" method="post" enctype="multipart/form-data">
 								<input type="hidden" id="elements_popup_version" name="version"/>
-								<input type="file" id="elements_popup_file" name="file" onchange="massEditPosterUpload()"/>
+								<input type="file" id="elements_popup_file" name="file"/>
 							</form>
 
 							<iframe id="elements_popup_frame" name="elements_popup_frame" class="hidden"></iframe>
