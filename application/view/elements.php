@@ -37,35 +37,40 @@
 
 	<tr class="width_full">
 
-		<td id="MSidebarContainer"><div id="MSidebarTriggerLeft"></div>
-		<ul id="MSidebar" class="MSidebarLeft">
+		<td id="MSideBarContainer"><div id="MSideBarTriggerLeft"></div>
+		<ul id="MSideBar" class="MSideBarLeft">
 
 			<a href="#section_slider">
 			<li>
 				<span>Slider</span>
 			</li> </a>
 
-			<a href="#section_bar_indicators">
+			<a href="#section_bar">
 			<li>
-				<span>Progress Indicators</span>
+				<span>Bar Indicators</span>
 			</li> </a>
 
-			<a href="#section_buttons">
+			<a href="#section_button">
 			<li>
 				<span>Buttons</span>
 			</li> </a>
-
-			<a href="#section_tabs">
+			
+			<a href="#section_input">
+			<li>
+				<span>Inputs</span>
+			</li> </a>
+			
+			<a href="#section_tab">
 			<li>
 				<span>Tabs</span>
 			</li> </a>
 
-			<a href="#section_inputs">
+			<a href="#section_list">
 			<li>
-				<span>Inputs</span>
+				<span>List</span>
 			</li> </a>
 
-			<a href="#section_popup_container">
+			<a href="#section_popup">
 			<li>
 				<span>Popup Container</span>
 			</li> </a>
@@ -77,7 +82,6 @@
 
 			<?php /** Sliders */ ?>
 			<fieldset id="section_slider">
-
 				<p class="MWidgetTitle">
 					Slider
 				</p>
@@ -93,7 +97,7 @@
 			<div class="MContentSpacer"></div>
 
 			<?php /** Bars */ ?>
-			<fieldset id="section_bar_indicators">
+			<fieldset id="section_bar">
 				<p class="MWidgetTitle">
 					Bar Indicators
 				</p>
@@ -104,12 +108,12 @@
 
 				<meter id="someMeter" min="0" max="100" value="40"></meter>
 
-			</fieldset><!-- section_bar_indicators -->
+			</fieldset><!-- section_bar -->
 
 			<div class="MContentSpacer"></div>
 
 			<?php /** Buttons */ ?>
-			<fieldset id="section_buttons" class="text_centered">
+			<fieldset id="section_button" class="text_centered">
 				<p class="MWidgetTitle">
 					Basic Buttons
 				</p>
@@ -306,17 +310,129 @@
 				</form><!-- button_upload_form_right -->
 				<iframe id="button_upload_frame_right" name="button_upload_frame_right" class="hidden"></iframe>
 
-			</fieldset><!-- section_buttons -->
+			</fieldset><!-- section_button -->
 
 			<div class="MContentSpacer"></div>
 
-			<?php /** Tabs */ ?>
-			<fieldset id="section_tabs">
+			<?php /** Input */ ?>
+			<fieldset id="section_input">
 				<p class="MWidgetTitle">
-					Tabs
+					Input
 				</p>
 
 				<div class="MContentSpacer"></div>
+				
+				<div class="MComboBox">
+					<span>ComboBox</span>
+					<ul id="drop" class="MComboBoxDropdown">
+						<li>Option 1</li>
+						<li>Option 2</li>
+						<li>Option 3</li>
+						<li>Option 4</li>
+					</ul>
+				</div>
+				
+				<div class="MContentSpacer"></div>
+
+				<div class="width_full text_centered">
+
+					<div class="MHBoxLayout">
+						<div MTip="S" title="I'm a checkbox with label.">
+							<input type="checkbox" id="checkbox1"/>
+							<label for="checkbox1">Checkbox</label>
+						</div>
+
+						<div MTip="S" title="I'm a radio button with label." style="margin-left:30px;">
+							<input type="radio" name="radio" id="radio1"/>
+							<label for="radio1">Radio 1</label>
+						</div>
+						<div MTip="S" title="I'm a radio button with label." style="margin-left:10px;">
+							<input type="radio" name="radio" id="radio2"/>
+							<label for="radio2">Radio 2</label>
+						</div>
+
+						<select style="margin-left:30px;">
+							<option>Select</option>
+							<option>Option 1</option>
+							<option>Option 2</option>
+							<option>Option 3 With More Text</option>
+						</select>
+
+					</div>
+
+				</div>
+
+				<div class="MContentSpacer"></div>
+				<hr />
+				<div class="MContentSpacer"></div>
+
+				<input class="width_full" type="text" placeholder="Input Text"/>
+				<div class="MContentSpacer"></div>
+				<input class="width_full input_invisible" type="text" placeholder="Input with No Border"/>
+				<div class="MContentSpacer"></div>
+				<input class="width_full" type="text" placeholder="Input Text Disabled" disabled="true"/>
+
+				<div class="MContentSpacer"></div>
+				<hr />
+				<div class="MContentSpacer"></div>
+				<textarea class="width_full" placeholder="Textarea"></textarea>																																																																																										
+			
+ 				<div class="MContentSpacer"></div>
+				<textarea class="width_full input_invisible" placeholder="Textarea with No Border"></textarea>
+				<div class="MContentSpacer"></div>
+				<textarea class="width_full" placeholder="Textarea Disabled" disabled="true"></textarea>																																																																																												
+
+			</fieldset><!-- section_input -->
+
+			<div class="MContentSpacer"></div>
+
+			<?php /** List */ ?>
+			<fieldset id="section_list">
+
+				<p class="MWidgetTitle">
+					List Items
+				</p>
+
+				<div class="MHBoxLayout text_centered">
+					<button onclick="MList.deselectAll();">
+						Deselect All
+					</button>
+					<button onclick="MList.selectAll();">
+						Select All
+					</button>
+				</div>
+
+				<ul>
+					<li class="MListItem">
+						<input type="checkbox" />
+						<span class="bold">List Item</span>
+					</li>
+
+					<li class="MListItem">
+						<input type="checkbox" />
+						<span class="bold">List Item</span>
+					</li>
+
+					<li class="MListItem">
+						<input type="checkbox" />
+						<span class="bold">List Item</span>
+					</li>
+
+					<li class="MListItem">
+						<input type="checkbox" />
+						<span class="bold">List Item</span>
+					</li>
+				</ul>
+
+			</fieldset><!-- section_list -->
+
+			<div class="MContentSpacer"></div>
+
+			<?php /** Tab */ ?>
+			<fieldset id="section_tab">
+				<p class="MWidgetTitle">
+					Tabs
+				</p>
 
 				<div class="MTabWidget">
 
@@ -353,69 +469,12 @@
 
 				</div><!-- MTabWidget -->
 
-			</fieldset><!-- section_tabs -->
-
-			<div class="MContentSpacer"></div>
-
-			<?php /** Input Text */ ?>
-			<fieldset id="section_inputs">
-				<p class="MWidgetTitle">
-					Input
-				</p>
-
-				<div class="width_full text_centered">
-
-					<div class="MHBoxLayout">
-						<div MTip="S" title="I'm a checkbox with label.">
-							<input type="checkbox" id="checkbox1"/>
-							<label for="checkbox1">Checkbox</label>
-						</div>
-
-						<div MTip="S" title="I'm a radio button with label." style="margin-left:30px;">
-							<input type="radio" name="radio" id="radio1"/>
-							<label for="radio1">Radio 1</label>
-						</div>
-						<div MTip="S" title="I'm a radio button with label." style="margin-left:10px;">
-							<input type="radio" name="radio" id="radio2"/>
-							<label for="radio2">Radio 2</label>
-						</div>
-
-						<select style="margin-left:30px;">
-							<option>Select</option>
-							<option>Option 1</option>
-							<option>Option 2</option>
-						</select>
-
-					</div>
-
-				</div>
-
-				<div class="MContentSpacer"></div>
-				<hr />
-				<div class="MContentSpacer"></div>
-
-				<input class="width_full" type="text" placeholder="Input Text"/>
-				<div class="MContentSpacer"></div>
-				<input class="width_full input_invisible" type="text" placeholder="Input with No Border"/>
-				<div class="MContentSpacer"></div>
-				<input class="width_full" type="text" placeholder="Input Text Disabled" disabled="true"/>
-
-				<div class="MContentSpacer"></div>
-				<hr />
-				<div class="MContentSpacer"></div>
-				<textarea class="width_full" placeholder="Textarea"></textarea>																																																																																										
-			
- 				<div class="MContentSpacer"></div>
-				<textarea class="width_full input_invisible" placeholder="Textarea with No Border"></textarea>
-				<div class="MContentSpacer"></div>
-				<textarea class="width_full" placeholder="Textarea Disabled" disabled="true"></textarea>																																																																																												
-
-			</fieldset><!-- section_inputs -->
+			</fieldset><!-- section_tab -->
 
 			<div class="MContentSpacer"></div>
 
 			<?php /** Popups */ ?>
-			<fieldset id="section_popup_container">
+			<fieldset id="section_popup">
 				<p class="MWidgetTitle">
 					Popup
 				</p>
@@ -457,55 +516,12 @@
 					<div onclick="$('#elements_popup').hide();" class="MModalBGBlack"></div>
 				</div><!-- elements_popup -->
 
-			</fieldset><!-- section_popup_container -->
-
-			<div class="MContentSpacer"></div>
-
-			<fieldset>
-
-				<p class="MWidgetTitle">
-					List Items
-				</p>
-
-				<div class="MHBoxLayout text_centered">
-					<button onclick="MList.deselectAll();">
-						Deselect All
-					</button>
-					<button onclick="MList.selectAll();">
-						Select All
-					</button>
-				</div>
-
-				<ul>
-					<li class="MListItem">
-						<input type="checkbox" />
-						<span class="bold">List Item</span>
-					</li>
-
-					<li class="MListItem">
-						<input type="checkbox" />
-						<span class="bold">List Item</span>
-					</li>
-
-					<li class="MListItem">
-						<input type="checkbox" />
-						<span class="bold">List Item</span>
-					</li>
-
-					<li class="MListItem">
-						<input type="checkbox" />
-						<span class="bold">List Item</span>
-					</li>
-				</ul>
-
-			</fieldset>
+			</fieldset><!-- section_popup -->
 
 			<div class="MContentSpacer"></div>
 			<div class="MContentSpacer"></div>
 			<div class="MContentSpacer"></div>
-			<div class="MContentSpacer"></div>
-			<div class="MContentSpacer"></div>
-
+			
 		</div></td>
 
 	</tr>
