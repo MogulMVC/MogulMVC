@@ -1,3 +1,55 @@
+<script>
+	function updateShow(id) {
+
+		$('.section').hide();
+
+		$('#MSideBar input').each(function() {
+			if ($(this).is(":checked")) {
+				$('#' + $(this).val()).show();
+			}
+		});
+
+		checkNoShow();
+	}
+
+	function noShow() {
+		$('#MSideBar input').each(function() {
+			$(this).attr('checked', false);
+		});
+
+		$('.section').fadeOut(speedNorm, function(){
+			checkNoShow();
+		});
+	}
+
+	function allShow() {
+		$('#MSideBar input').each(function() {
+			$(this).attr('checked', true);
+		});
+		
+		$('.section').fadeIn(speedNorm, function(){
+			checkNoShow();
+		});
+	}
+
+	function checkNoShow() {
+
+		var hiddenAll = true;
+
+		$('#MSideBar input').each(function() {
+			if ($(this).is(":checked")) {
+				hiddenAll = false;
+			}
+		});
+
+		if (hiddenAll) {
+			$('#section_noShow').fadeIn(speedNorm);
+		} else {
+			$('#section_noShow').fadeOut(speedNorm);
+		}
+	}
+</script>
+
 <div id="MToolBarPlaceholder"></div>
 <nav id="MToolBar">
 	<div class="MToolBarSpacer left"></div>
@@ -40,40 +92,59 @@
 		<td id="MSideBarContainer"><div id="MSideBarTriggerLeft"></div>
 		<ul id="MSideBar" class="MSideBarLeft">
 
-			<a href="#section_slider">
+			<div class="MSideBarMenu">
+				<button onclick="noShow()">
+					Deselect All
+				</button>
+				<button onclick="allShow()">
+					Select All
+				</button>
+			</div>
+
 			<li>
+				<input type="checkbox" style="margin-left:30px;" value="section_slider" checked="true" onclick="updateShow()"/>
 				<span>Slider</span>
-			</li> </a>
+			</li>
 
-			<a href="#section_bar">
 			<li>
-				<span>Bar Indicators</span>
-			</li> </a>
+				<input type="checkbox" style="margin-left:30px;" value="section_bar" checked="true" onclick="updateShow()"/>
+				<span>Bar</span>
+			</li>
 
-			<a href="#section_button">
 			<li>
-				<span>Buttons</span>
-			</li> </a>
-			
-			<a href="#section_input">
-			<li>
-				<span>Inputs</span>
-			</li> </a>
-			
-			<a href="#section_tab">
-			<li>
-				<span>Tabs</span>
-			</li> </a>
+				<input type="checkbox" style="margin-left:30px;" value="section_button" checked="true" onclick="updateShow()"/>
+				<span>Button</span>
+			</li>
 
-			<a href="#section_list">
 			<li>
+				<input type="checkbox" style="margin-left:30px;" value="section_input" checked="true" onclick="updateShow()"/>
+				<span>Input</span>
+			</li>
+
+			<li>
+				<input type="checkbox" style="margin-left:30px;" value="section_list" checked="true" onclick="updateShow()"/>
 				<span>List</span>
-			</li> </a>
+			</li>
 
-			<a href="#section_popup">
 			<li>
-				<span>Popup Container</span>
-			</li> </a>
+				<input type="checkbox" style="margin-left:30px;" value="section_tab" checked="true" onclick="updateShow()"/>
+				<span>Tab</span>
+			</li>
+
+			<li>
+				<input type="checkbox" style="margin-left:30px;" value="section_well" checked="true" onclick="updateShow()"/>
+				<span>Well</span>
+			</li>
+
+			<li>
+				<input type="checkbox" style="margin-left:30px;" value="section_widget" checked="true" onclick="updateShow()"/>
+				<span>Widget</span>
+			</li>
+
+			<li>
+				<input type="checkbox" style="margin-left:30px;" value="section_popup" checked="true" onclick="updateShow()"/>
+				<span>Popup</span>
+			</li>
 
 		</ul><!-- sidebar --></td>
 
@@ -81,10 +152,9 @@
 		<div class="width_full">
 
 			<?php /** Sliders */ ?>
-			<fieldset id="section_slider">
-				<p class="MWidgetTitle">
-					Slider
-				</p>
+			<div id="section_slider" class="section">
+				<h1>Slider</h1>
+				<span class="MNote" style="left: 80px;bottom: 60px;">A work in progress.</span>
 
 				<input type="range" min="0" max="100" value="40" class="width_full" onchange='MProgressBar.setPercent("#someProgress", this.value);MRatingsBar.setPercent("#someMeter", this.value);'/>
 
@@ -92,15 +162,14 @@
 
 				<div class="MSlider width_full"></div>
 
-			</fieldset><!-- section_slider -->
+				<div class="MContentSpacer"></div>
+				<div class="MContentSpacer"></div>
 
-			<div class="MContentSpacer"></div>
+			</div><!-- section_slider -->
 
 			<?php /** Bars */ ?>
-			<fieldset id="section_bar">
-				<p class="MWidgetTitle">
-					Bar Indicators
-				</p>
+			<li id="section_bar" class="section">
+				<h1>Bar</h1>
 
 				<progress id="someProgress" min="0" max="100" value="40"></progress>
 
@@ -108,17 +177,16 @@
 
 				<meter id="someMeter" min="0" max="100" value="40"></meter>
 
-			</fieldset><!-- section_bar -->
+				<div class="MContentSpacer"></div>
+				<div class="MContentSpacer"></div>
 
-			<div class="MContentSpacer"></div>
+			</li><!-- section_bar -->
 
 			<?php /** Buttons */ ?>
-			<fieldset id="section_button" class="text_centered">
-				<p class="MWidgetTitle">
-					Basic Buttons
-				</p>
+			<div id="section_button" class="section">
+				<h1>Button</h1>
 
-				<table class="width_full">
+				<table class="width_full text_centered">
 
 					<tr>
 						<th>&lt;a&gt;</th>
@@ -254,9 +322,11 @@
 					Input Buttons
 				</p>
 
-				<input type="button" value="Input Button"/>
-				<input type="submit" value="Input Submit"/>
-				<input type="reset" value="Input Reset"/>
+				<div class="text_centered">
+					<input type="button" value="Input Button"/>
+					<input type="submit" value="Input Submit"/>
+					<input type="reset" value="Input Reset"/>
+				</div>
 
 				<div class="MContentSpacer">
 					<hr />
@@ -292,47 +362,34 @@
 					Upload Buttons
 				</p>
 
-				<form action="/action_button_upload_action" target="button_upload_frame_left" method="post" enctype="multipart/form-data" class="left" MTip="S" title="A very complex button floated left.">
-					<input type="hidden" id="button_upload_data_left" name="data"/>
-					<input type="file" id="button_upload_file_left" name="file" onchange="upload()"/>
-				</form><!-- button_upload_form_left -->
-				<iframe id="button_upload_frame_left" name="button_upload_frame_left" class="hidden"></iframe>
+				<div class="text_centered">
+					<form action="/action_button_upload_action" target="button_upload_frame_left" method="post" enctype="multipart/form-data" class="left" MTip="SW" title="A very complex button floated left.">
+						<input type="hidden" id="button_upload_data_left" name="data"/>
+						<input type="file" id="button_upload_file_left" name="file" onchange="upload()"/>
+					</form><!-- button_upload_form_left -->
+					<iframe id="button_upload_frame_left" name="button_upload_frame_left" class="hidden"></iframe>
 
-				<form action="/action_button_upload_action" target="button_upload_frame" method="post" enctype="multipart/form-data" class="right" MTip="S" title="A very complex button floated right.">
-					<input type="hidden" id="button_upload_data" name="data"/>
-					<input type="file" id="button_upload_file" name="file" onchange="upload()"/>
-				</form><!-- button_upload_form -->
-				<iframe id="button_upload_frame" name="button_upload_frame" class="hidden"></iframe>
+					<form action="/action_button_upload_action" target="button_upload_frame" method="post" enctype="multipart/form-data" class="right" MTip="SE" title="A very complex button floated right.">
+						<input type="hidden" id="button_upload_data" name="data"/>
+						<input type="file" id="button_upload_file" name="file" onchange="upload()"/>
+					</form><!-- button_upload_form -->
+					<iframe id="button_upload_frame" name="button_upload_frame" class="hidden"></iframe>
 
-				<form action="/action_button_upload_action" target="button_upload_frame_right" method="post" enctype="multipart/form-data" MTip="S" title="A very complex button.">
-					<input type="hidden" id="button_upload_data_right" name="data"/>
-					<input type="file" id="button_upload_file_right" name="file" onchange="upload()"/>
-				</form><!-- button_upload_form_right -->
-				<iframe id="button_upload_frame_right" name="button_upload_frame_right" class="hidden"></iframe>
+					<form action="/action_button_upload_action" target="button_upload_frame_right" method="post" enctype="multipart/form-data" MTip="S" title="A very complex button.">
+						<input type="hidden" id="button_upload_data_right" name="data"/>
+						<input type="file" id="button_upload_file_right" name="file" onchange="upload()"/>
+					</form><!-- button_upload_form_right -->
+					<iframe id="button_upload_frame_right" name="button_upload_frame_right" class="hidden"></iframe>
+				</div>
 
-			</fieldset><!-- section_button -->
+				<div class="MContentSpacer"></div>
+				<div class="MContentSpacer"></div>
 
-			<div class="MContentSpacer"></div>
+			</div><!-- section_button -->
 
 			<?php /** Input */ ?>
-			<fieldset id="section_input">
-				<p class="MWidgetTitle">
-					Input
-				</p>
-
-				<div class="MContentSpacer"></div>
-				
-				<div class="MComboBox">
-					<span>ComboBox</span>
-					<ul id="drop" class="MComboBoxDropdown">
-						<li>Option 1</li>
-						<li>Option 2</li>
-						<li>Option 3</li>
-						<li>Option 4</li>
-					</ul>
-				</div>
-				
-				<div class="MContentSpacer"></div>
+			<div id="section_input" class="section">
+				<h1>Input</h1>
 
 				<div class="width_full text_centered">
 
@@ -375,23 +432,21 @@
 				<div class="MContentSpacer"></div>
 				<hr />
 				<div class="MContentSpacer"></div>
-				<textarea class="width_full" placeholder="Textarea"></textarea>																																																																																										
+				<textarea class="width_full" placeholder="Textarea"></textarea>																																																																																														
 			
- 				<div class="MContentSpacer"></div>
+				<div class="MContentSpacer"></div>
 				<textarea class="width_full input_invisible" placeholder="Textarea with No Border"></textarea>
 				<div class="MContentSpacer"></div>
-				<textarea class="width_full" placeholder="Textarea Disabled" disabled="true"></textarea>																																																																																												
+				<textarea class="width_full" placeholder="Textarea Disabled" disabled="true"></textarea>						
+																																																																																														
+				<div class="MContentSpacer"></div>
+				<div class="MContentSpacer"></div>
 
-			</fieldset><!-- section_input -->
-
-			<div class="MContentSpacer"></div>
+			</div><!-- section_input -->
 
 			<?php /** List */ ?>
-			<fieldset id="section_list">
-
-				<p class="MWidgetTitle">
-					List Items
-				</p>
+			<div id="section_list" class="section">
+				<h1>List</h1>
 
 				<div class="MHBoxLayout text_centered">
 					<button onclick="MList.deselectAll();">
@@ -424,15 +479,14 @@
 					</li>
 				</ul>
 
-			</fieldset><!-- section_list -->
+				<div class="MContentSpacer"></div>
+				<div class="MContentSpacer"></div>
 
-			<div class="MContentSpacer"></div>
+			</div><!-- section_list -->
 
 			<?php /** Tab */ ?>
-			<fieldset id="section_tab">
-				<p class="MWidgetTitle">
-					Tabs
-				</p>
+			<div id="section_tab" class="section">
+				<h1>Tab</h1>
 
 				<div class="MTabWidget">
 
@@ -469,17 +523,48 @@
 
 				</div><!-- MTabWidget -->
 
-			</fieldset><!-- section_tab -->
+				<div class="MContentSpacer"></div>
+				<div class="MContentSpacer"></div>
 
-			<div class="MContentSpacer"></div>
+			</div><!-- section_tab -->
 
-			<?php /** Popups */ ?>
-			<fieldset id="section_popup">
-				<p class="MWidgetTitle">
-					Popup
-				</p>
+			<?php /** Well */ ?>
+			<div id="section_well" class="section">
+				<h1>Well</h1>
 
-				<button class="MButtonBlue" onclick="$('#elements_popup').show();">Show Popup Container</button>
+				<div class="MWell">
+					<p>
+						I'm in a well.
+					</p>
+				</div>
+
+				<div class="MContentSpacer"></div>
+				<div class="MContentSpacer"></div>
+
+			</div>
+
+			<?php /** Widget */ ?>
+			<div id="section_widget" class="section">
+				<h1>Widget</h1>
+
+				<div class="MWidget">
+					<p>
+						I'm in a widget.
+					</p>
+				</div>
+
+				<div class="MContentSpacer"></div>
+				<div class="MContentSpacer"></div>
+
+			</div>
+
+			<?php /** Popup */ ?>
+			<div id="section_popup" class="section">
+				<h1>Popup</h1>
+
+				<button class="MButtonBlue" onclick="$('#elements_popup').show();">
+					Show Popup Container
+				</button>
 
 				<div id="elements_popup" class="hidden">
 
@@ -509,19 +594,26 @@
 						<hr class="clear"/>
 						<br />
 
-						<p class="text_centered bold">Content Goes Here</p>
+						<p class="text_centered bold">
+							Content Goes Here
+						</p>
 
 					</div><!-- MPopupContainer -->
 
 					<div onclick="$('#elements_popup').hide();" class="MModalBGBlack"></div>
 				</div><!-- elements_popup -->
 
-			</fieldset><!-- section_popup -->
+				<div class="MContentSpacer"></div>
+				<div class="MContentSpacer"></div>
 
-			<div class="MContentSpacer"></div>
-			<div class="MContentSpacer"></div>
-			<div class="MContentSpacer"></div>
+			</div><!-- section_popup -->
 			
+			<div id="section_noShow" class="text_centered hidden">
+				<h1>Select a Section from the Sidebar</h1>
+				<p>or</p>
+				<button class="MButtonGreen" onclick="allShow()">Show All</button>
+			</div><!-- section_noShow -->
+
 		</div></td>
 
 	</tr>
