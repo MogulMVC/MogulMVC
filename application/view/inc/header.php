@@ -5,6 +5,7 @@
 		<div class="MHeaderSpacer left"></div>
 		<div class="MHeaderSpacer right"></div>
 		
-		<!-- Your header goes here -->
+		<a href="/">Elements</a>
+		<a href="/typography">Typography</a>
 
 	</nav><!--MHeader-->

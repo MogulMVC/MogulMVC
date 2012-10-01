@@ -21,9 +21,7 @@
 	}
 
 	function noShow() {
-		$('#MSideBar input').each(function() {
-			$(this).attr('checked', false);
-		});
+		MSideBar.deselectAll();
 
 		$('.section').fadeOut(speedNorm, function(){
 			checkNoShow();
@@ -31,9 +29,7 @@
 	}
 
 	function allShow() {
-		$('#MSideBar input').each(function() {
-			$(this).attr('checked', true);
-		});
+		MSideBar.selectAll();
 		
 		$('.section').fadeIn(speedNorm, function(){
 			checkNoShow();
@@ -165,10 +161,6 @@
 				<span class="MNote" style="left: 80px;bottom: 60px;">A work in progress.</span>
 
 				<input type="range" min="0" max="100" value="40" class="width_full" onchange='MProgressBar.setPercent("#someProgress", this.value);MRatingsBar.setPercent("#someMeter", this.value);'/>
-
-				<div class="MContentSpacer"></div>
-
-				<div class="MSlider width_full"></div>
 
 				<div class="MContentSpacer"></div>
 				<div class="MContentSpacer"></div>
