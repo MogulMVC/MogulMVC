@@ -1,4 +1,12 @@
 <script>
+	$(document).ready(function(){
+		$('.showCode').each(function(index) {
+		  $(this).click(function() {
+			  $(this).next().toggle()
+		  });
+		});
+	});
+
 	function updateShow(id) {
 
 		$('.section').hide();
@@ -152,7 +160,7 @@
 		<div class="width_full">
 
 			<?php /** Sliders */ ?>
-			<div id="section_slider" class="section">
+			<section id="section_slider" class="section">
 				<h1>Slider</h1>
 				<span class="MNote" style="left: 80px;bottom: 60px;">A work in progress.</span>
 
@@ -165,17 +173,21 @@
 				<div class="MContentSpacer"></div>
 				<div class="MContentSpacer"></div>
 
-			</div><!-- section_slider -->
+			</section><!-- section_slider -->
 
 			<?php /** Bars */ ?>
 			<li id="section_bar" class="section">
 				<h1>Bar</h1>
 
 				<progress id="someProgress" min="0" max="100" value="40"></progress>
+				<a class="showCode">Code</a>
+				<pre class="hidden"><code><?php echo htmlentities('<progress min="0" max="100"></progress>');?></code></pre>
 
 				<div class="MContentSpacer"></div>
 
 				<meter id="someMeter" min="0" max="100" value="40"></meter>
+				<a class="showCode">Code</a>
+				<pre class="hidden"><code><?php echo htmlentities('<meter min="0" max="100"></meter>');?></code></pre>
 
 				<div class="MContentSpacer"></div>
 				<div class="MContentSpacer"></div>
@@ -183,7 +195,7 @@
 			</li><!-- section_bar -->
 
 			<?php /** Buttons */ ?>
-			<div id="section_button" class="section">
+			<section id="section_button" class="section">
 				<h1>Button</h1>
 
 				<table class="width_full text_centered">
@@ -313,6 +325,14 @@
 					</tr>
 
 				</table>
+				
+				<a class="showCode">Code</a>
+				<div class="hidden">
+					<pre><code><?php echo htmlentities('<a class="MButton">Button</a>
+<button class="MButton">Button</button>
+<div class="MButton">Button</div>
+<span class="MButton">Button</span>');?></code></pre>
+				</div>
 
 				<div class="MContentSpacer">
 					<hr />
@@ -323,10 +343,15 @@
 				</p>
 
 				<div class="text_centered">
-					<input type="button" value="Input Button"/>
-					<input type="submit" value="Input Submit"/>
-					<input type="reset" value="Input Reset"/>
+					<input type="button" value="Button"/>
+					<input type="submit" />
+					<input type="reset" />
 				</div>
+				
+				<a class="showCode">Code</a>
+				<pre class="hidden"><code><?php echo htmlentities('<input type="button" value="Button"/>
+<input type="submit" />
+<input type="reset" />');?></code></pre>
 
 				<div class="MContentSpacer">
 					<hr />
@@ -353,6 +378,9 @@
 						<td><span id="animated_button_span" class="MButton left" onclick="$(this).MHTMLAnimate('The text is now much longer and the button has animated to accomidate the new text.', 1000);$('#animated_button_span_reset').fadeIn(250);" MTip="W" title="I'm a &lt;span&gt; tag.">Change Text</span><a id="animated_button_span_reset" onclick="$('#animated_button_span').MHTMLAnimate('Change Text', 1000);$(this).fadeOut(250);" class="hidden right">Reset</a></td>
 					</tr>
 				</table>
+				
+				<a class="showCode">Code</a>
+				<pre class="hidden"><code><?php echo htmlentities('$(this).MHTMLAnimate("The text is now much longer and the button has animated to accomidate the new text.", 1000);');?></code></pre>
 
 				<div class="MContentSpacer">
 					<hr />
@@ -382,18 +410,24 @@
 					<iframe id="button_upload_frame_right" name="button_upload_frame_right" class="hidden"></iframe>
 				</div>
 
+				<a class="showCode">Code</a>
+				<pre class="hidden"><code><?php echo htmlentities('<input type="file" />');?></code></pre>
+
 				<div class="MContentSpacer"></div>
 				<div class="MContentSpacer"></div>
 
-			</div><!-- section_button -->
+			</section><!-- section_button -->
 
 			<?php /** Input */ ?>
-			<div id="section_input" class="section">
+			<section id="section_input" class="section">
 				<h1>Input</h1>
 
 				<div class="width_full text_centered">
 
+					<span class="MNote">A work in progress.</span>
+
 					<div class="MHBoxLayout">
+						
 						<div MTip="S" title="I'm a checkbox with label.">
 							<input type="checkbox" id="checkbox1"/>
 							<label for="checkbox1">Checkbox</label>
@@ -442,10 +476,10 @@
 				<div class="MContentSpacer"></div>
 				<div class="MContentSpacer"></div>
 
-			</div><!-- section_input -->
+			</section><!-- section_input -->
 
 			<?php /** List */ ?>
-			<div id="section_list" class="section">
+			<section id="section_list" class="section">
 				<h1>List</h1>
 
 				<div class="MHBoxLayout text_centered">
@@ -467,47 +501,46 @@
 						<input type="checkbox" />
 						<span class="bold">List Item</span>
 					</li>
-
-					<li class="MListItem">
-						<input type="checkbox" />
-						<span class="bold">List Item</span>
-					</li>
-
-					<li class="MListItem">
-						<input type="checkbox" />
-						<span class="bold">List Item</span>
-					</li>
 				</ul>
 
+				<a class="showCode">Code</a>
+				<pre class="hidden"><code><?php echo htmlentities('<ul>
+	<li class="MListItem">
+		<input type="checkbox" />
+		<span class="bold">List Item</span>
+	</li>
+
+	<li class="MListItem">
+		<input type="checkbox" />
+		<span class="bold">List Item</span>
+	</li>
+</ul>');?></code></pre>
+
 				<div class="MContentSpacer"></div>
 				<div class="MContentSpacer"></div>
 
-			</div><!-- section_list -->
+			</section><!-- section_list -->
 
 			<?php /** Tab */ ?>
-			<div id="section_tab" class="section">
+			<section id="section_tab" class="section">
 				<h1>Tab</h1>
 
 				<div class="MTabWidget">
-
 					<ul class="MTabContainer">
 						<li class="MTab">
-							<a href="#tab_group2_1">Tab 1</a>
+							<a href="#tab_body_1">Tab 1</a>
 						</li>
 						<li class="MTab">
-							<a href="#tab_group2_2">Tab 2</a>
+							<a href="#tab_body_2">Tab 2</a>
 						</li>
 					</ul><!-- tabs_container -->
-
 					<div class="MTabBodyContainer">
-
-						<div id="tab_group2_1">
+						<div id="tab_body_1">
 							<p>
 								This is a tab body
 							</p>
 						</div>
-
-						<div id="tab_group2_2">
+						<div id="tab_body_2">
 							<p>
 								This is another tab body
 							</p>
@@ -520,16 +553,37 @@
 						</div>
 
 					</div><!-- MTabBodyContainer -->
-
 				</div><!-- MTabWidget -->
 
+				<a class="showCode">Code</a>
+				<pre class="hidden"><code><?php echo htmlentities('<div class="MTabWidget">
+	<ul class="MTabContainer">
+		<li class="MTab">
+			<a href="#tab_body_1">Tab 1</a>
+		</li>
+		<li class="MTab">
+			<a href="#tab_body_2">Tab 2</a>
+		</li>
+	</ul>
+	<div class="MTabBodyContainer">
+		<div id="tab_body_1">
+			<p>This is a tab body</p>
+		</div>
+		<div id="tab_body_2">
+			<p>This is another tab body</p>
+			<p>This is another tab body</p>
+			<p>This is another tab body</p>
+		</div>
+	</div>
+</div>');?></code></pre>
+
 				<div class="MContentSpacer"></div>
 				<div class="MContentSpacer"></div>
 
-			</div><!-- section_tab -->
+			</section><!-- section_tab -->
 
 			<?php /** Well */ ?>
-			<div id="section_well" class="section">
+			<section id="section_well" class="section">
 				<h1>Well</h1>
 
 				<div class="MWell">
@@ -538,13 +592,16 @@
 					</p>
 				</div>
 
+				<a class="showCode">Code</a>
+				<pre class="hidden"><code><?php echo htmlentities('<div class="MWell"></div>');?></code></pre>
+
 				<div class="MContentSpacer"></div>
 				<div class="MContentSpacer"></div>
 
-			</div>
+			</section>
 
 			<?php /** Widget */ ?>
-			<div id="section_widget" class="section">
+			<section id="section_widget" class="section">
 				<h1>Widget</h1>
 
 				<div class="MWidget">
@@ -552,14 +609,17 @@
 						I'm in a widget.
 					</p>
 				</div>
+				
+				<a class="showCode">Code</a>
+				<pre class="hidden"><code><?php echo htmlentities('<div class="MWidget"></div>');?></code></pre>
 
 				<div class="MContentSpacer"></div>
 				<div class="MContentSpacer"></div>
 
-			</div>
+			</section>
 
 			<?php /** Popup */ ?>
-			<div id="section_popup" class="section">
+			<section id="section_popup" class="section">
 				<h1>Popup</h1>
 
 				<button class="MButtonBlue" onclick="$('#elements_popup').show();">
@@ -603,16 +663,25 @@
 					<div onclick="$('#elements_popup').hide();" class="MModalBGBlack"></div>
 				</div><!-- elements_popup -->
 
+				<br />
+
+				<a class="showCode">Code</a>
+				<pre class="hidden"><code><?php echo htmlentities('<div class="MPopup"></div>');?></code></pre>
+
 				<div class="MContentSpacer"></div>
 				<div class="MContentSpacer"></div>
 
-			</div><!-- section_popup -->
+			</section><!-- section_popup -->
 			
-			<div id="section_noShow" class="text_centered hidden">
+			<section id="section_noShow" class="text_centered hidden">
 				<h1>Select a Section from the Sidebar</h1>
 				<p>or</p>
 				<button class="MButtonGreen" onclick="allShow()">Show All</button>
-			</div><!-- section_noShow -->
+				
+				<div class="MContentSpacer"></div>
+				<div class="MContentSpacer"></div>
+				
+			</section><!-- section_noShow -->
 
 		</div></td>
 
