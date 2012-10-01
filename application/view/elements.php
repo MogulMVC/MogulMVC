@@ -1,9 +1,9 @@
 <script>
-	$(document).ready(function(){
+	$(document).ready(function() {
 		$('.showCode').each(function(index) {
-		  $(this).click(function() {
-			  $(this).next().toggle()
-		  });
+			$(this).click(function() {
+				$(this).next().toggle()
+			});
 		});
 	});
 
@@ -23,15 +23,15 @@
 	function noShow() {
 		MSideBar.deselectAll();
 
-		$('.section').fadeOut(speedNorm, function(){
+		$('.section').fadeOut(speedNorm, function() {
 			checkNoShow();
 		});
 	}
 
 	function allShow() {
 		MSideBar.selectAll();
-		
-		$('.section').fadeIn(speedNorm, function(){
+
+		$('.section').fadeIn(speedNorm, function() {
 			checkNoShow();
 		});
 	}
@@ -106,47 +106,52 @@
 			</div>
 
 			<li>
-				<input type="checkbox" style="margin-left:30px;" value="section_slider" checked="true" onclick="updateShow()"/>
+				<input type="checkbox" value="section_slider" checked="true" onclick="updateShow()"/>
 				<span>Slider</span>
 			</li>
 
 			<li>
-				<input type="checkbox" style="margin-left:30px;" value="section_bar" checked="true" onclick="updateShow()"/>
+				<input type="checkbox" value="section_bar" checked="true" onclick="updateShow()"/>
 				<span>Bar</span>
 			</li>
 
 			<li>
-				<input type="checkbox" style="margin-left:30px;" value="section_button" checked="true" onclick="updateShow()"/>
+				<input type="checkbox" value="section_button" checked="true" onclick="updateShow()"/>
 				<span>Button</span>
 			</li>
 
 			<li>
-				<input type="checkbox" style="margin-left:30px;" value="section_input" checked="true" onclick="updateShow()"/>
+				<input type="checkbox" value="section_input" checked="true" onclick="updateShow()"/>
 				<span>Input</span>
 			</li>
 
 			<li>
-				<input type="checkbox" style="margin-left:30px;" value="section_list" checked="true" onclick="updateShow()"/>
+				<input type="checkbox" value="section_list" checked="true" onclick="updateShow()"/>
 				<span>List</span>
 			</li>
 
 			<li>
-				<input type="checkbox" style="margin-left:30px;" value="section_tab" checked="true" onclick="updateShow()"/>
+				<input type="checkbox" value="section_tab" checked="true" onclick="updateShow()"/>
 				<span>Tab</span>
 			</li>
 
 			<li>
-				<input type="checkbox" style="margin-left:30px;" value="section_well" checked="true" onclick="updateShow()"/>
+				<input type="checkbox" value="section_well" checked="true" onclick="updateShow()"/>
 				<span>Well</span>
 			</li>
 
 			<li>
-				<input type="checkbox" style="margin-left:30px;" value="section_widget" checked="true" onclick="updateShow()"/>
+				<input type="checkbox" value="section_widget" checked="true" onclick="updateShow()"/>
 				<span>Widget</span>
 			</li>
 
 			<li>
-				<input type="checkbox" style="margin-left:30px;" value="section_popup" checked="true" onclick="updateShow()"/>
+				<input type="checkbox" value="section_layout" checked="true" onclick="updateShow()"/>
+				<span>Layout</span>
+			</li>
+
+			<li>
+				<input type="checkbox" value="section_popup" checked="true" onclick="updateShow()"/>
 				<span>Popup</span>
 			</li>
 
@@ -173,15 +178,14 @@
 
 				<progress id="someProgress" min="0" max="100" value="40"></progress>
 				<a class="showCode">Code</a>
-				<pre class="hidden"><code><?php echo htmlentities('<progress min="0" max="100"></progress>');?></code></pre>
-
+				<pre class="hidden"><code><?php echo htmlentities('<progress min="0" max="100"></progress>'); ?></code></pre>				
 				<div class="MContentSpacer"></div>
 
 				<meter id="someMeter" min="0" max="100" value="40"></meter>
 				<a class="showCode">Code</a>
-				<pre class="hidden"><code><?php echo htmlentities('<meter min="0" max="100"></meter>');?></code></pre>
+				<pre class="hidden"><code><?php echo htmlentities('<meter min="0" max="100"></meter>'); ?></code></pre>
 
-				<div class="MContentSpacer"></div>
+ 				<div class="MContentSpacer"></div>
 				<div class="MContentSpacer"></div>
 
 			</li><!-- section_bar -->
@@ -317,14 +321,13 @@
 					</tr>
 
 				</table>
-				
+
 				<a class="showCode">Code</a>
-				<div class="hidden">
-					<pre><code><?php echo htmlentities('<a class="MButton">Button</a>
+				<pre class="hidden"><code><?php echo htmlentities('<a class="MButton">Button</a>
 <button class="MButton">Button</button>
 <div class="MButton">Button</div>
-<span class="MButton">Button</span>');?></code></pre>
-				</div>
+<span class="MButton">Button</span>');
+				?></code></pre>
 
 				<div class="MContentSpacer">
 					<hr />
@@ -339,11 +342,11 @@
 					<input type="submit" />
 					<input type="reset" />
 				</div>
-				
+
 				<a class="showCode">Code</a>
 				<pre class="hidden"><code><?php echo htmlentities('<input type="button" value="Button"/>
 <input type="submit" />
-<input type="reset" />');?></code></pre>
+<input type="reset" />');?></code></pre>																												
 
 				<div class="MContentSpacer">
 					<hr />
@@ -370,9 +373,9 @@
 						<td><span id="animated_button_span" class="MButton left" onclick="$(this).MHTMLAnimate('The text is now much longer and the button has animated to accomidate the new text.', 1000);$('#animated_button_span_reset').fadeIn(250);" MTip="W" title="I'm a &lt;span&gt; tag.">Change Text</span><a id="animated_button_span_reset" onclick="$('#animated_button_span').MHTMLAnimate('Change Text', 1000);$(this).fadeOut(250);" class="hidden right">Reset</a></td>
 					</tr>
 				</table>
-				
+
 				<a class="showCode">Code</a>
-				<pre class="hidden"><code><?php echo htmlentities('$(this).MHTMLAnimate("The text is now much longer and the button has animated to accomidate the new text.", 1000);');?></code></pre>
+				<pre class="hidden"><code><?php echo htmlentities('$(this).MHTMLAnimate("The text is now much longer and the button has animated to accomidate the new text.", 1000);'); ?></code></pre>
 
 				<div class="MContentSpacer">
 					<hr />
@@ -403,9 +406,9 @@
 				</div>
 
 				<a class="showCode">Code</a>
-				<pre class="hidden"><code><?php echo htmlentities('<input type="file" />');?></code></pre>
+				<pre class="hidden"><code><?php echo htmlentities('<input type="file" />'); ?></code></pre>
 
-				<div class="MContentSpacer"></div>
+ 				<div class="MContentSpacer"></div>
 				<div class="MContentSpacer"></div>
 
 			</section><!-- section_button -->
@@ -419,33 +422,69 @@
 					<span class="MNote">A work in progress.</span>
 
 					<div class="MHBoxLayout">
-						
+
 						<div MTip="S" title="I'm a checkbox with label.">
 							<input type="checkbox" id="checkbox1"/>
 							<label for="checkbox1">Checkbox</label>
 						</div>
 
-						<div MTip="S" title="I'm a radio button with label." style="margin-left:30px;">
+						<div class="MHBoxSpacer"></div>
+						<div class="MHBoxSpacer"></div>
+						<div class="MHBoxSpacer"></div>
+
+						<div MTip="S" title="I'm a radio button with label.">
 							<input type="radio" name="radio" id="radio1"/>
 							<label for="radio1">Radio 1</label>
 						</div>
-						<div MTip="S" title="I'm a radio button with label." style="margin-left:10px;">
+
+						<div class="MHBoxSpacer"></div>
+
+						<div MTip="S" title="I'm a radio button with label.">
 							<input type="radio" name="radio" id="radio2"/>
 							<label for="radio2">Radio 2</label>
 						</div>
 
-						<select style="margin-left:30px;">
+						<div class="MHBoxSpacer"></div>
+						<div class="MHBoxSpacer"></div>
+						<div class="MHBoxSpacer"></div>
+
+						<select>
 							<option>Select</option>
 							<option>Option 1</option>
 							<option>Option 2</option>
 							<option>Option 3 With More Text</option>
 						</select>
 
+						<div class="MHBoxSpacer"></div>
+						<div class="MHBoxSpacer"></div>
+						<div class="MHBoxSpacer"></div>
+
+						<input type="number" value="0" min="0" max="100"/>
+
 					</div>
 
 				</div>
 
-				<div class="MContentSpacer"></div>
+				<a class="showCode">Code</a>
+				<pre class="hidden"><code><?php echo htmlentities('<input type="checkbox" id="checkbox1"/>
+<label for="checkbox1">Checkbox</label>
+
+<input type="radio" name="radio" id="radio1"/>
+<label for="radio1">Radio 1</label>
+
+<input type="radio" name="radio" id="radio2"/>
+<label for="radio2">Radio 2</label>
+	
+<select>
+	<option>Select</option>
+	<option>Option 1</option>
+	<option>Option 2</option>
+	<option>Option 3 With More Text</option>
+</select>
+
+<input type="number" value="0" min="0" max="100"/>');?></code></pre>																												
+
+ 				<div class="MContentSpacer"></div>
 				<hr />
 				<div class="MContentSpacer"></div>
 
@@ -458,14 +497,14 @@
 				<div class="MContentSpacer"></div>
 				<hr />
 				<div class="MContentSpacer"></div>
-				<textarea class="width_full" placeholder="Textarea"></textarea>																																																																																														
-			
-				<div class="MContentSpacer"></div>
+				<textarea class="width_full" placeholder="Textarea"></textarea>																								
+
+ 				<div class="MContentSpacer"></div>
 				<textarea class="width_full input_invisible" placeholder="Textarea with No Border"></textarea>
 				<div class="MContentSpacer"></div>
-				<textarea class="width_full" placeholder="Textarea Disabled" disabled="true"></textarea>						
+				<textarea class="width_full" placeholder="Textarea Disabled" disabled="true"></textarea>																																		
 																																																																																														
-				<div class="MContentSpacer"></div>
+ 				<div class="MContentSpacer"></div>
 				<div class="MContentSpacer"></div>
 
 			</section><!-- section_input -->
@@ -493,6 +532,18 @@
 						<input type="checkbox" />
 						<span class="bold">List Item</span>
 					</li>
+
+					<li class="MListSeperator"></li>
+
+					<li class="MListItem">
+						<input type="checkbox" />
+						<span class="bold">List Item</span>
+					</li>
+
+					<li class="MListItem">
+						<input type="checkbox" />
+						<span class="bold">List Item</span>
+					</li>
 				</ul>
 
 				<a class="showCode">Code</a>
@@ -501,14 +552,26 @@
 		<input type="checkbox" />
 		<span class="bold">List Item</span>
 	</li>
-
+	
 	<li class="MListItem">
 		<input type="checkbox" />
 		<span class="bold">List Item</span>
 	</li>
-</ul>');?></code></pre>
+	
+	<li class="MListSeperator"></li>
+	
+	<li class="MListItem">
+		<input type="checkbox" />
+		<span class="bold">List Item</span>
+	</li>
+	
+	<li class="MListItem">
+		<input type="checkbox" />
+		<span class="bold">List Item</span>
+	</li>
+</ul>');?></code></pre>																												
 
-				<div class="MContentSpacer"></div>
+ 				<div class="MContentSpacer"></div>
 				<div class="MContentSpacer"></div>
 
 			</section><!-- section_list -->
@@ -567,9 +630,9 @@
 			<p>This is another tab body</p>
 		</div>
 	</div>
-</div>');?></code></pre>
+</div>');?></code></pre>																												
 
-				<div class="MContentSpacer"></div>
+ 				<div class="MContentSpacer"></div>
 				<div class="MContentSpacer"></div>
 
 			</section><!-- section_tab -->
@@ -585,9 +648,9 @@
 				</div>
 
 				<a class="showCode">Code</a>
-				<pre class="hidden"><code><?php echo htmlentities('<div class="MWell"></div>');?></code></pre>
+				<pre class="hidden"><code><?php echo htmlentities('<div class="MWell"></div>'); ?></code></pre>																												
 
-				<div class="MContentSpacer"></div>
+ 				<div class="MContentSpacer"></div>
 				<div class="MContentSpacer"></div>
 
 			</section>
@@ -601,11 +664,70 @@
 						I'm in a widget.
 					</p>
 				</div>
-				
-				<a class="showCode">Code</a>
-				<pre class="hidden"><code><?php echo htmlentities('<div class="MWidget"></div>');?></code></pre>
 
+				<a class="showCode">Code</a>
+				<pre class="hidden"><code><?php echo htmlentities('<div class="MWidget"></div>'); ?></code></pre>																
+				
+ 				<div class="MContentSpacer"></div>
 				<div class="MContentSpacer"></div>
+
+			</section>
+
+			<?php /** Layouts */ ?>
+			<section id="section_layout" class="section">
+				<h1>Layout</h1>
+
+				<p class="MWidgetTitle">
+					MVBoxLayout
+				</p>
+
+				<div class="MHBoxLayout">
+					<button>
+						MHBoxLayout
+					</button>
+					<button>
+						MHBoxLayout
+					</button>
+					<button>
+						MHBoxLayout
+					</button>
+				</div>
+
+				<a class="showCode">Code</a>
+				<pre class="hidden"><code><?php echo htmlentities('<div class="MHBoxLayout">
+	<button>Button</button>
+	<button>Button</button>
+	<button>Button</button>
+</div>');?></code></pre>																												
+
+				<div class="MContentSpacer">
+					<hr />
+				</div>
+
+				<p class="MWidgetTitle">
+					MHBoxLayout
+				</p>
+
+				<div class="MVBoxLayout">
+					<button>
+						Button
+					</button>
+					<button>
+						Button
+					</button>
+					<button>
+						Button
+					</button>
+				</div>
+
+				<a class="showCode">Code</a>
+				<pre class="hidden"><code><?php echo htmlentities('<div class="MVBoxLayout">
+	<button>Button</button>
+	<button>Button</button>
+	<button>Button</button>
+</div>');?></code></pre>																												
+
+ 				<div class="MContentSpacer"></div>
 				<div class="MContentSpacer"></div>
 
 			</section>
@@ -658,21 +780,25 @@
 				<br />
 
 				<a class="showCode">Code</a>
-				<pre class="hidden"><code><?php echo htmlentities('<div class="MPopup"></div>');?></code></pre>
+				<pre class="hidden"><code><?php echo htmlentities('<div class="MPopup"></div>'); ?></code></pre>																												
 
-				<div class="MContentSpacer"></div>
+ 				<div class="MContentSpacer"></div>
 				<div class="MContentSpacer"></div>
 
 			</section><!-- section_popup -->
-			
+
 			<section id="section_noShow" class="text_centered hidden">
 				<h1>Select a Section from the Sidebar</h1>
-				<p>or</p>
-				<button class="MButtonGreen" onclick="allShow()">Show All</button>
-				
+				<p>
+					or
+				</p>
+				<button class="MButtonGreen" onclick="allShow()">
+					Show All
+				</button>
+
 				<div class="MContentSpacer"></div>
 				<div class="MContentSpacer"></div>
-				
+
 			</section><!-- section_noShow -->
 
 		</div></td>
