@@ -39,6 +39,7 @@ if (!defined('SERVER_ROOT')) {header('/error_404');
 
 	// Custom/Forked CSS
 	MLoad::css_framework_include('core/MStyle.css');
+	MLoad::css_framework_include('core/MIcons.css');
 
 	// MVC Specific CSS
 	MLoad::css_framework_include('core/style.css');

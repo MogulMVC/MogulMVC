@@ -7,5 +7,6 @@
 		
 		<a href="/">Elements</a>
 		<a href="/typography">Typography</a>
+		<a href="/icons">Icons</a>
 
 	</nav><!--MHeader-->
