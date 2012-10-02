@@ -181,7 +181,7 @@
 			<span class="MIconPoster"></span>
 			<span class="MIconList"></span>
 			<span class="MIconHD"></span>
-			<span class="MIconGrid">
+			<span class="MIconGrid"></span>
 			
 			<div class="MContentSpacer"></div>
 			<div class="MContentSpacer"></div>
