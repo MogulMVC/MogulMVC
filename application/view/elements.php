@@ -173,7 +173,7 @@
 			</section><!-- section_slider -->
 
 			<?php /** Bars */ ?>
-			<li id="section_bar" class="section">
+			<section id="section_bar" class="section">
 				<h1>Bar</h1>
 
 				<progress id="someProgress" min="0" max="100" value="40"></progress>
@@ -188,7 +188,7 @@
  				<div class="MContentSpacer"></div>
 				<div class="MContentSpacer"></div>
 
-			</li><!-- section_bar -->
+			</section><!-- section_bar -->
 
 			<?php /** Buttons */ ?>
 			<section id="section_button" class="section">
