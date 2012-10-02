@@ -178,12 +178,12 @@
 
 				<progress id="someProgress" min="0" max="100" value="40"></progress>
 				<a class="showCode">Code</a>
-				<pre class="hidden"><code><?php echo htmlentities('<progress min="0" max="100"></progress>'); ?></code></pre>				
+				<pre class="hidden"><code><?php echo htmlentities('<progress min="0" max="100"></progress>'); ?></code></pre>
 				<div class="MContentSpacer"></div>
 
 				<meter id="someMeter" min="0" max="100" value="40"></meter>
 				<a class="showCode">Code</a>
-				<pre class="hidden"><code><?php echo htmlentities('<meter min="0" max="100"></meter>'); ?></code></pre>
+				<pre class="hidden"><code><?php echo htmlentities('<meter min="0" max="100"></meter>'); ?></code></pre>				
 
  				<div class="MContentSpacer"></div>
 				<div class="MContentSpacer"></div>
@@ -198,7 +198,7 @@
 
 					<tr>
 						<th>&lt;a&gt;</th>
-						<th>&lt;button&gt;</th>
+						<th><span class="MNote">&lt;button&gt; is prefered</span></th>
 						<th>&lt;div&gt;</th>
 						<th>&lt;span&gt;</th>
 					</tr>
@@ -227,19 +227,6 @@
 							Button Disabled
 						</div></td>
 						<td><span class="MButton" MTip="S" title="I'm a &lt;span&gt; tag disabled." disabled="true">Button Disabled</span></td>
-					</tr>
-
-					<tr>
-						<td><a class="MButton" MTip="S" title="I'm an &lt;a&gt; tag disabled." disabled="true"><span class='MIconLoadingButton'></span>Button Loading</a></td>
-						<td>
-						<button MTip="S" title="I'm a &lt;button&gt; tag disabled." disabled="true">
-							<span class='MIconLoadingButton'></span>Button Loading
-						</button></td>
-						<td>
-						<div class="MButton" MTip="S" title="I'm a &lt;div&gt; tag disabled." disabled="true">
-							<span class='MIconLoadingButton'></span>Button Loading
-						</div></td>
-						<td><span class="MButton" MTip="S" title="I'm a &lt;span&gt; tag disabled." disabled="true"><span class='MIconLoadingButton'></span>Button Loading</span></td>
 					</tr>
 
 					<tr>
@@ -327,7 +314,8 @@
 <button class="MButton">Button</button>
 <div class="MButton">Button</div>
 <span class="MButton">Button</span>');
-				?></code></pre>
+				?></code></pre>				
+
 
 				<div class="MContentSpacer">
 					<hr />
@@ -346,7 +334,9 @@
 				<a class="showCode">Code</a>
 				<pre class="hidden"><code><?php echo htmlentities('<input type="button" value="Button"/>
 <input type="submit" />
-<input type="reset" />');?></code></pre>																												
+<input type="reset" />');
+				?></code></pre>																																
+
 
 				<div class="MContentSpacer">
 					<hr />
@@ -359,7 +349,14 @@
 				<table class="width_full left">
 					<tr>
 						<td class="text_right" style="width:70px;"><span class="bold">&lt;a&gt;</span></td>
-						<td><a  id="animated_button_a" class="MButton left" onclick="$(this).MHTMLAnimate('The text is now much longer and the button has animated to accomidate the new text.', 1000);$('#animated_button_a_reset').fadeIn(250);" MTip="W" title="I'm an &lt;a&gt; tag.">Change Text</a><a id="animated_button_a_reset" onclick="$('#animated_button_a').MHTMLAnimate('Change Text', 1000);$(this).fadeOut(250);" class="hidden right">Reset</a></td>
+						<td><a id="animated_button_a" class="MButton left" onclick="$(this).MHTMLAnimate('The text is now much longer and the button has animated to accomidate the new text.', 1000);$('#animated_button_a_reset').fadeIn(250);" MTip="W" title="I'm an &lt;a&gt; tag.">Change Text</a><a id="animated_button_a_reset" onclick="$('#animated_button_a').MHTMLAnimate('Change Text', 1000);$(this).fadeOut(250);" class="hidden right">Reset</a></td>
+					</tr>
+					<tr>
+						<td class="text_right"><span class="bold">&lt;button&gt;</span></td>
+						<td>
+						<button id="animated_button_button" class="MButton left" onclick="$(this).MHTMLAnimate('The text is now much longer and the button has animated to accomidate the new text.', 1000);$('#animated_button_button_reset').fadeIn(250);" MTip="W" title="I'm a &lt;span&gt; tag.">
+							Change Text
+						</button><a id="animated_button_button_reset" onclick="$('#animated_button_button').MHTMLAnimate('Change Text', 1000);$(this).fadeOut(250);" class="hidden right">Reset</a></td>
 					</tr>
 					<tr>
 						<td class="text_right"><span class="bold">&lt;div&gt;</span></td>
@@ -375,7 +372,8 @@
 				</table>
 
 				<a class="showCode">Code</a>
-				<pre class="hidden"><code><?php echo htmlentities('$(this).MHTMLAnimate("The text is now much longer and the button has animated to accomidate the new text.", 1000);'); ?></code></pre>
+				<pre class="hidden"><code><?php echo htmlentities('$(this).MHTMLAnimate("The text is now much longer and the button has animated to accomidate the new text.", 1000);'); ?></code></pre>				
+
 
 				<div class="MContentSpacer">
 					<hr />
@@ -406,9 +404,9 @@
 				</div>
 
 				<a class="showCode">Code</a>
-				<pre class="hidden"><code><?php echo htmlentities('<input type="file" />'); ?></code></pre>
+				<pre class="hidden"><code><?php echo htmlentities('<input type="file" />'); ?></code></pre>				
 
- 				<div class="MContentSpacer"></div>
+ <div class="MContentSpacer"></div>
 				<div class="MContentSpacer"></div>
 
 			</section><!-- section_button -->
@@ -482,9 +480,10 @@
 	<option>Option 3 With More Text</option>
 </select>
 
-<input type="number" value="0" min="0" max="100"/>');?></code></pre>																												
+<input type="number" value="0" min="0" max="100"/>');
+				?></code></pre>																																
 
- 				<div class="MContentSpacer"></div>
+ <div class="MContentSpacer"></div>
 				<hr />
 				<div class="MContentSpacer"></div>
 
@@ -497,14 +496,14 @@
 				<div class="MContentSpacer"></div>
 				<hr />
 				<div class="MContentSpacer"></div>
-				<textarea class="width_full" placeholder="Textarea"></textarea>																								
+				<textarea class="width_full" placeholder="Textarea"></textarea>																												
 
- 				<div class="MContentSpacer"></div>
+ <div class="MContentSpacer"></div>
 				<textarea class="width_full input_invisible" placeholder="Textarea with No Border"></textarea>
 				<div class="MContentSpacer"></div>
-				<textarea class="width_full" placeholder="Textarea Disabled" disabled="true"></textarea>																																		
+				<textarea class="width_full" placeholder="Textarea Disabled" disabled="true"></textarea>																																						
 																																																																																														
- 				<div class="MContentSpacer"></div>
+ <div class="MContentSpacer"></div>
 				<div class="MContentSpacer"></div>
 
 			</section><!-- section_input -->
@@ -569,9 +568,10 @@
 		<input type="checkbox" />
 		<span class="bold">List Item</span>
 	</li>
-</ul>');?></code></pre>																												
+</ul>');
+				?></code></pre>																																
 
- 				<div class="MContentSpacer"></div>
+ <div class="MContentSpacer"></div>
 				<div class="MContentSpacer"></div>
 
 			</section><!-- section_list -->
@@ -630,9 +630,10 @@
 			<p>This is another tab body</p>
 		</div>
 	</div>
-</div>');?></code></pre>																												
+</div>');
+				?></code></pre>																																
 
- 				<div class="MContentSpacer"></div>
+ <div class="MContentSpacer"></div>
 				<div class="MContentSpacer"></div>
 
 			</section><!-- section_tab -->
@@ -648,9 +649,9 @@
 				</div>
 
 				<a class="showCode">Code</a>
-				<pre class="hidden"><code><?php echo htmlentities('<div class="MWell"></div>'); ?></code></pre>																												
+				<pre class="hidden"><code><?php echo htmlentities('<div class="MWell"></div>'); ?></code></pre>																																
 
- 				<div class="MContentSpacer"></div>
+ <div class="MContentSpacer"></div>
 				<div class="MContentSpacer"></div>
 
 			</section>
@@ -666,9 +667,9 @@
 				</div>
 
 				<a class="showCode">Code</a>
-				<pre class="hidden"><code><?php echo htmlentities('<div class="MWidget"></div>'); ?></code></pre>																
+				<pre class="hidden"><code><?php echo htmlentities('<div class="MWidget"></div>'); ?></code></pre>																				
 				
- 				<div class="MContentSpacer"></div>
+ <div class="MContentSpacer"></div>
 				<div class="MContentSpacer"></div>
 
 			</section>
@@ -698,7 +699,9 @@
 	<button>Button</button>
 	<button>Button</button>
 	<button>Button</button>
-</div>');?></code></pre>																												
+</div>');
+				?></code></pre>																																
+
 
 				<div class="MContentSpacer">
 					<hr />
@@ -725,9 +728,10 @@
 	<button>Button</button>
 	<button>Button</button>
 	<button>Button</button>
-</div>');?></code></pre>																												
+</div>');
+				?></code></pre>																																
 
- 				<div class="MContentSpacer"></div>
+ <div class="MContentSpacer"></div>
 				<div class="MContentSpacer"></div>
 
 			</section>
@@ -780,9 +784,9 @@
 				<br />
 
 				<a class="showCode">Code</a>
-				<pre class="hidden"><code><?php echo htmlentities('<div class="MPopup"></div>'); ?></code></pre>																												
+				<pre class="hidden"><code><?php echo htmlentities('<div class="MPopup"></div>'); ?></code></pre>																																
 
- 				<div class="MContentSpacer"></div>
+ <div class="MContentSpacer"></div>
 				<div class="MContentSpacer"></div>
 
 			</section><!-- section_popup -->
