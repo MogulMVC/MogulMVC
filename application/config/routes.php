@@ -11,4 +11,3 @@ if (!defined('SERVER_ROOT')) {header('/error_404');
 //
 // Page to controller
 // $ROUTE['page/subpage'] = 'controller/function';
-?>

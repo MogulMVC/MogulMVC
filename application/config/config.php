@@ -47,4 +47,3 @@ define('APPLICATION_FAVICON', 'favicon.ico');
 //File locations start within the APPLICATION_IMG folder
 // 64x64 png file
 define('APPLICATION_ICON', 'icon.png');
-?>

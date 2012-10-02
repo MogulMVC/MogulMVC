@@ -31,4 +31,3 @@ if ($DB_HOST_COUNT > 0) {
 		}
 	}
 }
-?>

@@ -134,4 +134,3 @@ else {
 		$OBJECT -> $FUNCTION();
 	}
 }
-?>

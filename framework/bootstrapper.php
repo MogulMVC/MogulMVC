@@ -35,4 +35,3 @@ require_once (SERVER_ROOT . '/' . APPLICATION . '/config/variables.php');
 
 //The dispatcher runs the selected class
 require_once (SERVER_ROOT . '/' . FRAMEWORK . '/core/dispatcher.php');
-?>

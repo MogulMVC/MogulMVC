@@ -5,4 +5,3 @@ if (!defined('SERVER_ROOT')) {header('/error_404');
 
 // Example
 // $GLOBALS['var'] = value;
-?>

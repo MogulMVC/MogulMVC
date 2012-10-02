@@ -10,4 +10,3 @@ if (APPLICATION_ENVIRONMENT == 'development') {
 } else {
 	exit('APPLICATION_ENVIRONMENT is not set correctly.');
 }
-?>

@@ -16,4 +16,3 @@ define('FRAMEWORK_VIEW', 'view');
 
 define('FRAMEWORK_HEAD', 'head.php');
 define('FRAMEWORK_FOOT', 'foot.php');
-?>

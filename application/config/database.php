@@ -8,4 +8,3 @@ $DB_HOST = array();
 $DB_USER = array();
 $DB_PASS = array();
 $DB_NAME = array();
-?>

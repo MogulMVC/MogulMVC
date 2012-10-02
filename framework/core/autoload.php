@@ -10,4 +10,3 @@ foreach ($AUTOLOAD_PHP_FRAMEWORK as $php_framework) {
 foreach ($AUTOLOAD_PHP_APPLICATION as $php_application) {
 	MLoad::php_application($php_application);
 }
-?>
