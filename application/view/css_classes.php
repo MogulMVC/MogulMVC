@@ -102,17 +102,6 @@
 		<td class="width_full padding">
 		<div class="width_full">
 
-			<section>
-				<p>This page contains all elements that can be added with HTML and are automatically transformed into themed or cross browser classes.</p>
-				<p><span class="bold">&lt;progress&gt;</span> tags are turn into MProgressBar classes, which work on all browsers.</p>
-				<p><span class="bold">&lt;meter&gt;</span> tags are turn into MRatingsBar classes, which also work on all browsers.</p>
-				<p><span class="bold">&lt;input type="file" /&gt;</span> tags are turn into MButtonUpload classes, which visually matches the MButtonBlue class.</p>
-				<p><span class="bold">&lt;li&gt;</span> tags containing 1 checkbox turn blue when the checkbox is checked.</p>
-				
-				<div class="MContentSpacer"></div>
-				<div class="MContentSpacer"></div>
-			</section>
-
 			<?php /** Buttons */ ?>
 			<section id="section_button" class="section">
 				<h1>Button</h1>
