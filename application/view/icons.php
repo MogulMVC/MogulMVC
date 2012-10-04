@@ -30,7 +30,7 @@
 
 		</ul></td>
 
-		<td class="width_full" style="padding: 30px">
+		<td class="width_full padding">
 			
 		<section id="section_">
 			<h1>Arrows</h1>

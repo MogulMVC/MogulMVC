@@ -54,39 +54,6 @@
 	}
 </script>
 
-<div id="MToolBarPlaceholder"></div>
-<nav id="MToolBar">
-	<div class="MToolBarSpacer left"></div>
-	<div class="MToolBarSpacer right"></div>
-
-	<h1 class="MToolBarTitle left" MTip="NW" title="Toobar titles are always added to an h1 tag.">Toolbar Title</h1>
-
-	<div class="MToolBarSeperator left"></div>
-
-	<button class="MButton left" MTip="NW" title="I'm an &lt;button&gt; tag.">
-		Button
-	</button>
-
-	<a class="left"><img src="<?php echo MLoad::icon_framework('embed_16x16.png'); ?>" alt="Embed" class="toolbar_icon"/>Toolbar Link with Icon</a>
-
-	<div class="right">
-		<span class="MButtonRed left" MTip="NE" title="I'm an &lt;span&gt; tag.">Button Red</span>
-		<div class="MToolBarSpacer left"></div>
-		<button class="MButtonBlue left" MTip="NE" title="I'm an &lt;button&gt; tag.">
-			Button Blue
-		</button>
-	</div>
-
-	<div class="MToolBarSeperator right"></div>
-
-	<div id="display_options" class="right">
-		<span class="bold left">Toolbar Label:</span>
-		<a class="left">Toolbar Link</a>
-		<a class="left" onclick="MSystemMessage.init('A new message')">New System Message</a>
-	</div><!-- display_options -->
-
-</nav><!-- MToolBar -->
-
 <div id="MSystemMessageContainer"></div><!-- MSystemMessageContainer -->
 
 <table>
@@ -106,16 +73,6 @@
 			</div>
 
 			<li>
-				<input type="checkbox" value="section_slider" checked="true" onclick="updateShow()"/>
-				<span>Slider</span>
-			</li>
-
-			<li>
-				<input type="checkbox" value="section_bar" checked="true" onclick="updateShow()"/>
-				<span>Bar</span>
-			</li>
-
-			<li>
 				<input type="checkbox" value="section_button" checked="true" onclick="updateShow()"/>
 				<span>Button</span>
 			</li>
@@ -123,16 +80,6 @@
 			<li>
 				<input type="checkbox" value="section_input" checked="true" onclick="updateShow()"/>
 				<span>Input</span>
-			</li>
-
-			<li>
-				<input type="checkbox" value="section_list" checked="true" onclick="updateShow()"/>
-				<span>List</span>
-			</li>
-
-			<li>
-				<input type="checkbox" value="section_tab" checked="true" onclick="updateShow()"/>
-				<span>Tab</span>
 			</li>
 
 			<li>
@@ -150,45 +97,21 @@
 				<span>Layout</span>
 			</li>
 
-			<li>
-				<input type="checkbox" value="section_popup" checked="true" onclick="updateShow()"/>
-				<span>Popup</span>
-			</li>
-
 		</ul><!-- sidebar --></td>
 
-		<td class="width_full" style="padding:30px;">
+		<td class="width_full padding">
 		<div class="width_full">
 
-			<?php /** Sliders */ ?>
-			<section id="section_slider" class="section">
-				<h1>Slider</h1>
-				<span class="MNote" style="left: 80px;bottom: 60px;">A work in progress.</span>
-
-				<input type="range" min="0" max="100" value="40" class="width_full" onchange='MProgressBar.setPercent("#someProgress", this.value);MRatingsBar.setPercent("#someMeter", this.value);'/>
-
+			<section>
+				<p>This page contains all elements that can be added with HTML and are automatically transformed into themed or cross browser classes.</p>
+				<p><span class="bold">&lt;progress&gt;</span> tags are turn into MProgressBar classes, which work on all browsers.</p>
+				<p><span class="bold">&lt;meter&gt;</span> tags are turn into MRatingsBar classes, which also work on all browsers.</p>
+				<p><span class="bold">&lt;input type="file" /&gt;</span> tags are turn into MButtonUpload classes, which visually matches the MButtonBlue class.</p>
+				<p><span class="bold">&lt;li&gt;</span> tags containing 1 checkbox turn blue when the checkbox is checked.</p>
+				
 				<div class="MContentSpacer"></div>
 				<div class="MContentSpacer"></div>
-
-			</section><!-- section_slider -->
-
-			<?php /** Bars */ ?>
-			<section id="section_bar" class="section">
-				<h1>Bar</h1>
-
-				<progress id="someProgress" min="0" max="100" value="40"></progress>
-				<a class="showCode">Code</a>
-				<pre class="hidden"><code><?php echo htmlentities('<progress min="0" max="100"></progress>'); ?></code></pre>
-				<div class="MContentSpacer"></div>
-
-				<meter id="someMeter" min="0" max="100" value="40"></meter>
-				<a class="showCode">Code</a>
-				<pre class="hidden"><code><?php echo htmlentities('<meter min="0" max="100"></meter>'); ?></code></pre>				
-
- 				<div class="MContentSpacer"></div>
-				<div class="MContentSpacer"></div>
-
-			</section><!-- section_bar -->
+			</section>
 
 			<?php /** Buttons */ ?>
 			<section id="section_button" class="section">
@@ -374,39 +297,7 @@
 				<a class="showCode">Code</a>
 				<pre class="hidden"><code><?php echo htmlentities('$(this).MHTMLAnimate("The text is now much longer and the button has animated to accomidate the new text.", 1000);'); ?></code></pre>				
 
-
-				<div class="MContentSpacer">
-					<hr />
-				</div>
-
-				<p class="MWidgetTitle">
-					Upload Buttons
-				</p>
-
-				<div class="text_centered">
-					<form action="/action_button_upload_action" target="button_upload_frame_left" method="post" enctype="multipart/form-data" class="left" MTip="SW" title="A very complex button floated left.">
-						<input type="hidden" id="button_upload_data_left" name="data"/>
-						<input type="file" id="button_upload_file_left" name="file" onchange="upload()"/>
-					</form><!-- button_upload_form_left -->
-					<iframe id="button_upload_frame_left" name="button_upload_frame_left" class="hidden"></iframe>
-
-					<form action="/action_button_upload_action" target="button_upload_frame" method="post" enctype="multipart/form-data" class="right" MTip="SE" title="A very complex button floated right.">
-						<input type="hidden" id="button_upload_data" name="data"/>
-						<input type="file" id="button_upload_file" name="file" onchange="upload()"/>
-					</form><!-- button_upload_form -->
-					<iframe id="button_upload_frame" name="button_upload_frame" class="hidden"></iframe>
-
-					<form action="/action_button_upload_action" target="button_upload_frame_right" method="post" enctype="multipart/form-data" MTip="S" title="A very complex button.">
-						<input type="hidden" id="button_upload_data_right" name="data"/>
-						<input type="file" id="button_upload_file_right" name="file" onchange="upload()"/>
-					</form><!-- button_upload_form_right -->
-					<iframe id="button_upload_frame_right" name="button_upload_frame_right" class="hidden"></iframe>
-				</div>
-
-				<a class="showCode">Code</a>
-				<pre class="hidden"><code><?php echo htmlentities('<input type="file" />'); ?></code></pre>				
-
- <div class="MContentSpacer"></div>
+ 				<div class="MContentSpacer"></div>
 				<div class="MContentSpacer"></div>
 
 			</section><!-- section_button -->
@@ -483,7 +374,7 @@
 <input type="number" value="0" min="0" max="100"/>');
 				?></code></pre>																																
 
- <div class="MContentSpacer"></div>
+ 				<div class="MContentSpacer"></div>
 				<hr />
 				<div class="MContentSpacer"></div>
 
@@ -498,181 +389,15 @@
 				<div class="MContentSpacer"></div>
 				<textarea class="width_full" placeholder="Textarea"></textarea>																												
 
- <div class="MContentSpacer"></div>
+ 				<div class="MContentSpacer"></div>
 				<textarea class="width_full input_invisible" placeholder="Textarea with No Border"></textarea>
 				<div class="MContentSpacer"></div>
 				<textarea class="width_full" placeholder="Textarea Disabled" disabled="true"></textarea>																																						
 																																																																																														
- <div class="MContentSpacer"></div>
+ 				<div class="MContentSpacer"></div>
 				<div class="MContentSpacer"></div>
 
 			</section><!-- section_input -->
-
-			<?php /** List */ ?>
-			<section id="section_list" class="section">
-				<h1>List</h1>
-
-				<div class="MHBoxLayout text_centered">
-					<button onclick="MList.deselectAll();">
-						Deselect All
-					</button>
-					<button onclick="MList.selectAll();">
-						Select All
-					</button>
-				</div>
-
-				<ul>
-					<li class="MListItem">
-						<input type="checkbox" />
-						<span class="bold">List Item</span>
-					</li>
-
-					<li class="MListItem">
-						<input type="checkbox" />
-						<span class="bold">List Item</span>
-					</li>
-
-					<li class="MListSeperator"></li>
-
-					<li class="MListItem">
-						<input type="checkbox" />
-						<span class="bold">List Item</span>
-					</li>
-
-					<li class="MListItem">
-						<input type="checkbox" />
-						<span class="bold">List Item</span>
-					</li>
-				</ul>
-
-				<a class="showCode">Code</a>
-				<pre class="hidden"><code><?php echo htmlentities('<ul>
-	<li class="MListItem">
-		<input type="checkbox" />
-		<span class="bold">List Item</span>
-	</li>
-	
-	<li class="MListItem">
-		<input type="checkbox" />
-		<span class="bold">List Item</span>
-	</li>
-	
-	<li class="MListSeperator"></li>
-	
-	<li class="MListItem">
-		<input type="checkbox" />
-		<span class="bold">List Item</span>
-	</li>
-	
-	<li class="MListItem">
-		<input type="checkbox" />
-		<span class="bold">List Item</span>
-	</li>
-</ul>');
-				?></code></pre>																																
-
- <div class="MContentSpacer"></div>
-				<div class="MContentSpacer"></div>
-
-			</section><!-- section_list -->
-
-			<?php /** Tab */ ?>
-			<section id="section_tab" class="section">
-				<h1>Tab</h1>
-
-				<div class="MTabWidget">
-					<ul class="MTabContainer">
-						<li class="MTab">
-							<a href="#tab_body_1">Tab 1</a>
-						</li>
-						<li class="MTab">
-							<a href="#tab_body_2">Tab 2</a>
-						</li>
-					</ul><!-- tabs_container -->
-					<div class="MTabBodyContainer">
-						<div id="tab_body_1">
-							<p>
-								This is a tab body
-							</p>
-						</div>
-						<div id="tab_body_2">
-							<p>
-								This is another tab body
-							</p>
-							<p>
-								This is another tab body
-							</p>
-							<p>
-								This is another tab body
-							</p>
-						</div>
-
-					</div><!-- MTabBodyContainer -->
-				</div><!-- MTabWidget -->
-
-				<a class="showCode">Code</a>
-				<pre class="hidden"><code><?php echo htmlentities('<div class="MTabWidget">
-	<ul class="MTabContainer">
-		<li class="MTab">
-			<a href="#tab_body_1">Tab 1</a>
-		</li>
-		<li class="MTab">
-			<a href="#tab_body_2">Tab 2</a>
-		</li>
-	</ul>
-	<div class="MTabBodyContainer">
-		<div id="tab_body_1">
-			<p>This is a tab body</p>
-		</div>
-		<div id="tab_body_2">
-			<p>This is another tab body</p>
-			<p>This is another tab body</p>
-			<p>This is another tab body</p>
-		</div>
-	</div>
-</div>');
-				?></code></pre>																																
-
- <div class="MContentSpacer"></div>
-				<div class="MContentSpacer"></div>
-
-			</section><!-- section_tab -->
-
-			<?php /** Well */ ?>
-			<section id="section_well" class="section">
-				<h1>Well</h1>
-
-				<div class="MWell">
-					<p>
-						I'm in a well.
-					</p>
-				</div>
-
-				<a class="showCode">Code</a>
-				<pre class="hidden"><code><?php echo htmlentities('<div class="MWell"></div>'); ?></code></pre>																																
-
- <div class="MContentSpacer"></div>
-				<div class="MContentSpacer"></div>
-
-			</section>
-
-			<?php /** Widget */ ?>
-			<section id="section_widget" class="section">
-				<h1>Widget</h1>
-
-				<div class="MWidget">
-					<p>
-						I'm in a widget.
-					</p>
-				</div>
-
-				<a class="showCode">Code</a>
-				<pre class="hidden"><code><?php echo htmlentities('<div class="MWidget"></div>'); ?></code></pre>																				
-				
- <div class="MContentSpacer"></div>
-				<div class="MContentSpacer"></div>
-
-			</section>
 
 			<?php /** Layouts */ ?>
 			<section id="section_layout" class="section">
@@ -731,65 +456,46 @@
 </div>');
 				?></code></pre>																																
 
- <div class="MContentSpacer"></div>
+ 				<div class="MContentSpacer"></div>
+				<div class="MContentSpacer"></div>
+
+			</section><!-- section_layout -->
+
+			<?php /** Well */ ?>
+			<section id="section_well" class="section">
+				<h1>Well</h1>
+
+				<div class="MWell">
+					<p>
+						I'm in a well.
+					</p>
+				</div>
+
+				<a class="showCode">Code</a>
+				<pre class="hidden"><code><?php echo htmlentities('<div class="MWell"></div>'); ?></code></pre>																																
+
+				<div class="MContentSpacer"></div>
 				<div class="MContentSpacer"></div>
 
 			</section>
 
-			<?php /** Popup */ ?>
-			<section id="section_popup" class="section">
-				<h1>Popup</h1>
+			<?php /** Widget */ ?>
+			<section id="section_widget" class="section">
+				<h1>Widget</h1>
 
-				<button class="MButtonBlue" onclick="$('#elements_popup').show();">
-					Show Popup Container
-				</button>
-
-				<div id="elements_popup" class="hidden">
-
-					<div class="MPopup">
-
-						<span class="MIconClose" onclick="$('#elements_popup').hide();"></span>
-
-						<p class="MWidgetTitle">
-							Popup
-						</p>
-
-						<div class="MPopupMenu">
-
-							<button id="elements_popup_button_apply" class="MButtonBlue right">
-								Apply
-							</button>
-
-							<form id="elements_popup_form" name="elements_popup_form" class="MButtonUploadForm"  action="/action_image" target="elements_popup_frame" method="post" enctype="multipart/form-data">
-								<input type="hidden" id="elements_popup_version" name="version"/>
-								<input type="file" id="elements_popup_file" name="file"/>
-							</form>
-
-							<iframe id="elements_popup_frame" name="elements_popup_frame" class="hidden"></iframe>
-
-						</div><!-- MPopupMenu -->
-
-						<hr class="clear"/>
-						<br />
-
-						<p class="text_centered bold">
-							Content Goes Here
-						</p>
-
-					</div><!-- MPopupContainer -->
-
-					<div onclick="$('#elements_popup').hide();" class="MModalBGBlack"></div>
-				</div><!-- elements_popup -->
-
-				<br />
+				<div class="MWidget">
+					<p>
+						I'm in a widget.
+					</p>
+				</div>
 
 				<a class="showCode">Code</a>
-				<pre class="hidden"><code><?php echo htmlentities('<div class="MPopup"></div>'); ?></code></pre>																																
-
- <div class="MContentSpacer"></div>
+				<pre class="hidden"><code><?php echo htmlentities('<div class="MWidget"></div>'); ?></code></pre>																				
+				
+				 <div class="MContentSpacer"></div>
 				<div class="MContentSpacer"></div>
 
-			</section><!-- section_popup -->
+			</section>
 
 			<section id="section_noShow" class="text_centered hidden">
 				<h1>Select a Section from the Sidebar</h1>

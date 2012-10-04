@@ -1,51 +1,5 @@
-<div class="MContent610">
-
-	<div class="MContentSpacer"></div>
-
-	<div class="MVBoxLayout">
-
-		<input type="text" id="inputContent" />
-
-		<button id="createButton">
-			Create Button
-		</button>
-
-		<button id="createListItem">
-			Create List Item
-		</button>
-
-		<button id="createNote">
-			Create Note
-		</button>
-
-		<button id="createPopup">
-			Create Popup
-		</button>
-
-		<button id="createProgressBar">
-			Create Progress Bar
-		</button>
-
-		<button id="createRatingsBar">
-			Create Ratings Bar
-		</button>
-
-		<button id="createSystemMessage">
-			Create System Message
-		</button>
-
-		<div class="MContentSpacer"></div>
-		<hr />
-		<div class="MContentSpacer"></div>
-
-		<div id="newContent"></div>
-
-	</div>
-
-</div>
-
 <script>
-	(function() {
+	$(document).ready(function() {
 		$('#createButton').click(createButton);
 		$('#createListItem').click(createListItem);
 		$('#createNote').click(createNote);
@@ -53,7 +7,7 @@
 		$('#createProgressBar').click(createProgressBar);
 		$('#createRatingsBar').click(createRatingsBar);
 		$('#createSystemMessage').click(createSystemMessage);
-	})();
+	});
 
 	function createButton() {
 		var input = $('#inputContent').val();
@@ -67,6 +21,7 @@
 		var input = $('#inputContent').val();
 
 		var object = new MListItem();
+		console.log( typeof object.toHTML());
 		$('#newContent').append(object.toHTML());
 	};
 
@@ -100,13 +55,61 @@
 		object.setPercent(input);
 		$('#newContent').append(object.toHTML());
 	};
-	
+
 	function createSystemMessage() {
 		var input = $('#inputContent').val();
 
 		var object = new MSystemMessage();
 		object.setText(input);
 		$('#MSystemMessageContainer').append(object.toHTML());
+
 	};
 
 </script>
+
+<table class="width_full">
+	<tr class="width_full">
+
+		<td id="MSideBarContainer">
+		<ul id="MSideBar" class="MSideBarLeft">
+
+			<div class="padding_small">
+				<input type="text" id="inputContent" class="width_full" placeholder="Custom Messages / Value"/>
+			</div>
+
+			<hr />
+
+			<li id="createButton">
+				<span>New Button</span>
+			</li>
+
+			<li id="createListItem">
+				<span>New List Item</span>
+			</li>
+
+			<li id="createNote">
+				<span>New Note</span>
+			</li>
+
+			<li id="createPopup">
+				<span>New Popup</span>
+			</li>
+
+			<li id="createProgressBar">
+				<span>New Progress Bar</span>
+			</li>
+
+			<li id="createRatingsBar">
+				<span>New Ratings Bar</span>
+			</li>
+
+			<li id="createSystemMessage">
+				<span>New System Message</span>
+			</li>
+
+		</ul></td>
+
+		<td class="width_full padding"><div class="MContentSpacer"></div><div id="newContent" style="padding"></div></td>
+
+	</tr>
+</table>
