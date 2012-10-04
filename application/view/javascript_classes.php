@@ -56,6 +56,19 @@
 		$('#newContent').append(object.toHTML());
 	};
 
+	function createIncrease() {
+
+		for (var i = 0; i <= 100; i++) {
+			var input = $('#inputContent').val();
+
+			var object = new MProgressBar();
+			object.setPercent(i);
+			$('#newContent').append(object.toHTML());
+			console.log(i);
+		}
+
+	};
+
 	function createSystemMessage() {
 		var input = $('#inputContent').val();
 
@@ -107,9 +120,13 @@
 				<span>New System Message</span>
 			</li>
 
+			<button onclick="createIncrease();">
+				Special
+			</button>
+
 		</ul></td>
 
-		<td class="width_full padding"><div class="MContentSpacer"></div><div id="newContent" style="padding"></div></td>
+		<td class="width_full padding"><div id="newContent" style="padding"></div></td>
 
 	</tr>
 </table>
