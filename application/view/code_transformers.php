@@ -18,7 +18,7 @@
 		});
 
 		checkNoShow();
-	}
+	};
 
 	function noShow() {
 		MSideBar.deselectAll();
@@ -26,7 +26,7 @@
 		$('.section').fadeOut(speedNorm, function() {
 			checkNoShow();
 		});
-	}
+	};
 
 	function allShow() {
 		MSideBar.selectAll();
@@ -34,7 +34,7 @@
 		$('.section').fadeIn(speedNorm, function() {
 			checkNoShow();
 		});
-	}
+	};
 
 	function checkNoShow() {
 
@@ -51,7 +51,7 @@
 		} else {
 			$('#section_noShow').fadeOut(speedNorm);
 		}
-	}
+	};
 </script>
 
 <div id="MSystemMessageContainer"></div><!-- MSystemMessageContainer -->
@@ -72,30 +72,40 @@
 				</button>
 			</div>
 
-			<li>
-				<input type="checkbox" value="section_slider" checked="true" onclick="updateShow()"/>
-				<span>Slider</span>
-			</li>
+			<label for="check_slider">
+				<li>
+					<input id="check_slider" type="checkbox" value="section_slider" checked="true" onclick="updateShow()"/>
+					<span>Slider</span>
+				</li> 
+			</label>
 
-			<li>
-				<input type="checkbox" value="section_bar" checked="true" onclick="updateShow()"/>
-				<span>Bar</span>
-			</li>
+			<label for="check_bar">
+				<li>
+					<input id="check_bar" type="checkbox" value="section_bar" checked="true" onclick="updateShow()"/>
+					<span>Bar</span>
+				</li>
+			</label>
 
-			<li>
-				<input type="checkbox" value="section_button" checked="true" onclick="updateShow()"/>
-				<span>Upload Button</span>
-			</li>
+			<label for="check_button">
+				<li>
+					<input id="check_button" type="checkbox" value="section_button" checked="true" onclick="updateShow()"/>
+					<span>Upload Button</span>
+				</li>
+			</label>
 
-			<li>
-				<input type="checkbox" value="section_list" checked="true" onclick="updateShow()"/>
-				<span>List</span>
-			</li>
+			<label for="check_list">
+				<li>
+					<input id="check_list" type="checkbox" value="section_list" checked="true" onclick="updateShow()"/>
+					<span>List</span>
+				</li>
+			</label>
 
-			<li>
-				<input type="checkbox" value="section_tab" checked="true" onclick="updateShow()"/>
-				<span>Tab</span>
-			</li>
+			<label for="check_tab">
+				<li>
+					<input id="check_tab" type="checkbox" value="section_tab" checked="true" onclick="updateShow()"/>
+					<span>Tab</span>
+				</li>
+			</label>
 
 		</ul><!-- sidebar --></td>
 

@@ -61,43 +61,54 @@
 	<tr class="width_full">
 
 		<td id="MSideBarContainer"><div id="MSideBarTriggerLeft"></div>
-		<ul id="MSideBar" class="MSideBarLeft">
-
-			<div class="MSideBarMenu">
-				<button onclick="noShow()">
-					Deselect All
-				</button>
-				<button onclick="allShow()">
-					Select All
-				</button>
-			</div>
-
-			<li>
-				<input type="checkbox" value="section_button" checked="true" onclick="updateShow()"/>
-				<span>Button</span>
-			</li>
-
-			<li>
-				<input type="checkbox" value="section_input" checked="true" onclick="updateShow()"/>
-				<span>Input</span>
-			</li>
-
-			<li>
-				<input type="checkbox" value="section_well" checked="true" onclick="updateShow()"/>
-				<span>Well</span>
-			</li>
-
-			<li>
-				<input type="checkbox" value="section_widget" checked="true" onclick="updateShow()"/>
-				<span>Widget</span>
-			</li>
-
-			<li>
-				<input type="checkbox" value="section_layout" checked="true" onclick="updateShow()"/>
-				<span>Layout</span>
-			</li>
-
-		</ul><!-- sidebar --></td>
+			<ul id="MSideBar" class="MSideBarLeft">
+	
+				<div class="MSideBarMenu">
+					<button onclick="noShow()">
+						Deselect All
+					</button>
+					<button onclick="allShow()">
+						Select All
+					</button>
+				</div>
+	
+				<label for="check_button">
+					<li>
+						<input id="check_button" type="checkbox" value="section_button" checked="true" onclick="updateShow()"/>
+						<span>Button</span>
+					</li>
+				</label>
+	
+				<label for="check_input">
+					<li>
+						<input id="check_input" type="checkbox" value="section_input" checked="true" onclick="updateShow()"/>
+						<span>Input</span>
+					</li>
+				</label>
+	
+				<label for="check_well">
+					<li>
+						<input id="check_well" type="checkbox" value="section_well" checked="true" onclick="updateShow()"/>
+						<span>Well</span>
+					</li>
+				</label>
+	
+				<label for="check_widget">
+					<li>
+						<input id="check_widget" type="checkbox" value="section_widget" checked="true" onclick="updateShow()"/>
+						<span>Widget</span>
+					</li>
+				</label>
+	
+				<label for="check_layout">
+					<li>
+						<input id="check_layout" type="checkbox" value="section_layout" checked="true" onclick="updateShow()"/>
+						<span>Layout</span>
+					</li>
+				</label>
+	
+			</ul><!-- sidebar -->
+		</td>
 
 		<td class="width_full padding">
 		<div class="width_full">

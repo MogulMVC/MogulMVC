@@ -56,19 +56,6 @@
 		$('#newContent').append(object.toHTML());
 	};
 
-	function createIncrease() {
-
-		for (var i = 0; i <= 100; i++) {
-			var input = $('#inputContent').val();
-
-			var object = new MProgressBar();
-			object.setPercent(i);
-			$('#newContent').append(object.toHTML());
-			console.log(i);
-		}
-
-	};
-
 	function createSystemMessage() {
 		var input = $('#inputContent').val();
 
@@ -77,7 +64,6 @@
 		$('#MSystemMessageContainer').append(object.toHTML());
 
 	};
-
 </script>
 
 <table class="width_full">
@@ -119,10 +105,6 @@
 			<li id="createSystemMessage">
 				<span>New System Message</span>
 			</li>
-
-			<button onclick="createIncrease();">
-				Special
-			</button>
 
 		</ul></td>
 

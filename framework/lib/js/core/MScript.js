@@ -160,7 +160,6 @@ $(document).ready(function() {
 var MInputText = (function() {
 
 	function MInputText() {
-
 	};
 
 	// Static Methods
@@ -177,6 +176,47 @@ var MInputText = (function() {
 
 })();
 // Class
+var MList = (function() {
+
+	function MList() {
+	};
+
+	// Static Methods
+	MList.selectAll = function(selector) {
+		// Set a deault parameter
+		selector = typeof selector !== 'undefined' ? selector : '';
+
+		$(selector + ' .MListItem input[type=checkbox]:visible').each(function() {
+			$(this).attr('checked', 'checked');
+			MList.updateUI();
+		});
+	};
+
+	MList.deselectAll = function(selector) {
+		// Set a deault parameter
+		selector = typeof selector !== 'undefined' ? selector : '';
+
+		$(selector + ' .MListItem input[type=checkbox]').each(function() {
+			$(this).removeAttr('checked');
+			MList.updateUI();
+		});
+	};
+
+	MList.updateUI = function() {
+		$('.MListItem input[type=checkbox]').each(function() {
+			// Set the default state
+			if ($(this).is(':checked')) {
+				$(this).closest('.MListItem').addClass('active');
+			} else {
+				$(this).closest('.MListItem').removeClass('active');
+			}
+		});
+	};
+
+	return MList;
+
+})();
+
 var MListItem = (function() {
 
 	function MListItem() {
@@ -195,38 +235,6 @@ var MListItem = (function() {
 		}
 	};
 
-	// Static Methods
-	MListItem.selectAll = function(selector) {
-		// Set a deault parameter
-		selector = typeof selector !== 'undefined' ? selector : '';
-
-		$(selector + ' .MListItem input[type=checkbox]:visible').each(function() {
-			$(this).attr('checked', 'checked');
-			MList.updateUI();
-		});
-	};
-
-	MListItem.deselectAll = function(selector) {
-		// Set a deault parameter
-		selector = typeof selector !== 'undefined' ? selector : '';
-
-		$(selector + ' .MListItem input[type=checkbox]').each(function() {
-			$(this).removeAttr('checked');
-			MList.updateUI();
-		});
-	};
-
-	MListItem.updateUI = function() {
-		$('.MListItem input[type=checkbox]').each(function() {
-			// Set the default state
-			if ($(this).is(':checked')) {
-				$(this).closest('.MListItem').addClass('active');
-			} else {
-				$(this).closest('.MListItem').removeClass('active');
-			}
-		});
-	};
-
 	return MListItem;
 
 })();
@@ -234,12 +242,12 @@ var MListItem = (function() {
 // Bootstrapper
 $(document).ready(function() {
 	// Set the default state
-	MListItem.updateUI();
+	MList.updateUI();
 
 	$('.MListItem input[type=checkbox]').live('change', function() {
 		// Add a change event listener
 		// A label can change the state of the checkbox so I am using change instead of click
-		MListItem.updateUI();
+		MList.updateUI();
 	});
 });
 // Bootstrapper
@@ -259,7 +267,9 @@ var MNote = (function() {
 
 	// Methods
 	MNote.prototype.toHTML = function() {
-		return '<span ' + _idString + ' class="MNote">' + _text + '</span>';
+		var rotation = MMath.random(-8, 8);
+		var rotationCss = 'style="-moz-transform: rotate(' + rotation + 'deg); -ms-transform: rotate(' + rotation + 'deg); -o-transform: rotate(' + rotation + 'deg); -webkit-transform: rotate(' + rotation + 'deg)"';
+		return '<span ' + _idString + ' class="MNote" ' + rotationCss + '>' + _text + '</span>';
 	};
 
 	// Setters / Getters
@@ -483,7 +493,6 @@ $(document).ready(function() {
 var MSideBar = (function() {
 
 	function MSideBar() {
-
 	};
 
 	MSideBar.scale = function() {
@@ -688,11 +697,11 @@ $(window).load(function() {
 	MSideBar.menuTop();
 
 	$("#MSideBar").mouseenter(function() {
-		$("#MSideBar").css("overflow-y", "auto");
+		$(this).css("overflow-y", "auto");
 	});
 
 	$("#MSideBar").mouseleave(function() {
-		$("#MSideBar").css("overflow-y", "hidden");
+		$(this).css("overflow-y", "hidden");
 	});
 
 	//MSideBar.fadeIn();
@@ -709,7 +718,6 @@ $(document).mousemove(function(event) {
 var MSlider = (function() {
 
 	function MSlider() {
-
 	};
 
 	MSlider.prototype.toHTML = function() {
@@ -723,41 +731,40 @@ var MSlider = (function() {
 })();
 
 // Class
-var MSystemMessageContainer = (function(){
-	
-	function MSystemMessageContainer(){
+var MSystemMessageContainer = (function() {
+
+	function MSystemMessageContainer() {
 	};
-	
+
 	MSystemMessageContainer.position = function() {
-		console.log("running")
 		var headerHeight = $("#MHeader").height();
-		var toolbarHeight = $("#MToolBar").height();
+		var toolBarHeight = $("#MToolBar").height();
 
 		if (isNaN(headerHeight)) {
 			headerHeight = 0;
 		}
 
-		if (isNaN(toolbarHeight)) {
-			toolbarHeight = 0;
+		if (isNaN(toolBarHeight)) {
+			toolBarHeight = 0;
 		}
 
-		$("#MSystemMessageContainer").css("top", headerHeight + toolbarHeight);
+		$("#MSystemMessageContainer").css("top", headerHeight + toolBarHeight);
 	};
-	
+
 	return MSystemMessageContainer;
-	
+
 })();
 
 var MSystemMessage = (function() {
 
 	function MSystemMessage() {
 		_idString = '';
-		_message = 'System Message';
+		_text = 'System Message';
 	};
 
 	// Methods
 	MSystemMessage.prototype.toHTML = function() {
-		return '<div ' + _idString + ' class="MSystemMessage"><span class="MIconClose"/></span><span class="bold">' + _message + '</span></div>';
+		return '<div ' + _idString + ' class="MSystemMessage"><span class="MIconClose"/></span><span class="bold">' + _text + '</span></div>';
 	};
 
 	// Getters / Setters
@@ -1782,7 +1789,6 @@ $(document).ready(function() {
 var MToolBar = (function() {
 
 	function MToolBar() {
-
 	};
 
 	MToolBar.position = function() {

@@ -94,6 +94,8 @@ class MLoad {
 
 		}
 
+		exit();
+
 	}
 
 	public static function frame($frame, $data = '') {
