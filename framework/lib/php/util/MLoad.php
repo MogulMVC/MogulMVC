@@ -208,6 +208,21 @@ class MLoad {
 
 	}
 
+	public static function js_framework_return($js) {
+
+		if (!empty($js)) {
+
+			if (!file_exists(SERVER_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_LIB_JS . '/' . $js)) {
+				trigger_error('error - ' . $js . ' not found.', E_USER_ERROR);
+			}
+
+			$src = '/' . FRAMEWORK . '/' . FRAMEWORK_LIB_JS . '/' . $js;
+			return '<script src="' . $src . '?' . FRAMEWORK_VERSION . '"></script>';
+
+		}
+
+	}
+
 	public static function js_framework_include($js) {
 
 		if (!empty($js)) {
@@ -236,7 +251,22 @@ class MLoad {
 		}
 
 	}
+	
+	public static function js_application_return($js) {
 
+		if (!empty($js)) {
+
+			if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_LIB_JS . '/' . $js)) {
+				trigger_error('error - ' . $js . ' not found.', E_USER_ERROR);
+			}
+
+			$src = '/' . APPLICATION . '/' . APPLICATION_LIB_JS . '/' . $js;
+			return '<script src="' . $src . '?' . APPLICATION_VERSION . '"></script>';
+
+		}
+
+	}
+	
 	public static function js_application_include($js) {
 
 		if (!empty($js)) {
@@ -267,7 +297,22 @@ class MLoad {
 		}
 
 	}
+	
+	public static function css_framework_return($css) {
 
+		if (!empty($css)) {
+
+			if (!file_exists(SERVER_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_LIB_CSS . '/' . $css)) {
+				trigger_error('error - ' . $css . ' not found.', E_USER_ERROR);
+			}
+
+			$src = '/' . FRAMEWORK . '/' . FRAMEWORK_LIB_CSS . '/' . $css;
+			return '<link href="' . $src . '?' . FRAMEWORK_VERSION . '" type="text/css" rel="stylesheet" />';
+
+		}
+
+	}
+	
 	public static function css_framework_include($css) {
 
 		if (!empty($css)) {
@@ -292,6 +337,21 @@ class MLoad {
 			}
 
 			array_push($GLOBALS['LOAD_CSS_APPLICATION'], $css);
+		}
+
+	}
+	
+	public static function css_application_return($css) {
+
+		if (!empty($css)) {
+
+			if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_LIB_CSS . '/' . $css)) {
+				trigger_error('error - ' . $css . ' not found.', E_USER_ERROR);
+			}
+
+			$src = '/' . APPLICATION . '/' . APPLICATION_LIB_CSS . '/' . $css;
+			return '<link href="' . $src . '?' . APPLICATION_VERSION . '" type="text/css" rel="stylesheet" />';
+
 		}
 
 	}

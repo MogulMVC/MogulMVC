@@ -1,6 +1,6 @@
 <?php
 
-class Code_transformers {
+class Class_managers {
 
 	function index() {
 		MLoad::php_framework('ui/MMessages.php');

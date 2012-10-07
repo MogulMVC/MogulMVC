@@ -149,6 +149,8 @@
 
 		<td class="width_full padding">
 			
+		<p><?php echo htmlentities(MLoad::css_framework_return('core/MIcons.css'));?></p>
+			
 		<section id="section_arrow" class="section">
 			<h1>Arrows</h1>
 

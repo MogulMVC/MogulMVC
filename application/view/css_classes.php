@@ -113,6 +113,8 @@
 		<td class="width_full padding">
 		<div class="width_full">
 
+			<p><?php echo htmlentities(MLoad::css_framework_return('core/MStyle.css'));?></p>
+
 			<?php /** Buttons */ ?>
 			<section id="section_button" class="section">
 				<h1>Button</h1>

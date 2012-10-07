@@ -9,6 +9,6 @@
 		<a href="/icons">Icons</a>
 		<a href="/css_classes">CSS Classes</a>
 		<a href="/javascript_classes">JavaScript Classes</a>
-		<a href="/code_transformers">Code Transformers</a>
+		<a href="/class_managers">Code Transformers</a>
 
 	</nav><!--MHeader-->
