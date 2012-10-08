@@ -123,7 +123,7 @@
 			<h1>Slider</h1>
 			<span class="MNote" style="left: 80px;bottom: 60px;">A work in progress.</span>
 
-			<input type="range" min="0" max="100" value="40" class="width_full" onchange='MProgressBar.setPercent("#someProgress", this.value);MRatingsBar.setPercent("#someMeter", this.value);'/>
+			<input type="range" min="0" max="100" value="40" class="width_full" onchange='$().MProgressBar.setPercent("#someProgress", this.value);MRatingsBar.setPercent("#someMeter", this.value);'/>
 
 			<div class="MContentSpacer"></div>
 			<div class="MContentSpacer"></div>
