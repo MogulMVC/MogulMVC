@@ -31,7 +31,7 @@ define('APPLICATION_VIEW', 'view');
 define('APPLICATION_VO', 'model/vo');
 
 //Controllers
-define('APPLICATION_DEFAULT_CONTROLLER', 'Class_managers.php');
+define('APPLICATION_DEFAULT_CONTROLLER', 'Managers.php');
 define('APPLICATION_ERROR_404_CONTROLLER', 'Error_404.php');
 
 //Templates

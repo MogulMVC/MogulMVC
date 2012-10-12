@@ -70,45 +70,48 @@
 	<tr class="width_full">
 
 		<td id="MSideBarContainer">
-		<ul id="MSideBar" class="MSideBarLeft">
+			<ul id="MSideBar" class="MSideBarLeft">
+	
+				<div class="padding_small">
+					<input type="text" id="inputContent" class="width_full" placeholder="Custom Messages / Value"/>
+				</div>
+	
+				<hr />
+	
+				<li id="createButton" class="MSideBarItem">
+					<span>New Button</span>
+				</li>
+	
+				<li id="createListItem" class="MSideBarItem">
+					<span>New List Item</span>
+				</li>
+	
+				<li id="createNote" class="MSideBarItem">
+					<span>New Note</span>
+				</li>
+	
+				<li id="createPopup" class="MSideBarItem">
+					<span>New Popup</span>
+				</li>
+	
+				<li id="createProgressBar" class="MSideBarItem">
+					<span>New Progress Bar</span>
+				</li>
+	
+				<li id="createRatingsBar" class="MSideBarItem">
+					<span>New Ratings Bar</span>
+				</li>
+	
+				<li id="createSystemMessage" class="MSideBarItem">
+					<span>New System Message</span>
+				</li>
+	
+			</ul>
+		</td>
 
-			<div class="padding_small">
-				<input type="text" id="inputContent" class="width_full" placeholder="Custom Messages / Value"/>
-			</div>
-
-			<hr />
-
-			<li id="createButton">
-				<span>New Button</span>
-			</li>
-
-			<li id="createListItem">
-				<span>New List Item</span>
-			</li>
-
-			<li id="createNote">
-				<span>New Note</span>
-			</li>
-
-			<li id="createPopup">
-				<span>New Popup</span>
-			</li>
-
-			<li id="createProgressBar">
-				<span>New Progress Bar</span>
-			</li>
-
-			<li id="createRatingsBar">
-				<span>New Ratings Bar</span>
-			</li>
-
-			<li id="createSystemMessage">
-				<span>New System Message</span>
-			</li>
-
-		</ul></td>
-
-		<td class="width_full padding"><div id="newContent" style="padding"></div></td>
+		<td class="width_full padding">
+			<div id="newContent" style="padding"></div>
+		</td>
 
 	</tr>
 </table>

@@ -57,7 +57,6 @@
 <div id="MSystemMessageContainer"></div><!-- MSystemMessageContainer -->
 
 <table>
-
 	<tr class="width_full">
 
 		<td id="MSideBarContainer"><div id="MSideBarTriggerLeft"></div>
@@ -73,35 +72,35 @@
 				</div>
 	
 				<label for="check_button">
-					<li>
+					<li class="MSideBarItem">
 						<input id="check_button" type="checkbox" value="section_button" checked="true" onclick="updateShow()"/>
 						<span>Button</span>
 					</li>
 				</label>
 	
 				<label for="check_input">
-					<li>
+					<li class="MSideBarItem">
 						<input id="check_input" type="checkbox" value="section_input" checked="true" onclick="updateShow()"/>
 						<span>Input</span>
 					</li>
 				</label>
 	
 				<label for="check_well">
-					<li>
+					<li class="MSideBarItem">
 						<input id="check_well" type="checkbox" value="section_well" checked="true" onclick="updateShow()"/>
 						<span>Well</span>
 					</li>
 				</label>
 	
 				<label for="check_widget">
-					<li>
+					<li class="MSideBarItem">
 						<input id="check_widget" type="checkbox" value="section_widget" checked="true" onclick="updateShow()"/>
 						<span>Widget</span>
 					</li>
 				</label>
 	
 				<label for="check_layout">
-					<li>
+					<li class="MSideBarItem">
 						<input id="check_layout" type="checkbox" value="section_layout" checked="true" onclick="updateShow()"/>
 						<span>Layout</span>
 					</li>
@@ -129,107 +128,107 @@
 					</tr>
 
 					<tr>
-						<td><a class="MButton" MTip="S" title="I'm an &lt;a&gt; tag.">Button</a></td>
+						<td><a class="MButton" data-mtip="S" title="I'm an &lt;a&gt; tag.">Button</a></td>
 						<td>
-						<button MTip="S" title="I'm a &lt;button&gt; tag.">
+						<button data-mtip="S" title="I'm a &lt;button&gt; tag.">
 							Button
 						</button></td>
 						<td>
-						<div class="MButton" MTip="S" title="I'm a &lt;div&gt; tag.">
+						<div class="MButton" data-mtip="S" title="I'm a &lt;div&gt; tag.">
 							Button
 						</div></td>
-						<td><span class="MButton" MTip="S" title="I'm a &lt;span&gt; tag.">Button</span></td>
+						<td><span class="MButton" data-mtip="S" title="I'm a &lt;span&gt; tag.">Button</span></td>
 					</tr>
 
 					<tr>
-						<td><a class="MButton" MTip="S" title="I'm an &lt;a&gt; tag disabled." disabled="true">Button Disabled</a></td>
+						<td><a class="MButton" data-mtip="S" title="I'm an &lt;a&gt; tag disabled." disabled="true">Button Disabled</a></td>
 						<td>
-						<button MTip="S" title="I'm a &lt;button&gt; tag disabled." disabled="true">
+						<button data-mtip="S" title="I'm a &lt;button&gt; tag disabled." disabled="true">
 							Button Disabled
 						</button></td>
 						<td>
-						<div class="MButton" MTip="S" title="I'm a &lt;div&gt; tag disabled." disabled="true">
+						<div class="MButton" data-mtip="S" title="I'm a &lt;div&gt; tag disabled." disabled="true">
 							Button Disabled
 						</div></td>
-						<td><span class="MButton" MTip="S" title="I'm a &lt;span&gt; tag disabled." disabled="true">Button Disabled</span></td>
+						<td><span class="MButton" data-mtip="S" title="I'm a &lt;span&gt; tag disabled." disabled="true">Button Disabled</span></td>
 					</tr>
 
 					<tr>
-						<td><a class="MButtonRed" MTip="S" title="I'm an &lt;a&gt; tag.">Button Red</a></td>
+						<td><a class="MButtonRed" data-mtip="S" title="I'm an &lt;a&gt; tag.">Button Red</a></td>
 						<td>
-						<button class="MButtonRed" MTip="S" title="I'm a &lt;button&gt; tag.">
+						<button class="MButtonRed" data-mtip="S" title="I'm a &lt;button&gt; tag.">
 							Button Red
 						</button></td>
 						<td>
-						<div class="MButtonRed" MTip="S" title="I'm a &lt;div&gt; tag.">
+						<div class="MButtonRed" data-mtip="S" title="I'm a &lt;div&gt; tag.">
 							Button Red
 						</div></td>
-						<td><span class="MButtonRed" MTip="S" title="I'm a &lt;span&gt; tag.">Button Red</span></td>
+						<td><span class="MButtonRed" data-mtip="S" title="I'm a &lt;span&gt; tag.">Button Red</span></td>
 					</tr>
 
 					<tr>
-						<td><a class="MButtonOrange" MTip="S" title="I'm an &lt;a&gt; tag.">Button Orange</a></td>
+						<td><a class="MButtonOrange" data-mtip="S" title="I'm an &lt;a&gt; tag.">Button Orange</a></td>
 						<td>
-						<button class="MButtonOrange" MTip="S" title="I'm a &lt;button&gt; tag.">
+						<button class="MButtonOrange" data-mtip="S" title="I'm a &lt;button&gt; tag.">
 							Button Orange
 						</button></td>
 						<td>
-						<div class="MButtonOrange" MTip="S" title="I'm a &lt;div&gt; tag.">
+						<div class="MButtonOrange" data-mtip="S" title="I'm a &lt;div&gt; tag.">
 							Button Orange
 						</div></td>
-						<td><span class="MButtonOrange" MTip="S" title="I'm a &lt;span&gt; tag.">Button Orange</span></td>
+						<td><span class="MButtonOrange" data-mtip="S" title="I'm a &lt;span&gt; tag.">Button Orange</span></td>
 					</tr>
 
 					<tr>
-						<td><a class="MButtonYellow" MTip="S" title="I'm an &lt;a&gt; tag.">Button Yellow</a></td>
+						<td><a class="MButtonYellow" data-mtip="S" title="I'm an &lt;a&gt; tag.">Button Yellow</a></td>
 						<td>
-						<button class="MButtonYellow" MTip="S" title="I'm a &lt;button&gt; tag.">
+						<button class="MButtonYellow" data-mtip="S" title="I'm a &lt;button&gt; tag.">
 							Button Yellow
 						</button></td>
 						<td>
-						<div class="MButtonYellow" MTip="S" title="I'm a &lt;div&gt; tag.">
+						<div class="MButtonYellow" data-mtip="S" title="I'm a &lt;div&gt; tag.">
 							Button Yellow
 						</div></td>
-						<td><span class="MButtonYellow" MTip="S" title="I'm a &lt;span&gt; tag.">Button Yellow</span></td>
+						<td><span class="MButtonYellow" data-mtip="S" title="I'm a &lt;span&gt; tag.">Button Yellow</span></td>
 					</tr>
 
 					<tr>
-						<td><a class="MButtonGreen" MTip="S" title="I'm an &lt;a&gt; tag.">Button Green</a></td>
+						<td><a class="MButtonGreen" data-mtip="S" title="I'm an &lt;a&gt; tag.">Button Green</a></td>
 						<td>
-						<button class="MButtonGreen" MTip="S" title="I'm a &lt;button&gt; tag.">
+						<button class="MButtonGreen" data-mtip="S" title="I'm a &lt;button&gt; tag.">
 							Button Green
 						</button></td>
 						<td>
-						<div class="MButtonGreen" MTip="S" title="I'm a &lt;div&gt; tag.">
+						<div class="MButtonGreen" data-mtip="S" title="I'm a &lt;div&gt; tag.">
 							Button Green
 						</div></td>
-						<td><span class="MButtonGreen" MTip="S" title="I'm a &lt;span&gt; tag.">Button Green</span></td>
+						<td><span class="MButtonGreen" data-mtip="S" title="I'm a &lt;span&gt; tag.">Button Green</span></td>
 					</tr>
 
 					<tr>
-						<td><a class="MButtonBlue" MTip="S" title="I'm an &lt;a&gt; tag.">Button Blue</a></td>
+						<td><a class="MButtonBlue" data-mtip="S" title="I'm an &lt;a&gt; tag.">Button Blue</a></td>
 						<td>
-						<button class="MButtonBlue" MTip="S" title="I'm a &lt;button&gt; tag.">
+						<button class="MButtonBlue" data-mtip="S" title="I'm a &lt;button&gt; tag.">
 							Button Blue
 						</button></td>
 						<td>
-						<div class="MButtonBlue" MTip="S" title="I'm a &lt;div&gt; tag.">
+						<div class="MButtonBlue" data-mtip="S" title="I'm a &lt;div&gt; tag.">
 							Button Blue
 						</div></td>
-						<td><span class="MButtonBlue" MTip="S" title="I'm a &lt;span&gt; tag.">Button Blue</span></td>
+						<td><span class="MButtonBlue" data-mtip="S" title="I'm a &lt;span&gt; tag.">Button Blue</span></td>
 					</tr>
 
 					<tr>
-						<td><a class="MButtonViolet" MTip="S" title="I'm an &lt;a&gt; tag.">Button Violet</a></td>
+						<td><a class="MButtonViolet" data-mtip="S" title="I'm an &lt;a&gt; tag.">Button Violet</a></td>
 						<td>
-						<button class="MButtonViolet" MTip="S" title="I'm a &lt;button&gt; tag.">
+						<button class="MButtonViolet" data-mtip="S" title="I'm a &lt;button&gt; tag.">
 							Button Violet
 						</button></td>
 						<td>
-						<div class="MButtonViolet" MTip="S" title="I'm a &lt;div&gt; tag.">
+						<div class="MButtonViolet" data-mtip="S" title="I'm a &lt;div&gt; tag.">
 							Button Violet
 						</div></td>
-						<td><span class="MButtonViolet" MTip="S" title="I'm a &lt;span&gt; tag.">Button Violet</span></td>
+						<td><span class="MButtonViolet" data-mtip="S" title="I'm a &lt;span&gt; tag.">Button Violet</span></td>
 					</tr>
 
 				</table>
@@ -274,25 +273,25 @@
 				<table class="width_full left">
 					<tr>
 						<td class="text_right" style="width:70px;"><span class="bold">&lt;a&gt;</span></td>
-						<td><a id="animated_button_a" class="MButton left" onclick="$(this).MHTMLAnimate('The text is now much longer and the button has animated to accomidate the new text.', 1000);$('#animated_button_a_reset').fadeIn(250);" MTip="W" title="I'm an &lt;a&gt; tag.">Change Text</a><a id="animated_button_a_reset" onclick="$('#animated_button_a').MHTMLAnimate('Change Text', 1000);$(this).fadeOut(250);" class="hidden right">Reset</a></td>
+						<td><a id="animated_button_a" class="MButton left" onclick="$(this).MHTMLAnimate('The text is now much longer and the button has animated to accomidate the new text.', 1000);$('#animated_button_a_reset').fadeIn(250);" data-mtip="W" title="I'm an &lt;a&gt; tag.">Change Text</a><a id="animated_button_a_reset" onclick="$('#animated_button_a').MHTMLAnimate('Change Text', 1000);$(this).fadeOut(250);" class="hidden right">Reset</a></td>
 					</tr>
 					<tr>
 						<td class="text_right"><span class="bold">&lt;button&gt;</span></td>
 						<td>
-						<button id="animated_button_button" class="MButton left" onclick="$(this).MHTMLAnimate('The text is now much longer and the button has animated to accomidate the new text.', 1000);$('#animated_button_button_reset').fadeIn(250);" MTip="W" title="I'm a &lt;span&gt; tag.">
+						<button id="animated_button_button" class="MButton left" onclick="$(this).MHTMLAnimate('The text is now much longer and the button has animated to accomidate the new text.', 1000);$('#animated_button_button_reset').fadeIn(250);" data-mtip="W" title="I'm a &lt;span&gt; tag.">
 							Change Text
 						</button><a id="animated_button_button_reset" onclick="$('#animated_button_button').MHTMLAnimate('Change Text', 1000);$(this).fadeOut(250);" class="hidden right">Reset</a></td>
 					</tr>
 					<tr>
 						<td class="text_right"><span class="bold">&lt;div&gt;</span></td>
 						<td>
-						<div id="animated_button_div" class="MButton left" onclick="$(this).MHTMLAnimate('The text is now much longer and the button has animated to accomidate the new text.', 1000);$('#animated_button_div_reset').fadeIn(250);" MTip="W" title="I'm a &lt;div&gt; tag.">
+						<div id="animated_button_div" class="MButton left" onclick="$(this).MHTMLAnimate('The text is now much longer and the button has animated to accomidate the new text.', 1000);$('#animated_button_div_reset').fadeIn(250);" data-mtip="W" title="I'm a &lt;div&gt; tag.">
 							Change Text
 						</div><a id="animated_button_div_reset" onclick="$('#animated_button_div').MHTMLAnimate('Change Text', 1000);$(this).fadeOut(250);" class="hidden right">Reset</a></td>
 					</tr>
 					<tr>
 						<td class="text_right"><span class="bold">&lt;span&gt;</span></td>
-						<td><span id="animated_button_span" class="MButton left" onclick="$(this).MHTMLAnimate('The text is now much longer and the button has animated to accomidate the new text.', 1000);$('#animated_button_span_reset').fadeIn(250);" MTip="W" title="I'm a &lt;span&gt; tag.">Change Text</span><a id="animated_button_span_reset" onclick="$('#animated_button_span').MHTMLAnimate('Change Text', 1000);$(this).fadeOut(250);" class="hidden right">Reset</a></td>
+						<td><span id="animated_button_span" class="MButton left" onclick="$(this).MHTMLAnimate('The text is now much longer and the button has animated to accomidate the new text.', 1000);$('#animated_button_span_reset').fadeIn(250);" data-mtip="W" title="I'm a &lt;span&gt; tag.">Change Text</span><a id="animated_button_span_reset" onclick="$('#animated_button_span').MHTMLAnimate('Change Text', 1000);$(this).fadeOut(250);" class="hidden right">Reset</a></td>
 					</tr>
 				</table>
 
@@ -314,7 +313,7 @@
 
 					<div class="MHBoxLayout">
 
-						<div MTip="S" title="I'm a checkbox with label.">
+						<div data-mtip="S" title="I'm a checkbox with label.">
 							<input type="checkbox" id="checkbox1"/>
 							<label for="checkbox1">Checkbox</label>
 						</div>
@@ -323,14 +322,14 @@
 						<div class="MHBoxSpacer"></div>
 						<div class="MHBoxSpacer"></div>
 
-						<div MTip="S" title="I'm a radio button with label.">
+						<div data-mtip="S" title="I'm a radio button with label.">
 							<input type="radio" name="radio" id="radio1"/>
 							<label for="radio1">Radio 1</label>
 						</div>
 
 						<div class="MHBoxSpacer"></div>
 
-						<div MTip="S" title="I'm a radio button with label.">
+						<div data-mtip="S" title="I'm a radio button with label.">
 							<input type="radio" name="radio" id="radio2"/>
 							<label for="radio2">Radio 2</label>
 						</div>
@@ -516,5 +515,4 @@
 		</div></td>
 
 	</tr>
-
 </table>

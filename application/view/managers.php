@@ -73,35 +73,35 @@
 			</div>
 
 			<label for="check_slider">
-				<li>
+				<li class="MSideBarItem">
 					<input id="check_slider" type="checkbox" value="section_slider" checked="true" onclick="updateShow()"/>
 					<span>Slider</span>
 				</li> 
 			</label>
 
 			<label for="check_bar">
-				<li>
+				<li class="MSideBarItem">
 					<input id="check_bar" type="checkbox" value="section_bar" checked="true" onclick="updateShow()"/>
 					<span>Bar</span>
 				</li>
 			</label>
 
 			<label for="check_button">
-				<li>
+				<li class="MSideBarItem">
 					<input id="check_button" type="checkbox" value="section_button" checked="true" onclick="updateShow()"/>
 					<span>Upload Button</span>
 				</li>
 			</label>
 
 			<label for="check_list">
-				<li>
+				<li class="MSideBarItem">
 					<input id="check_list" type="checkbox" value="section_list" checked="true" onclick="updateShow()"/>
 					<span>List</span>
 				</li>
 			</label>
 
 			<label for="check_tab">
-				<li>
+				<li class="MSideBarItem">
 					<input id="check_tab" type="checkbox" value="section_tab" checked="true" onclick="updateShow()"/>
 					<span>Tab</span>
 				</li>
@@ -164,19 +164,19 @@
 			</p>
 
 			<div class="text_centered">
-				<form action="/action_button_upload_action" target="button_upload_frame_left" method="post" enctype="multipart/form-data" class="left" MTip="SW" title="A very complex button floated left.">
+				<form action="/action_button_upload_action" target="button_upload_frame_left" method="post" enctype="multipart/form-data" class="left" data-mtip="SW" title="A very complex button floated left.">
 					<input type="hidden" id="button_upload_data_left" name="data"/>
 					<input type="file" id="button_upload_file_left" name="file" onchange="upload()"/>
 				</form><!-- button_upload_form_left -->
 				<iframe id="button_upload_frame_left" name="button_upload_frame_left" class="hidden"></iframe>
 
-				<form action="/action_button_upload_action" target="button_upload_frame" method="post" enctype="multipart/form-data" class="right" MTip="SE" title="A very complex button floated right.">
+				<form action="/action_button_upload_action" target="button_upload_frame" method="post" enctype="multipart/form-data" class="right" data-mtip="SE" title="A very complex button floated right.">
 					<input type="hidden" id="button_upload_data" name="data"/>
 					<input type="file" id="button_upload_file" name="file" onchange="upload()"/>
 				</form><!-- button_upload_form -->
 				<iframe id="button_upload_frame" name="button_upload_frame" class="hidden"></iframe>
 
-				<form action="/action_button_upload_action" target="button_upload_frame_right" method="post" enctype="multipart/form-data" MTip="S" title="A very complex button.">
+				<form action="/action_button_upload_action" target="button_upload_frame_right" method="post" enctype="multipart/form-data" data-mtip="S" title="A very complex button.">
 					<input type="hidden" id="button_upload_data_right" name="data"/>
 					<input type="file" id="button_upload_file_right" name="file" onchange="upload()"/>
 				</form><!-- button_upload_form_right -->

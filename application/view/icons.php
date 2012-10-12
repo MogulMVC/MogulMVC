@@ -69,77 +69,77 @@
 			</div>
 			
 			<label for="check_arrow">
-				<li>
+				<li class="MSideBarItem">
 					<input id="check_arrow" type="checkbox" value="section_arrow" checked="true" onclick="updateShow()"/>
 					<span>Arrows</span>
 				</li>
 			</label>
 
 			<label for="check_close">
-				<li>
+				<li class="MSideBarItem">
 					<input id="check_close" type="checkbox" value="section_close" checked="true" onclick="updateShow()"/>
 					<span>Close</span>
 				</li>
 			</label>
 
 			<label for="check_social">
-				<li>
+				<li class="MSideBarItem">
 					<input id="check_social" type="checkbox" value="section_social" checked="true" onclick="updateShow()"/>
 					<span>Social</span>
 				</li>
 			</label>
 
 			<label for="check_avatar">
-				<li>
+				<li class="MSideBarItem">
 					<input id="check_avatar" type="checkbox" value="section_avatar" checked="true" onclick="updateShow()"/>
 					<span>Avatar</span>
 				</li>
 			</label>
 
 			<label for="check_complete">
-				<li>
+				<li class="MSideBarItem">
 					<input id="check_complete" type="checkbox" value="section_complete" checked="true" onclick="updateShow()"/>
 					<span>Complete</span>
 				</li>
 			</label>
 
 			<label for="check_embed">
-				<li>
+				<li class="MSideBarItem">
 					<input id="check_embed" type="checkbox" value="section_embed" checked="true" onclick="updateShow()"/>
 					<span>Embed</span>
 				</li>
 			</label>
 			
 			<label for="check_loading">
-				<li>
+				<li class="MSideBarItem">
 					<input id="check_loading" type="checkbox" value="section_loading" checked="true" onclick="updateShow()"/>
 					<span>Loading</span>
 				</li>
 			</label>
 			
 			<label for="check_openShare">
-				<li>
+				<li class="MSideBarItem">
 					<input id="check_openShare" type="checkbox" value="section_openShare" checked="true" onclick="updateShow()"/>
 					<span>Open Share</span>
 				</li>
 			</label>
 			
 			<label for="check_shareThis">
-				<li>
+				<li class="MSideBarItem">
 					<input id="check_shareThis" type="checkbox" value="section_shareThis" checked="true" onclick="updateShow()"/>
 					<span>Share This</span>
 				</li>
 			</label>
 			
 			<label for="check_warning">
-				<li>
+				<li class="MSideBarItem">
 					<input id="check_warning" type="checkbox" value="section_warning" checked="true" onclick="updateShow()"/>
 					<span>Warning</span>
 				</li>
 			</label>
 			
 			<label for="check_misc">
-				<li>
+				<li class="MSideBarItem">
 					<input id="check_misc" type="checkbox" value="section_misc" checked="true" onclick="updateShow()"/>
 					<span>Misc</span>
 				</li>
