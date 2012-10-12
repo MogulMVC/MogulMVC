@@ -58,7 +58,7 @@
 
 <table>
 
-	<tr class="width_full">
+	<tr class="MWidthFull">
 
 		<td id="MSideBarContainer">
 		<ul id="MSideBar" class="MSideBarLeft">
@@ -109,11 +109,9 @@
 
 		</ul><!-- sidebar --></td>
 
-		<td class="width_full padding">
+		<td class="MWidthFull MPadding">
 		<section>
-			<p>
-				This page contains all elements that can be added with HTML and are automatically transformed into themed or cross browser classes.
-			</p>
+			<p>This page contains all elements that can be added with HTML and are automatically transformed into themed or cross browser classes.</p>
 
 			<div class="MContentSpacer"></div>
 			<div class="MContentSpacer"></div>
@@ -121,9 +119,9 @@
 		
 		<section id="section_slider" class="section">
 			<h1>Slider</h1>
-			<span class="MNote" style="left: 80px;bottom: 60px;">A work in progress.</span>
+			<span class="MNoteY" style="left: 80px;bottom: 60px;">A work in progress.</span>
 
-			<input type="range" min="0" max="100" value="40" class="width_full" onchange='$().MProgressBar.setPercent("#someProgress", this.value);MRatingsBar.setPercent("#someMeter", this.value);'/>
+			<input type="range" min="0" max="100" value="40" class="MWidthFull" onchange='MProgressBar.setPercent("#someProgress", this.value);MRatingsBar.setPercent("#someMeter", this.value);'/>
 
 			<div class="MContentSpacer"></div>
 			<div class="MContentSpacer"></div>
@@ -133,18 +131,14 @@
 		<section id="section_bar" class="section">
 			<h1>Bar</h1>
 
-			<p>
-				<span class="bold">&lt;progress&gt;</span> tags are turn into MProgressBar classes, which work on all browsers.
-			</p>
+			<p><span class="bold">&lt;progress&gt;</span> tags are turn into MProgressBar classes, which work on all browsers.</p>
 			
 			<progress id="someProgress" min="0" max="100" value="40"></progress>
 			<a class="showCode">Code</a>
 			<pre class="hidden"><code><?php echo htmlentities('<progress min="0" max="100"></progress>'); ?></code></pre>
 			<div class="MContentSpacer"></div>
 
-			<p>
-				<span class="bold">&lt;meter&gt;</span> tags are turn into MRatingsBar classes, which also work on all browsers.
-			</p>
+			<p><span class="bold">&lt;meter&gt;</span> tags are turn into MRatingsBar classes, which also work on all browsers.</p>
 
 			<meter id="someMeter" min="0" max="100" value="40"></meter>
 			<a class="showCode">Code</a>
@@ -159,9 +153,7 @@
 		<section id="section_button" class="section">
 			<h1>Upload Button</h1>
 
-			<p>
-				<span class="bold">&lt;input type="file" /&gt;</span> tags are turn into MButtonUpload classes, which visually matches the MButtonBlue class.
-			</p>
+			<p><span class="bold">&lt;input type="file" /&gt;</span> tags are turn into MButtonUpload classes, which visually matches the MButtonBlue class.</p>
 
 			<div class="text_centered">
 				<form action="/action_button_upload_action" target="button_upload_frame_left" method="post" enctype="multipart/form-data" class="left" data-mtip="SW" title="A very complex button floated left.">
@@ -195,9 +187,7 @@
 		<section id="section_list" class="section">
 			<h1>List</h1>
 			
-			<p>
-				<span class="bold">&lt;li&gt;</span> tags containing 1 checkbox turn blue when the checkbox is checked.
-			</p>
+			<p><span class="bold">&lt;li&gt;</span> tags containing 1 checkbox turn blue when the checkbox is checked.</p>
 
 			<div class="MHBoxLayout text_centered">
 				<button onclick="MList.deselectAll();">
@@ -277,21 +267,13 @@
 				</ul><!-- tabs_container -->
 				<div class="MTabBodyContainer">
 					<div id="tab_body_1">
-						<p>
-							This is a tab body
-						</p>
-					</div>
+						<p>This is a tab body</p>
+					</div><!-- tab_body_1 -->
 					<div id="tab_body_2">
-						<p>
-							This is another tab body
-						</p>
-						<p>
-							This is another tab body
-						</p>
-						<p>
-							This is another tab body
-						</p>
-					</div>
+						<p>This is another tab body</p>
+						<p>This is another tab body</p>
+						<p>This is another tab body</p>
+					</div><!-- tab_body_2 -->
 
 				</div><!-- MTabBodyContainer -->
 			</div><!-- MTabWidget -->
@@ -326,9 +308,7 @@
 		
 		<section id="section_noShow" class="text_centered hidden">
 			<h1>Select a Section from the Sidebar</h1>
-			<p>
-				or
-			</p>
+			<p>or</p>
 			<button class="MButtonGreen" onclick="allShow()">
 				Show All
 			</button>

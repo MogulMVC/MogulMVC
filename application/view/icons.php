@@ -55,7 +55,7 @@
 </script>
 
 <table>
-	<tr class="width_full">
+	<tr class="MWidthFull">
 		<td id="MSideBarContainer">
 		<ul id="MSideBar" class="MSideBarLeft">
 			
@@ -147,7 +147,7 @@
 
 		</ul></td>
 
-		<td class="width_full padding">
+		<td class="MWidthFull MPadding">
 			
 		<p><?php echo htmlentities(MLoad::css_framework_return('core/MIcons.css'));?></p>
 			

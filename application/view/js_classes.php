@@ -66,14 +66,14 @@
 	};
 </script>
 
-<table class="width_full">
-	<tr class="width_full">
+<table class="MWidthFull">
+	<tr class="MWidthFull">
 
 		<td id="MSideBarContainer">
 			<ul id="MSideBar" class="MSideBarLeft">
 	
-				<div class="padding_small">
-					<input type="text" id="inputContent" class="width_full" placeholder="Custom Messages / Value"/>
+				<div class="MPaddingSmall">
+					<input type="text" id="inputContent" class="MWidthFull" placeholder="Custom Messages / Value"/>
 				</div>
 	
 				<hr />
@@ -109,8 +109,8 @@
 			</ul>
 		</td>
 
-		<td class="width_full padding">
-			<div id="newContent" style="padding"></div>
+		<td class="MWidthFull MPadding">
+			<div id="newContent"></div>
 		</td>
 
 	</tr>

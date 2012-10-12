@@ -57,7 +57,7 @@
 <div id="MSystemMessageContainer"></div><!-- MSystemMessageContainer -->
 
 <table>
-	<tr class="width_full">
+	<tr class="MWidthFull">
 
 		<td id="MSideBarContainer"><div id="MSideBarTriggerLeft"></div>
 			<ul id="MSideBar" class="MSideBarLeft">
@@ -109,8 +109,8 @@
 			</ul><!-- sidebar -->
 		</td>
 
-		<td class="width_full padding">
-		<div class="width_full">
+		<td class="MWidthFull MPadding">
+		<div class="MWidthFull">
 
 			<p><?php echo htmlentities(MLoad::css_framework_return('core/MStyle.css'));?></p>
 
@@ -118,11 +118,11 @@
 			<section id="section_button" class="section">
 				<h1>Button</h1>
 
-				<table class="width_full text_centered">
+				<table class="MWidthFull text_centered">
 
 					<tr>
 						<th>&lt;a&gt;</th>
-						<th><span class="MNote">&lt;button&gt; is prefered</span></th>
+						<th><span class="MNoteY">&lt;button&gt; is prefered</span></th>
 						<th>&lt;div&gt;</th>
 						<th>&lt;span&gt;</th>
 					</tr>
@@ -270,7 +270,7 @@
 					Animated Buttons
 				</p>
 
-				<table class="width_full left">
+				<table class="MWidthFull left">
 					<tr>
 						<td class="text_right" style="width:70px;"><span class="bold">&lt;a&gt;</span></td>
 						<td><a id="animated_button_a" class="MButton left" onclick="$(this).MHTMLAnimate('The text is now much longer and the button has animated to accomidate the new text.', 1000);$('#animated_button_a_reset').fadeIn(250);" data-mtip="W" title="I'm an &lt;a&gt; tag.">Change Text</a><a id="animated_button_a_reset" onclick="$('#animated_button_a').MHTMLAnimate('Change Text', 1000);$(this).fadeOut(250);" class="hidden right">Reset</a></td>
@@ -307,9 +307,9 @@
 			<section id="section_input" class="section">
 				<h1>Input</h1>
 
-				<div class="width_full text_centered">
+				<div class="MWidthFull text_centered">
 
-					<span class="MNote">A work in progress.</span>
+					<span class="MNoteY">A work in progress.</span>
 
 					<div class="MHBoxLayout">
 
@@ -379,21 +379,21 @@
 				<hr />
 				<div class="MContentSpacer"></div>
 
-				<input class="width_full" type="text" placeholder="Input Text"/>
+				<input class="MWidthFull" type="text" placeholder="Input Text"/>
 				<div class="MContentSpacer"></div>
-				<input class="width_full input_invisible" type="text" placeholder="Input with No Border"/>
+				<input class="MWidthFull MInputInvisible" type="text" placeholder="Input with No Border"/>
 				<div class="MContentSpacer"></div>
-				<input class="width_full" type="text" placeholder="Input Text Disabled" disabled="true"/>
+				<input class="MWidthFull" type="text" placeholder="Input Text Disabled" disabled="true"/>
 
 				<div class="MContentSpacer"></div>
 				<hr />
 				<div class="MContentSpacer"></div>
-				<textarea class="width_full" placeholder="Textarea"></textarea>																												
+				<textarea class="MWidthFull" placeholder="Textarea"></textarea>																												
 
  				<div class="MContentSpacer"></div>
-				<textarea class="width_full input_invisible" placeholder="Textarea with No Border"></textarea>
+				<textarea class="MWidthFull MInputInvisible" placeholder="Textarea with No Border"></textarea>
 				<div class="MContentSpacer"></div>
-				<textarea class="width_full" placeholder="Textarea Disabled" disabled="true"></textarea>																																						
+				<textarea class="MWidthFull" placeholder="Textarea Disabled" disabled="true"></textarea>																																						
 																																																																																														
  				<div class="MContentSpacer"></div>
 				<div class="MContentSpacer"></div>
