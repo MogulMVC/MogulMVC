@@ -55,6 +55,9 @@
 		</td>
 
 		<td class="MWidthFull MPadding">
+			
+			<p class="red bold"><?php echo htmlentities(MLoad::css_framework('core/MStyle.css', 'return', true));?></p>
+			
 			<section id="section_text">
 				<h1>Headings</h1>
 	

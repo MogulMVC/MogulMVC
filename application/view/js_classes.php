@@ -12,56 +12,48 @@
 	function createButton() {
 		var input = $('#inputContent').val();
 
-		var object = new MButton();
-		object.setText(input);
-		$('#newContent').append(object.toHTML());
+		var object = new MButton(input);
+		$('#newContent').append(object);
 	};
 
 	function createListItem() {
-		var input = $('#inputContent').val();
-
 		var object = new MListItem();
-		console.log( typeof object.toHTML());
-		$('#newContent').append(object.toHTML());
+		$('#newContent').append(object);
 	};
 
 	function createNote() {
 		var input = $('#inputContent').val();
 
-		var object = new MNote();
-		object.setText(input);
-		$('#newContent').append(object.toHTML());
+		var object = new MNote(input);
+		$('#newContent').append(object);
 	};
 
 	function createPopup() {
 		var input = $('#inputContent').val();
 
-		var object = new MPopup();
-		$('#newContent').append(object.toHTML());
+		var object = new MPopup(input);
+		$('#newContent').append(object);
 	};
 
 	function createProgressBar() {
 		var input = $('#inputContent').val();
 
-		var object = new MProgressBar();
-		object.setPercent(input);
-		$('#newContent').append(object.toHTML());
+		var object = new MProgressBar(input);
+		$('#newContent').append(object);
 	};
 
 	function createRatingsBar() {
 		var input = $('#inputContent').val();
 
-		var object = new MRatingsBar();
-		object.setPercent(input);
-		$('#newContent').append(object.toHTML());
+		var object = new MRatingsBar(input);
+		$('#newContent').append(object);
 	};
 
 	function createSystemMessage() {
 		var input = $('#inputContent').val();
 
-		var object = new MSystemMessage();
-		object.setText(input);
-		$('#MSystemMessageContainer').append(object.toHTML());
+		var object = new MSystemMessage(input);
+		$('#MSystemMessageContainer').append(object);
 
 	};
 </script>
@@ -110,6 +102,9 @@
 		</td>
 
 		<td class="MWidthFull MPadding">
+			
+			<p class="red bold"><?php echo htmlentities(MLoad::js_framework('core/MScript.js', 'return', true));?></p>
+			
 			<div id="newContent"></div>
 		</td>
 

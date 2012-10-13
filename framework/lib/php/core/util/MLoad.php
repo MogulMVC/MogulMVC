@@ -194,7 +194,7 @@ class MLoad {
 
 	/********** JavaScript Libraries **********/
 
-	public static function js_framework($js) {
+	public static function js_framework($js, $direction = null, $useHTTP = false) {
 
 		if (!empty($js)) {
 
@@ -202,57 +202,32 @@ class MLoad {
 				trigger_error('error - ' . $js . ' not found.', E_USER_ERROR);
 			}
 
-			array_push($GLOBALS['LOAD_JS_FRAMEWORK'], $js);
-
-		}
-
-	}
-
-	public static function js_framework_return($js) {
-
-		if (!empty($js)) {
-
-			if (!file_exists(SERVER_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_LIB_JS . '/' . $js)) {
-				trigger_error('error - ' . $js . ' not found.', E_USER_ERROR);
-			}
-
+			// If use HTTP is true include an HTTP section
 			$src = '/' . FRAMEWORK . '/' . FRAMEWORK_LIB_JS . '/' . $js;
-			return '<script src="' . $src . '?' . FRAMEWORK_VERSION . '"></script>';
-
-		}
-
-	}
-
-	public static function js_framework_include($js) {
-
-		if (!empty($js)) {
-
-			if (!file_exists(SERVER_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_LIB_JS . '/' . $js)) {
-				trigger_error('error - ' . $js . ' not found.', E_USER_ERROR);
+			if ($useHTTP) {
+				$src = 'http://' . $_SERVER['SERVER_NAME'] . '/' . FRAMEWORK . '/' . FRAMEWORK_LIB_JS . '/' . $js;
 			}
 
-			$src = '/' . FRAMEWORK . '/' . FRAMEWORK_LIB_JS . '/' . $js;
-			echo '<script src="' . $src . '?' . FRAMEWORK_VERSION . '"></script>';
-
-		}
-
-	}
-
-	public static function js_application($js) {
-
-		if (!empty($js)) {
-
-			if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_LIB_JS . '/' . $js)) {
-				trigger_error('error - ' . $js . ' not found.', E_USER_ERROR);
+			// Only include it as part of the global js
+			if ($direction == null) {
+				array_push($GLOBALS['LOAD_JS_FRAMEWORK'], $js);
 			}
 
-			array_push($GLOBALS['LOAD_JS_APPLICATION'], $js);
+			// Return the link
+			elseif ($direction == 'return') {
+				return '<script src="' . $src . '?' . FRAMEWORK_VERSION . '"></script>';
+			}
+
+			// Echo the link
+			elseif ($direction == 'echo') {
+				echo '<script src="' . $src . '?' . FRAMEWORK_VERSION . '"></script>';
+			}
 
 		}
 
 	}
-	
-	public static function js_application_return($js) {
+
+	public static function js_application($js, $direction = null, $useHTTP = false) {
 
 		if (!empty($js)) {
 
@@ -260,23 +235,26 @@ class MLoad {
 				trigger_error('error - ' . $js . ' not found.', E_USER_ERROR);
 			}
 
+			// If use HTTP is true include an HTTP section
 			$src = '/' . APPLICATION . '/' . APPLICATION_LIB_JS . '/' . $js;
-			return '<script src="' . $src . '?' . APPLICATION_VERSION . '"></script>';
-
-		}
-
-	}
-	
-	public static function js_application_include($js) {
-
-		if (!empty($js)) {
-
-			if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_LIB_JS . '/' . $js)) {
-				trigger_error('error - ' . $js . ' not found.', E_USER_ERROR);
+			if ($useHTTP) {
+				$src = 'http://' . $_SERVER['SERVER_NAME'] . '/' . APPLICATION . '/' . APPLICATION_LIB_JS . '/' . $js;
 			}
 
-			$src = '/' . APPLICATION . '/' . APPLICATION_LIB_JS . '/' . $js;
-			echo '<script src="' . $src . '?' . APPLICATION_VERSION . '"></script>';
+			// Only include it as part of the global js
+			if ($direction == null) {
+				array_push($GLOBALS['LOAD_JS_APPLICATION'], $js);
+			}
+
+			// Return the link
+			elseif ($direction == 'return') {
+				return '<script src="' . $src . '?' . APPLICATION_VERSION . '"></script>';
+			}
+
+			// Echo the link
+			elseif ($direction == 'echo') {
+				echo '<script src="' . $src . '?' . APPLICATION_VERSION . '"></script>';
+			}
 
 		}
 
@@ -284,7 +262,7 @@ class MLoad {
 
 	/********** CSS Libraries **********/
 
-	public static function css_framework($css) {
+	public static function css_framework($css, $direction = null, $useHTTP = false) {
 
 		if (!empty($css)) {
 
@@ -292,56 +270,32 @@ class MLoad {
 				trigger_error('error - ' . $css . ' not found.', E_USER_ERROR);
 			}
 
-			array_push($GLOBALS['LOAD_CSS_FRAMEWORK'], $css);
-
-		}
-
-	}
-	
-	public static function css_framework_return($css) {
-
-		if (!empty($css)) {
-
-			if (!file_exists(SERVER_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_LIB_CSS . '/' . $css)) {
-				trigger_error('error - ' . $css . ' not found.', E_USER_ERROR);
-			}
-
+			// If use HTTP is true include an HTTP section
 			$src = '/' . FRAMEWORK . '/' . FRAMEWORK_LIB_CSS . '/' . $css;
-			return '<link href="' . $src . '?' . FRAMEWORK_VERSION . '" type="text/css" rel="stylesheet" />';
-
-		}
-
-	}
-	
-	public static function css_framework_include($css) {
-
-		if (!empty($css)) {
-
-			if (!file_exists(SERVER_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_LIB_CSS . '/' . $css)) {
-				trigger_error('error - ' . $css . ' not found.', E_USER_ERROR);
+			if ($useHTTP) {
+				$src = 'http://' . $_SERVER['SERVER_NAME'] . '/' . FRAMEWORK . '/' . FRAMEWORK_LIB_CSS . '/' . $css;
 			}
 
-			$src = '/' . FRAMEWORK . '/' . FRAMEWORK_LIB_CSS . '/' . $css;
-			echo '<link href="' . $src . '?' . FRAMEWORK_VERSION . '" type="text/css" rel="stylesheet" />';
-
-		}
-
-	}
-
-	public static function css_application($css) {
-
-		if (!empty($css)) {
-
-			if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_LIB_CSS . '/' . $css)) {
-				trigger_error('error - ' . $css . ' not found.', E_USER_ERROR);
+			// Only include it as part of the global js
+			if ($direction == null) {
+				array_push($GLOBALS['LOAD_CSS_FRAMEWORK'], $js);
 			}
 
-			array_push($GLOBALS['LOAD_CSS_APPLICATION'], $css);
+			// Return the link
+			elseif ($direction == 'return') {
+				return '<link href="' . $src . '?' . FRAMEWORK_VERSION . '" type="text/css" rel="stylesheet" />';
+			}
+
+			// Echo the link
+			elseif ($direction == 'echo') {
+				echo '<link href="' . $src . '?' . FRAMEWORK_VERSION . '" type="text/css" rel="stylesheet" />';
+			}
+
 		}
 
 	}
-	
-	public static function css_application_return($css) {
+
+	public static function css_application($css, $direction = null, $useHTTP = false) {
 
 		if (!empty($css)) {
 
@@ -349,23 +303,26 @@ class MLoad {
 				trigger_error('error - ' . $css . ' not found.', E_USER_ERROR);
 			}
 
+			// If use HTTP is true include an HTTP section
 			$src = '/' . APPLICATION . '/' . APPLICATION_LIB_CSS . '/' . $css;
-			return '<link href="' . $src . '?' . APPLICATION_VERSION . '" type="text/css" rel="stylesheet" />';
-
-		}
-
-	}
-
-	public static function css_application_include($css) {
-
-		if (!empty($css)) {
-
-			if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_LIB_CSS . '/' . $css)) {
-				trigger_error('error - ' . $css . ' not found.', E_USER_ERROR);
+			if ($useHTTP) {
+				$src = 'http://' . $_SERVER['SERVER_NAME'] . '/' . APPLICATION . '/' . APPLICATION_LIB_CSS . '/' . $css;
 			}
 
-			$src = '/' . APPLICATION . '/' . APPLICATION_LIB_CSS . '/' . $css;
-			echo '<link href="' . $src . '?' . APPLICATION_VERSION . '" type="text/css" rel="stylesheet" />';
+			// Only include it as part of the global js
+			if ($direction == null) {
+				array_push($GLOBALS['LOAD_CSS_APPLICATION'], $js);
+			}
+
+			// Return the link
+			elseif ($direction == 'return') {
+				return '<link href="' . $src . '?' . APPLICATION_VERSION . '" type="text/css" rel="stylesheet" />';
+			}
+
+			// Echo the link
+			elseif ($direction == 'echo') {
+				echo '<link href="' . $src . '?' . APPLICATION_VERSION . '" type="text/css" rel="stylesheet" />';
+			}
 
 		}
 

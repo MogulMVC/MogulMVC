@@ -38,63 +38,63 @@ if (!defined('SERVER_ROOT')) {header('/error_404');
 	// CSS
 
 	// Custom/Forked CSS
-	MLoad::css_framework_include('core/MStyle.css');
-	MLoad::css_framework_include('core/MIcons.css');
+	MLoad::css_framework('core/MStyle.css', 'echo');
+	MLoad::css_framework('core/MIcons.css', 'echo');
 
 	// MVC Specific CSS
-	MLoad::css_framework_include('core/style.css');
+	MLoad::css_framework('core/style.css', 'echo');
 
 	//Autoload Framework CSS
 	foreach ($AUTOLOAD_CSS_FRAMEWORK as $CSS) {
-		MLoad::css_framework_include($CSS);
+		MLoad::css_framework($CSS, 'echo');
 	}
 
 	//Include all CSS file that were loaded with the js_framework_load function
 	foreach ($GLOBALS["LOAD_CSS_FRAMEWORK"] as $CSS) {
-		MLoad::css_framework_include($CSS);
+		MLoad::css_framework($CSS, 'echo');
 	}
 	
 	//Autoload Application CSS
 	foreach ($AUTOLOAD_CSS_APPLICATION as $CSS) {
-		MLoad::css_application_include($CSS);
+		MLoad::css_application($CSS, 'echo');
 	}
 
 	//Include all CSS file that were loaded with the js_application_load function
 	foreach ($GLOBALS["LOAD_CSS_APPLICATION"] as $CSS) {
-		MLoad::css_application_include($CSS);
+		MLoad::css_application($CSS, 'echo');
 	}
 
 	// JavaScript
 
 	// Third Party JavaScript/jQuery Libraries
-	MLoad::js_framework_include('3rdparty/jquery.js');
-	MLoad::js_framework_include('3rdparty/jquery.ui.js');
-	MLoad::js_framework_include('3rdparty/jquery.placeholder.js');
+	MLoad::js_framework('3rdparty/jquery.js', 'echo');
+	MLoad::js_framework('3rdparty/jquery.ui.js', 'echo');
+	MLoad::js_framework('3rdparty/jquery.placeholder.js', 'echo');
 
 	// Custom/Forked JavaScript/jQuery Libraries
-	MLoad::js_framework_include('core/MScript.js');
+	MLoad::js_framework('core/MScript.js', 'echo');
 
 	// MVC Specific JS
-	MLoad::js_framework_include('core/script.js');
+	MLoad::js_framework('core/script.js', 'echo');
 
 	// Autoload Framework JavaScript
 	foreach ($AUTOLOAD_JS_FRAMEWORK as $JS) {
-		MLoad::js_framework_include($JS);
+		MLoad::js_framework($JS, 'echo');
 	}
 
 	// Include all JavaScript file that were loaded with the js_framework_load function
 	foreach ($GLOBALS['LOAD_JS_FRAMEWORK'] as $JS) {
-		MLoad::js_framework_include($JS);
+		MLoad::js_framework($JS, 'echo');
 	}
 
 	// Autoload Application JavaScript
 	foreach ($AUTOLOAD_JS_APPLICATION as $JS) {
-		MLoad::js_application_include($JS);
+		MLoad::js_application($JS, 'echo');
 	}
 
 	// Include all JavaScript file that were loaded with the js_application_load function
 	foreach ($GLOBALS['LOAD_JS_APPLICATION'] as $JS) {
-		MLoad::js_application_include($JS);
+		MLoad::js_application($JS, 'echo');
 	}
 	?>
 

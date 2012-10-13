@@ -110,9 +110,10 @@
 		</td>
 
 		<td class="MWidthFull MPadding">
+			
+		<p class="red bold"><?php echo htmlentities(MLoad::css_framework('core/MStyle.css', 'return', true));?></p>
+			
 		<div class="MWidthFull">
-
-			<p><?php echo htmlentities(MLoad::css_framework_return('core/MStyle.css'));?></p>
 
 			<?php /** Buttons */ ?>
 			<section id="section_button" class="section">

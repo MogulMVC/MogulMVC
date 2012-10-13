@@ -110,6 +110,9 @@
 		</ul><!-- sidebar --></td>
 
 		<td class="MWidthFull MPadding">
+			
+		<p class="red bold"><?php echo htmlentities(MLoad::js_framework('core/MScript.js', 'return', true));?></p>
+			
 		<section>
 			<p>This page contains all elements that can be added with HTML and are automatically transformed into themed or cross browser classes.</p>
 

@@ -149,7 +149,7 @@
 
 		<td class="MWidthFull MPadding">
 			
-		<p><?php echo htmlentities(MLoad::css_framework_return('core/MIcons.css'));?></p>
+		<p class="red bold"><?php echo htmlentities(MLoad::css_framework('core/MIcons.css', 'return', true));?></p>
 			
 		<section id="section_arrow" class="section">
 			<h1>Arrows</h1>
