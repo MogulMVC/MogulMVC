@@ -48,7 +48,7 @@ if ($CLASS == 'robots.txt') {
 }
 
 // Application Manifest
-elseif ($CLASS == 'application' && $FUNCTION == 'index') {
+elseif ($CLASS == 'application.xml' && $FUNCTION == 'index') {
 	header("Content-Type:text/xml");
 
 	// Output an XML file describing the application
