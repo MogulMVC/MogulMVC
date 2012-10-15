@@ -27,12 +27,12 @@
   height: 400px; }
 
 .MIconAdd, .MIconAdd16x16 {
-  background-image: url("/framework/img/icons/add_16x16.png");
+  background-image: url("/framework/img/icon/add_16x16.png");
   height: 16px;
   width: 16px; }
 
 .MIconArrorLeft, .MIconArrowLeft16x16 {
-  background-image: url("/framework/img/icons/arrow_left_16x16.png");
+  background-image: url("/framework/img/icon/arrow_left_16x16.png");
   background-position: 0 0;
   cursor: pointer;
   height: 16px;
@@ -45,7 +45,7 @@
     background-position: 0 -16px; }
 
 .MIconArrowRight, .MIconArrowRight16x16 {
-  background-image: url("/framework/img/icons/arrow_right_16x16.png");
+  background-image: url("/framework/img/icon/arrow_right_16x16.png");
   background-position: 0 0;
   cursor: pointer;
   height: 16px;
@@ -58,43 +58,43 @@
     background-position: 0 -16px; }
 
 .MAvatar, .MAvatar16x16 {
-  background-image: url("/framework/img/icons/avatar_16x16.png");
+  background-image: url("/framework/img/icon/avatar_16x16.png");
   height: 16px;
   width: 16px; }
 
 .MAvatar30x30 {
-  background-image: url("/framework/img/icons/avatar_30x30.png");
+  background-image: url("/framework/img/icon/avatar_30x30.png");
   height: 30px;
   width: 30px; }
 
 .MAvatar50x50 {
-  background-image: url("/framework/img/icons/avatar_50x50.png");
+  background-image: url("/framework/img/icon/avatar_50x50.png");
   height: 50px;
   width: 50px; }
 
 .MAvatar150x150 {
-  background-image: url("/framework/img/icons/avatar_150x150.png");
+  background-image: url("/framework/img/icon/avatar_150x150.png");
   height: 150px;
   width: 150px; }
 
 .MAvatar200x200 {
-  background-image: url("/framework/img/icons/avatar_200x200.png");
+  background-image: url("/framework/img/icon/avatar_200x200.png");
   height: 200px;
   width: 200px; }
 
 .MAvatar400x400 {
-  background-image: url("/framework/img/icons/avatar_400x400.png");
+  background-image: url("/framework/img/icon/avatar_400x400.png");
   height: 400px;
   width: 400px; }
 
 .MBackground, .MBackground20x16 {
-  background-image: url("/framework/img/icons/background_24x16.png");
+  background-image: url("/framework/img/icon/background_24x16.png");
   background-repeat: no-repeat;
   height: 16px;
   width: 24px; }
 
 .MIconClose, .MIconClose16x16 {
-  background-image: url("/framework/img/icons/close_16x16.png");
+  background-image: url("/framework/img/icon/close_16x16.png");
   background-position: 0 0;
   cursor: pointer;
   height: 16px;
@@ -107,202 +107,202 @@
     background-position: 0 -16px; }
 
 .MIconComplete, .MIconComplete16x16 {
-  background-image: url("/framework/img/icons/complete_16x16.png");
+  background-image: url("/framework/img/icon/complete_16x16.png");
   height: 16px;
   width: 16px; }
 
 .MIconComplete30x30 {
-  background-image: url("/framework/img/icons/complete_30x30.png");
+  background-image: url("/framework/img/icon/complete_30x30.png");
   height: 30px;
   width: 30px; }
 
 .MIconComplete50x50 {
-  background-image: url("/framework/img/icons/complete_50x50.png");
+  background-image: url("/framework/img/icon/complete_50x50.png");
   height: 50px;
   width: 50px; }
 
 .MIconComplete150x150 {
-  background-image: url("/framework/img/icons/complete_150x150.png");
+  background-image: url("/framework/img/icon/complete_150x150.png");
   height: 150px;
   width: 150px; }
 
 .MIconDocument, .MIconDocument12x16 {
-  background-image: url("/framework/img/icons/document_12x16.png");
+  background-image: url("/framework/img/icon/document_12x16.png");
   height: 16px;
   width: 12px; }
 
 .MIconEdit, .MIconEdit16x16 {
-  background-image: url("/framework/img/icons/edit_16x16.png");
+  background-image: url("/framework/img/icon/edit_16x16.png");
   height: 16px;
   width: 16px; }
 
 .MIconEmbed, .MIconEmbed16x16 {
-  background-image: url("/framework/img/icons/embed_16x16.png");
+  background-image: url("/framework/img/icon/embed_16x16.png");
   height: 16px;
   width: 16px; }
 
 .MIconEmbed30x30 {
-  background-image: url("/framework/img/icons/embed_30x30.png");
+  background-image: url("/framework/img/icon/embed_30x30.png");
   height: 30px;
   width: 30px; }
 
 .MIconEmbed50x50 {
-  background-image: url("/framework/img/icons/embed_50x50.png");
+  background-image: url("/framework/img/icon/embed_50x50.png");
   height: 50px;
   width: 50px; }
 
 .MIconEmbed150x150 {
-  background-image: url("/framework/img/icons/embed_150x150.png");
+  background-image: url("/framework/img/icon/embed_150x150.png");
   height: 150px;
   width: 150px; }
 
 .MIconFacebook, .MIconFacebook16x16 {
-  background-image: url("/framework/img/icons/facebook_16x16.png");
+  background-image: url("/framework/img/icon/facebook_16x16.png");
   height: 16px;
   width: 16px; }
 
 .MIconFacebook30x30 {
-  background-image: url("/framework/img/icons/facebook_30x30.png");
+  background-image: url("/framework/img/icon/facebook_30x30.png");
   height: 30px;
   width: 30px; }
 
 .MIconFacebook50x50 {
-  background-image: url("/framework/img/icons/facebook_50x50.png");
+  background-image: url("/framework/img/icon/facebook_50x50.png");
   height: 50px;
   width: 50px; }
 
 .MIconFacebook150x150 {
-  background-image: url("/framework/img/icons/facebook_150x150.png");
+  background-image: url("/framework/img/icon/facebook_150x150.png");
   height: 150px;
   width: 150px; }
 
 .MIconGrid, .MIconGrid16x16 {
-  background-image: url("/framework/img/icons/grid_16x16.png");
+  background-image: url("/framework/img/icon/grid_16x16.png");
   height: 16px;
   width: 16px; }
 
 .MIconHD, .MIconHD16x16 {
-  background-image: url("/framework/img/icons/hd_16x16.png");
+  background-image: url("/framework/img/icon/hd_16x16.png");
   height: 16px;
   width: 16px; }
 
 .MIconList, .MIconList16x16 {
-  background-image: url("/framework/img/icons/list_16x16.png");
+  background-image: url("/framework/img/icon/list_16x16.png");
   height: 16px;
   width: 16px; }
 
 .MIconLoadingBlack, .MIconLoadingBlack16x16 {
-  background-image: url("/framework/img/icons/loading_black_16x16.gif");
+  background-image: url("/framework/img/icon/loading_black_16x16.gif");
   height: 16px;
   width: 16px; }
 
 .MIconLoadingBlack50x50 {
-  background-image: url("/framework/img/icons/loading_black_50x50.gif");
+  background-image: url("/framework/img/icon/loading_black_50x50.gif");
   height: 50px;
   width: 50px; }
 
 .MIconLoadingBlack150x150 {
-  background-image: url("/framework/img/icons/loading_black_150x150.gif");
+  background-image: url("/framework/img/icon/loading_black_150x150.gif");
   height: 150px;
   width: 150px; }
 
 .MIconLoadingWhite, .MIconLoadingWhite50x50 {
-  background-image: url("/framework/img/icons/loading_white_50x50.gif");
+  background-image: url("/framework/img/icon/loading_white_50x50.gif");
   height: 50px;
   width: 50px; }
 
 .MIconLock, .MIconLock16x16 {
-  background-image: url("/framework/img/icons/lock_16x16.png");
+  background-image: url("/framework/img/icon/lock_16x16.png");
   height: 16px;
   width: 16px; }
 
 .MIconLock64x64 {
-  background-image: url("/framework/img/icons/lock_64x64.png");
+  background-image: url("/framework/img/icon/lock_64x64.png");
   height: 64px;
   width: 64px; }
 
 .MIconOpenShare, .MIconOpenShare16x16 {
-  background-image: url("/framework/img/icons/openshare_16x16.png");
+  background-image: url("/framework/img/icon/openshare_16x16.png");
   height: 16px;
   width: 16px; }
 
 .MIconOpenShare30x30 {
-  background-image: url("/framework/img/icons/openshare_30x30.png");
+  background-image: url("/framework/img/icon/openshare_30x30.png");
   height: 30px;
   width: 30px; }
 
 .MIconOpenShare50x50 {
-  background-image: url("/framework/img/icons/openshare_50x50.png");
+  background-image: url("/framework/img/icon/openshare_50x50.png");
   height: 50px;
   width: 50px; }
 
 .MIconOpenShare150x150 {
-  background-image: url("/framework/img/icons/openshare_150x150.png");
+  background-image: url("/framework/img/icon/openshare_150x150.png");
   height: 150px;
   width: 150px; }
 
 .MIconPoster, .MIconPoster12x16 {
-  background-image: url("/framework/img/icons/poster_12x16.png");
+  background-image: url("/framework/img/icon/poster_12x16.png");
   height: 16px;
   width: 12px; }
 
 .MIconShareThis, .MIconShareThis16x16 {
-  background-image: url("/framework/img/icons/sharethis_16x16.png");
+  background-image: url("/framework/img/icon/sharethis_16x16.png");
   height: 16px;
   width: 16px; }
 
 .MIconShareThis30x30 {
-  background-image: url("/framework/img/icons/sharethis_30x30.png");
+  background-image: url("/framework/img/icon/sharethis_30x30.png");
   height: 30px;
   width: 30px; }
 
 .MIconShareThis50x50 {
-  background-image: url("/framework/img/icons/sharethis_50x50.png");
+  background-image: url("/framework/img/icon/sharethis_50x50.png");
   height: 50px;
   width: 50px; }
 
 .MIconShareThis150x150 {
-  background-image: url("/framework/img/icons/sharethis_150x150.png");
+  background-image: url("/framework/img/icon/sharethis_150x150.png");
   height: 150px;
   width: 150px; }
 
 .MIconTwitter, .MIconTwitter16x16 {
-  background-image: url("/framework/img/icons/twitter_16x16.png");
+  background-image: url("/framework/img/icon/twitter_16x16.png");
   height: 16px;
   width: 16px; }
 
 .MIconTwitter30x30 {
-  background-image: url("/framework/img/icons/twitter_30x30.png");
+  background-image: url("/framework/img/icon/twitter_30x30.png");
   height: 30px;
   width: 30px; }
 
 .MIconTwitter50x50 {
-  background-image: url("/framework/img/icons/twitter_50x50.png");
+  background-image: url("/framework/img/icon/twitter_50x50.png");
   height: 50px;
   width: 50px; }
 
 .MIconTwitter150x150 {
-  background-image: url("/framework/img/icons/twitter_150x150.png");
+  background-image: url("/framework/img/icon/twitter_150x150.png");
   height: 150px;
   width: 150px; }
 
 .MIconWarning, .MIconWarning16x16 {
-  background-image: url("/framework/img/icons/warning_16x16.png");
+  background-image: url("/framework/img/icon/warning_16x16.png");
   height: 16px;
   width: 16px; }
 
 .MIconWarning30x30 {
-  background-image: url("/framework/img/icons/warning_30x30.png");
+  background-image: url("/framework/img/icon/warning_30x30.png");
   height: 30px;
   width: 30px; }
 
 .MIconWarning50x50 {
-  background-image: url("/framework/img/icons/warning_50x50.png");
+  background-image: url("/framework/img/icon/warning_50x50.png");
   height: 50px;
   width: 50px; }
 
 .MIconWarning150x150 {
-  background-image: url("/framework/img/icons/warning_150x150.png");
+  background-image: url("/framework/img/icon/warning_150x150.png");
   height: 150px;
   width: 150px; }
 
