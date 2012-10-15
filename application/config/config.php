@@ -36,8 +36,8 @@ define('APPLICATION_ERROR_404_CONTROLLER', 'Error_404.php');
 
 //Templates
 //File locations start within the APPLICATION_VIEW folder
-define('APPLICATION_HEADER', 'inc/header.php');
-define('APPLICATION_FOOTER', 'inc/footer.php');
+define('APPLICATION_HEADER', 'template/header.php');
+define('APPLICATION_FOOTER', 'template/footer.php');
 
 //Favicon
 //File locations start within the APPLICATION_IMG folder

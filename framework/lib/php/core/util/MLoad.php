@@ -126,7 +126,7 @@ class MLoad {
 
 	}
 
-	public static function element_framework($element, $data = '') {
+	public static function template_framework($element, $data = '') {
 
 		if (!empty($data)) {
 			foreach ($data as $key => $value) {
@@ -145,7 +145,7 @@ class MLoad {
 
 	}
 
-	public static function element_application($element, $data = '') {
+	public static function template_application($element, $data = '') {
 
 		if (!empty($data)) {
 			foreach ($data as $key => $value) {
@@ -366,7 +366,7 @@ class MLoad {
 
 		if (!empty($icon)) {
 
-			return self::img_framework('icons/' . $icon);
+			return self::img_framework('icon/' . $icon);
 
 		}
 
