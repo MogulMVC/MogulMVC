@@ -65,7 +65,7 @@ elseif ($CLASS == 'application.xml' && $FUNCTION == 'index') {
 }
 
 // Action
-elseif ($CLASS == APPLICATION_ACTION) {
+elseif ($CLASS == APPLICATION_ACTION_URL) {
 
 	//Check if the action exists
 	if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_ACTION . '/' . $FUNCTION . '.php')) {
@@ -79,7 +79,7 @@ elseif ($CLASS == APPLICATION_ACTION) {
 }
 
 // Api
-elseif ($CLASS == APPLICATION_API) {
+elseif ($CLASS == APPLICATION_API_URL) {
 
 	// Check if the api exists
 	if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_API . '/' . $FUNCTION . '.php')) {
