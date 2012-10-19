@@ -5,7 +5,7 @@ if (!defined('SERVER_ROOT')) {header('/error_404');
 ?>
 
 <div class="MHoverMessage">  
-  <div class="MIconComplete left"/></div>
+  <div class="MIconComplete150x150 left"/></div>
   <h3 id="complete_title" class="bold"><?php echo $title; ?></h3>
   <p id="complete_description"><?php echo $description; ?></p>
 </div>
