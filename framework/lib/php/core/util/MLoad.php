@@ -14,6 +14,11 @@ class MLoad {
 
 		if (!empty($model)) {
 
+			// Add extension if one doesn't exist
+			if(!substr(strrchr($model,'.'),1)){
+				$model = $model . '.php';
+			}
+
 			if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_MODEL . '/' . $model)) {
 				trigger_error('error - ' . $model . ' not found.', E_USER_ERROR);
 			}
@@ -27,6 +32,11 @@ class MLoad {
 	public static function vo($vo) {
 
 		if (!empty($vo)) {
+
+			// Add extension if one doesn't exist
+			if(!substr(strrchr($vo,'.'),1)){
+				$vo = $vo . '.php';
+			}
 
 			if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_VO . '/' . $vo)) {
 				trigger_error('error - ' . $vo . ' not found.', E_USER_ERROR);
@@ -42,16 +52,23 @@ class MLoad {
 
 	public static function view($view, $data = '') {
 
+		
+		// Convert the data array to variables
 		if (!empty($data)) {
 			foreach ($data as $key => $value) {
 				$$key = $value;
 			}
 		}
-
+		
+		// Start loading the view
 		if (!empty($view)) {
-
+			
+ 			// Add extension if one doesn't exist
+			if (!substr(strrchr($view, '.'), 1)) {
+				$view = $view . '.php';
+			}
+			
 			//Define the sections
-
 			$header = '';
 			if (APPLICATION_HEADER != '') {
 
@@ -100,13 +117,20 @@ class MLoad {
 
 	public static function frame($frame, $data = '') {
 
+		// Convert the data array to variables
 		if (!empty($data)) {
 			foreach ($data as $key => $value) {
 				$$key = $value;
 			}
 		}
-
+		
+		// Start loading the frame
 		if (!empty($frame)) {
+
+			// Add extension if one doesn't exist
+			if(!substr(strrchr($frame,'.'),1)){
+				$frame = $frame . '.php';
+			}
 
 			//Construst the Frame
 
@@ -126,40 +150,54 @@ class MLoad {
 
 	}
 
-	public static function template_framework($element, $data = '') {
+	public static function template_framework($template, $data = '') {
 
+		// Convert the data array to variables
 		if (!empty($data)) {
 			foreach ($data as $key => $value) {
 				$$key = $value;
 			}
 		}
+		
+		// Start loading the template
+		if (!empty($template)) {
 
-		if (!empty($element)) {
-
-			if (!file_exists(SERVER_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_VIEW . '/' . $element)) {
-				trigger_error('error - ' . $element . ' not found.', E_USER_ERROR);
+			// Add extension if one doesn't exist
+			if(!substr(strrchr($template,'.'),1)){
+				$template = $template . '.php';
 			}
 
-			require (SERVER_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_VIEW . '/' . $element);
+			if (!file_exists(SERVER_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_VIEW . '/' . $template)) {
+				trigger_error('error - ' . $template . ' not found.', E_USER_ERROR);
+			}
+
+			require (SERVER_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_VIEW . '/' . $template);
 		}
 
 	}
 
-	public static function template_application($element, $data = '') {
+	public static function template_application($template, $data = '') {
 
+		// Convert the data array to variables
 		if (!empty($data)) {
 			foreach ($data as $key => $value) {
 				$$key = $value;
 			}
 		}
 
-		if (!empty($element)) {
+		// Start loading the template
+		if (!empty($template)) {
 
-			if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_VIEW . '/' . $element)) {
-				trigger_error('error - ' . $element . ' not found.', E_USER_ERROR);
+			// Add extension if one doesn't exist
+			if(!substr(strrchr($template,'.'),1)){
+				$template = $template . '.php';
 			}
 
-			require (SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_VIEW . '/' . $element);
+			if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_VIEW . '/' . $template)) {
+				trigger_error('error - ' . $template . ' not found.', E_USER_ERROR);
+			}
+
+			require (SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_VIEW . '/' . $template);
 		}
 
 	}
@@ -169,6 +207,11 @@ class MLoad {
 	public static function php_framework($library) {
 
 		if (!empty($library)) {
+
+			// Add extension if one doesn't exist
+			if(!substr(strrchr($library,'.'),1)){
+				$library = $library . '.php';
+			}
 
 			if (!file_exists(SERVER_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_LIB_PHP . '/' . $library)) {
 				trigger_error('error - ' . $library . ' not found.', E_USER_ERROR);
@@ -182,6 +225,11 @@ class MLoad {
 	public static function php_application($library) {
 
 		if (!empty($library)) {
+
+			// Add extension if one doesn't exist
+			if(!substr(strrchr($library,'.'),1)){
+				$library = $library . '.php';
+			}
 
 			if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_LIB_PHP . '/' . $library)) {
 				trigger_error('error - ' . $library . ' not found.', E_USER_ERROR);
@@ -197,6 +245,11 @@ class MLoad {
 	public static function js_framework($js, $direction = null, $useHTTP = false) {
 
 		if (!empty($js)) {
+
+			// Add extension if one doesn't exist
+			if(!substr(strrchr($js,'.'),1)){
+				$js = $js . '.js';
+			}
 
 			if (!file_exists(SERVER_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_LIB_JS . '/' . $js)) {
 				trigger_error('error - ' . $js . ' not found.', E_USER_ERROR);
@@ -230,6 +283,11 @@ class MLoad {
 	public static function js_application($js, $direction = null, $useHTTP = false) {
 
 		if (!empty($js)) {
+
+			// Add extension if one doesn't exist
+			if(!substr(strrchr($js,'.'),1)){
+				$js = $js . '.js';
+			}
 
 			if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_LIB_JS . '/' . $js)) {
 				trigger_error('error - ' . $js . ' not found.', E_USER_ERROR);
@@ -266,6 +324,11 @@ class MLoad {
 
 		if (!empty($css)) {
 
+			// Add extension if one doesn't exist
+			if(!substr(strrchr($css,'.'),1)){
+				$css = $css . '.css';
+			}
+
 			if (!file_exists(SERVER_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_LIB_CSS . '/' . $css)) {
 				trigger_error('error - ' . $css . ' not found.', E_USER_ERROR);
 			}
@@ -298,6 +361,11 @@ class MLoad {
 	public static function css_application($css, $direction = null, $useHTTP = false) {
 
 		if (!empty($css)) {
+
+			// Add extension if one doesn't exist
+			if(!substr(strrchr($css,'.'),1)){
+				$css = $css . '.css';
+			}
 
 			if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_LIB_CSS . '/' . $css)) {
 				trigger_error('error - ' . $css . ' not found.', E_USER_ERROR);

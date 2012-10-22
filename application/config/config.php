@@ -30,6 +30,7 @@ define('APPLICATION_LIB_JS', 'lib/js');
 define('APPLICATION_LIB_PHP', 'lib/php');
 define('APPLICATION_MODEL', 'model');
 define('APPLICATION_UPLOAD', 'upload');
+define('APPLICATION_SETUP', 'setup');
 define('APPLICATION_VID', 'vid');
 define('APPLICATION_VIEW', 'view');
 define('APPLICATION_VO', 'model/vo');

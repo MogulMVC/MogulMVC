@@ -6,9 +6,8 @@ if (!defined('SERVER_ROOT')) {header('/error_404');
 //Order Matters
 require_once (SERVER_ROOT . '/' . FRAMEWORK . '/core/config.php');
 require_once (SERVER_ROOT . '/' . APPLICATION . '/config/config.php');
-
-require_once (SERVER_ROOT . '/' . FRAMEWORK . '/core/session.php');
 require_once (SERVER_ROOT . '/' . FRAMEWORK . '/core/database.php');
+require_once (SERVER_ROOT . '/' . FRAMEWORK . '/core/session.php');
 require_once (SERVER_ROOT . '/' . FRAMEWORK . '/core/environment.php');
 
 //Used to load all the other libraries

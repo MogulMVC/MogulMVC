@@ -78,7 +78,7 @@ elseif ($CLASS == APPLICATION_ACTION_URL) {
 	exit ;
 }
 
-// Api
+// API
 elseif ($CLASS == APPLICATION_API_URL) {
 
 	// Check if the api exists
@@ -102,6 +102,27 @@ elseif ($CLASS == APPLICATION_JOB) {
 	require_once (SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_JOB . '/' . $FUNCTION . '.php');
 
 	exit ;
+}
+
+// Setup
+elseif ($CLASS == APPLICATION_SETUP) {
+
+	if (APPLICATION_ENVIRONMENT == 'development') {
+
+		// Check if the job exists
+		if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_SETUP . '/' . $FUNCTION . '.php')) {
+			MErrors::error_404();
+		}
+
+		require_once (SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_SETUP . '/' . $FUNCTION . '.php');
+
+		exit ;
+
+	}
+
+	// Show 404 if application isn't in development mode
+	MErrors::error_404();
+
 }
 
 // Controller
