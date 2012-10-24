@@ -379,7 +379,7 @@ class MLoad {
 
 			// Only include it as part of the global js
 			if ($direction == null) {
-				array_push($GLOBALS['LOAD_CSS_APPLICATION'], $js);
+				array_push($GLOBALS['LOAD_CSS_APPLICATION'], $css);
 			}
 
 			// Return the link
