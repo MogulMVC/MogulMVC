@@ -15,11 +15,11 @@ require_once (SERVER_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_LIB_PHP . '/core/u
 
 //Load needed core libraries
 //MStrings.php must come first
-MLoad::php_framework('core/util/MStrings.php');
+MLoad::php_framework('core/util/MString.php');
 
 //The rest are alphabetical
 MLoad::php_framework('core/util/MCLI.php');
-MLoad::php_framework('core/util/MErrors.php');
+MLoad::php_framework('core/util/MError.php');
 MLoad::php_framework('core/util/MURL.php');
 
 //Autoload the libraries defined in the application autoload

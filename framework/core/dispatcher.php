@@ -9,7 +9,7 @@ if (MCLI::cli_is()) {
 	$URI_ARRAY = array();
 
 	foreach ($_SERVER['argv'] as $argument) {
-		$argument_safe = MStrings::sub_before($argument, '?');
+		$argument_safe = MString::sub_before($argument, '?');
 		array_push($URI_ARRAY, $argument_safe);
 	}
 
@@ -18,7 +18,7 @@ if (MCLI::cli_is()) {
 /********** Via the Web **********/
 
 if (!MCLI::cli_is()) {
-	$URI = MStrings::sub_before($_SERVER['REQUEST_URI'], '?');
+	$URI = MString::sub_before($_SERVER['REQUEST_URI'], '?');
 	$URI_ARRAY = explode('/', $URI);
 }
 

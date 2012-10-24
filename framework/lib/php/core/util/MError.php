@@ -1,6 +1,6 @@
 <?php
 
-class MErrors {
+class MError {
 
 	public static function error_404($display_error = '') {
 

@@ -14,7 +14,7 @@ class MURL {
 		$uri = explode('/', $_SERVER['REQUEST_URI']);
 
 		if (!empty($uri[$segment])) {
-			return MStrings::sub_before($uri[$segment], '?');
+			return MString::sub_before($uri[$segment], '?');
 		} else {
 			return NULL;
 		}
