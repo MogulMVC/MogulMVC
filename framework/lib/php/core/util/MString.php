@@ -27,6 +27,10 @@ class MString {
 		return $string;
 	}
 
+	public static function newline_remove($string) {
+		return preg_replace('/[\n\r]/', ' ', $string);
+	}
+
 	public static function url_link($string, $nofollow = true) {
 		if ($nofollow) {
 			$string = preg_replace('/(http:\/\/[^\s]+)/', '<a href=\'$1\' rel=\'nofollow\'>$1</a>', $string);
