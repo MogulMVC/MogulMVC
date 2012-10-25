@@ -4,11 +4,6 @@ $GLOBALS['PDO'] = array();
 
 require_once (SERVER_ROOT . '/' . APPLICATION . '/config/database.php');
 
-if ($DB_WARN == FALSE) {
-	//Framework wide error_reporting will be set in the environment core file
-	error_reporting(0);
-}
-
 $DB_TYPE_COUNT = count($DB_TYPE);
 $DB_HOST_COUNT = count($DB_HOST);
 $DB_USER_COUNT = count($DB_USER);
