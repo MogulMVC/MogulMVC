@@ -5,7 +5,7 @@ if (!defined('SERVER_ROOT')) {header('/error_404');
 
 date_default_timezone_set('America/New_York');
 
-define('FRAMEWORK_VERSION', '121022');
+define('FRAMEWORK_VERSION', '1210');
 
 define('FRAMEWORK_IMG', 'img');
 define('FRAMEWORK_LIB_AS', 'lib/as');
