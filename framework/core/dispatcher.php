@@ -47,10 +47,26 @@ if ($CLASS == 'robots.txt') {
 	exit ;
 }
 
-// Application Manifest
+// Application Manifest JSON
+elseif ($CLASS == 'application.js' && $FUNCTION == 'index') {
+	header("Content-Type:application/json");
+
+	$application = new stdClass();
+	$application -> name = APPLICATION_NAME;
+	$application -> description = APPLICATION_DESCRIPTION;
+	$application -> id = APPLICATION_ID;
+	$application -> icon = MURL::base() . '/' . APPLICATION . '/' . APPLICATION_IMG . '/' . APPLICATION_ICON . '?' . APPLICATION_VERSION;
+	
+	// Output an JSON file describing the application
+	echo json_encode($application);
+
+	exit ;
+}
+
+// Application Manifest XML
 elseif ($CLASS == 'application.xml' && $FUNCTION == 'index') {
 	header("Content-Type:text/xml");
-
+	
 	// Output an XML file describing the application
 	// Must be written this way
 	echo '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
@@ -58,7 +74,7 @@ elseif ($CLASS == 'application.xml' && $FUNCTION == 'index') {
 	<name>' . APPLICATION_NAME . '</name>
 	<description>' . APPLICATION_DESCRIPTION . '</description>
 	<id>' . APPLICATION_ID . '</id>
-	<icon>' . MURL::base() . '/' . APPLICATION . '/' . APPLICATION_IMG . '/' . APPLICATION_ICON . '</icon>
+	<icon>' . MURL::base() . '/' . APPLICATION . '/' . APPLICATION_IMG . '/' . APPLICATION_ICON . '?' . APPLICATION_VERSION . '</icon>
 </application>';
 
 	exit ;
@@ -69,7 +85,7 @@ elseif ($CLASS == APPLICATION_ACTION_URL) {
 
 	//Check if the action exists
 	if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_ACTION . '/' . $FUNCTION . '.php')) {
-		MErrors::error_404();
+		MError::error_404();
 	}
 
 	//Run the action
@@ -83,7 +99,7 @@ elseif ($CLASS == APPLICATION_API_URL) {
 
 	// Check if the api exists
 	if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_API . '/' . $FUNCTION . '.php')) {
-		MErrors::error_404();
+		MError::error_404();
 	}
 
 	require_once (SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_API . '/' . $FUNCTION . '.php');
@@ -96,7 +112,7 @@ elseif ($CLASS == APPLICATION_JOB) {
 
 	// Check if the job exists
 	if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_JOB . '/' . $FUNCTION . '.php')) {
-		MErrors::error_404();
+		MError::error_404();
 	}
 
 	require_once (SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_JOB . '/' . $FUNCTION . '.php');
@@ -111,7 +127,7 @@ elseif ($CLASS == APPLICATION_SETUP) {
 
 		// Check if the job exists
 		if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_SETUP . '/' . $FUNCTION . '.php')) {
-			MErrors::error_404();
+			MError::error_404();
 		}
 
 		require_once (SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_SETUP . '/' . $FUNCTION . '.php');
@@ -121,7 +137,7 @@ elseif ($CLASS == APPLICATION_SETUP) {
 	}
 
 	// Show 404 if application isn't in development mode
-	MErrors::error_404();
+	MError::error_404();
 
 }
 
@@ -136,7 +152,7 @@ else {
 
 	// Check if the controller exist
 	if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_CONTROLLER . '/' . $CLASS . '.php')) {
-		MErrors::error_404();
+		MError::error_404();
 	}
 
 	// Instantiate the controller object
@@ -149,7 +165,7 @@ else {
 
 		// Check if the function exists
 		if (!method_exists($OBJECT, $FUNCTION)) {
-			MErrors::error_404();
+			MError::error_404();
 		}
 
 		$OBJECT -> $FUNCTION();

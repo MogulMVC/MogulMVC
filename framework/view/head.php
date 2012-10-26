@@ -29,7 +29,7 @@ if (!defined('SERVER_ROOT')) {header('/error_404');
 	<?php endif; ?>
 	
 	<?php if(defined('APPLICATION_FAVICON') && constant('APPLICATION_FAVICON') !== ''): ?>
-		<link rel="shortcut icon" href="<?php echo '/' . APPLICATION . '/' . APPLICATION_IMG . '/' . APPLICATION_FAVICON; ?>" />
+		<link rel="shortcut icon" href="<?php echo '/' . APPLICATION . '/' . APPLICATION_IMG . '/' . APPLICATION_FAVICON . '?' . APPLICATION_VERSION; ?>" />
 	<?php endif; ?>
 	
 	<?php
