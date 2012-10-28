@@ -5,11 +5,6 @@ class MDatabase {
 	public $connection;
 	public $table;
 	
-	function __construct($connection, $table){
-		$this->connection = $connection;
-		$this->table = $table;
-	}
-	
 	public function create($object) {
 		
 		// Write from this object to a database and table

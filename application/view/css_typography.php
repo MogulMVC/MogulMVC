@@ -14,11 +14,18 @@
 		}
 
 		$('#section_text').children().each(function() {
-			$(this).removeClass('red orange yellow green blue violet');
+			$(this).removeClass('MTextRed MTextOrange MTextYellow MTextGreen MTextBlue MTextViolet');
 			$(this).addClass(color);
 		});
 	}
 </script>
+
+<div id="MToolBarPlaceholder"></div>
+<nav id="MToolBar">
+	<div class="MToolBarSpacer left"></div>
+	<div class="MToolBarSpacer right"></div>
+	<span>This is the MToolBar. It is an ID. Don't confuse it with the MToolBar class. This one is fixed position. You will probably use this one more.</span>
+</nav>
 
 <table class="MWidthFull">
 
@@ -31,22 +38,22 @@
 					<button class="MButton" onclick="changeColor('')">
 						Default
 					</button>
-					<button class="MButtonRed" onclick="changeColor('red')">
+					<button class="MButtonRed" onclick="changeColor('MTextRed')">
 						Red
 					</button>
-					<button class="MButtonOrange" onclick="changeColor('orange')">
+					<button class="MButtonOrange" onclick="changeColor('MTextOrange')">
 						Orange
 					</button>
-					<button class="MButtonYellow" onclick="changeColor('yellow')">
+					<button class="MButtonYellow" onclick="changeColor('MTextYellow')">
 						Yellow
 					</button>
-					<button class="MButtonGreen" onclick="changeColor('green')">
+					<button class="MButtonGreen" onclick="changeColor('MTextGreen')">
 						Green
 					</button>
-					<button class="MButtonBlue" onclick="changeColor('blue')">
+					<button class="MButtonBlue" onclick="changeColor('MTextBlue')">
 						Blue
 					</button>
-					<button class="MButtonViolet" onclick="changeColor('violet')">
+					<button class="MButtonViolet" onclick="changeColor('MTextViolet')">
 						Violet
 					</button>
 				</div>
@@ -56,7 +63,7 @@
 
 		<td class="MWidthFull MPadding">
 			
-			<p class="red bold"><?php echo htmlentities(MLoad::css_framework('core/MStyle.css', 'return', true));?></p>
+			<p class="MTextRed MTextBold"><?php echo htmlentities(MLoad::css_framework('core/MStyle.css', 'return', true));?></p>
 			
 			<section id="section_text">
 				<h1>Headings</h1>
@@ -81,18 +88,18 @@
 				<h1>Styles</h1>
 	
 				<p class="MWidgetTitle">Bold</p>
-				<p class="bold">The quick brown fox jumps over the lazy dog</p>
+				<p class="MTextBold">The quick brown fox jumps over the lazy dog</p>
 				<a class="showCode">Code</a>
-				<pre class="hidden"><?php echo htmlentities('<p class="bold">The quick brown fox jumps over the lazy dog</p>'); ?></pre>					
+				<pre class="MHidden"><?php echo htmlentities('<p class="MTextBold">The quick brown fox jumps over the lazy dog</p>'); ?></pre>					
 	
 				<div class="MContentSpacer">
 					<hr />
 				</div>
 	
 				<p class="MWidgetTitle">Italics</p>
-				<p class="italics">The quick brown fox jumps over the lazy dog</p>
+				<p class="MTextItalics">The quick brown fox jumps over the lazy dog</p>
 				<a class="showCode">Code</a>
-				<pre class="hidden"><?php echo htmlentities('<p class="italics">The quick brown fox jumps over the lazy dog</p>'); ?></pre>					
+				<pre class="MHidden"><?php echo htmlentities('<p class="MTextItalics">The quick brown fox jumps over the lazy dog</p>'); ?></pre>					
 	
 			</section>
 		</td>

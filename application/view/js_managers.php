@@ -54,7 +54,12 @@
 	};
 </script>
 
-<div id="MSystemMessageContainer"></div><!-- MSystemMessageContainer -->
+<div id="MToolBarPlaceholder"></div>
+<nav id="MToolBar">
+	<div class="MToolBarSpacer left"></div>
+	<div class="MToolBarSpacer right"></div>
+	<span>This is the MToolBar. It is an ID. Don't confuse it with the MToolBar class. This one is fixed position. You will probably use this one more.</span>
+</nav>
 
 <table>
 
@@ -73,35 +78,35 @@
 			</div>
 
 			<label for="check_slider">
-				<li class="MSideBarItem">
+				<li class="MSideBarListItem">
 					<input id="check_slider" type="checkbox" value="section_slider" checked="true" onclick="updateShow()"/>
 					<span>Slider</span>
 				</li> 
 			</label>
 
 			<label for="check_bar">
-				<li class="MSideBarItem">
+				<li class="MSideBarListItem">
 					<input id="check_bar" type="checkbox" value="section_bar" checked="true" onclick="updateShow()"/>
 					<span>Bar</span>
 				</li>
 			</label>
 
 			<label for="check_button">
-				<li class="MSideBarItem">
+				<li class="MSideBarListItem">
 					<input id="check_button" type="checkbox" value="section_button" checked="true" onclick="updateShow()"/>
 					<span>Upload Button</span>
 				</li>
 			</label>
 
 			<label for="check_list">
-				<li class="MSideBarItem">
+				<li class="MSideBarListItem">
 					<input id="check_list" type="checkbox" value="section_list" checked="true" onclick="updateShow()"/>
 					<span>List</span>
 				</li>
 			</label>
 
 			<label for="check_tab">
-				<li class="MSideBarItem">
+				<li class="MSideBarListItem">
 					<input id="check_tab" type="checkbox" value="section_tab" checked="true" onclick="updateShow()"/>
 					<span>Tab</span>
 				</li>
@@ -111,7 +116,7 @@
 
 		<td class="MWidthFull MPadding">
 			
-		<p class="red bold"><?php echo htmlentities(MLoad::js_framework('core/MScript.js', 'return', true));?></p>
+		<p class="MTextRed MTextBold"><?php echo htmlentities(MLoad::js_framework('core/MScript.js', 'return', true));?></p>
 			
 		<section>
 			<p>This page contains all elements that can be added with HTML and are automatically transformed into themed or cross browser classes.</p>
@@ -134,18 +139,18 @@
 		<section id="section_bar" class="section">
 			<h1>Bar</h1>
 
-			<p><span class="bold">&lt;progress&gt;</span> tags are turn into MProgressBar classes, which work on all browsers.</p>
+			<p><span class="MTextBold">&lt;progress&gt;</span> tags are turn into MProgressBar classes, which work on all browsers.</p>
 			
 			<progress id="someProgress" min="0" max="100" value="40"></progress>
 			<a class="showCode">Code</a>
-			<pre class="hidden"><code><?php echo htmlentities('<progress min="0" max="100"></progress>'); ?></code></pre>
+			<pre class="MHidden"><code><?php echo htmlentities('<progress min="0" max="100"></progress>'); ?></code></pre>
 			<div class="MContentSpacer"></div>
 
-			<p><span class="bold">&lt;meter&gt;</span> tags are turn into MRatingsBar classes, which also work on all browsers.</p>
+			<p><span class="MTextBold">&lt;meter&gt;</span> tags are turn into MRatingsBar classes, which also work on all browsers.</p>
 
 			<meter id="someMeter" min="0" max="100" value="40"></meter>
 			<a class="showCode">Code</a>
-			<pre class="hidden"><code><?php echo htmlentities('<meter min="0" max="100"></meter>'); ?></code></pre>																						
+			<pre class="MHidden"><code><?php echo htmlentities('<meter min="0" max="100"></meter>'); ?></code></pre>																						
 			<br />
 
  			<div class="MContentSpacer"></div>
@@ -156,30 +161,30 @@
 		<section id="section_button" class="section">
 			<h1>Upload Button</h1>
 
-			<p><span class="bold">&lt;input type="file" /&gt;</span> tags are turn into MButtonUpload classes, which visually matches the MButtonBlue class.</p>
+			<p><span class="MTextBold">&lt;input type="file" /&gt;</span> tags are turn into MButtonUpload classes, which visually matches the MButtonBlue class.</p>
 
-			<div class="text_centered">
+			<div class="MTextCentered">
 				<form action="/action_button_upload_action" target="button_upload_frame_left" method="post" enctype="multipart/form-data" class="left" data-mtip="SW" title="A very complex button floated left.">
 					<input type="hidden" id="button_upload_data_left" name="data"/>
 					<input type="file" id="button_upload_file_left" name="file" onchange="upload()"/>
 				</form><!-- button_upload_form_left -->
-				<iframe id="button_upload_frame_left" name="button_upload_frame_left" class="hidden"></iframe>
+				<iframe id="button_upload_frame_left" name="button_upload_frame_left" class="MHidden"></iframe>
 
 				<form action="/action_button_upload_action" target="button_upload_frame" method="post" enctype="multipart/form-data" class="right" data-mtip="SE" title="A very complex button floated right.">
 					<input type="hidden" id="button_upload_data" name="data"/>
 					<input type="file" id="button_upload_file" name="file" onchange="upload()"/>
 				</form><!-- button_upload_form -->
-				<iframe id="button_upload_frame" name="button_upload_frame" class="hidden"></iframe>
+				<iframe id="button_upload_frame" name="button_upload_frame" class="MHidden"></iframe>
 
 				<form action="/action_button_upload_action" target="button_upload_frame_right" method="post" enctype="multipart/form-data" data-mtip="S" title="A very complex button.">
 					<input type="hidden" id="button_upload_data_right" name="data"/>
 					<input type="file" id="button_upload_file_right" name="file" onchange="upload()"/>
 				</form><!-- button_upload_form_right -->
-				<iframe id="button_upload_frame_right" name="button_upload_frame_right" class="hidden"></iframe>
+				<iframe id="button_upload_frame_right" name="button_upload_frame_right" class="MHidden"></iframe>
 			</div>
 
 			<a class="showCode">Code</a>
-			<pre class="hidden"><code><?php echo htmlentities('<input type="file" />'); ?></code></pre>
+			<pre class="MHidden"><code><?php echo htmlentities('<input type="file" />'); ?></code></pre>
 			<br />
 
 			<div class="MContentSpacer"></div>
@@ -190,9 +195,9 @@
 		<section id="section_list" class="section">
 			<h1>List</h1>
 			
-			<p><span class="bold">&lt;li&gt;</span> tags containing 1 checkbox turn blue when the checkbox is checked.</p>
+			<p><span class="MTextBold">&lt;li&gt;</span> tags containing 1 checkbox turn blue when the checkbox is checked.</p>
 
-			<div class="MHBoxLayout text_centered">
+			<div class="MHBoxLayout MTextCentered">
 				<button onclick="MList.deselectAll();">
 					Deselect All
 				</button>
@@ -204,49 +209,49 @@
 			<ul>
 				<li class="MListItem">
 					<input type="checkbox" />
-					<span class="bold">List Item</span>
+					<span>List Item</span>
 				</li>
 
 				<li class="MListItem">
 					<input type="checkbox" />
-					<span class="bold">List Item</span>
+					<span>List Item</span>
 				</li>
 
 				<li class="MListSeperator"></li>
 
 				<li class="MListItem">
 					<input type="checkbox" />
-					<span class="bold">List Item</span>
+					<span>List Item</span>
 				</li>
 
 				<li class="MListItem">
 					<input type="checkbox" />
-					<span class="bold">List Item</span>
+					<span>List Item</span>
 				</li>
 			</ul>
 
 			<a class="showCode">Code</a>
-			<pre class="hidden"><code><?php echo htmlentities('<ul>
+			<pre class="MHidden"><code><?php echo htmlentities('<ul>
 	<li class="MListItem">
 		<input type="checkbox" />
-		<span class="bold">List Item</span>
+		<span>List Item</span>
 	</li>
 	
 	<li class="MListItem">
 		<input type="checkbox" />
-		<span class="bold">List Item</span>
+		<span>List Item</span>
 	</li>
 	
 	<li class="MListSeperator"></li>
 	
 	<li class="MListItem">
 		<input type="checkbox" />
-		<span class="bold">List Item</span>
+		<span>List Item</span>
 	</li>
 	
 	<li class="MListItem">
 		<input type="checkbox" />
-		<span class="bold">List Item</span>
+		<span>List Item</span>
 	</li>
 </ul>');?></code></pre>																																																		
 			<br />
@@ -282,7 +287,7 @@
 			</div><!-- MTabWidget -->
 
 			<a class="showCode">Code</a>
-			<pre class="hidden"><code><?php echo htmlentities('<div class="MTabWidget">
+			<pre class="MHidden"><code><?php echo htmlentities('<div class="MTabWidget">
 	<ul class="MTabContainer">
 		<li class="MTab">
 			<a href="#tab_body_1">Tab 1</a>
@@ -309,7 +314,7 @@
 
 		</section><!-- section_tab -->
 		
-		<section id="section_noShow" class="text_centered hidden">
+		<section id="section_noShow" class="MTextCentered MHidden">
 			<h1>Select a Section from the Sidebar</h1>
 			<p>or</p>
 			<button class="MButtonGreen" onclick="allShow()">

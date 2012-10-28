@@ -54,7 +54,12 @@
 	}
 </script>
 
-<div id="MSystemMessageContainer"></div><!-- MSystemMessageContainer -->
+<div id="MToolBarPlaceholder"></div>
+<nav id="MToolBar">
+	<div class="MToolBarSpacer left"></div>
+	<div class="MToolBarSpacer right"></div>
+	<span>This is the MToolBar. It is an ID. Don't confuse it with the MToolBar class. This one is fixed position. You will probably use this one more.</span>
+</nav>
 
 <table>
 	<tr class="MWidthFull">
@@ -72,35 +77,35 @@
 				</div>
 	
 				<label for="check_button">
-					<li class="MSideBarItem">
+					<li class="MSideBarListItem">
 						<input id="check_button" type="checkbox" value="section_button" checked="true" onclick="updateShow()"/>
 						<span>Button</span>
 					</li>
 				</label>
 	
 				<label for="check_input">
-					<li class="MSideBarItem">
+					<li class="MSideBarListItem">
 						<input id="check_input" type="checkbox" value="section_input" checked="true" onclick="updateShow()"/>
 						<span>Input</span>
 					</li>
 				</label>
 	
 				<label for="check_well">
-					<li class="MSideBarItem">
+					<li class="MSideBarListItem">
 						<input id="check_well" type="checkbox" value="section_well" checked="true" onclick="updateShow()"/>
 						<span>Well</span>
 					</li>
 				</label>
 	
 				<label for="check_widget">
-					<li class="MSideBarItem">
+					<li class="MSideBarListItem">
 						<input id="check_widget" type="checkbox" value="section_widget" checked="true" onclick="updateShow()"/>
 						<span>Widget</span>
 					</li>
 				</label>
 	
 				<label for="check_layout">
-					<li class="MSideBarItem">
+					<li class="MSideBarListItem">
 						<input id="check_layout" type="checkbox" value="section_layout" checked="true" onclick="updateShow()"/>
 						<span>Layout</span>
 					</li>
@@ -111,7 +116,7 @@
 
 		<td class="MWidthFull MPadding">
 			
-		<p class="red bold"><?php echo htmlentities(MLoad::css_framework('core/MStyle.css', 'return', true));?></p>
+		<p class="MTextRed MTextBold"><?php echo htmlentities(MLoad::css_framework('core/MStyle.css', 'return', true));?></p>
 			
 		<div class="MWidthFull">
 
@@ -119,7 +124,7 @@
 			<section id="section_button" class="section">
 				<h1>Button</h1>
 
-				<table class="MWidthFull text_centered">
+				<table class="MWidthFull MTextCentered">
 
 					<tr>
 						<th>&lt;a&gt;</th>
@@ -235,7 +240,7 @@
 				</table>
 
 				<a class="showCode">Code</a>
-				<pre class="hidden"><code><?php echo htmlentities('<a class="MButton">Button</a>
+				<pre class="MHidden"><code><?php echo htmlentities('<a class="MButton">Button</a>
 <button class="MButton">Button</button>
 <div class="MButton">Button</div>
 <span class="MButton">Button</span>');
@@ -250,14 +255,14 @@
 					Input Buttons
 				</p>
 
-				<div class="text_centered">
+				<div class="MTextCentered">
 					<input type="button" value="Button"/>
 					<input type="submit" />
 					<input type="reset" />
 				</div>
 
 				<a class="showCode">Code</a>
-				<pre class="hidden"><code><?php echo htmlentities('<input type="button" value="Button"/>
+				<pre class="MHidden"><code><?php echo htmlentities('<input type="button" value="Button"/>
 <input type="submit" />
 <input type="reset" />');
 				?></code></pre>																																
@@ -273,31 +278,31 @@
 
 				<table class="MWidthFull left">
 					<tr>
-						<td class="text_right" style="width:70px;"><span class="bold">&lt;a&gt;</span></td>
-						<td><a id="animated_button_a" class="MButton left" onclick="$(this).MHTMLAnimate('The text is now much longer and the button has animated to accomidate the new text.', 1000);$('#animated_button_a_reset').fadeIn(250);" data-mtip="W" title="I'm an &lt;a&gt; tag.">Change Text</a><a id="animated_button_a_reset" onclick="$('#animated_button_a').MHTMLAnimate('Change Text', 1000);$(this).fadeOut(250);" class="hidden right">Reset</a></td>
+						<td class="MTextRight" style="width:70px;"><span class="MTextBold">&lt;a&gt;</span></td>
+						<td><a id="animated_button_a" class="MButton left" onclick="$(this).MHTMLAnimate('The text is now much longer and the button has animated to accomidate the new text.', 1000);$('#animated_button_a_reset').fadeIn(250);" data-mtip="W" title="I'm an &lt;a&gt; tag.">Change Text</a><a id="animated_button_a_reset" onclick="$('#animated_button_a').MHTMLAnimate('Change Text', 1000);$(this).fadeOut(250);" class="MHidden right">Reset</a></td>
 					</tr>
 					<tr>
-						<td class="text_right"><span class="bold">&lt;button&gt;</span></td>
+						<td class="MTextRight"><span class="MTextBold">&lt;button&gt;</span></td>
 						<td>
 						<button id="animated_button_button" class="MButton left" onclick="$(this).MHTMLAnimate('The text is now much longer and the button has animated to accomidate the new text.', 1000);$('#animated_button_button_reset').fadeIn(250);" data-mtip="W" title="I'm a &lt;span&gt; tag.">
 							Change Text
-						</button><a id="animated_button_button_reset" onclick="$('#animated_button_button').MHTMLAnimate('Change Text', 1000);$(this).fadeOut(250);" class="hidden right">Reset</a></td>
+						</button><a id="animated_button_button_reset" onclick="$('#animated_button_button').MHTMLAnimate('Change Text', 1000);$(this).fadeOut(250);" class="MHidden right">Reset</a></td>
 					</tr>
 					<tr>
-						<td class="text_right"><span class="bold">&lt;div&gt;</span></td>
+						<td class="MTextRight"><span class="MTextBold">&lt;div&gt;</span></td>
 						<td>
 						<div id="animated_button_div" class="MButton left" onclick="$(this).MHTMLAnimate('The text is now much longer and the button has animated to accomidate the new text.', 1000);$('#animated_button_div_reset').fadeIn(250);" data-mtip="W" title="I'm a &lt;div&gt; tag.">
 							Change Text
-						</div><a id="animated_button_div_reset" onclick="$('#animated_button_div').MHTMLAnimate('Change Text', 1000);$(this).fadeOut(250);" class="hidden right">Reset</a></td>
+						</div><a id="animated_button_div_reset" onclick="$('#animated_button_div').MHTMLAnimate('Change Text', 1000);$(this).fadeOut(250);" class="MHidden right">Reset</a></td>
 					</tr>
 					<tr>
-						<td class="text_right"><span class="bold">&lt;span&gt;</span></td>
-						<td><span id="animated_button_span" class="MButton left" onclick="$(this).MHTMLAnimate('The text is now much longer and the button has animated to accomidate the new text.', 1000);$('#animated_button_span_reset').fadeIn(250);" data-mtip="W" title="I'm a &lt;span&gt; tag.">Change Text</span><a id="animated_button_span_reset" onclick="$('#animated_button_span').MHTMLAnimate('Change Text', 1000);$(this).fadeOut(250);" class="hidden right">Reset</a></td>
+						<td class="MTextRight"><span class="MTextBold">&lt;span&gt;</span></td>
+						<td><span id="animated_button_span" class="MButton left" onclick="$(this).MHTMLAnimate('The text is now much longer and the button has animated to accomidate the new text.', 1000);$('#animated_button_span_reset').fadeIn(250);" data-mtip="W" title="I'm a &lt;span&gt; tag.">Change Text</span><a id="animated_button_span_reset" onclick="$('#animated_button_span').MHTMLAnimate('Change Text', 1000);$(this).fadeOut(250);" class="MHidden right">Reset</a></td>
 					</tr>
 				</table>
 
 				<a class="showCode">Code</a>
-				<pre class="hidden"><code><?php echo htmlentities('$(this).MHTMLAnimate("The text is now much longer and the button has animated to accomidate the new text.", 1000);'); ?></code></pre>				
+				<pre class="MHidden"><code><?php echo htmlentities('$(this).MHTMLAnimate("The text is now much longer and the button has animated to accomidate the new text.", 1000);'); ?></code></pre>				
 
  				<div class="MContentSpacer"></div>
 				<div class="MContentSpacer"></div>
@@ -308,7 +313,7 @@
 			<section id="section_input" class="section">
 				<h1>Input</h1>
 
-				<div class="MWidthFull text_centered">
+				<div class="MWidthFull MTextCentered">
 
 					<span class="MNoteY">A work in progress.</span>
 
@@ -357,7 +362,7 @@
 				</div>
 
 				<a class="showCode">Code</a>
-				<pre class="hidden"><code><?php echo htmlentities('<input type="checkbox" id="checkbox1"/>
+				<pre class="MHidden"><code><?php echo htmlentities('<input type="checkbox" id="checkbox1"/>
 <label for="checkbox1">Checkbox</label>
 
 <input type="radio" name="radio" id="radio1"/>
@@ -422,7 +427,7 @@
 				</div>
 
 				<a class="showCode">Code</a>
-				<pre class="hidden"><code><?php echo htmlentities('<div class="MHBoxLayout">
+				<pre class="MHidden"><code><?php echo htmlentities('<div class="MHBoxLayout">
 	<button>Button</button>
 	<button>Button</button>
 	<button>Button</button>
@@ -451,7 +456,7 @@
 				</div>
 
 				<a class="showCode">Code</a>
-				<pre class="hidden"><code><?php echo htmlentities('<div class="MVBoxLayout">
+				<pre class="MHidden"><code><?php echo htmlentities('<div class="MVBoxLayout">
 	<button>Button</button>
 	<button>Button</button>
 	<button>Button</button>
@@ -474,7 +479,7 @@
 				</div>
 
 				<a class="showCode">Code</a>
-				<pre class="hidden"><code><?php echo htmlentities('<div class="MWell"></div>'); ?></code></pre>																																
+				<pre class="MHidden"><code><?php echo htmlentities('<div class="MWell"></div>'); ?></code></pre>																																
 
 				<div class="MContentSpacer"></div>
 				<div class="MContentSpacer"></div>
@@ -492,14 +497,14 @@
 				</div>
 
 				<a class="showCode">Code</a>
-				<pre class="hidden"><code><?php echo htmlentities('<div class="MWidget"></div>'); ?></code></pre>																				
+				<pre class="MHidden"><code><?php echo htmlentities('<div class="MWidget"></div>'); ?></code></pre>																				
 				
 				 <div class="MContentSpacer"></div>
 				<div class="MContentSpacer"></div>
 
 			</section>
 
-			<section id="section_noShow" class="text_centered hidden">
+			<section id="section_noShow" class="MTextCentered MHidden">
 				<h1>Select a Section from the Sidebar</h1>
 				<p>
 					or

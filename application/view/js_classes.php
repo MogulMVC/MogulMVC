@@ -58,6 +58,13 @@
 	};
 </script>
 
+<div id="MToolBarPlaceholder"></div>
+<nav id="MToolBar">
+	<div class="MToolBarSpacer left"></div>
+	<div class="MToolBarSpacer right"></div>
+	<span>This is the MToolBar. It is an ID. Don't confuse it with the MToolBar class. This one is fixed position. You will probably use this one more.</span>
+</nav>
+
 <table class="MWidthFull">
 	<tr class="MWidthFull">
 
@@ -70,31 +77,31 @@
 	
 				<hr />
 	
-				<li id="createButton" class="MSideBarItem">
+				<li id="createButton" class="MSideBarListItem">
 					<span>New Button</span>
 				</li>
 	
-				<li id="createListItem" class="MSideBarItem">
+				<li id="createListItem" class="MSideBarListItem">
 					<span>New List Item</span>
 				</li>
 	
-				<li id="createNote" class="MSideBarItem">
+				<li id="createNote" class="MSideBarListItem">
 					<span>New Note</span>
 				</li>
 	
-				<li id="createPopup" class="MSideBarItem">
+				<li id="createPopup" class="MSideBarListItem">
 					<span>New Popup</span>
 				</li>
 	
-				<li id="createProgressBar" class="MSideBarItem">
+				<li id="createProgressBar" class="MSideBarListItem">
 					<span>New Progress Bar</span>
 				</li>
 	
-				<li id="createRatingsBar" class="MSideBarItem">
+				<li id="createRatingsBar" class="MSideBarListItem">
 					<span>New Ratings Bar</span>
 				</li>
 	
-				<li id="createSystemMessage" class="MSideBarItem">
+				<li id="createSystemMessage" class="MSideBarListItem">
 					<span>New System Message</span>
 				</li>
 	
@@ -103,7 +110,7 @@
 
 		<td class="MWidthFull MPadding">
 			
-			<p class="red bold"><?php echo htmlentities(MLoad::js_framework('core/MScript.js', 'return', true));?></p>
+			<p class="MTextRed MTextBold"><?php echo htmlentities(MLoad::js_framework('core/MScript.js', 'return', true));?></p>
 			
 			<div id="newContent"></div>
 		</td>

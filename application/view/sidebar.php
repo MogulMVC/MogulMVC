@@ -1,3 +1,10 @@
+<div id="MToolBarPlaceholder"></div>
+<nav id="MToolBar">
+	<div class="MToolBarSpacer left"></div>
+	<div class="MToolBarSpacer right"></div>
+	<span>This is the MToolBar. It is an ID. Don't confuse it with the MToolBar class. This one is fixed position. You will probably use this one more.</span>
+</nav>
+
 <table>
 	<tr class="MWidthFull">
 		<td id="MSideBarContainer">

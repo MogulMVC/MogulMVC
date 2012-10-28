@@ -8,7 +8,7 @@ define('APPLICATION_COMPANY', 'Application Company');
 define('APPLICATION_NAME', 'Application Name');
 define('APPLICATION_DESCRIPTION', 'Application Description');
 define('APPLICATION_ID', 'SomeUniqueID');
-define('APPLICATION_VERSION', '120927');
+define('APPLICATION_VERSION', '121028');
 
 // Environment
 define('APPLICATION_ENVIRONMENT', 'development');
@@ -36,7 +36,7 @@ define('APPLICATION_VIEW', 'view');
 define('APPLICATION_VO', 'model/vo');
 
 // Controllers
-define('APPLICATION_DEFAULT_CONTROLLER', 'Managers.php');
+define('APPLICATION_DEFAULT_CONTROLLER', 'Main.php');
 define('APPLICATION_ERROR_404_CONTROLLER', 'Error_404.php');
 
 // Templates

@@ -54,6 +54,13 @@
 	};
 </script>
 
+<div id="MToolBarPlaceholder"></div>
+<nav id="MToolBar">
+	<div class="MToolBarSpacer left"></div>
+	<div class="MToolBarSpacer right"></div>
+	<span>This is the MToolBar. It is an ID. Don't confuse it with the MToolBar class. This one is fixed position. You will probably use this one more.</span>
+</nav>
+
 <table>
 	<tr class="MWidthFull">
 		<td id="MSideBarContainer">
@@ -69,77 +76,77 @@
 			</div>
 			
 			<label for="check_arrow">
-				<li class="MSideBarItem">
+				<li class="MSideBarListItem">
 					<input id="check_arrow" type="checkbox" value="section_arrow" checked="true" onclick="updateShow()"/>
 					<span>Arrows</span>
 				</li>
 			</label>
 
 			<label for="check_close">
-				<li class="MSideBarItem">
+				<li class="MSideBarListItem">
 					<input id="check_close" type="checkbox" value="section_close" checked="true" onclick="updateShow()"/>
 					<span>Close</span>
 				</li>
 			</label>
 
 			<label for="check_social">
-				<li class="MSideBarItem">
+				<li class="MSideBarListItem">
 					<input id="check_social" type="checkbox" value="section_social" checked="true" onclick="updateShow()"/>
 					<span>Social</span>
 				</li>
 			</label>
 
 			<label for="check_avatar">
-				<li class="MSideBarItem">
+				<li class="MSideBarListItem">
 					<input id="check_avatar" type="checkbox" value="section_avatar" checked="true" onclick="updateShow()"/>
 					<span>Avatar</span>
 				</li>
 			</label>
 
 			<label for="check_complete">
-				<li class="MSideBarItem">
+				<li class="MSideBarListItem">
 					<input id="check_complete" type="checkbox" value="section_complete" checked="true" onclick="updateShow()"/>
 					<span>Complete</span>
 				</li>
 			</label>
 
 			<label for="check_embed">
-				<li class="MSideBarItem">
+				<li class="MSideBarListItem">
 					<input id="check_embed" type="checkbox" value="section_embed" checked="true" onclick="updateShow()"/>
 					<span>Embed</span>
 				</li>
 			</label>
 			
 			<label for="check_loading">
-				<li class="MSideBarItem">
+				<li class="MSideBarListItem">
 					<input id="check_loading" type="checkbox" value="section_loading" checked="true" onclick="updateShow()"/>
 					<span>Loading</span>
 				</li>
 			</label>
 			
 			<label for="check_openShare">
-				<li class="MSideBarItem">
+				<li class="MSideBarListItem">
 					<input id="check_openShare" type="checkbox" value="section_openShare" checked="true" onclick="updateShow()"/>
 					<span>Open Share</span>
 				</li>
 			</label>
 			
 			<label for="check_shareThis">
-				<li class="MSideBarItem">
+				<li class="MSideBarListItem">
 					<input id="check_shareThis" type="checkbox" value="section_shareThis" checked="true" onclick="updateShow()"/>
 					<span>Share This</span>
 				</li>
 			</label>
 			
 			<label for="check_warning">
-				<li class="MSideBarItem">
+				<li class="MSideBarListItem">
 					<input id="check_warning" type="checkbox" value="section_warning" checked="true" onclick="updateShow()"/>
 					<span>Warning</span>
 				</li>
 			</label>
 			
 			<label for="check_misc">
-				<li class="MSideBarItem">
+				<li class="MSideBarListItem">
 					<input id="check_misc" type="checkbox" value="section_misc" checked="true" onclick="updateShow()"/>
 					<span>Misc</span>
 				</li>
@@ -149,7 +156,7 @@
 
 		<td class="MWidthFull MPadding">
 			
-		<p class="red bold"><?php echo htmlentities(MLoad::css_framework('core/MIcons.css', 'return', true));?></p>
+		<p class="MTextRed MTextBold"><?php echo htmlentities(MLoad::css_framework('core/MIcons.css', 'return', true));?></p>
 			
 		<section id="section_arrow" class="section">
 			<h1>Arrows</h1>
@@ -161,7 +168,7 @@
 			
 			<br />
 			<a class="showCode">Code</a>
-			<pre class="hidden"><code><?php echo htmlentities('<div class="MIconArrorLeft"></div>
+			<pre class="MHidden"><code><?php echo htmlentities('<div class="MIconArrorLeft"></div>
 <div class="MIconArrowRight"></div>');?></code></pre>
 			
 			<div class="MContentSpacer"></div>
@@ -176,7 +183,7 @@
 			
 			<br />
 			<a class="showCode">Code</a>
-			<pre class="hidden"><code><?php echo htmlentities('<span class="MIconClose"></span>');?></code></pre>
+			<pre class="MHidden"><code><?php echo htmlentities('<span class="MIconClose"></span>');?></code></pre>
 			
 			<div class="MContentSpacer"></div>
 			<div class="MContentSpacer"></div>
@@ -194,7 +201,7 @@
 			
 			<br />
 			<a class="showCode">Code</a>
-			<pre class="hidden"><code><?php echo htmlentities('<span class="MIconFacebook"></span>
+			<pre class="MHidden"><code><?php echo htmlentities('<span class="MIconFacebook"></span>
 <span class="MIconFacebook30x30"></span>
 <span class="MIconFacebook50x50"></span>
 <span class="MIconFacebook150x150"></span>');?></code></pre>
@@ -210,7 +217,7 @@
 			
 			<br />
 			<a class="showCode">Code</a>
-			<pre class="hidden"><code><?php echo htmlentities('<span class="MIconTwitter"></span>
+			<pre class="MHidden"><code><?php echo htmlentities('<span class="MIconTwitter"></span>
 <span class="MIconTwitter30x30"></span>
 <span class="MIconTwitter50x50"></span>
 <span class="MIconTwitter150x150"></span>');?></code></pre>
@@ -231,7 +238,7 @@
 			
 			<br />
 			<a class="showCode">Code</a>
-			<pre class="hidden"><code><?php echo htmlentities('<span class="MAvatar"></span>
+			<pre class="MHidden"><code><?php echo htmlentities('<span class="MAvatar"></span>
 <span class="MAvatar30x30"></span>
 <span class="MAvatar50x50"></span>
 <span class="MAvatar150x150"></span>
@@ -252,7 +259,7 @@
 			
 			<br />
 			<a class="showCode">Code</a>
-			<pre class="hidden"><code><?php echo htmlentities('<span class="MIconComplete"></span>
+			<pre class="MHidden"><code><?php echo htmlentities('<span class="MIconComplete"></span>
 <span class="MIconComplete30x30"></span>
 <span class="MIconComplete50x50"></span>
 <span class="MIconComplete150x150"></span>');?></code></pre>
@@ -271,7 +278,7 @@
 			
 			<br />
 			<a class="showCode">Code</a>
-			<pre class="hidden"><code><?php echo htmlentities('<span class="MIconEmbed"></span>
+			<pre class="MHidden"><code><?php echo htmlentities('<span class="MIconEmbed"></span>
 <span class="MIconEmbed30x30"></span>
 <span class="MIconEmbed50x50"></span>
 <span class="MIconEmbed150x150"></span>');?></code></pre>
@@ -290,7 +297,7 @@
 			
 			<br />
 			<a class="showCode">Code</a>
-			<pre class="hidden"><code><?php echo htmlentities('<span class="MIconLoadingBlack"></span>
+			<pre class="MHidden"><code><?php echo htmlentities('<span class="MIconLoadingBlack"></span>
 <span class="MIconLoadingBlack50x50"></span>
 <span class="MIconLoadingBlack150x150"></span>
 <span class="MIconLoadingWhite"></span>');?></code></pre>
@@ -307,7 +314,7 @@
 			
 			<br />
 			<a class="showCode">Code</a>
-			<pre class="hidden"><code><?php echo htmlentities('<span class="MIconLock"></span>
+			<pre class="MHidden"><code><?php echo htmlentities('<span class="MIconLock"></span>
 <span class="MIconLock64x64"></span>');?></code></pre>
 
 			<div class="MContentSpacer"></div>
@@ -324,7 +331,7 @@
 			
 			<br />
 			<a class="showCode">Code</a>
-			<pre class="hidden"><code><?php echo htmlentities('<span class="MIconOpenShare"></span>
+			<pre class="MHidden"><code><?php echo htmlentities('<span class="MIconOpenShare"></span>
 <span class="MIconOpenShare30x30"></span>
 <span class="MIconOpenShare50x50"></span>
 <span class="MIconOpenShare150x150"></span>');?></code></pre>
@@ -343,7 +350,7 @@
 			
 			<br />
 			<a class="showCode">Code</a>
-			<pre class="hidden"><code><?php echo htmlentities('<span class="MIconShareThis"></span>
+			<pre class="MHidden"><code><?php echo htmlentities('<span class="MIconShareThis"></span>
 <span class="MIconShareThis30x30"></span>
 <span class="MIconShareThis50x50"></span>
 <span class="MIconShareThis150x150"></span>');?></code></pre>
@@ -362,7 +369,7 @@
 			
 			<br />
 			<a class="showCode">Code</a>
-			<pre class="hidden"><code><?php echo htmlentities('<span class="MIconWarning"></span>
+			<pre class="MHidden"><code><?php echo htmlentities('<span class="MIconWarning"></span>
 <span class="MIconWarning30x30"></span>
 <span class="MIconWarning50x50"></span>
 <span class="MIconWarning150x150"></span>');?></code></pre>
@@ -385,7 +392,7 @@
 			
 			<br />
 			<a class="showCode">Code</a>
-			<pre class="hidden"><code><?php echo htmlentities('<span class="MIconAdd"></span>
+			<pre class="MHidden"><code><?php echo htmlentities('<span class="MIconAdd"></span>
 <span class="MBackground"></span>
 <span class="MIconDocument"></span>
 <span class="MIconEdit"></span>
@@ -398,7 +405,7 @@
 			<div class="MContentSpacer"></div>
 		</section>
 		
-		<section id="section_noShow" class="text_centered hidden">
+		<section id="section_noShow" class="MTextCentered MHidden">
 			<h1>Select a Section from the Sidebar</h1>
 			<p>
 				or

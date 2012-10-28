@@ -1,13 +1,13 @@
-.shadow_top {
-	background: url("/framework/img/global/shadow_top.png") repeat-x;
+.shadow-top {
+	background: url("/framework/img/global/shadow-top.png") repeat-x;
 	clear: both;
 	height: 2.4em;
 	margin: 0 auto;
 	width: 100%;
 }
 
-.shadow_bottom {
-	background: url("/framework/img/global/shadow_bottom.png") repeat-x;
+.shadow-bottom {
+	background: url("/framework/img/global/shadow-bottom.png") repeat-x;
 	clear: both;
 	height: 2.4em;
 	margin: 0 auto;

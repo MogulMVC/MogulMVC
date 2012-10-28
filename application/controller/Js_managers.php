@@ -1,10 +1,10 @@
 <?php
 
-class Managers {
+class Js_managers {
 
 	function index() {
 		$data['page_title'] = 'Managers';
-		MLoad::view('managers.php', $data);
+		MLoad::view('js_managers.php', $data);
 	}
 
 }
