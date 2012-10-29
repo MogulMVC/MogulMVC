@@ -11,7 +11,7 @@ define('APPLICATION_ID', 'SomeUniqueID');
 define('APPLICATION_VERSION', '121029');
 
 // Environment
-define('APPLICATION_ENVIRONMENT', 'development');
+define('APPLICATION_ENVIRONMENT', 'production');
 
 // URL Keywords
 define('APPLICATION_ACTION_URL', 'action');
