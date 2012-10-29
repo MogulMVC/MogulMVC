@@ -87,18 +87,59 @@
 				
 			</div>
 			<div id="why_use">
-				<h3>Currently you probably shouldn't.</h3>
-				<p>Here are the honest reason's you shouldn't use Mogul MVC.</p>
-				<ol>
-					<li><span class="MTextBold">Support</span> - I wrote Mogul MVC for me and my projects. Thus, there is no large coporation or community backing Mogul MVC.</li>
-					<li><span class="MTextBold">Age</span> - It's a young framework compared to others like <a href="http://codeigniter.com/">Codeigniter</a>, and <a href="http://cakephp.org/">CakePHP</a> and hasn't been tested by a large community.</li>
-					<li><span class="MTextBold">CLI Tools</span> - CLI tools are being developed. Currently they lack features that may require a change to Mogul MVC to implement.</li>
-					<li><span class="MTextBold">Datebase</span> - It's database system is not as sophisticated as <a href="http://rubyonrails.org/">Ruby on Rail</a>'s ActiveRecord system.</li>
-					<li><span class="MTextBold">UI</span> - It's UI library is not as robust as <a href="http://jqueryui.com/">jQuery UI</a> or <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</li>
-					<li><span class="MTextBold">Open Source</span> - Mogul MVC is not Open-Source yet and won't be until it's great.</li>
-				</ol>
 				
+				<div class="left" style="width: 50%">
+					<p>Here are the reason's you shouldn use Mogul MVC.</p>
+					<span class="MTextGreen MTextBold" style="font-size: 1.8em">PROS</span>
+					<li class="MListItem">
+						<span class="MTextBold">CSS UI</span>
+						<span> - Mogul MVC includes a CSS library of commonly used UI elements.</span>
+					</li>
+					<li class="MListItem">
+						<span class="MTextBold">Automatic CSS and JavaScript Minification</span>
+						<span> - When in production mode Mogul MVC will automatically create a single CSS and single JavaScript file for your entire project and cache it for quick loading.</span>
+					</li>
+					<li class="MListItem">
+						<span class="MTextBold">Speed</span>
+						<span> - Mogul MVC is a "Use at Will" framework. You specify the components and librarues to load so only what needs to be loaded is loaded.</span>
+					</li>
+					<li class="MListItem">
+						<span class="MTextBold">CLI Tools</span>
+						<span> - CLI tools make it easy to build new componets. They write the boring for you.</span>
+					</li>
+					<li class="MListItem">
+						<span class="MTextBold">Easy to Learn</span>
+						<span> - Mogul MVC is pretty simple and easy to learn.</span>
+					</li>				
+				</div>
+				
+				<div class="right" style="width: 50%">
+					<p>Here are the reason's you shouldn't use Mogul MVC.</p>
+					<span class="MTextRed MTextBold" style="font-size: 1.8em">CONS</span>
+					<li class="MListItem">
+						<span class="MTextBold">Support</span>
+						<span> - I wrote Mogul MVC for me and my projects. Thus, there is no large coporation or community backing Mogul MVC.</span>
+					</li>
+					<li class="MListItem">
+						<span class="MTextBold">Age</span>
+						<span> - Mogul MVC is a young framework compared to others like <a href="http://codeigniter.com/">Codeigniter</a>, and <a href="http://cakephp.org/">CakePHP</a> and hasn't been tested by a large community.</span>
+					</li>
+					<li class="MListItem">
+						<span class="MTextBold">Datebase</span>
+						<span> - Mogul MVC's database system is not as sophisticated as <a href="http://rubyonrails.org/">Ruby on Rail</a>'s ActiveRecord system.</span>
+					</li>
+					<li class="MListItem">
+						<span class="MTextBold">JavaScript UI</span>
+						<span> - Mogul MVC's JavaScript UI library is not as robust as <a href="http://jqueryui.com/">jQuery UI</a> or <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</span>
+						</li>
+					<li class="MListItem">
+						<span class="MTextBold">Open Source</span>
+						<span> - Mogul MVC is not Open-Source yet and won't be until it's great.</span>
+					</li>
+				</div>
+
 				<p>If you want to help make Mogul MVC great e-mail me at <a href="mailto:alanjames1987@gmail.com?subject=Mogul MVC">AlanJames1987@gmail.com</a> for the source code.</p>
+				
 			</div>
 		</div>
 	</div>

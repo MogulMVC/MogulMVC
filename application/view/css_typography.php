@@ -35,27 +35,27 @@
 			<ul id="MSideBar" class="MSideBarLeft">
 				
 				<div class="MVBoxLayout">
-					<button class="MButton" onclick="changeColor('')">
-						Default
-					</button>
-					<button class="MButtonRed" onclick="changeColor('MTextRed')">
-						Red
-					</button>
-					<button class="MButtonOrange" onclick="changeColor('MTextOrange')">
-						Orange
-					</button>
-					<button class="MButtonYellow" onclick="changeColor('MTextYellow')">
-						Yellow
-					</button>
-					<button class="MButtonGreen" onclick="changeColor('MTextGreen')">
-						Green
-					</button>
-					<button class="MButtonBlue" onclick="changeColor('MTextBlue')">
-						Blue
-					</button>
-					<button class="MButtonViolet" onclick="changeColor('MTextViolet')">
-						Violet
-					</button>
+					<li class="MSideBarListItem MCursorPointer" onclick="changeColor('')">
+						<span class="MTextBold">Default</span>
+					</li>
+					<li class="MSideBarListItem MCursorPointer" onclick="changeColor('MTextRed')">
+						<span class="MTextBold MTextRed">Red</span>
+					</li>
+					<li class="MSideBarListItem MCursorPointer" onclick="changeColor('MTextOrange')">
+						<span class="MTextBold MTextOrange">Orange</span>
+					</li>
+					<li class="MSideBarListItem MCursorPointer" onclick="changeColor('MTextYellow')">
+						<span class="MTextBold MTextYellow">Yellow</span>
+					</li>
+					<li class="MSideBarListItem MCursorPointer" onclick="changeColor('MTextGreen')">
+						<span class="MTextBold MTextGreen">Green</span>
+					</li>
+					<li class="MSideBarListItem MCursorPointer" onclick="changeColor('MTextBlue')">
+						<span class="MTextBold MTextBlue">Blue</span>
+					</li>
+					<li class="MSideBarListItem MCursorPointer" onclick="changeColor('MTextViolet')">
+						<span class="MTextBold MTextViolet">Violet</span>
+					</li>
 				</div>
 	
 			</ul>
@@ -68,12 +68,12 @@
 			<section id="section_text">
 				<h1>Headings</h1>
 	
-				<h1>The quick brown fox jumps over the lazy dog</h1>
-				<h2>The quick brown fox jumps over the lazy dog</h2>
-				<h3>The quick brown fox jumps over the lazy dog</h3>
-				<h4>The quick brown fox jumps over the lazy dog</h4>
-				<h5>The quick brown fox jumps over the lazy dog</h5>
-				<h6>The quick brown fox jumps over the lazy dog</h6>
+				<h1>h1 The quick brown fox jumps over the lazy dog</h1>
+				<h2>h2 The quick brown fox jumps over the lazy dog</h2>
+				<h3>h3 The quick brown fox jumps over the lazy dog</h3>
+				<h4>h4 The quick brown fox jumps over the lazy dog</h4>
+				<h5>h5 The quick brown fox jumps over the lazy dog</h5>
+				<h6>h6 The quick brown fox jumps over the lazy dog</h6>
 	
 				<h1>Paragraph</h1>
 	

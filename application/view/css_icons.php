@@ -155,21 +155,21 @@
 		</ul></td>
 
 		<td class="MWidthFull MPadding">
-			
+		
 		<p class="MTextRed MTextBold"><?php echo htmlentities(MLoad::css_framework('core/MIcons.css', 'return', true));?></p>
 			
 		<section id="section_arrow" class="section">
 			<h1>Arrows</h1>
 
 			<div class="MWidget" style="position: relative">
-				<div class="MIconArrorLeft"></div>
-				<div class="MIconArrowRight"></div>
+				<span class="MIconArrorLeft"></span>
+				<span class="MIconArrowRight"></span>
 			</div>
 			
 			<br />
 			<a class="showCode">Code</a>
-			<pre class="MHidden"><code><?php echo htmlentities('<div class="MIconArrorLeft"></div>
-<div class="MIconArrowRight"></div>');?></code></pre>
+			<pre class="MHidden"><code><?php echo htmlentities('<span class="MIconArrorLeft"></span>
+<span class="MIconArrowRight"></span>');?></code></pre>
 			
 			<div class="MContentSpacer"></div>
 			<div class="MContentSpacer"></div>

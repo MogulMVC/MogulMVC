@@ -71,11 +71,9 @@
 		<td id="MSideBarContainer">
 			<ul id="MSideBar" class="MSideBarLeft">
 	
-				<div class="MPaddingSmall">
+				<div class="MSideBarMenu">
 					<input type="text" id="inputContent" class="MWidthFull" placeholder="Custom Messages / Value"/>
 				</div>
-	
-				<hr />
 	
 				<li id="createButton" class="MSideBarListItem">
 					<span>New Button</span>

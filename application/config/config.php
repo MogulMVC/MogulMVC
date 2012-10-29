@@ -8,10 +8,10 @@ define('APPLICATION_COMPANY', 'Application Company');
 define('APPLICATION_NAME', 'Application Name');
 define('APPLICATION_DESCRIPTION', 'Application Description');
 define('APPLICATION_ID', 'SomeUniqueID');
-define('APPLICATION_VERSION', '121028');
+define('APPLICATION_VERSION', '121029');
 
 // Environment
-define('APPLICATION_ENVIRONMENT', 'development');
+define('APPLICATION_ENVIRONMENT', 'production');
 
 // URL Keywords
 define('APPLICATION_ACTION_URL', 'action');
@@ -20,6 +20,7 @@ define('APPLICATION_API_URL', 'api');
 // Directories
 define('APPLICATION_ACTION', 'controller/action');
 define('APPLICATION_API', 'controller/api');
+define('APPLICATION_CACHE', 'cache');
 define('APPLICATION_CONTROLLER', 'controller');
 define('APPLICATION_DOC', 'doc');
 define('APPLICATION_IMG', 'img');
@@ -29,8 +30,8 @@ define('APPLICATION_LIB_CSS', 'lib/css');
 define('APPLICATION_LIB_JS', 'lib/js');
 define('APPLICATION_LIB_PHP', 'lib/php');
 define('APPLICATION_MODEL', 'model');
-define('APPLICATION_UPLOAD', 'upload');
 define('APPLICATION_SETUP', 'setup');
+define('APPLICATION_UPLOAD', 'upload');
 define('APPLICATION_VID', 'vid');
 define('APPLICATION_VIEW', 'view');
 define('APPLICATION_VO', 'model/vo');

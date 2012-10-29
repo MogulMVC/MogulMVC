@@ -8,7 +8,7 @@ $GLOBALS['LOAD_JS_APPLICATION'] = array();
 
 class MLoad {
 
-	/********** Models / VOs **********/
+	/********** Models / VO Functions **********/
 
 	public static function model($model) {
 
@@ -48,7 +48,7 @@ class MLoad {
 
 	}
 
-	/********** Views **********/
+	/********** View Functions **********/
 
 	public static function view($view, $data = '') {
 
@@ -202,7 +202,7 @@ class MLoad {
 
 	}
 
-	/********** PHP Libraries **********/
+	/********** PHP Functions **********/
 
 	public static function php_framework($library) {
 
@@ -240,7 +240,7 @@ class MLoad {
 
 	}
 
-	/********** JavaScript Libraries **********/
+	/********** JavaScript Functions **********/
 
 	public static function js_framework($js, $direction = null, $useHTTP = false) {
 
@@ -251,10 +251,13 @@ class MLoad {
 				$js = $js . '.js';
 			}
 
+			// Check if the file exists
 			if (!file_exists(SERVER_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_LIB_JS . '/' . $js)) {
 				trigger_error('error - ' . $js . ' not found.', E_USER_ERROR);
 			}
-
+			
+			$version = filemtime(SERVER_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_LIB_JS . '/' . $js);
+			
 			// If use HTTP is true include an HTTP section
 			$src = '/' . FRAMEWORK . '/' . FRAMEWORK_LIB_JS . '/' . $js;
 			if ($useHTTP) {
@@ -268,12 +271,12 @@ class MLoad {
 
 			// Return the link
 			elseif ($direction == 'return') {
-				return '<script src="' . $src . '?' . FRAMEWORK_VERSION . '"></script>';
+				return '<script src="' . $src . '?' . $version . '"></script>';
 			}
 
 			// Echo the link
 			elseif ($direction == 'echo') {
-				echo '<script src="' . $src . '?' . FRAMEWORK_VERSION . '"></script>';
+				echo '<script src="' . $src . '?' . $version . '"></script>';
 			}
 
 		}
@@ -289,9 +292,12 @@ class MLoad {
 				$js = $js . '.js';
 			}
 
+			// Check if the file exists
 			if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_LIB_JS . '/' . $js)) {
 				trigger_error('error - ' . $js . ' not found.', E_USER_ERROR);
 			}
+
+			$version = filemtime(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_LIB_JS . '/' . $js);
 
 			// If use HTTP is true include an HTTP section
 			$src = '/' . APPLICATION . '/' . APPLICATION_LIB_JS . '/' . $js;
@@ -306,19 +312,55 @@ class MLoad {
 
 			// Return the link
 			elseif ($direction == 'return') {
-				return '<script src="' . $src . '?' . APPLICATION_VERSION . '"></script>';
+				return '<script src="' . $src . '?' . $version . '"></script>';
 			}
 
 			// Echo the link
 			elseif ($direction == 'echo') {
-				echo '<script src="' . $src . '?' . APPLICATION_VERSION . '"></script>';
+				echo '<script src="' . $src . '?' . $version . '"></script>';
 			}
 
 		}
 
 	}
 
-	/********** CSS Libraries **********/
+	public static function js_cache($js, $direction, $useHTTP = false) {
+
+		if (!empty($js)) {
+
+			// Add extension if one doesn't exist
+			if(!substr(strrchr($js,'.'),1)){
+				$js = $js . '.js';
+			}
+
+			// Check if the file exists
+			if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_CACHE . '/' . $js)) {
+				trigger_error('error - ' . $js . ' not found.', E_USER_ERROR);
+			}
+
+			$version = filemtime(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_CACHE . '/' . $js);
+
+			// If use HTTP is true include an HTTP section
+			$src = '/' . APPLICATION . '/' . APPLICATION_CACHE . '/' . $js;
+			if ($useHTTP) {
+				$src = 'http://' . $_SERVER['SERVER_NAME'] . '/' . APPLICATION . '/' . APPLICATION_CACHE . '/' . $js;
+			}
+
+			// Return the link
+			elseif ($direction == 'return') {
+				return '<script src="' . $src . '?' . $version . '"></script>';
+			}
+
+			// Echo the link
+			elseif ($direction == 'echo') {
+				echo '<script src="' . $src . '?' . $version . '"></script>';
+			}
+
+		}
+
+	}
+
+	/********** CSS Functions **********/
 
 	public static function css_framework($css, $direction = null, $useHTTP = false) {
 
@@ -329,9 +371,12 @@ class MLoad {
 				$css = $css . '.css';
 			}
 
+			// Check if the file exists
 			if (!file_exists(SERVER_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_LIB_CSS . '/' . $css)) {
 				trigger_error('error - ' . $css . ' not found.', E_USER_ERROR);
 			}
+
+			$version = filemtime(SERVER_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_LIB_CSS . '/' . $css);
 
 			// If use HTTP is true include an HTTP section
 			$src = '/' . FRAMEWORK . '/' . FRAMEWORK_LIB_CSS . '/' . $css;
@@ -346,12 +391,12 @@ class MLoad {
 
 			// Return the link
 			elseif ($direction == 'return') {
-				return '<link href="' . $src . '?' . FRAMEWORK_VERSION . '" type="text/css" rel="stylesheet" />';
+				return '<link href="' . $src . '?' . $version . '" type="text/css" rel="stylesheet" />';
 			}
 
 			// Echo the link
 			elseif ($direction == 'echo') {
-				echo '<link href="' . $src . '?' . FRAMEWORK_VERSION . '" type="text/css" rel="stylesheet" />';
+				echo '<link href="' . $src . '?' . $version . '" type="text/css" rel="stylesheet" />';
 			}
 
 		}
@@ -367,9 +412,12 @@ class MLoad {
 				$css = $css . '.css';
 			}
 
+			// Check if the file exists
 			if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_LIB_CSS . '/' . $css)) {
 				trigger_error('error - ' . $css . ' not found.', E_USER_ERROR);
 			}
+
+			$version = filemtime(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_LIB_CSS . '/' . $css);
 
 			// If use HTTP is true include an HTTP section
 			$src = '/' . APPLICATION . '/' . APPLICATION_LIB_CSS . '/' . $css;
@@ -384,58 +432,97 @@ class MLoad {
 
 			// Return the link
 			elseif ($direction == 'return') {
-				return '<link href="' . $src . '?' . APPLICATION_VERSION . '" type="text/css" rel="stylesheet" />';
+				return '<link href="' . $src . '?' . $version . '" type="text/css" rel="stylesheet" />';
 			}
 
 			// Echo the link
 			elseif ($direction == 'echo') {
-				echo '<link href="' . $src . '?' . APPLICATION_VERSION . '" type="text/css" rel="stylesheet" />';
+				echo '<link href="' . $src . '?' . $version . '" type="text/css" rel="stylesheet" />';
 			}
 
 		}
 
 	}
 
-	/********** Images **********/
+	public static function css_cache($css, $direction, $useHTTP = false) {
+
+		if (!empty($css)) {
+
+			// Add extension if one doesn't exist
+			if(!substr(strrchr($css,'.'),1)){
+				$css = $css . '.css';
+			}
+
+			// Check if the file exists
+			if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_CACHE . '/' . $css)) {
+				trigger_error('error - ' . $css . ' not found.', E_USER_ERROR);
+			}
+
+			$version = filemtime(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_CACHE . '/' . $css);
+
+			// If use HTTP is true include an HTTP section
+			$src = '/' . APPLICATION . '/' . APPLICATION_CACHE . '/' . $css;
+			if ($useHTTP) {
+				$src = 'http://' . $_SERVER['SERVER_NAME'] . '/' . APPLICATION . '/' . APPLICATION_CACHE . '/' . $css;
+			}
+
+			// Return the link
+			elseif ($direction == 'return') {
+				return '<link href="' . $src . '?' . $version . '" type="text/css" rel="stylesheet" />';
+			}
+
+			// Echo the link
+			elseif ($direction == 'echo') {
+				echo '<link href="' . $src . '?' . $version . '" type="text/css" rel="stylesheet" />';
+			}
+
+		}
+
+	}
+
+
+	/********** Image Functions **********/
 
 	public static function img_framework($img) {
 
 		if (!empty($img)) {
 
+			// Check if the file exists
 			if (!file_exists(SERVER_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_IMG . '/' . $img)) {
 				trigger_error('error - ' . $img . ' not found.', E_USER_ERROR);
 			}
 
-			return '/' . FRAMEWORK . '/' . FRAMEWORK_IMG . '/' . $img . '?' . FRAMEWORK_VERSION;
+			$version = filemtime(SERVER_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_IMG . '/' . $img);
+
+			return '/' . FRAMEWORK . '/' . FRAMEWORK_IMG . '/' . $img . '?' . $version;
 
 		}
 
 		return NULL;
-
 	}
 
 	public static function img_application($img) {
 
 		if (!empty($img)) {
 
+			// Check if the file exists
 			if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_IMG . '/' . $img)) {
 				trigger_error('error - ' . $img . ' not found.', E_USER_ERROR);
 			}
 
-			return '/' . APPLICATION . '/' . APPLICATION_IMG . '/' . $img . '?' . APPLICATION_VERSION;
+			$version = filemtime(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_IMG . '/' . $img);
+			
+			return '/' . APPLICATION . '/' . APPLICATION_IMG . '/' . $img . '?' . $version;
 
 		}
 
 		return NULL;
-
 	}
 
 	public static function icon_framework($icon) {
 
 		if (!empty($icon)) {
-
 			return self::img_framework('icon/' . $icon);
-
 		}
 
 	}
