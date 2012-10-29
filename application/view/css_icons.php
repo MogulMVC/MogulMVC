@@ -12,7 +12,7 @@
 		$('.section').hide();
 
 		$('#MSideBar input').each(function() {
-			if ($(this).is(":checked")) {
+			if ($(this).is(':checked')) {
 				$('#' + $(this).val()).show();
 			}
 		});
@@ -41,7 +41,7 @@
 		var hiddenAll = true;
 
 		$('#MSideBar input').each(function() {
-			if ($(this).is(":checked")) {
+			if ($(this).is(':checked')) {
 				hiddenAll = false;
 			}
 		});
@@ -228,7 +228,6 @@
 
 		<section id="section_avatar" class="section">
 			<h1>Avatar</h1>
-			
 			<span class="MAvatar"></span>
 			<span class="MAvatar30x30"></span>
 			<span class="MAvatar50x50"></span>
@@ -251,7 +250,6 @@
 
 		<section id="section_complete" class="section">
 			<h1>Complete</h1>
-			
 			<span class="MIconComplete"></span>
 			<span class="MIconComplete30x30"></span>
 			<span class="MIconComplete50x50"></span>
@@ -270,7 +268,6 @@
 
 		<section id="section_embed" class="section">
 			<h1>Embed</h1>
-			
 			<span class="MIconEmbed"></span>
 			<span class="MIconEmbed30x30"></span>
 			<span class="MIconEmbed50x50"></span>
@@ -293,7 +290,12 @@
 			<span class="MIconLoadingBlack"></span>
 			<span class="MIconLoadingBlack50x50"></span>
 			<span class="MIconLoadingBlack150x150"></span>
-			<span class="MIconLoadingWhite"></span>
+			
+			<div style="background:#323232;display: inline-block;">				
+				<span class="MIconLoadingWhite"></span>
+				<span class="MIconLoadingWhite50x50"></span>
+				<span class="MIconLoadingWhite150x150"></span>
+			</div>
 			
 			<br />
 			<a class="showCode">Code</a>

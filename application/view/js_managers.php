@@ -12,7 +12,7 @@
 		$('.section').hide();
 
 		$('#MSideBar input').each(function() {
-			if ($(this).is(":checked")) {
+			if ($(this).is(':checked')) {
 				$('#' + $(this).val()).show();
 			}
 		});
@@ -41,7 +41,7 @@
 		var hiddenAll = true;
 
 		$('#MSideBar input').each(function() {
-			if ($(this).is(":checked")) {
+			if ($(this).is(':checked')) {
 				hiddenAll = false;
 			}
 		});
