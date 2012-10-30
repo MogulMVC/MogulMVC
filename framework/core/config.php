@@ -3,8 +3,6 @@ if (!defined('SERVER_ROOT')) {header('/error_404');
 	exit ;
 }
 
-date_default_timezone_set('America/New_York');
-
 define('FRAMEWORK_VERSION', '121029');
 
 define('FRAMEWORK_IMG', 'img');

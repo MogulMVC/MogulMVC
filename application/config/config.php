@@ -3,6 +3,8 @@ if (!defined('SERVER_ROOT')) {header('/error_404');
 	exit ;
 }
 
+date_default_timezone_set('America/New_York');
+
 // Application
 define('APPLICATION_COMPANY', 'Application Company');
 define('APPLICATION_NAME', 'Application Name');
@@ -11,7 +13,7 @@ define('APPLICATION_ID', 'SomeUniqueID');
 define('APPLICATION_VERSION', '121029');
 
 // Environment
-define('APPLICATION_ENVIRONMENT', 'production');
+define('APPLICATION_ENVIRONMENT', 'development');
 
 // URL Keywords
 define('APPLICATION_ACTION_URL', 'action');
