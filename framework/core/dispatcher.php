@@ -3,23 +3,22 @@ if (!defined('SERVER_ROOT')) {header('/error_404');
 	exit ;
 }
 
-/********** Via the CLI **********/
-if (MCLI::cli_is()) {
+/********** Via the Web **********/
 
+if (!MCLI::cli_is()) {
+	$URI = MString::sub_before($_SERVER['REQUEST_URI'], '?');
+	$URI_ARRAY = explode('/', $URI);
+}
+
+/********** Via the CLI **********/
+
+elseif (MCLI::cli_is()) {
 	$URI_ARRAY = array();
 
 	foreach ($_SERVER['argv'] as $argument) {
 		$argument_safe = MString::sub_before($argument, '?');
 		array_push($URI_ARRAY, $argument_safe);
 	}
-
-}
-
-/********** Via the Web **********/
-
-if (!MCLI::cli_is()) {
-	$URI = MString::sub_before($_SERVER['REQUEST_URI'], '?');
-	$URI_ARRAY = explode('/', $URI);
 }
 
 /********** Define Important Stuff **********/
@@ -56,7 +55,7 @@ elseif ($CLASS == 'application.js' && $FUNCTION == 'index') {
 	$application -> description = APPLICATION_DESCRIPTION;
 	$application -> id = APPLICATION_ID;
 	$application -> icon = MURL::base() . '/' . APPLICATION . '/' . APPLICATION_IMG . '/' . APPLICATION_ICON . '?' . APPLICATION_VERSION;
-	
+
 	// Output an JSON file describing the application
 	echo json_encode($application);
 
@@ -66,7 +65,7 @@ elseif ($CLASS == 'application.js' && $FUNCTION == 'index') {
 // Application Manifest XML
 elseif ($CLASS == 'application.xml' && $FUNCTION == 'index') {
 	header("Content-Type:text/xml");
-	
+
 	// Output an XML file describing the application
 	// Must be written this way
 	echo '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
@@ -108,14 +107,17 @@ elseif ($CLASS == APPLICATION_API_URL) {
 }
 
 // Cron Job
-elseif ($CLASS == APPLICATION_JOB) {
+elseif ($CLASS == APPLICATION_COMMAND) {
 
 	// Check if the job exists
-	if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_JOB . '/' . $FUNCTION . '.php')) {
+	if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_COMMAND . '/' . $FUNCTION . '.php')) {
 		MError::error_404();
 	}
 
-	require_once (SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_JOB . '/' . $FUNCTION . '.php');
+	// Only run the command via the CLI
+	if (!MCLI::cli_is()) {
+		require_once (SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_COMMAND . '/' . $FUNCTION . '.php');
+	}
 
 	exit ;
 }
@@ -144,8 +146,34 @@ elseif ($CLASS == APPLICATION_SETUP) {
 // Controller
 else {
 
-	// Used to route
-	require_once ('routes.php');
+	require_once (SERVER_ROOT . '/' . APPLICATION . '/config/routes.php');
+	
+	if (!empty($ROUTE)) {
+	
+		foreach ($ROUTE as $from => $to) {
+	
+			$from_segments = explode('/', $from);
+			$to_segments = explode('/', $to);
+	
+			//If the controller class matches something in the routes
+			if ($CLASS == $from_segments[0]) {
+	
+				//Catch empty functions and set to index as the default
+				if (empty($FUNCTION)) {
+					$FUNCTION = 'index';
+				}
+	
+				//Check if the function matches
+				if ($FUNCTION == $from_segments[1] || $from_segments[1] == '*' || ($from_segments[1] == '#' && is_numeric($FUNCTION))) {
+					$CLASS = $to_segments[0];
+					$FUNCTION = $to_segments[1];
+				}
+	
+			}
+	
+		}
+	
+	}
 
 	// All classes start with a capital letter
 	$CLASS = ucfirst($CLASS);

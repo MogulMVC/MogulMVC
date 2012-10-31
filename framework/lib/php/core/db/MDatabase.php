@@ -1,4 +1,7 @@
 <?php
+if (!defined('SERVER_ROOT')) {header('/error_404');
+	exit ;
+}
 
 class MDatabase extends ActiveRecord\model {
 
@@ -13,7 +16,5 @@ class MDatabase extends ActiveRecord\model {
 	public static function delete($where) {
 
 	}
-
-	
 
 }

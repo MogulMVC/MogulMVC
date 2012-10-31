@@ -3,7 +3,6 @@ if (!defined('SERVER_ROOT')) {header('/error_404');
 	exit ;
 }
 ?>
-
 <!DOCTYPE html>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
