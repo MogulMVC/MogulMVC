@@ -45,7 +45,7 @@
 	
 	<div class="MContentSpacer"></div>
 	<div class="MTextCenter">
-		<span class="MNoteY MTextBold">If you're interested in Mogul MVC please read "Why Use Mogul MVC?".</span>	
+		<span class="MNoteY MTextBold">If you're interested in Mogul MVC please read "Why Use Mogul MVC?".</span>
 	</div>
 	<div class="MContentSpacer"></div>
 	<div class="MContentSpacer"></div>

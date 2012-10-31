@@ -3,9 +3,14 @@ if (!defined('SERVER_ROOT')) {header('/error_404');
 	exit ;
 }
 
-if (php_sapi_name() == 'cli' || php_sapi_name() == 'cgi-fcgi') {
-	define('NL', '\n');
-} else {
+/********** Via the Web **********/
+
+if (!MCLI::cli_is()) {
 	define('NL', '<br />');
 }
 
+/********** Via the CLI **********/
+
+elseif (MCLI::cli_is()) {
+	define('NL', '\n');
+}

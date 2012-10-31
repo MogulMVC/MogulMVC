@@ -246,7 +246,6 @@
 <span class="MButton">Button</span>');
 				?></code></pre>				
 
-
 				<div class="MContentSpacer">
 					<hr />
 				</div>
@@ -267,42 +266,27 @@
 <input type="reset" />');
 				?></code></pre>																																
 
-
 				<div class="MContentSpacer">
 					<hr />
 				</div>
 
 				<p class="MWidgetTitle">
-					Animated Buttons
+					Button Group
 				</p>
 
-				<table class="MWidthFull left">
-					<tr>
-						<td class="MTextRight" style="width:70px;"><span class="MTextBold">&lt;a&gt;</span></td>
-						<td><a id="animated_button_a" class="MButton left" onclick="$(this).MHTMLAnimate('The text is now much longer and the button has animated to accomidate the new text.', 1000);$('#animated_button_a_reset').fadeIn(250);" data-mtip="W" title="I'm an &lt;a&gt; tag.">Change Text</a><a id="animated_button_a_reset" onclick="$('#animated_button_a').MHTMLAnimate('Change Text', 1000);$(this).fadeOut(250);" class="MHidden right">Reset</a></td>
-					</tr>
-					<tr>
-						<td class="MTextRight"><span class="MTextBold">&lt;button&gt;</span></td>
-						<td>
-						<button id="animated_button_button" class="MButton left" onclick="$(this).MHTMLAnimate('The text is now much longer and the button has animated to accomidate the new text.', 1000);$('#animated_button_button_reset').fadeIn(250);" data-mtip="W" title="I'm a &lt;span&gt; tag.">
-							Change Text
-						</button><a id="animated_button_button_reset" onclick="$('#animated_button_button').MHTMLAnimate('Change Text', 1000);$(this).fadeOut(250);" class="MHidden right">Reset</a></td>
-					</tr>
-					<tr>
-						<td class="MTextRight"><span class="MTextBold">&lt;div&gt;</span></td>
-						<td>
-						<div id="animated_button_div" class="MButton left" onclick="$(this).MHTMLAnimate('The text is now much longer and the button has animated to accomidate the new text.', 1000);$('#animated_button_div_reset').fadeIn(250);" data-mtip="W" title="I'm a &lt;div&gt; tag.">
-							Change Text
-						</div><a id="animated_button_div_reset" onclick="$('#animated_button_div').MHTMLAnimate('Change Text', 1000);$(this).fadeOut(250);" class="MHidden right">Reset</a></td>
-					</tr>
-					<tr>
-						<td class="MTextRight"><span class="MTextBold">&lt;span&gt;</span></td>
-						<td><span id="animated_button_span" class="MButton left" onclick="$(this).MHTMLAnimate('The text is now much longer and the button has animated to accomidate the new text.', 1000);$('#animated_button_span_reset').fadeIn(250);" data-mtip="W" title="I'm a &lt;span&gt; tag.">Change Text</span><a id="animated_button_span_reset" onclick="$('#animated_button_span').MHTMLAnimate('Change Text', 1000);$(this).fadeOut(250);" class="MHidden right">Reset</a></td>
-					</tr>
-				</table>
-
-				<a class="showCode">Code</a>
-				<pre class="MHidden"><code><?php echo htmlentities('$(this).MHTMLAnimate("The text is now much longer and the button has animated to accomidate the new text.", 1000);'); ?></code></pre>				
+				<div class="MHButtonGroup">
+					<button>A Button</button>
+					<button>Another Button</button>
+					<button>Yet Another Button</button>
+				</div>
+				
+				<br /><br />
+				
+				<div class="MVButtonGroup">
+					<button>A Button</button>
+					<button>Another Button</button>
+					<button>Yet Another Button</button>
+				</div>
 
  				<div class="MContentSpacer"></div>
 				<div class="MContentSpacer"></div>
