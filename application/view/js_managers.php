@@ -264,6 +264,8 @@
 		<section id="section_tab" class="section">
 			<h1>Tab</h1>
 
+			<p>Any <span class="MTextBold">&lt;div&gt;</span> tags with class MTabWidget and proper tab markup with automatically be given tab functionality.</p>
+
 			<div class="MTabWidget">
 				<ul class="MTabContainer">
 					<li class="MTab">

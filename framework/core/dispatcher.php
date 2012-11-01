@@ -109,70 +109,51 @@ elseif ($CLASS == APPLICATION_API_URL) {
 // Cron Job
 elseif ($CLASS == APPLICATION_COMMAND) {
 
-	// Check if the job exists
+	// Check if the application password matches
+	if (empty($URI_ARRAY[3]) || $URI_ARRAY[3] != APPLICATION_PASSWORD) {
+		MError::error_404();
+	}
+
+	// Check if the command exists
 	if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_COMMAND . '/' . $FUNCTION . '.php')) {
 		MError::error_404();
 	}
 
-	// Only run the command via the CLI
-	if (!MCLI::cli_is()) {
-		require_once (SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_COMMAND . '/' . $FUNCTION . '.php');
-	}
+	require_once (SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_COMMAND . '/' . $FUNCTION . '.php');
 
 	exit ;
-}
-
-// Setup
-elseif ($CLASS == APPLICATION_SETUP) {
-
-	if (APPLICATION_ENVIRONMENT == 'development') {
-
-		// Check if the job exists
-		if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_SETUP . '/' . $FUNCTION . '.php')) {
-			MError::error_404();
-		}
-
-		require_once (SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_SETUP . '/' . $FUNCTION . '.php');
-
-		exit ;
-
-	}
-
-	// Show 404 if application isn't in development mode
-	MError::error_404();
-
 }
 
 // Controller
 else {
 
 	require_once (SERVER_ROOT . '/' . APPLICATION . '/config/routes.php');
-	
+
 	if (!empty($ROUTE)) {
-	
+
 		foreach ($ROUTE as $from => $to) {
-	
+
 			$from_segments = explode('/', $from);
 			$to_segments = explode('/', $to);
-	
+
 			//If the controller class matches something in the routes
 			if ($CLASS == $from_segments[0]) {
-	
+
 				//Catch empty functions and set to index as the default
 				if (empty($FUNCTION)) {
 					$FUNCTION = 'index';
 				}
-	
+
 				//Check if the function matches
 				if ($FUNCTION == $from_segments[1] || $from_segments[1] == '*' || ($from_segments[1] == '#' && is_numeric($FUNCTION))) {
 					$CLASS = $to_segments[0];
 					$FUNCTION = $to_segments[1];
 				}
-	
+
 			}
-	
+
 		}
-	
+
 	}
 
 	// All classes start with a capital letter

@@ -1,3 +1,12 @@
+<style>
+	
+	.background-grey{
+		background: #323232;
+		display: inline-block;
+	}
+	
+</style>
+
 <script>
 	$(document).ready(function() {
 		$('.showCode').each(function(index) {
@@ -291,9 +300,15 @@
 			<span class="MIconLoadingBlack50x50"></span>
 			<span class="MIconLoadingBlack150x150"></span>
 			
-			<div style="background:#323232;display: inline-block;">				
+			<div class="background-grey">				
 				<span class="MIconLoadingWhite"></span>
+			</div>
+			
+			<div class="background-grey">				
 				<span class="MIconLoadingWhite50x50"></span>
+			</div>
+			
+			<div class="background-grey">				
 				<span class="MIconLoadingWhite150x150"></span>
 			</div>
 			
