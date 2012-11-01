@@ -37,10 +37,10 @@
 <div class="MContent840">
 	
 	<div class="MTextCenter">
-		<p style="font-size: 2em;">Mogul MVC is an MVC framework and UI library written in<br /><a href="http://www.php.net/">PHP</a>, <a href="http://jquery.com/">jQuery</a>, and <a href="http://sass-lang.com/">Sass</a></p>
+		<h2 style="font-size: 2em;">Mogul MVC is an MVC framework and UI library written in<br /><a href="http://www.php.net/">PHP</a>, <a href="http://jquery.com/">jQuery</a>, and <a href="http://sass-lang.com/">Sass</a></h2>
 		<p>It's designed to be fast, have a small footprint, work on shared hosting, and not require the installation of any additional software.</p>
 		<p>It's designed to have as few abstraction layers as possible, while also helping you orgaize your web application.</p>
-		<p class="MTextBold">Mogul MVC is not Open-Source yet.<br />But...</p>
+		<p class="MTextBold">Mogul MVC is not Open-Source yet, but...</p>
 	</div>
 	
 	<div class="MContentSpacer"></div>
@@ -136,6 +136,10 @@
 						<span class="MTextBold">Open Source</span>
 						<span> - Mogul MVC is not Open-Source yet and won't be until it's great.</span>
 					</li>
+				</div>
+
+				<div class="MContentSpacer">
+					<hr />
 				</div>
 
 				<p>If you want to help make Mogul MVC great e-mail me at <a href="mailto:alanjames1987@gmail.com?subject=Mogul MVC">AlanJames1987@gmail.com</a> for the source code.</p>

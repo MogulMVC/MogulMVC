@@ -1,6 +1,6 @@
 <?php
 
-class MValidator {
+class MValidate {
 
 	public static function email($email) {
 
