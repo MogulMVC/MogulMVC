@@ -20,7 +20,7 @@ class MLoad {
 			}
 
 			if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_MODEL . '/' . $model)) {
-				trigger_error('error - ' . $model . ' not found.', E_USER_ERROR);
+				trigger_error('error - ' . $model . ' not found.');
 			}
 
 			require_once (SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_MODEL . '/' . $model);
@@ -272,7 +272,7 @@ class MLoad {
 			elseif ($direction == 'echo') {
 				echo '<script src="' . $src . '?' . $version . '"></script>';
 			}
-			
+
 			// Return the link
 			return '<script src="' . $src . '?' . $version . '"></script>';
 
@@ -306,12 +306,12 @@ class MLoad {
 			if ($direction == null) {
 				array_push($GLOBALS['LOAD_JS_APPLICATION'], $js);
 			}
-			
+
 			// Echo the link
 			elseif ($direction == 'echo') {
 				echo '<script src="' . $src . '?' . $version . '"></script>';
 			}
-			
+
 			// Return the link
 			return '<script src="' . $src . '?' . $version . '"></script>';
 
@@ -340,12 +340,12 @@ class MLoad {
 			if ($useHTTP) {
 				$src = 'http://' . $_SERVER['SERVER_NAME'] . '/' . APPLICATION . '/' . APPLICATION_CACHE . '/' . $js;
 			}
-			
+
 			// Echo the link
 			if ($direction == 'echo') {
 				echo '<script src="' . $src . '?' . $version . '"></script>';
 			}
-			
+
 			// Return the link
 			return '<script src="' . $src . '?' . $version . '"></script>';
 
@@ -386,7 +386,7 @@ class MLoad {
 			elseif ($direction == 'echo') {
 				echo '<link href="' . $src . '?' . $version . '" type="text/css" rel="stylesheet" />';
 			}
-			
+
 			// Return the link
 			return '<link href="' . $src . '?' . $version . '" type="text/css" rel="stylesheet" />';
 
@@ -425,7 +425,7 @@ class MLoad {
 			elseif ($direction == 'echo') {
 				echo '<link href="' . $src . '?' . $version . '" type="text/css" rel="stylesheet" />';
 			}
-			
+
 			// Return the link
 			return '<link href="' . $src . '?' . $version . '" type="text/css" rel="stylesheet" />';
 
@@ -459,7 +459,7 @@ class MLoad {
 			if ($direction == 'echo') {
 				echo '<link href="' . $src . '?' . $version . '" type="text/css" rel="stylesheet" />';
 			}
-			
+
 			// Return the link
 			return '<link href="' . $src . '?' . $version . '" type="text/css" rel="stylesheet" />';
 
@@ -475,7 +475,8 @@ class MLoad {
 
 			// Check if the file exists
 			if (!file_exists(SERVER_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_IMG . '/' . $img)) {
-				trigger_error('error - ' . $img . ' not found.', E_USER_ERROR);
+				echo('error - ' . $img . ' not found.');
+				exit ;
 			}
 
 			$version = filemtime(SERVER_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_IMG . '/' . $img);
@@ -485,12 +486,12 @@ class MLoad {
 			if ($useHTTP) {
 				$src = 'http://' . $_SERVER['SERVER_NAME'] . '/' . FRAMEWORK . '/' . FRAMEWORK_IMG . '/' . $img . '?' . $version;
 			}
-			
+
 			// Echo the link
 			if ($direction == 'echo') {
 				echo '/' . FRAMEWORK . '/' . FRAMEWORK_IMG . '/' . $img . '?' . $version;
 			}
-			
+
 			// Return the link
 			return '/' . FRAMEWORK . '/' . FRAMEWORK_IMG . '/' . $img . '?' . $version;
 
@@ -505,7 +506,8 @@ class MLoad {
 
 			// Check if the file exists
 			if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_IMG . '/' . $img)) {
-				trigger_error('error - ' . $img . ' not found.', E_USER_ERROR);
+				echo('error - ' . $img . ' not found.');
+				exit;
 			}
 
 			$version = filemtime(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_IMG . '/' . $img);
@@ -520,7 +522,7 @@ class MLoad {
 			if ($direction == 'echo') {
 				echo '/' . APPLICATION . '/' . APPLICATION_IMG . '/' . $img . '?' . $version;
 			}
-			
+
 			// Return the link
 			return '/' . APPLICATION . '/' . APPLICATION_IMG . '/' . $img . '?' . $version;
 

@@ -9,5 +9,5 @@ $GLOBALS['DB_USER'] = array('alan1987_mglmvc', 'alan1987_mglmvc');
 $GLOBALS['DB_PASS'] = array('z&(Ov*7q@hOl', 'z&(Ov*7q@hOl');
 // $GLOBALS['DB_HOST'] = array('localhost', 'localhost');
 $GLOBALS['DB_HOST'] = array('174.121.151.187', '174.121.151.187');
-$GLOBALS['DB_NAME'] = array('alan1987_mglmvc', 'alan1987_mgl2');
+$GLOBALS['DB_NAME'] = array('alan1987_mglmvc1', 'alan1987_mglmvc2');
 

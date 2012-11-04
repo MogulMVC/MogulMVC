@@ -2,40 +2,41 @@
 
 class Artest {
 
-	function index() {
-
-		$data['someData'] = "Somet Data 123456";
-
-		MLoad::view('test', $data);
-	}
-
 	function create() {
 
 		MLoad::model('ARTestModel');
-		$test = ARTestModel::create(array('content' => 'Tito'));
+
+		$object = new ARTestModel();
+		$object -> content = "Another bit of content";
+		$object -> save();
 
 	}
 
 	function read() {
 
 		MLoad::model('ARTestModel');
-		$test = ARTestModel::find(1);
 
-		echo $test -> created;
+		$object = ARTestModel::find(1);
+		echo $object -> content;
 
 	}
 
 	function update() {
 
 		MLoad::model('ARTestModel');
-		$test = ARTestModel::create(array('content' => 'Tito'));
+
+		$object = ARTestModel::find(1);
+		$object -> content = 'MD5 Time String ' . md5(time());
+		$object -> save();
 
 	}
 
 	function delete() {
 
 		MLoad::model('ARTestModel');
-		$test = ARTestModel::create(array('content' => 'Tito'));
+
+		$object = ARTestModel::find('last');
+		$object -> delete();
 
 	}
 

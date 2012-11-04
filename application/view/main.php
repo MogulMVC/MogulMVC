@@ -39,7 +39,6 @@
 	<div class="MTextCenter">
 		<h2 style="font-size: 2em;">Mogul MVC is an MVC framework and UI library written in<br /><a href="http://www.php.net/">PHP</a>, <a href="http://jquery.com/">jQuery</a>, and <a href="http://sass-lang.com/">Sass</a></h2>
 		<p>It's designed to be fast, have a small footprint, work on shared hosting, and not require the installation of any additional software.</p>
-		<p>It's designed to have as few abstraction layers as possible, while also helping you orgaize your web application.</p>
 		<p class="MTextBold">Mogul MVC is not Open-Source yet, but...</p>
 	</div>
 	
@@ -101,7 +100,7 @@
 					</li>
 					<li class="MListItem">
 						<span class="MTextBold">Speed</span>
-						<span> - Mogul MVC is a "Use at Will" framework. You specify the components and librarues to load so only what needs to be loaded is loaded.</span>
+						<span> - Mogul MVC is a "<a href="http://en.wikipedia.org/wiki/Loose_coupling">loosly coupled</a>" and "use-at-will" framework. You specify only the components and libraries to load so only what needs to be loaded is loaded.</span>
 					</li>
 					<li class="MListItem">
 						<span class="MTextBold">CLI Tools</span>

@@ -1,6 +1,8 @@
 <?php
 
-$DB = $GLOBALS['PDO'][0];
+MLoad::php_framework('core/db/MPDO');
+
+$DB = $GLOBALS['MPDO'][0];
 
 $query = $DB -> prepare("CREATE TABLE IF NOT EXISTS tableName (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,

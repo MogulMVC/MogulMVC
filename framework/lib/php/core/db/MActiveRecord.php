@@ -4,9 +4,10 @@ if (!defined('SERVER_ROOT')) {header('/error_404');
 }
 
 require_once (SERVER_ROOT . '/' . APPLICATION . '/config/database.php');
+
 MLoad::php_framework('3rdparty/db/ActiveRecord');
 
-// // Count the entries
+// Count the entries
 $DB_TYPE_COUNT = count($GLOBALS['DB_TYPE']);
 $DB_HOST_COUNT = count($GLOBALS['DB_HOST']);
 $DB_USER_COUNT = count($GLOBALS['DB_USER']);
@@ -14,7 +15,12 @@ $DB_PASS_COUNT = count($GLOBALS['DB_PASS']);
 $DB_NAME_COUNT = count($GLOBALS['DB_NAME']);
 
 // Exit if there is a misconfigured amount of connections
-if ($DB_TYPE_COUNT != $DB_HOST_COUNT || $DB_HOST_COUNT != $DB_USER_COUNT || $DB_USER_COUNT != $DB_PASS_COUNT || $DB_PASS_COUNT != $DB_NAME_COUNT) {
+if (
+	$DB_TYPE_COUNT != $DB_HOST_COUNT ||
+	$DB_HOST_COUNT != $DB_USER_COUNT || 
+	$DB_USER_COUNT != $DB_PASS_COUNT || 
+	$DB_PASS_COUNT != $DB_NAME_COUNT
+) {
 	exit('error - Inconsistent number of databases entries.');
 }
 

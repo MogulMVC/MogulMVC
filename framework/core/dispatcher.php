@@ -106,20 +106,22 @@ elseif ($CLASS == APPLICATION_API_URL) {
 	exit ;
 }
 
-// Cron Job
+// Command
 elseif ($CLASS == APPLICATION_COMMAND) {
 
 	// Check if the application password matches
-	if (empty($URI_ARRAY[3]) || $URI_ARRAY[3] != APPLICATION_PASSWORD) {
+	// Password is the second segment
+	if (empty($URI_ARRAY[2]) || $URI_ARRAY[2] != APPLICATION_PASSWORD) {
 		MError::error_404();
 	}
 
 	// Check if the command exists
-	if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_COMMAND . '/' . $FUNCTION . '.php')) {
+	// Using $URI_ARRAY[3] because password is number 2
+	if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_COMMAND . '/' . $URI_ARRAY[3] . '.php')) {
 		MError::error_404();
 	}
 
-	require_once (SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_COMMAND . '/' . $FUNCTION . '.php');
+	require_once (SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_COMMAND . '/' . $URI_ARRAY[3] . '.php');
 
 	exit ;
 }
