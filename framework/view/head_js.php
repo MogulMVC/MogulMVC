@@ -5,16 +5,6 @@ require (SERVER_ROOT . '/' . APPLICATION . '/config/autoload.php');
 // Development
 if (APPLICATION_ENVIRONMENT == 'development') {
 
-	// Third Party JavaScript/jQuery Libraries
-	MLoad::js_framework('3rdparty/jquery.js', 'echo');
-	MLoad::js_framework('3rdparty/jquery.ui.js', 'echo');
-
-	// Custom/Forked JavaScript/jQuery Libraries
-	MLoad::js_framework('core/MScript.js', 'echo');
-
-	// MVC Specific JS
-	MLoad::js_framework('core/script.js', 'echo');
-
 	// Autoload Framework JavaScript
 	foreach ($GLOBALS['AUTOLOAD_JS_FRAMEWORK'] as $JS) {
 		MLoad::js_framework($JS, 'echo');
@@ -34,13 +24,6 @@ if (APPLICATION_ENVIRONMENT == 'production') {
 	if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_CACHE . '/' . 'application' . APPLICATION_VERSION . '.js')) {
 
 		MLoad::php_framework('3rdparty/util/jsmin');
-
-		// Minify the JS files while merging them
-		$js_file = JSMin::minify(file_get_contents(SERVER_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_LIB_JS . '/3rdparty/jquery.min.js', 'return'));
-		$js_file .= JSMin::minify(file_get_contents(SERVER_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_LIB_JS . '/3rdparty/jquery.min.ui.js', 'return'));
-
-		$js_file .= JSMin::minify(file_get_contents(SERVER_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_LIB_JS . '/core/MScript.min.js', 'return'));
-		$js_file .= JSMin::minify(file_get_contents(SERVER_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_LIB_JS . '/core/script.js', 'return'));
 
 		foreach ($AUTOLOAD_JS_APPLICATION as $JS) {
 			$js_file .= JSMin::minify(file_get_contents(SERVER_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_LIB_JS . '/' . $JS, 'return'));

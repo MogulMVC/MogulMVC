@@ -2,7 +2,7 @@
 
 MLoad::php_framework('core/db/MActiveRecord');
 
-class ARTest extends ActiveRecord\Model {
+class ARTestModel extends MActiveRecord {
 
 	static $table = 'testing';
 

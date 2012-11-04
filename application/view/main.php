@@ -108,9 +108,13 @@
 						<span> - CLI tools make it easy to build new componets. They write the boring for you.</span>
 					</li>
 					<li class="MListItem">
-						<span class="MTextBold">Easy to Learn</span>
-						<span> - Mogul MVC is pretty simple and easy to learn.</span>
-					</li>				
+						<span class="MTextBold">Datebase</span>
+						<span> - Mogul MVC includes the <a href="http://www.phpactiverecord.org/">php-activerecord</a> library. Futhermore, the MActiveRecord class takes care of the initialization for you.</span>
+					</li>
+					<li class="MListItem">
+						<span class="MTextBold">3rd Party Libraries</span>
+						<span> - Mogul MVC includes <a href="http://jquery.com/">jQuery</a> and <a href="http://jqueryui.com/">jQuery UI</a>.<br />It also works well with any other 3rd party library you need.</span>
+					</li>	
 				</div>
 				
 				<div class="right" style="width: 50%">
@@ -125,16 +129,12 @@
 						<span> - Mogul MVC is a young framework compared to others like <a href="http://codeigniter.com/">Codeigniter</a>, and <a href="http://cakephp.org/">CakePHP</a> and hasn't been tested by a large community.</span>
 					</li>
 					<li class="MListItem">
-						<span class="MTextBold">Datebase</span>
-						<span> - Mogul MVC's database system is not as sophisticated as <a href="http://rubyonrails.org/">Ruby on Rail</a>'s ActiveRecord system.</span>
-					</li>
-					<li class="MListItem">
 						<span class="MTextBold">JavaScript UI</span>
 						<span> - Mogul MVC's JavaScript UI library is not as robust as <a href="http://jqueryui.com/">jQuery UI</a> or <a href="http://twitter.github.com/bootstrap/">Twitter Bootstrap</a>.</span>
 						</li>
 					<li class="MListItem">
 						<span class="MTextBold">Open Source</span>
-						<span> - Mogul MVC is not Open-Source yet and won't be until it's great.</span>
+						<span> - Mogul MVC is not Open-Source yet and won't be until I feel that it is ready to play with the big boys.</span>
 					</li>
 				</div>
 
