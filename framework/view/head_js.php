@@ -16,12 +16,12 @@ if (APPLICATION_ENVIRONMENT == 'development') {
 	MLoad::js_framework('core/script.js', 'echo');
 
 	// Autoload Framework JavaScript
-	foreach ($AUTOLOAD_JS_FRAMEWORK as $JS) {
+	foreach ($GLOBALS['AUTOLOAD_JS_FRAMEWORK'] as $JS) {
 		MLoad::js_framework($JS, 'echo');
 	}
 
 	// Autoload Application JavaScript
-	foreach ($AUTOLOAD_JS_APPLICATION as $JS) {
+	foreach ($GLOBALS['AUTOLOAD_JS_APPLICATION'] as $JS) {
 		MLoad::js_application($JS, 'echo');
 	}
 

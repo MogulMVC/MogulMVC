@@ -13,12 +13,12 @@ if (APPLICATION_ENVIRONMENT == 'development') {
 	MLoad::css_framework('core/style.css', 'echo');
 
 	//Autoload Framework CSS
-	foreach ($AUTOLOAD_CSS_FRAMEWORK as $CSS) {
+	foreach ($GLOBALS['AUTOLOAD_CSS_FRAMEWORK'] as $CSS) {
 		MLoad::css_framework($CSS, 'echo');
 	}
 
 	//Autoload Application CSS
-	foreach ($AUTOLOAD_CSS_APPLICATION as $CSS) {
+	foreach ($GLOBALS['AUTOLOAD_CSS_APPLICATION'] as $CSS) {
 		MLoad::css_application($CSS, 'echo');
 	}
 

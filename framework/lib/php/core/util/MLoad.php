@@ -15,7 +15,7 @@ class MLoad {
 		if (!empty($model)) {
 
 			// Add extension if one doesn't exist
-			if(!substr(strrchr($model,'.'),1)){
+			if (!substr(strrchr($model, '.'), 1)) {
 				$model = $model . '.php';
 			}
 
@@ -34,7 +34,7 @@ class MLoad {
 		if (!empty($vo)) {
 
 			// Add extension if one doesn't exist
-			if(!substr(strrchr($vo,'.'),1)){
+			if (!substr(strrchr($vo, '.'), 1)) {
 				$vo = $vo . '.php';
 			}
 
@@ -52,22 +52,21 @@ class MLoad {
 
 	public static function view($view, $data = '') {
 
-		
 		// Convert the data array to variables
 		if (!empty($data)) {
 			foreach ($data as $key => $value) {
 				$$key = $value;
 			}
 		}
-		
+
 		// Start loading the view
 		if (!empty($view)) {
-			
- 			// Add extension if one doesn't exist
+
+			// Add extension if one doesn't exist
 			if (!substr(strrchr($view, '.'), 1)) {
 				$view = $view . '.php';
 			}
-			
+
 			//Define the sections
 			$header = '';
 			if (APPLICATION_HEADER != '') {
@@ -123,12 +122,12 @@ class MLoad {
 				$$key = $value;
 			}
 		}
-		
+
 		// Start loading the frame
 		if (!empty($frame)) {
 
 			// Add extension if one doesn't exist
-			if(!substr(strrchr($frame,'.'),1)){
+			if (!substr(strrchr($frame, '.'), 1)) {
 				$frame = $frame . '.php';
 			}
 
@@ -158,12 +157,12 @@ class MLoad {
 				$$key = $value;
 			}
 		}
-		
+
 		// Start loading the template
 		if (!empty($template)) {
 
 			// Add extension if one doesn't exist
-			if(!substr(strrchr($template,'.'),1)){
+			if (!substr(strrchr($template, '.'), 1)) {
 				$template = $template . '.php';
 			}
 
@@ -189,7 +188,7 @@ class MLoad {
 		if (!empty($template)) {
 
 			// Add extension if one doesn't exist
-			if(!substr(strrchr($template,'.'),1)){
+			if (!substr(strrchr($template, '.'), 1)) {
 				$template = $template . '.php';
 			}
 
@@ -209,7 +208,7 @@ class MLoad {
 		if (!empty($library)) {
 
 			// Add extension if one doesn't exist
-			if(!substr(strrchr($library,'.'),1)){
+			if (!substr(strrchr($library, '.'), 1)) {
 				$library = $library . '.php';
 			}
 
@@ -227,7 +226,7 @@ class MLoad {
 		if (!empty($library)) {
 
 			// Add extension if one doesn't exist
-			if(!substr(strrchr($library,'.'),1)){
+			if (!substr(strrchr($library, '.'), 1)) {
 				$library = $library . '.php';
 			}
 
@@ -247,7 +246,7 @@ class MLoad {
 		if (!empty($js)) {
 
 			// Add extension if one doesn't exist
-			if(!substr(strrchr($js,'.'),1)){
+			if (!substr(strrchr($js, '.'), 1)) {
 				$js = $js . '.js';
 			}
 
@@ -255,9 +254,9 @@ class MLoad {
 			if (!file_exists(SERVER_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_LIB_JS . '/' . $js)) {
 				trigger_error('error - ' . $js . ' not found.', E_USER_ERROR);
 			}
-			
+
 			$version = filemtime(SERVER_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_LIB_JS . '/' . $js);
-			
+
 			// If use HTTP is true include an HTTP section
 			$src = '/' . FRAMEWORK . '/' . FRAMEWORK_LIB_JS . '/' . $js;
 			if ($useHTTP) {
@@ -269,15 +268,13 @@ class MLoad {
 				array_push($GLOBALS['LOAD_JS_FRAMEWORK'], $js);
 			}
 
-			// Return the link
-			elseif ($direction == 'return') {
-				return '<script src="' . $src . '?' . $version . '"></script>';
-			}
-
 			// Echo the link
 			elseif ($direction == 'echo') {
 				echo '<script src="' . $src . '?' . $version . '"></script>';
 			}
+			
+			// Return the link
+			return '<script src="' . $src . '?' . $version . '"></script>';
 
 		}
 
@@ -288,7 +285,7 @@ class MLoad {
 		if (!empty($js)) {
 
 			// Add extension if one doesn't exist
-			if(!substr(strrchr($js,'.'),1)){
+			if (!substr(strrchr($js, '.'), 1)) {
 				$js = $js . '.js';
 			}
 
@@ -309,16 +306,14 @@ class MLoad {
 			if ($direction == null) {
 				array_push($GLOBALS['LOAD_JS_APPLICATION'], $js);
 			}
-
-			// Return the link
-			elseif ($direction == 'return') {
-				return '<script src="' . $src . '?' . $version . '"></script>';
-			}
-
+			
 			// Echo the link
 			elseif ($direction == 'echo') {
 				echo '<script src="' . $src . '?' . $version . '"></script>';
 			}
+			
+			// Return the link
+			return '<script src="' . $src . '?' . $version . '"></script>';
 
 		}
 
@@ -329,7 +324,7 @@ class MLoad {
 		if (!empty($js)) {
 
 			// Add extension if one doesn't exist
-			if(!substr(strrchr($js,'.'),1)){
+			if (!substr(strrchr($js, '.'), 1)) {
 				$js = $js . '.js';
 			}
 
@@ -345,16 +340,14 @@ class MLoad {
 			if ($useHTTP) {
 				$src = 'http://' . $_SERVER['SERVER_NAME'] . '/' . APPLICATION . '/' . APPLICATION_CACHE . '/' . $js;
 			}
-
-			// Return the link
-			elseif ($direction == 'return') {
-				return '<script src="' . $src . '?' . $version . '"></script>';
-			}
-
+			
 			// Echo the link
-			elseif ($direction == 'echo') {
+			if ($direction == 'echo') {
 				echo '<script src="' . $src . '?' . $version . '"></script>';
 			}
+			
+			// Return the link
+			return '<script src="' . $src . '?' . $version . '"></script>';
 
 		}
 
@@ -367,7 +360,7 @@ class MLoad {
 		if (!empty($css)) {
 
 			// Add extension if one doesn't exist
-			if(!substr(strrchr($css,'.'),1)){
+			if (!substr(strrchr($css, '.'), 1)) {
 				$css = $css . '.css';
 			}
 
@@ -389,15 +382,13 @@ class MLoad {
 				array_push($GLOBALS['LOAD_CSS_FRAMEWORK'], $js);
 			}
 
-			// Return the link
-			elseif ($direction == 'return') {
-				return '<link href="' . $src . '?' . $version . '" type="text/css" rel="stylesheet" />';
-			}
-
 			// Echo the link
 			elseif ($direction == 'echo') {
 				echo '<link href="' . $src . '?' . $version . '" type="text/css" rel="stylesheet" />';
 			}
+			
+			// Return the link
+			return '<link href="' . $src . '?' . $version . '" type="text/css" rel="stylesheet" />';
 
 		}
 
@@ -408,7 +399,7 @@ class MLoad {
 		if (!empty($css)) {
 
 			// Add extension if one doesn't exist
-			if(!substr(strrchr($css,'.'),1)){
+			if (!substr(strrchr($css, '.'), 1)) {
 				$css = $css . '.css';
 			}
 
@@ -430,15 +421,13 @@ class MLoad {
 				array_push($GLOBALS['LOAD_CSS_APPLICATION'], $css);
 			}
 
-			// Return the link
-			elseif ($direction == 'return') {
-				return '<link href="' . $src . '?' . $version . '" type="text/css" rel="stylesheet" />';
-			}
-
 			// Echo the link
 			elseif ($direction == 'echo') {
 				echo '<link href="' . $src . '?' . $version . '" type="text/css" rel="stylesheet" />';
 			}
+			
+			// Return the link
+			return '<link href="' . $src . '?' . $version . '" type="text/css" rel="stylesheet" />';
 
 		}
 
@@ -449,7 +438,7 @@ class MLoad {
 		if (!empty($css)) {
 
 			// Add extension if one doesn't exist
-			if(!substr(strrchr($css,'.'),1)){
+			if (!substr(strrchr($css, '.'), 1)) {
 				$css = $css . '.css';
 			}
 
@@ -466,24 +455,21 @@ class MLoad {
 				$src = 'http://' . $_SERVER['SERVER_NAME'] . '/' . APPLICATION . '/' . APPLICATION_CACHE . '/' . $css;
 			}
 
-			// Return the link
-			elseif ($direction == 'return') {
-				return '<link href="' . $src . '?' . $version . '" type="text/css" rel="stylesheet" />';
-			}
-
 			// Echo the link
-			elseif ($direction == 'echo') {
+			if ($direction == 'echo') {
 				echo '<link href="' . $src . '?' . $version . '" type="text/css" rel="stylesheet" />';
 			}
+			
+			// Return the link
+			return '<link href="' . $src . '?' . $version . '" type="text/css" rel="stylesheet" />';
 
 		}
 
 	}
 
-
 	/********** Image Functions **********/
 
-	public static function img_framework($img) {
+	public static function img_framework($img, $direction, $useHTTP = false) {
 
 		if (!empty($img)) {
 
@@ -494,6 +480,18 @@ class MLoad {
 
 			$version = filemtime(SERVER_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_IMG . '/' . $img);
 
+			// If use HTTP is true include an HTTP section
+			$src = '/' . FRAMEWORK . '/' . FRAMEWORK_IMG . '/' . $img . '?' . $version;
+			if ($useHTTP) {
+				$src = 'http://' . $_SERVER['SERVER_NAME'] . '/' . FRAMEWORK . '/' . FRAMEWORK_IMG . '/' . $img . '?' . $version;
+			}
+			
+			// Echo the link
+			if ($direction == 'echo') {
+				echo '/' . FRAMEWORK . '/' . FRAMEWORK_IMG . '/' . $img . '?' . $version;
+			}
+			
+			// Return the link
 			return '/' . FRAMEWORK . '/' . FRAMEWORK_IMG . '/' . $img . '?' . $version;
 
 		}
@@ -501,7 +499,7 @@ class MLoad {
 		return NULL;
 	}
 
-	public static function img_application($img) {
+	public static function img_application($img, $direction, $useHTTP = false) {
 
 		if (!empty($img)) {
 
@@ -511,7 +509,19 @@ class MLoad {
 			}
 
 			$version = filemtime(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_IMG . '/' . $img);
+
+			// If use HTTP is true include an HTTP section
+			$src = '/' . APPLICATION . '/' . APPLICATION_IMG . '/' . $img . '?' . $version;
+			if ($useHTTP) {
+				$src = 'http://' . $_SERVER['SERVER_NAME'] . '/' . APPLICATION . '/' . APPLICATION_IMG . '/' . $img . '?' . $version;
+			}
+
+			// Echo the link
+			if ($direction == 'echo') {
+				echo '/' . APPLICATION . '/' . APPLICATION_IMG . '/' . $img . '?' . $version;
+			}
 			
+			// Return the link
 			return '/' . APPLICATION . '/' . APPLICATION_IMG . '/' . $img . '?' . $version;
 
 		}
@@ -519,10 +529,10 @@ class MLoad {
 		return NULL;
 	}
 
-	public static function icon_framework($icon) {
+	public static function icon_framework($icon, $direction, $useHTTP = false) {
 
 		if (!empty($icon)) {
-			return self::img_framework('icon/' . $icon);
+			return self::img_framework('icon/' . $icon, $direction, $useHTTP);
 		}
 
 	}

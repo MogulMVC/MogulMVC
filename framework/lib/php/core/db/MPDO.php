@@ -3,6 +3,8 @@ if (!defined('SERVER_ROOT')) {header('/error_404');
 	exit ;
 }
 
+// Considering deleting this
+
 $GLOBALS['PDO'] = array();
 
 require_once (SERVER_ROOT . '/' . APPLICATION . '/config/database.php');
@@ -16,6 +18,7 @@ $DB_NAME_COUNT = count($DB_NAME);
 if ($DB_TYPE_COUNT != $DB_HOST_COUNT || $DB_HOST_COUNT != $DB_USER_COUNT || $DB_USER_COUNT != $DB_PASS_COUNT || $DB_PASS_COUNT != $DB_NAME_COUNT) {
 	exit('error - Inconsistent number of databases entries.');
 }
+
 for ($i = 0; $i < $DB_HOST_COUNT; $i++) {
 
 	if ($DB_HOST_COUNT > 0) {

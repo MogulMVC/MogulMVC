@@ -11,7 +11,7 @@
 	<div class="MContentSpacer"></div>
 	
 	<div class="MContent840">
-		<img src="<?php echo MLoad::img_application('mogul_logo_white.png')?>" />
+		<img src="<?php MLoad::img_application('mogul-logo-white.png', 'echo')?>" />
 			
 			<h1 class="MTextWhite right">
 				Mogul MVC
