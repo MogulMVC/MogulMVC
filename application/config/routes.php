@@ -4,10 +4,13 @@ if (!defined('SERVER_ROOT')) {header('/error_404');
 }
 
 // Any subpage to controller with function
-// $ROUTE['page/*'] = 'controller/function';
+// $ROUTE['page/*'] = 'Controller/function';
 //
-// Any number to controller
-// $ROUTE['page/#'] = 'controller/function';
+// Any number to controller with function
+// $ROUTE['page/#'] = 'Controller/function';
 //
-// Page to controller
-// $ROUTE['page/subpage'] = 'controller/function';
+// Any string to controller with function
+// $ROUTE['page/@'] = 'Controller/function';
+//
+// Page to controller with function
+// $ROUTE['page/subpage'] = 'Controller/function';

@@ -138,18 +138,30 @@ else {
 			$from_segments = explode('/', $from);
 			$to_segments = explode('/', $to);
 
-			//If the controller class matches something in the routes
-			if ($CLASS == $from_segments[0]) {
+			$from_controller = $from_segments[0];
+			$from_function =  $from_segments[1];
+			
+		 	$to_controller = $to_segments[0];
+			$to_function = $to_segments[1];
 
-				//Catch empty functions and set to index as the default
-				if (empty($FUNCTION)) {
-					$FUNCTION = 'index';
-				}
+			//If the controller class matches something in the routes
+			if ($CLASS == $from_controller) {
 
 				//Check if the function matches
-				if ( $FUNCTION == $from_segments[1] || $from_segments[1] == '*' || ($from_segments[1] == '#' && is_numeric($FUNCTION)) ) {
-					$CLASS = $to_segments[0];
-					$FUNCTION = $to_segments[1];
+				// Only reroute index in condition 1 or 4
+				// 1 - Check if route reroutes all subpages
+				// 2 - Check if route reroutes all numbers
+				// 3 - Check if route reroutes all strings
+				// 4 - Check if route reroutes a subpage
+				if (
+					$from_function == '*' || 
+					(is_numeric($FUNCTION) && $FUNCTION != 'index' && $from_function == '#') ||
+					(!is_numeric($FUNCTION) && $FUNCTION != 'index' && $from_function == '@') ||  
+					$from_function == $FUNCTION 
+				) 
+				{
+					$CLASS = $to_controller;
+					$FUNCTION = $to_function;
 				}
 
 			}
