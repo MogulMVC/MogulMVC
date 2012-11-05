@@ -114,7 +114,7 @@ class MLoad {
 
 	}
 
-	public static function frame($frame, $data = '') {
+	public static function page($page, $data = '') {
 
 		// Convert the data array to variables
 		if (!empty($data)) {
@@ -124,24 +124,21 @@ class MLoad {
 		}
 
 		// Start loading the frame
-		if (!empty($frame)) {
+		if (!empty($page)) {
 
 			// Add extension if one doesn't exist
-			if (!substr(strrchr($frame, '.'), 1)) {
-				$frame = $frame . '.php';
+			if (!substr(strrchr($page, '.'), 1)) {
+				$page = $page . '.php';
 			}
 
 			//Construst the Frame
-
-			self::css_framework('core/style_frame.css');
-
 			require (SERVER_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_VIEW . '/' . FRAMEWORK_HEAD);
 
-			if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_VIEW . '/' . $frame)) {
-				trigger_error('error - ' . $frame . ' not found.', E_USER_ERROR);
+			if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_VIEW . '/' . $page)) {
+				trigger_error('error - ' . $page . ' not found.', E_USER_ERROR);
 			}
 
-			require (SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_VIEW . '/' . $frame);
+			require (SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_VIEW . '/' . $page);
 
 			require (SERVER_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_VIEW . '/' . FRAMEWORK_FOOT);
 
