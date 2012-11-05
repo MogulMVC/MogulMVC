@@ -4,4 +4,4 @@ if (!defined('SERVER_ROOT')) {header('/error_404');
 }
 
 // Example
-// define("COST", "value");
+// define('COST', 'value');

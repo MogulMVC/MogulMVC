@@ -147,7 +147,7 @@ else {
 				}
 
 				//Check if the function matches
-				if ($FUNCTION == $from_segments[1] || $from_segments[1] == '*' || ($from_segments[1] == '#' && is_numeric($FUNCTION))) {
+				if ( $FUNCTION == $from_segments[1] || $from_segments[1] == '*' || ($from_segments[1] == '#' && is_numeric($FUNCTION)) ) {
 					$CLASS = $to_segments[0];
 					$FUNCTION = $to_segments[1];
 				}
