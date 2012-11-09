@@ -107,12 +107,8 @@
 						<span> - CLI tools make it easy to build new componets. They write the boring for you.</span>
 					</li>
 					<li class="MListItem">
-						<span class="MTextBold">Datebase</span>
-						<span> - Mogul MVC includes the <a href="http://www.phpactiverecord.org/">php-activerecord</a> library. Futhermore, the MActiveRecord class takes care of the initialization for you.</span>
-					</li>
-					<li class="MListItem">
 						<span class="MTextBold">3rd Party Libraries</span>
-						<span> - Mogul MVC includes <a href="http://jquery.com/">jQuery</a> and <a href="http://jqueryui.com/">jQuery UI</a>.<br />It also works well with any other 3rd party library you need.</span>
+						<span> - Mogul MVC includes <a href="http://www.phpactiverecord.org/">php-activerecord</a> for database access and <a href="http://jquery.com/">jQuery</a> and <a href="http://jqueryui.com/">jQuery UI</a> for client side scripting.<br />It also works well with any other 3rd party library.</span>
 					</li>	
 				</div>
 				
