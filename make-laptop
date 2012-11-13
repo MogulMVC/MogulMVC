@@ -1,0 +1,21 @@
+#!/bin/bash
+
+#CSS
+cd ~/Workspace/Aptana/Mogul\ Frameworks/Mogul\ CSS/
+./make
+rm ~/Workspace/Aptana/Mogul\ Frameworks/Mogul\ MVC/Framework/framework/lib/css/core/M*
+cp ~/Workspace/Aptana/Mogul\ Frameworks/Mogul\ CSS/bin/* ~/Workspace/Aptana/Mogul\ Frameworks/Mogul\ MVC/Framework/framework/lib/css/core/
+
+#Icons
+cd ~/Workspace/Aptana/Mogul\ Frameworks/Mogul\ Icons/
+./make
+rm ~/Workspace/Aptana/Mogul\ Frameworks/Mogul\ MVC/Framework/framework/img/icon/*
+cp ~/Workspace/Aptana/Mogul\ Frameworks/Mogul\ Icons/img/* ~/Workspace/Aptana/Mogul\ Frameworks/Mogul\ MVC/Framework/framework/img/icon/
+#rm ~/Workspace/Aptana/Mogul\ Frameworks/Mogul\ MVC/Framework/framework/lib/css/core/MIcons*
+cp ~/Workspace/Aptana/Mogul\ Frameworks/Mogul\ Icons/bin/* ~/Workspace/Aptana/Mogul\ Frameworks/Mogul\ MVC/Framework/framework/lib/css/core/
+
+#JS
+cd ~/Workspace/Aptana/Mogul\ Frameworks/Mogul\ JS/
+./make
+rm ~/Workspace/Aptana/Mogul\ Frameworks/Mogul\ MVC/Framework/framework/lib/js/core/M*
+cp ~/Workspace/Aptana/Mogul\ Frameworks/Mogul\ JS/bin/* ~/Workspace/Aptana/Mogul\ Frameworks/Mogul\ MVC/Framework/framework/lib/js/core/
