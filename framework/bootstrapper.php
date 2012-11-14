@@ -8,6 +8,13 @@ require_once (SERVER_ROOT . '/' . FRAMEWORK . '/core/config.php');
 require_once (SERVER_ROOT . '/' . APPLICATION . '/config/config.php');
 require_once (SERVER_ROOT . '/' . FRAMEWORK . '/core/environment.php');
 
+// Application constants must come after framework constants
+require_once (SERVER_ROOT . '/' . FRAMEWORK . '/core/constants.php');
+require_once (SERVER_ROOT . '/' . APPLICATION . '/config/constants.php');
+
+// Application variables
+require_once (SERVER_ROOT . '/' . APPLICATION . '/config/variables.php');
+
 // Used to load all the other libraries
 require_once (SERVER_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_LIB_PHP . '/core/util/MLoad.php');
 
@@ -25,12 +32,6 @@ MLoad::php_framework('core/util/MURL');
 // Framework autoload loads them
 require_once (SERVER_ROOT . '/' . APPLICATION . '/config/autoload.php');
 require_once (SERVER_ROOT . '/' . FRAMEWORK . '/core/autoload.php');
-
-// Application constants must come after framework constants
-require_once (SERVER_ROOT . '/' . FRAMEWORK . '/core/constants.php');
-require_once (SERVER_ROOT . '/' . APPLICATION . '/config/constants.php');
-
-require_once (SERVER_ROOT . '/' . APPLICATION . '/config/variables.php');
 
 // The dispatcher runs the selected class
 require_once (SERVER_ROOT . '/' . FRAMEWORK . '/core/dispatcher.php');
