@@ -8,13 +8,6 @@ require_once (SERVER_ROOT . '/' . FRAMEWORK . '/core/config.php');
 require_once (SERVER_ROOT . '/' . APPLICATION . '/config/config.php');
 require_once (SERVER_ROOT . '/' . FRAMEWORK . '/core/environment.php');
 
-// Application constants must come after framework constants
-require_once (SERVER_ROOT . '/' . FRAMEWORK . '/core/constants.php');
-require_once (SERVER_ROOT . '/' . APPLICATION . '/config/constants.php');
-
-// Application variables
-require_once (SERVER_ROOT . '/' . APPLICATION . '/config/variables.php');
-
 // Used to load all the other libraries
 require_once (SERVER_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_LIB_PHP . '/core/util/MLoad.php');
 
@@ -27,6 +20,13 @@ MLoad::php_framework('core/util/MString');
 MLoad::php_framework('core/util/MCLI');
 MLoad::php_framework('core/util/MError');
 MLoad::php_framework('core/util/MURL');
+
+// Application constants must come after framework constants
+require_once (SERVER_ROOT . '/' . FRAMEWORK . '/core/constants.php');
+require_once (SERVER_ROOT . '/' . APPLICATION . '/config/constants.php');
+
+// Application variables
+require_once (SERVER_ROOT . '/' . APPLICATION . '/config/variables.php');
 
 // Application autoload list the libraries to be loaded
 // Framework autoload loads them
