@@ -24,6 +24,16 @@ if (!empty($_SERVER['REMOTE_ADDR'])) {
 
 		// Define the callback functions
 		function _open() {
+			
+			if (!isset($_COOKIE['session_id'])) {
+				// Set a cookie to hold the session id
+				setcookie('session_id', session_id(), time() + 60 * 60 * 24 * 365, '/', MURL::domain());
+			}
+			
+			if (isset($_COOKIE['session_id'])) {
+				session_id($_COOKIE['session_id']);
+			}
+			
 		}
 
 		function _close() {
@@ -35,8 +45,11 @@ if (!empty($_SERVER['REMOTE_ADDR'])) {
 
 			$query = $DB -> prepare("SELECT * from " . $GLOBALS['SESSION_TABLE'] . " WHERE id = ?");
 			$query -> execute(array($id));
-			
+			$result = $query -> fetch();
+
 			$DB = null;
+
+			return $result['data'];
 
 		}
 
@@ -48,7 +61,7 @@ if (!empty($_SERVER['REMOTE_ADDR'])) {
 
 			$query = $DB -> prepare("REPLACE INTO " . $GLOBALS['SESSION_TABLE'] . " VALUES  (?, ?, ?)");
 			$query -> execute(array($id, $access, $data));
-			
+
 			$DB = null;
 
 		}
@@ -59,7 +72,7 @@ if (!empty($_SERVER['REMOTE_ADDR'])) {
 
 			$query = $DB -> prepare("DELETE from " . $GLOBALS['SESSION_TABLE'] . " WHERE id = ?");
 			$query -> execute(array($id));
-			
+
 			$DB = null;
 
 		}
@@ -67,14 +80,14 @@ if (!empty($_SERVER['REMOTE_ADDR'])) {
 		function _clean($max) {
 
 			$old = time() - $max;
-			
+
 			$DB = new PDO($GLOBALS['SESSION_TYPE'] . ':host=' . $GLOBALS['SESSION_HOST'] . ';dbname=' . $GLOBALS['SESSION_NAME'], $GLOBALS['SESSION_USER'], $GLOBALS['SESSION_PASS']);
 
 			$query = $DB -> prepare("DELETE from " . $GLOBALS['SESSION_TABLE'] . " WHERE  access < ?");
 			$query -> execute(array($old));
-			
+
 			$DB = null;
-			
+
 		}
 
 		session_set_save_handler('_open', '_close', '_read', '_write', '_destroy', '_clean');
@@ -83,4 +96,5 @@ if (!empty($_SERVER['REMOTE_ADDR'])) {
 
 	// Start the session
 	session_start();
+
 }
