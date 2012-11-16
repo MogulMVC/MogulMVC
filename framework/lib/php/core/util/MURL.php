@@ -2,6 +2,15 @@
 
 class MURL {
 
+	public static function domain() {
+		$uri = explode('.', $_SERVER['SERVER_NAME']);
+
+		$ext = $uri[count($uri) - 1];
+		$domain = $uri[count($uri) - 2];
+		return $domain . '.' . $ext;
+
+	}
+
 	public static function base() {
 		return 'http://' . $_SERVER['SERVER_NAME'];
 	}
