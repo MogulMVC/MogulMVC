@@ -3,7 +3,7 @@ if (!defined('SERVER_ROOT')) {header('/error_404');
 	exit ;
 }
 
-define('FRAMEWORK_VERSION', '121117');
+define('FRAMEWORK_VERSION', '121118');
 
 define('FRAMEWORK_IMG', 'img');
 define('FRAMEWORK_LIB_AS', 'lib/as');
