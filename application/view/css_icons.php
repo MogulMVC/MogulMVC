@@ -140,13 +140,6 @@
 				</li>
 			</label>
 			
-			<label for="check_shareThis">
-				<li class="MSideBarListItem">
-					<input id="check_shareThis" type="checkbox" value="section_shareThis" checked="true" onclick="updateShow()"/>
-					<span>Share This</span>
-				</li>
-			</label>
-			
 			<label for="check_warning">
 				<li class="MSideBarListItem">
 					<input id="check_warning" type="checkbox" value="section_warning" checked="true" onclick="updateShow()"/>
@@ -352,25 +345,6 @@
 <span class="MIconOpenShare30x30"></span>
 <span class="MIconOpenShare50x50"></span>
 <span class="MIconOpenShare150x150"></span>');?></code></pre>
-
-			<div class="MContentSpacer"></div>
-			<div class="MContentSpacer"></div>
-		</section>
-
-		<section id="section_shareThis" class="section">
-			<h1>Share This</h1>
-			
-			<span class="MIconShareThis"></span>
-			<span class="MIconShareThis30x30"></span>
-			<span class="MIconShareThis50x50"></span>
-			<span class="MIconShareThis150x150"></span>
-			
-			<br />
-			<a class="showCode">Code</a>
-			<pre class="MHidden"><code><?php echo htmlentities('<span class="MIconShareThis"></span>
-<span class="MIconShareThis30x30"></span>
-<span class="MIconShareThis50x50"></span>
-<span class="MIconShareThis150x150"></span>');?></code></pre>
 
 			<div class="MContentSpacer"></div>
 			<div class="MContentSpacer"></div>
