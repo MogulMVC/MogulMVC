@@ -9,4 +9,3 @@ $GLOBALS['DB_USER'] = array('');
 $GLOBALS['DB_PASS'] = array('');
 $GLOBALS['DB_HOST'] = array('');
 $GLOBALS['DB_NAME'] = array('');
-
