@@ -30,6 +30,8 @@ if (!defined('SERVER_ROOT')) {header('/error_404');
 	<?php if(defined('APPLICATION_FAVICON') && constant('APPLICATION_FAVICON') !== ''): ?>
 		<link rel="shortcut icon" href="<?php echo '/' . APPLICATION . '/' . APPLICATION_IMG . '/' . APPLICATION_FAVICON . '?' . APPLICATION_VERSION; ?>" />
 	<?php endif; ?>
+	
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
 
 	<?php
 	require ('head_css.php');
