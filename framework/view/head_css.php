@@ -25,8 +25,24 @@ if (APPLICATION_ENVIRONMENT == 'production') {
 
 		MLoad::php_framework('3rdparty/util/cssmin');
 
-		foreach ($AUTOLOAD_CSS_APPLICATION as $CSS) {
-			$css_file .= CssMin::minify(file_get_contents(SERVER_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_LIB_CSS . '/' . $CSS, 'return'));
+		$css_file = '';
+
+		// Minify the framework css
+		foreach ($GLOBALS['AUTOLOAD_CSS_FRAMEWORK'] as $CSS) {
+			// Add extension if one doesn't exist
+			if (!substr(strrchr($CSS, '.'), 1)) {
+				$CSS = $CSS . '.css';
+			}
+			$css_file .= CssMin::minify(file_get_contents(SERVER_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_LIB_CSS . '/' . $CSS));
+		}
+
+		// Minify the application css
+		foreach ($GLOBALS['AUTOLOAD_CSS_APPLICATION'] as $CSS) {
+			// Add extension if one doesn't exist
+			if (!substr(strrchr($CSS, '.'), 1)) {
+				$CSS = $CSS . '.css';
+			}
+			$css_file .= CssMin::minify(file_get_contents(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_LIB_CSS . '/' . $CSS));
 		}
 
 		$css_file = CssMin::minify($css_file);

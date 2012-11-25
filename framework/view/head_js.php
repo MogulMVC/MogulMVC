@@ -25,8 +25,24 @@ if (APPLICATION_ENVIRONMENT == 'production') {
 
 		MLoad::php_framework('3rdparty/util/jsmin');
 
-		foreach ($AUTOLOAD_JS_APPLICATION as $JS) {
-			$js_file .= JSMin::minify(file_get_contents(SERVER_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_LIB_JS . '/' . $JS, 'return'));
+		$js_file = '';
+
+		// Minify the framework js
+		foreach ($GLOBALS['AUTOLOAD_JS_FRAMEWORK'] as $JS) {
+			// Add extension if one doesn't exist
+			if (!substr(strrchr($JS, '.'), 1)) {
+				$JS = $JS . '.js';
+			}
+			$js_file .= JSMin::minify(file_get_contents(SERVER_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_LIB_JS . '/' . $JS));
+		}
+
+		// Minify the application js
+		foreach ($GLOBALS['AUTOLOAD_JS_APPLICATION'] as $JS) {
+			// Add extension if one doesn't exist
+			if (!substr(strrchr($JS, '.'), 1)) {
+				$JS = $JS . '.js';
+			}
+			$js_file .= JSMin::minify(file_get_contents(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_LIB_JS . '/' . $JS));
 		}
 
 		$js_file = JSMin::minify($js_file);
