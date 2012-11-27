@@ -6,7 +6,7 @@ if (!defined('SERVER_ROOT')) {header('/error_404');
 $GLOBALS['AUTOLOAD_PHP_FRAMEWORK'] = array();
 $GLOBALS['AUTOLOAD_PHP_APPLICATION'] = array();
 
-$GLOBALS['AUTOLOAD_CSS_FRAMEWORK'] = array('core/MIcons.css', 'core/MStyle.css', 'core/style.css');
+$GLOBALS['AUTOLOAD_CSS_FRAMEWORK'] = array('core/MIcons', 'core/MStyle', 'core/style');
 $GLOBALS['AUTOLOAD_CSS_APPLICATION'] = array();
 
 $GLOBALS['AUTOLOAD_JS_FRAMEWORK'] = array('3rdparty/jquery', '3rdparty/jquery-ui', 'core/MScript', 'core/script');
