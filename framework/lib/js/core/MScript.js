@@ -54,6 +54,16 @@ var rounded_large = '2em';$(document).ready(function() {
 	$('input[type="file"]').wrap('<div class="MButtonUpload"></div>');
 	$('.MButtonUpload').append('<span>Select File</span>');
 });$(document).ready(function() {
+	$('.MDropdown li:has(ul)').bind('mouseenter', function(e) {
+		$(this).children('ul').show()
+		return false;
+	});
+
+	$('.MDropdown li:has(ul)').bind('mouseleave', function(e) {
+		$(this).children('ul').hide()
+		return false;
+	});
+}); $(document).ready(function() {
 	// Set the default state
 	MList.updateUI();
 
@@ -277,20 +287,6 @@ var MInputText = (function() {
 	return MInputText;
 
 })();
-var MListItem = (function() {
-
-	function MListItem() {
-		
-		var uiElement = document.createElement('li');
-		$(uiElement).addClass('MListItem');
-		
-		return uiElement;
-		
-	};
-
-	return MListItem;
-
-})();
 var MList = (function() {
 
 	function MList() {
@@ -336,7 +332,21 @@ var MList = (function() {
 
 	return MList;
 
-})();var MNote = (function() {
+})();var MListItem = (function() {
+
+	function MListItem() {
+		
+		var uiElement = document.createElement('li');
+		$(uiElement).addClass('MListItem');
+		
+		return uiElement;
+		
+	};
+
+	return MListItem;
+
+})();
+var MNote = (function() {
 
 	function MNote(label) {
 
