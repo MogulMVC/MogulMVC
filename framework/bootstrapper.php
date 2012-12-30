@@ -26,6 +26,7 @@ require_once (SERVER_ROOT . '/' . FRAMEWORK . '/core/constants.php');
 require_once (SERVER_ROOT . '/' . APPLICATION . '/config/constants.php');
 
 // Application variables
+require_once (SERVER_ROOT . '/' . FRAMEWORK . '/core/variables.php');
 require_once (SERVER_ROOT . '/' . APPLICATION . '/config/variables.php');
 
 // Application autoload list the libraries to be loaded

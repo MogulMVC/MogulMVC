@@ -36,7 +36,7 @@ if ($DB_HOST_COUNT > 0) {
 			!empty($GLOBALS['DB_HOST'][$i]) && 
 			!empty($GLOBALS['DB_NAME'][$i])
 		) {
-			$GLOBALS['MPDO'][$i] = new PDO($GLOBALS['DB_TYPE'][$i] . ':host=' . $GLOBALS['DB_HOST'][$i] . ';dbname=' . $GLOBALS['DB_NAME'][$i], $GLOBALS['DB_USER'][$i], $GLOBALS['DB_PASS'][$i]);
+			$GLOBALS['MPDO'][$i] = new PDO($GLOBALS['DB_TYPE'][$i] . ':host=' . $GLOBALS['DB_HOST'][$i] . ';port=' . $GLOBALS['DB_PORT'][$i] . ';dbname=' . $GLOBALS['DB_NAME'][$i], $GLOBALS['DB_USER'][$i], $GLOBALS['DB_PASS'][$i]);
 			$GLOBALS['MPDO'][$i] -> setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
 		}
 	}

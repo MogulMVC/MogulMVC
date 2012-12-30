@@ -39,7 +39,7 @@ if ($DB_HOST_COUNT > 0) {
 			!empty($GLOBALS['DB_NAME'][$i])
 		) {
 			$key = $GLOBALS['DB_CONNECTION'][$i];
-			$value = $GLOBALS['DB_TYPE'][$i] . '://' . $GLOBALS['DB_USER'][$i] . ':' . $GLOBALS['DB_PASS'][$i] . '@' . $GLOBALS['DB_HOST'][$i] . '/' . $GLOBALS['DB_NAME'][$i];
+			$value = $GLOBALS['DB_TYPE'][$i] . '://' . $GLOBALS['DB_USER'][$i] . ':' . $GLOBALS['DB_PASS'][$i] . '@' . $GLOBALS['DB_HOST'][$i] . '[:' . $GLOBALS['DB_PORT'][$i] . ']/' . $GLOBALS['DB_NAME'][$i];
 			$connections[$key] = $value;
 		}
 	}
