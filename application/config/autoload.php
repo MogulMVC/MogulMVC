@@ -3,7 +3,7 @@ if (!defined('SERVER_ROOT')) {header('/error_404');
 	exit ;
 }
 
-$GLOBALS['AUTOLOAD_PHP_FRAMEWORK'] = array();
+$GLOBALS['AUTOLOAD_PHP_FRAMEWORK'] = array('core/db/MPDO');
 $GLOBALS['AUTOLOAD_PHP_APPLICATION'] = array();
 
 $GLOBALS['AUTOLOAD_CSS_FRAMEWORK'] = array('core/MIcons', 'core/MStyle', 'core/style');
