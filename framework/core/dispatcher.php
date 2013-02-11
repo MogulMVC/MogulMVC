@@ -3,111 +3,77 @@ if (!defined('SERVER_ROOT')) {header('/error_404');
 	exit ;
 }
 
-/********** Via the Web **********/
+/********** Point of Entry **********/
 
+// Via the Web
 if (!MCLI::cli_is()) {
+	
 	$URI = MString::sub_before($_SERVER['REQUEST_URI'], '?');
 	$URI_ARRAY = explode('/', $URI);
+	
 }
 
-/********** Via the CLI **********/
-
+// Via the CLI
 elseif (MCLI::cli_is()) {
+	
 	$URI_ARRAY = array();
 
 	foreach ($_SERVER['argv'] as $argument) {
 		$argument_safe = MString::sub_before($argument, '?');
 		array_push($URI_ARRAY, $argument_safe);
 	}
+	
 }
 
 /********** Define Important Stuff **********/
 
-//If Class is empty
-if (empty($URI_ARRAY[1])) {
-	$CLASS = basename(APPLICATION_DEFAULT_CONTROLLER, '.php');
-} else {
-	$CLASS = $URI_ARRAY[1];
+//If route 1 is empty
+$SEGMENT1 = basename(APPLICATION_DEFAULT_CONTROLLER, '.php');
+if (!empty($URI_ARRAY[1])) {
+	$SEGMENT1 = $URI_ARRAY[1];
 }
 
-//If Functions is empty
-if (empty($URI_ARRAY[2])) {
-	$FUNCTION = 'index';
-} else {
-	$FUNCTION = $URI_ARRAY[2];
+//If route 2 is empty
+$SEGMENT2 = 'index';
+if (!empty($URI_ARRAY[2])) {
+	$SEGMENT2 = $URI_ARRAY[2];
 }
 
 /********** Choices Choices, So Many Choices **********/
 
-// Robots.txt
-if ($CLASS == 'robots.txt') {
-	header('Content-Type: text');
-	require (SERVER_ROOT . '/' . APPLICATION . '/config/robots.txt');
-	exit ;
-}
-
-// Application Manifest JSON
-elseif ($CLASS == 'application.js' && $FUNCTION == 'index') {
-	header("Content-Type:application/json");
-
-	$application = new stdClass();
-	$application -> name = APPLICATION_NAME;
-	$application -> description = APPLICATION_DESCRIPTION;
-	$application -> id = APPLICATION_ID;
-	$application -> icon = MURL::base() . '/' . APPLICATION . '/' . APPLICATION_IMG . '/' . APPLICATION_ICON . '?' . APPLICATION_VERSION;
-
-	// Output an JSON file describing the application
-	echo json_encode($application);
-
-	exit ;
-}
-
-// Application Manifest XML
-elseif ($CLASS == 'application.xml' && $FUNCTION == 'index') {
-	header("Content-Type:text/xml");
-
-	// Output an XML file describing the application
-	// Must be written this way
-	echo '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<application>
-	<name>' . APPLICATION_NAME . '</name>
-	<description>' . APPLICATION_DESCRIPTION . '</description>
-	<id>' . APPLICATION_ID . '</id>
-	<icon>' . MURL::base() . '/' . APPLICATION . '/' . APPLICATION_IMG . '/' . APPLICATION_ICON . '?' . APPLICATION_VERSION . '</icon>
-</application>';
-
-	exit ;
-}
+//These choices go in order of likelihood
 
 // Action
-elseif ($CLASS == APPLICATION_ACTION_URL) {
+if ($SEGMENT1 == APPLICATION_ACTION_URL) {
 
 	//Check if the action exists
-	if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_ACTION . '/' . $FUNCTION . '.php')) {
+	if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_ACTION . '/' . $SEGMENT2 . '.php')) {
 		MError::error_404();
 	}
 
 	//Run the action
-	require_once (SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_ACTION . '/' . $FUNCTION . '.php');
+	require_once (SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_ACTION . '/' . $SEGMENT2 . '.php');
 
 	exit ;
+	
 }
 
 // API
-elseif ($CLASS == APPLICATION_API_URL) {
+elseif ($SEGMENT1 == APPLICATION_API_URL) {
 
 	// Check if the api exists
-	if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_API . '/' . $FUNCTION . '.php')) {
+	if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_API . '/' . $SEGMENT2 . '.php')) {
 		MError::error_404();
 	}
 
-	require_once (SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_API . '/' . $FUNCTION . '.php');
+	require_once (SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_API . '/' . $SEGMENT2 . '.php');
 
 	exit ;
+	
 }
 
 // Command
-elseif ($CLASS == APPLICATION_COMMAND) {
+elseif ($SEGMENT1 == APPLICATION_COMMAND) {
 
 	// Check if the application password matches
 	// Password is the second segment
@@ -124,6 +90,54 @@ elseif ($CLASS == APPLICATION_COMMAND) {
 	require_once (SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_COMMAND . '/' . $URI_ARRAY[3] . '.php');
 
 	exit ;
+	
+}
+
+// Application Manifest JSON
+elseif ($SEGMENT2 == 'index' && $SEGMENT1 == 'application.js') {
+	
+	header('Content-Type:application/json');
+
+	$application = new stdClass();
+	$application -> name = APPLICATION_NAME;
+	$application -> description = APPLICATION_DESCRIPTION;
+	$application -> id = APPLICATION_ID;
+	$application -> icon = MURL::base() . '/' . APPLICATION . '/' . APPLICATION_IMG . '/' . APPLICATION_ICON . '?' . APPLICATION_VERSION;
+
+	// Output an JSON file describing the application
+	echo json_encode($application);
+
+	exit ;
+	
+}
+
+// Application Manifest XML
+elseif ($SEGMENT2 == 'index' && $SEGMENT1 == 'application.xml') {
+	
+	header("Content-Type:text/xml");
+
+	// Output an XML file describing the application
+	// Must be written this way
+	echo '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<application>
+	<name>' . APPLICATION_NAME . '</name>
+	<description>' . APPLICATION_DESCRIPTION . '</description>
+	<id>' . APPLICATION_ID . '</id>
+	<icon>' . MURL::base() . '/' . APPLICATION . '/' . APPLICATION_IMG . '/' . APPLICATION_ICON . '?' . APPLICATION_VERSION . '</icon>
+</application>';
+
+	exit ;
+	
+}
+
+// Robots.txt
+elseif ($SEGMENT2 == 'index' &&  $SEGMENT1 == 'robots.txt') {
+	
+	header('Content-Type: text');
+	require (SERVER_ROOT . '/' . APPLICATION . '/config/robots.txt');
+	
+	exit ;
+	
 }
 
 // Controller
@@ -138,14 +152,14 @@ else {
 			$from_segments = explode('/', $from);
 			$to_segments = explode('/', $to);
 
-			$from_controller = $from_segments[0];
-			$from_function =  $from_segments[1];
+			$from_segment1 = $from_segments[0];
+			$from_segment2 =  $from_segments[1];
 			
-		 	$to_controller = $to_segments[0];
-			$to_function = $to_segments[1];
+		 	$to_segment1 = $to_segments[0];
+			$to_segment2 = $to_segments[1];
 
 			//If the controller class matches something in the routes
-			if ($CLASS == $from_controller) {
+			if ($SEGMENT1 == $from_segment1) {
 
 				//Check if the function matches
 				// Only reroute index in condition 1 or 4
@@ -154,14 +168,14 @@ else {
 				// 3 - Check if route reroutes all strings
 				// 4 - Check if route reroutes a subpage
 				if (
-					$from_function == '*' || 
-					(is_numeric($FUNCTION) && $FUNCTION != 'index' && $from_function == '#') ||
-					(!is_numeric($FUNCTION) && $FUNCTION != 'index' && $from_function == '@') ||  
-					$from_function == $FUNCTION 
+					$from_segment2 == '*' || 
+					(is_numeric($SEGMENT2) && $SEGMENT2 != 'index' && $from_segment2 == '#') ||
+					(!is_numeric($SEGMENT2) && $SEGMENT2 != 'index' && $from_segment2 == '@') ||  
+					$from_segment2 == $SEGMENT2 
 				) 
 				{
-					$CLASS = $to_controller;
-					$FUNCTION = $to_function;
+					$SEGMENT1 = $to_segment1;
+					$SEGMENT2 = $to_segment2;
 				}
 
 			}
@@ -170,27 +184,24 @@ else {
 
 	}
 
-	// All classes start with a capital letter
-	$CLASS = ucfirst($CLASS);
+	// All controllers start with a capital letter
+	$SEGMENT1 = ucfirst($SEGMENT1);
 
 	// Check if the controller exist
-	if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_CONTROLLER . '/' . $CLASS . '.php')) {
+	if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_CONTROLLER . '/' . $SEGMENT1 . '.php')) {
 		MError::error_404();
 	}
 
 	// Instantiate the controller object
-	require_once (SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_CONTROLLER . '/' . $CLASS . '.php');
+	require_once (SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_CONTROLLER . '/' . $SEGMENT1 . '.php');
 
-	$OBJECT = new $CLASS();
+	$OBJECT = new $SEGMENT1();
 
-	// If function is set
-	if (!empty($FUNCTION)) {
-
-		// Check if the function exists
-		if (!method_exists($OBJECT, $FUNCTION)) {
-			MError::error_404();
-		}
-
-		$OBJECT -> $FUNCTION();
+	// Check if the function exists
+	if (!method_exists($OBJECT, $SEGMENT2)) {
+		MError::error_404();
 	}
+
+	$OBJECT -> $SEGMENT2();
+	
 }

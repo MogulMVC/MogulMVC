@@ -14,6 +14,11 @@ if (APPLICATION_ENVIRONMENT == 'development') {
 	foreach ($GLOBALS['AUTOLOAD_CSS_APPLICATION'] as $CSS) {
 		MLoad::css_application($CSS, 'echo');
 	}
+	
+	//Autoload External CSS
+	foreach ($GLOBALS['AUTOLOAD_CSS_EXTERNAL'] as $CSS) {
+		MLoad::css_external($CSS, 'echo');
+	}
 
 }
 
@@ -56,12 +61,17 @@ if (APPLICATION_ENVIRONMENT == 'production') {
 
 // These files are loaded on a per page basis and shouldn't be merged into the application.css
 
-//Include all CSS file that were loaded with the js_framework_load function
-foreach ($GLOBALS["LOAD_CSS_FRAMEWORK"] as $CSS) {
+//Include all CSS files that were loaded with the css_framework function
+foreach ($GLOBALS['LOAD_CSS_FRAMEWORK'] as $CSS) {
 	MLoad::css_framework($CSS, 'echo');
 }
 
-//Include all CSS file that were loaded with the js_application_load function
-foreach ($GLOBALS["LOAD_CSS_APPLICATION"] as $CSS) {
+//Include all CSS files that were loaded with the css_framework function
+foreach ($GLOBALS['LOAD_CSS_APPLICATION'] as $CSS) {
 	MLoad::css_application($CSS, 'echo');
+}
+
+//Include all CSS files that were loaded with the css_framework function
+foreach ($GLOBALS['LOAD_CSS_EXTERNAL'] as $CSS) {
+	MLoad::css_external($CSS, 'echo');
 }

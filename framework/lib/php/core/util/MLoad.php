@@ -2,9 +2,11 @@
 
 $GLOBALS['LOAD_CSS_FRAMEWORK'] = array();
 $GLOBALS['LOAD_CSS_APPLICATION'] = array();
+$GLOBALS['LOAD_CSS_EXTERNAL'] = array();
 
 $GLOBALS['LOAD_JS_FRAMEWORK'] = array();
 $GLOBALS['LOAD_JS_APPLICATION'] = array();
+$GLOBALS['LOAD_JS_EXTERNAL'] = array();
 
 class MLoad {
 
@@ -71,21 +73,25 @@ class MLoad {
 			$header = '';
 			if (APPLICATION_HEADER != '') {
 
-				if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_VIEW . '/' . APPLICATION_HEADER)) {
+				$header_file = dirname(APPLICATION_HEADER) . '/' . basename(APPLICATION_HEADER, '.php') . '.php';
+				
+				if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_VIEW . '/' . $header_file)) {
 					trigger_error('error - header not found.', E_USER_ERROR);
 				}
 
-				$header = SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_VIEW . '/' . APPLICATION_HEADER;
+				$header = SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_VIEW . '/' . $header_file;
 			}
 
 			$footer = '';
 			if (APPLICATION_FOOTER != '') {
 
-				if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_VIEW . '/' . APPLICATION_FOOTER)) {
+				$footer_file = dirname(APPLICATION_FOOTER) . '/' . basename(APPLICATION_FOOTER, '.php') . '.php';
+
+				if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_VIEW . '/' . $footer_file)) {
 					trigger_error('error - footer not found.', E_USER_ERROR);
 				}
 
-				$footer = SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_VIEW . '/' . APPLICATION_FOOTER;
+				$footer = SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_VIEW . '/' . $footer_file;
 			}
 
 			//Construst the Page
@@ -349,6 +355,27 @@ class MLoad {
 		}
 
 	}
+	
+	public static function js_external($js, $direction = null) {
+
+		if (!empty($js)) {
+
+			// Only include it as part of the global js
+			if ($direction == null) {
+				array_push($GLOBALS['LOAD_JS_EXTERNAL'], $js);
+			}
+
+			// Echo the link
+			elseif ($direction == 'echo') {
+				echo '<script src="' . $js . '"></script>';
+			}
+
+			// Return the link
+			return '<script src="' . $js . '"></script>';
+
+		}
+
+	}
 
 	/********** CSS Functions **********/
 
@@ -459,6 +486,27 @@ class MLoad {
 
 			// Return the link
 			return '<link href="' . $src . '?' . $version . '" type="text/css" rel="stylesheet" />';
+
+		}
+
+	}
+	
+	public static function css_external($css, $direction = null) {
+
+		if (!empty($css)) {
+
+			// Only include it as part of the global js
+			if ($direction == null) {
+				array_push($GLOBALS['LOAD_CSS_EXTERNAL'], $js);
+			}
+
+			// Echo the link
+			elseif ($direction == 'echo') {
+				echo '<link href="' . $css . '" type="text/css" rel="stylesheet" />';
+			}
+
+			// Return the link
+			return '<link href="' . $css . '" type="text/css" rel="stylesheet" />';
 
 		}
 

@@ -14,6 +14,11 @@ if (APPLICATION_ENVIRONMENT == 'development') {
 	foreach ($GLOBALS['AUTOLOAD_JS_APPLICATION'] as $JS) {
 		MLoad::js_application($JS, 'echo');
 	}
+	
+	// Autoload External JavaScript
+	foreach ($GLOBALS['AUTOLOAD_JS_EXTERNAL'] as $JS) {
+		MLoad::js_external($JS, 'echo');
+	}
 
 }
 
@@ -56,12 +61,17 @@ if (APPLICATION_ENVIRONMENT == 'production') {
 
 // These files are loaded on a per page basis and shouldn't be merged into the application.js
 
-// Include all JavaScript file that were loaded with the js_framework_load function
+// Include all JavaScript files that were loaded with the js_framework function
 foreach ($GLOBALS['LOAD_JS_FRAMEWORK'] as $JS) {
 	MLoad::js_framework($JS, 'echo');
 }
 
-// Include all JavaScript file that were loaded with the js_application_load function
+// Include all JavaScript files that were loaded with the js_framework function
 foreach ($GLOBALS['LOAD_JS_APPLICATION'] as $JS) {
 	MLoad::js_application($JS, 'echo');
+}
+
+// Include all JavaScript files that were loaded with the js_framework function
+foreach ($GLOBALS['LOAD_JS_EXTERNAL'] as $JS) {
+	MLoad::js_external($JS, 'echo');
 }

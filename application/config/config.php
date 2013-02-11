@@ -31,26 +31,29 @@ define('APPLICATION_API', 'controller/api');
 define('APPLICATION_CACHE', 'cache');
 define('APPLICATION_COMMAND', 'command');
 define('APPLICATION_CONTROLLER', 'controller');
-define('APPLICATION_DOC', 'doc');
-define('APPLICATION_IMG', 'img');
-define('APPLICATION_LIB_AS', 'lib/as');
+define('APPLICATION_DOC', 'public/doc');
+define('APPLICATION_IMG', 'public/img');
 define('APPLICATION_LIB_CSS', 'lib/css');
 define('APPLICATION_LIB_JS', 'lib/js');
 define('APPLICATION_LIB_PHP', 'lib/php');
 define('APPLICATION_MODEL', 'model');
-define('APPLICATION_UPLOAD', 'upload');
+define('APPLICATION_PUBLIC', 'public');
+define('APPLICATION_PUBLIC_AS', 'public/as');
+define('APPLICATION_PUBLIC_CSS', 'public/css');
+define('APPLICATION_PUBLIC_JS', 'public/js');
+define('APPLICATION_UPLOAD', 'public/upload');
 define('APPLICATION_VID', 'vid');
 define('APPLICATION_VIEW', 'view');
 define('APPLICATION_VO', 'model/vo');
 
 // Controllers
-define('APPLICATION_DEFAULT_CONTROLLER', 'Main.php');
-define('APPLICATION_ERROR_404_CONTROLLER', 'Error_404.php');
+define('APPLICATION_DEFAULT_CONTROLLER', 'Main');
+define('APPLICATION_ERROR_404_CONTROLLER', 'Error_404');
 
 // Templates
 //File locations start within the APPLICATION_VIEW folder
-define('APPLICATION_HEADER', 'template/header.php');
-define('APPLICATION_FOOTER', 'template/footer.php');
+define('APPLICATION_HEADER', 'template/header');
+define('APPLICATION_FOOTER', 'template/footer');
 
 // Favicon
 // File locations start within the APPLICATION_IMG folder
