@@ -1,10 +1,10 @@
 /* 
  * MScript.js by Alan James
- * version 130211
+ * version 130228
  * recommended jQuery version 1.9.0
  */
 
-var version = "130211";
+var version = "130228";
 
 //Speed
 var speedFast = 125;
@@ -58,42 +58,59 @@ var outline_down = mono_2;
 //Visual
 var rounded = '3px'; //Same size as CSS
 var rounded_large = '2em';$(document).ready(function() {
+
 	$('input[type="file"]').addClass('MButtonUploadInput');
 	$('input[type="file"]').wrap('<div class="MButtonUpload"></div>');
 	$('.MButtonUpload').append('<span>Select File</span>');
-});$(document).ready(function() {
-	$('.MDropdown li:has(ul)').bind('mouseenter', function(e) {
-		$(this).children('ul').show()
-		return false;
+
+}); $(document).ready(function() {
+
+	$(document).on('mouseenter', '.MDropdown li:has(ul)', function() {
+		$(this).children('ul').show();
 	});
 
-	$('.MDropdown li:has(ul)').bind('mouseleave', function(e) {
-		$(this).children('ul').hide()
-		return false;
+	$(document).on('mouseleave', '.MDropdown li:has(ul)', function() {
+		$(this).children('ul').hide();
 	});
-}); $(document).ready(function() {
+
+});
+$(document).ready(function() {
+
+	$(document).keydown(function(e) {
+		MKeyboard.keys[e.keyCode] = 1;
+	});
+
+	$(document).keyup(function(e) {
+		MKeyboard.keys[e.keyCode] = 0;
+	});
+	
+});
+$(document).ready(function() {
+	
 	// Set the default state
 	MList.updateUI();
 
 	$(document).on('change', '.MListItem input[type=checkbox], .MListItem input[type=radio]', function() {
-		// Add a change event listener
-		// A label can change the state of the checkbox or radio so I am using change instead of click
 		MList.updateUI();
 	});
+	
 });$(window).load(function() {
-	// Fade in all images
+
 	$('#MMainWindow img').animate({
 		opacity : 1
-	}, speedSlow);
+	}, speedNorm);
+
 });
 $(document).ready(function() {
+
 	$('.MNote, .MNoteRed, .MNoteR, .MNoteOrange, .MNoteO, .MNoteYellow, .MNoteY, .MNoteGreen, .MNoteG, .MNoteBlue, .MNoteB, .MNoteViolet, .MNoteV').each(function() {
-		var rotation = MMath.random(-8, 8);
 		$(this).css({
-			'transform' : 'rotate(' + rotation + 'deg)'
-		})
+			'transform' : 'rotate(' + MMath.random(-8, 8) + 'deg)'
+		});
 	});
-});$(document).ready(function() {
+
+});
+$(document).ready(function() {
 
 	$(document).on('click', '.MPopup .MIconClose', function() {
 		$(this).closest('.MPopupContainer').hide();
@@ -107,7 +124,9 @@ $(document).ready(function() {
 
 });
 $(document).ready(function() {
+	
 	$('progress').each(function() {
+		
 		// Get default settings to reapply later
 		var currentId = $(this).attr('id');
 		var currentPercent = $(this).attr('value');
@@ -124,7 +143,9 @@ $(document).ready(function() {
 
 		// Replace with the Mogul progress bar
 		$(this).replaceWith('<div ' + idString + ' class="MProgressBar"><div class="MProgressBarBG"><div class="MProgressBarFG" style="width:' + percentString + '"><span class="MProgressBarIndicator">' + percentString + '</span></div></div></div>');
+		
 	});
+	
 });$(document).ready(function() {
 	
 	// I am calling this MSearch but putting
@@ -136,7 +157,9 @@ $(document).ready(function() {
 	});
 
 }); $(document).ready(function() {
+	
 	$('meter').each(function() {
+		
 		// Get default settings to reapply later
 		var currentId = $(this).attr('id');
 		var currentPercent = $(this).attr('value');
@@ -153,30 +176,35 @@ $(document).ready(function() {
 
 		// Replace with the Mogul progress bar
 		$(this).replaceWith('<div class="MRatingsBar"><div ' + idString + ' class="MRatingsBarBG"><div class="MRatingsBarFG" style="width:' + percentString + '"></div></div></div>');
+	
 	});
+	
 });$(document).ready(function() {
+	
 	// Set the default state
 	MSideBar.updateUI();
 
-	//Tracking it with live so I can add new items and they still work
 	$(document).on('click', '#MSideBar li input[type=checkbox], #MSideBar li input[type=radio]', function() {
 		MSideBar.updateUI();
 	});
+	
 });
 
 $(window).load(function() {
+	
 	MSideBar.scale();
 
 	MSideBar.menuPlaceholderHeight();
 	MSideBar.menuTop();
+	
 });
 
 $(window).resize(function() {
 	MSideBar.scale();
 });
 
-$(document).mousemove(function(event) {
-	MSideBar.triggerProximity(event);
+$(document).mousemove(function(e) {
+	MSideBar.triggerProximity(e);
 });$(window).load(function() {
 
 	// Fade in the stage image
@@ -186,14 +214,17 @@ $(document).mousemove(function(event) {
 
 });
 $(document).ready(function() {
-	//Add a message container if one doesnt exist
+
+	// Add a message container if one doesnt exist
 	if ($('#MSystemMessageContainer').length == 0) {
 		$('#MMainWindow').append('<div id="MSystemMessageContainer"></div>');
 	}
 
+	// Remove the message is the close button is clicked
 	$(document).on('click', '.MSystemMessage .MIconClose', function() {
 		$(this).parent().remove();
 	});
+
 });
 
 $(window).load(function() {
@@ -206,6 +237,7 @@ $(window).resize(function() {
 $(document).ready(function() {
 	$('.MTabWidget').MTab();
 }); $(document).ready(function() {
+	
 	$('[data-mtip=n], [data-mtip=N], [data-mtip=b], [data-mtip=B]').MTip({
 		gravity : 'N',
 		delayIn : speedSlow
@@ -245,6 +277,7 @@ $(document).ready(function() {
 		gravity : 'E',
 		delayIn : speedSlow
 	});
+	
 }); $(window).load(function() {
 	MToolBar.position();
 });
@@ -273,27 +306,29 @@ var MButton = (function(){
 var MInputText = (function() {
 
 	function MInputText(label) {
-		
-		if(label == null || label == ''){
+
+		if (label == '' || label == null) {
 			label = '';
 		}
-		
+
 		var uiElement = document.createElement('input');
 		uiElement.type = 'text';
 		$(uiElement).attr('placeholder', label);
-		
+
 		return uiElement;
-		
+
 	};
 
-	// Static Methods
 	MInputText.passWordToggle = function(id) {
+
 		var element = document.getElementById(id);
+
 		if (element.type == 'password') {
 			element.type = 'text';
 		} else {
 			element.type = 'password';
-		}
+		};
+
 	};
 
 	return MInputText;
@@ -362,21 +397,14 @@ var MList = (function() {
 
 	function MNote(label) {
 
-		if (label == null || label == '') {
+		if (label == '' || label == null) {
 			label = 'Note';
 		}
 
 		var uiElement = document.createElement('span');
 
-		var rotation = MMath.random(-8, 8);
-		var rotationCss = 'rotate(' + rotation + 'deg)';
-
 		$(uiElement).addClass('MNote').css({
-			'-webkit-transform' : rotationCss,
-			'-moz-transform' : rotationCss,
-			'-ms-transform' : rotationCss,
-			'-o-transform' : rotationCss,
-			'transform' : rotationCss
+			'transform' : MMath.random(-8, 8)
 		}).html(label);
 
 		return uiElement;
@@ -530,8 +558,8 @@ var MSideBar = (function() {
 		this.menuTop();
 
 		var windowHeight = $(window).height();
-		var headerHeight = $('#MHeader').height();
-		var toolBarHeight = $('#MToolBar').height();
+		var headerHeight = $('#MHeaderPlaceholder').height();
+		var toolBarHeight = $('#MToolBarPlaceholder').height();
 
 		if (isNaN(headerHeight)) {
 			headerHeight = 0;
@@ -576,7 +604,7 @@ var MSideBar = (function() {
 
 	MSideBar.rightShow = function() {
 		this.scale();
-		
+
 		var sideBarWidth = $('#MSideBar').outerWidth();
 
 		$('#MSideBarContainer').animate({
@@ -661,8 +689,8 @@ var MSideBar = (function() {
 	MSideBar.menuTop = function() {
 		if (document.getElementById('MSideBarMenuFixed')) {
 			/*Top Position*/
-			var headerHeight = $('#MHeader').height();
-			var toolBarHeight = $('#MToolBar').height();
+			var headerHeight = $('#MHeaderPlaceholder').height();
+			var toolBarHeight = $('#MToolBarPlaceholder').height();
 
 			if (isNaN(headerHeight)) {
 				headerHeight = 0;
@@ -713,8 +741,9 @@ var MSystemMessageContainer = (function() {
 	};
 
 	MSystemMessageContainer.position = function() {
-		var headerHeight = $('#MHeader').height();
-		var toolBarHeight = $('#MToolBar').height();
+
+		var headerHeight = $('#MHeaderPlaceholder').height();
+		var toolBarHeight = $('#MToolBarPlaceholder').height();
 
 		if (isNaN(headerHeight)) {
 			headerHeight = 0;
@@ -725,12 +754,29 @@ var MSystemMessageContainer = (function() {
 		}
 
 		$('#MSystemMessageContainer').css('top', headerHeight + toolBarHeight);
+
+	};
+
+	MSystemMessageContainer.append = function(MSystemMessage, fadeDelay, fadeSpeed) {
+
+		if (fadeDelay == undefined) {
+			fadeDelay = 0;
+		}
+
+		if (fadeSpeed == undefined) {
+			fadeSpeed = 0;
+		}
+
+		$('#MSystemMessageContainer').append(MSystemMessage);
+		$('.MSystemMessage').last().delay(fadeDelay).fadeOut(fadeSpeed, function() {
+			$(this).remove()
+		});
+
 	};
 
 	return MSystemMessageContainer;
 
 })();
-
 var MSystemMessage = (function() {
 
 	function MSystemMessage(label) {
@@ -751,6 +797,7 @@ var MSystemMessage = (function() {
 		$(uiElement).addClass('MSystemMessage').append(uiContent);
 
 		return uiElement;
+
 	};
 
 	return MSystemMessage;
@@ -1798,6 +1845,19 @@ var MToolBar = (function() {
 })(jQuery);
 (function() {
 
+	var MKeyboard = {
+		keys : []
+	};
+
+	for (var i = 0; i < 100; i++) {
+		MKeyboard.keys[i] = 0;
+	}
+
+	window.MKeyboard = MKeyboard;
+
+})();
+(function() {
+
 	var MLoad = {
 		js : function(url) {
 			var headID = document.getElementsByTagName('head')[0];
@@ -1877,21 +1937,37 @@ var MToolBar = (function() {
 			$.expr[':'].Contains = function(x, y, z) {
 				return $(x).text().toUpperCase().indexOf(z[3].toUpperCase()) >= 0;
 			}
-
+			
 			if (search == "") {
 				$('[data-searchable=true]').show();
 			} else {
 				$('[data-searchable=true]').hide();
 				$('[data-searchable=true]:Contains(' + search + ')').show();
 			}
+
+		},
+		searchInside : function(search, container) {
+
+			// Creates the Contains function which is case insensitive
+			$.expr[':'].Contains = function(x, y, z) {
+				return $(x).text().toUpperCase().indexOf(z[3].toUpperCase()) >= 0;
+			}
+			
+			if (search == "") {
+				$(container).closest('[data-searchable=true]').show();
+			} else {
+				$(container).closest('[data-searchable=true]').hide();
+				$(container + ':Contains(' + search + ')').closest('[data-searchable=true]').show();
+			}
+
 		}
 	};
 
 	window.MQuery = MQuery;
 
 })();
-(function(){
-	
+(function() {
+
 	var MString = {
 		escapeHtml : function(unsafe) {
 	  		return unsafe
@@ -1900,11 +1976,16 @@ var MToolBar = (function() {
 				.replace(/>/g, "&gt;")
 				.replace(/"/g, "&quot;")
 				.replace(/'/g, "&#039;");
+		},
+		firstToUpperCase : function(str) {
+			str += '';
+			var f = str.charAt(0).toUpperCase();
+			return f + str.substr(1);
 		}
 	};
-	
+
 	window.MString = MString;
-	
+
 })();
 (function() {
 
@@ -2017,9 +2098,38 @@ var MToolBar = (function() {
 		email : function(email) {
 			var reg = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
 			return reg.test(email);
+		},
+		state : function(state) {
+
+			var stateString = state.toLowerCase();
+			
+			var stateAbbreviationArray = ['ak', 'al', 'ar', 'as', 'az', 'ca', 'co', 'ct', 'dc', 'de', 'fl', 'ga', 'gu', 'hi', 'ia', 'id', 'il', 'in', 'ks', 'ky', 'la', 'ma', 'md', 'me', 'mh', 'mi', 'mn', 'mo', 'ms', 'mt', 'nc', 'nd', 'ne', 'nh', 'nj', 'nm', 'nv', 'ny', 'oh', 'ok', 'or', 'pa', 'pr', 'pw', 'ri', 'sc', 'sd', 'tn', 'tx', 'ut', 'va', 'vi', 'vt', 'wa', 'wi', 'wv', 'wy'];
+			var stateArray = ['alabama', 'alaska', 'arizona', 'arkansas', 'california', 'colorado', 'connecticut', 'delaware', 'florida', 'georgia', 'hawaii', 'idaho', 'illinois', 'indiana', 'iowa', 'iansas', 'kentucky', 'louisiana', 'maine', 'maryland', 'massachusetts', 'michigan', 'minnesota', 'mississippi', 'missouri', 'montana', 'nebraska', 'nevada', 'new hampshire', 'new jersey', 'new mexico', 'new york', 'north carolina', 'north dakota', 'ohio', 'oklahoma', 'oregon', 'pennsylvania', 'rhode island', 'south carolina', 'south dakota', 'tennessee', 'texas', 'utah', 'vermont', 'virginia', 'washington', 'west virginia', 'wisconsin', 'wyoming'];
+
+			// Check the abbreviations
+			for (var i = 0, j = stateAbbreviationArray.length; i < j; i++) {
+
+				if (stateString == stateAbbreviationArray[i]) {
+					return true;
+				}
+
+			}
+
+			// Check the full name
+			for (var i = 0, j = stateArray.length; i < j; i++) {
+
+				if (stateString == stateArray[i]) {
+					return true;
+				}
+
+			}
+
+			// If the state was not found
+			return false;
+
 		}
 	};
-	
+
 	window.MValidate = MValidate;
 
 })();
