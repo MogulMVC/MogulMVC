@@ -2,7 +2,7 @@
 
 /* 
  * Mogul MVC by Alan James
- * version 130222
+ * version 130228
  * recommended PHP version 5.3
  */
 
@@ -11,7 +11,7 @@ if (!defined('SERVER_ROOT')) {
 	exit ;
 }
 
-define('FRAMEWORK_VERSION', '130222');
+define('FRAMEWORK_VERSION', '130228');
 
 define('FRAMEWORK_IMG', 'img');
 define('FRAMEWORK_LIB_AS', 'lib/as');

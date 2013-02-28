@@ -16,17 +16,33 @@ class MValidate {
 
 	}
 
-	public static function color_hex($color) {
+	public static function state($state) {
 
-		$valid = false;
+		$stateString = strtoupper($state);
 
-		$color = preg_replace('/[^0-9a-fA-F\n]/', '', $color);
+		$stateAbbreviationArray = array('ak', 'al', 'ar', 'as', 'az', 'ca', 'co', 'ct', 'dc', 'de', 'fl', 'ga', 'gu', 'hi', 'ia', 'id', 'il', 'in', 'ks', 'ky', 'la', 'ma', 'md', 'me', 'mh', 'mi', 'mn', 'mo', 'ms', 'mt', 'nc', 'nd', 'ne', 'nh', 'nj', 'nm', 'nv', 'ny', 'oh', 'ok', 'or', 'pa', 'pr', 'pw', 'ri', 'sc', 'sd', 'tn', 'tx', 'ut', 'va', 'vi', 'vt', 'wa', 'wi', 'wv', 'wy');
+		$stateArray = array('alabama', 'alaska', 'arizona', 'arkansas', 'california', 'colorado', 'connecticut', 'delaware', 'florida', 'georgia', 'hawaii', 'idaho', 'illinois', 'indiana', 'iowa', 'iansas', 'kentucky', 'louisiana', 'maine', 'maryland', 'massachusetts', 'michigan', 'minnesota', 'mississippi', 'missouri', 'montana', 'nebraska', 'nevada', 'new hampshire', 'new jersey', 'new mexico', 'new york', 'north carolina', 'north dakota', 'ohio', 'oklahoma', 'oregon', 'pennsylvania', 'rhode island', 'south carolina', 'south dakota', 'tennessee', 'texas', 'utah', 'vermont', 'virginia', 'washington', 'west virginia', 'wisconsin', 'wyoming');
 
-		if (strlen($color) == 3 || strlen($color) == 6) {
-			$valid = true;
+		// Check the abbreviations
+		for ($i = 0, $j = count($stateAbbreviationArray); $i < $j; $i++) {
+
+			if ($stateString == $stateAbbreviationArray[$i]) {
+				return true;
+			}
+
 		}
 
-		return $valid;
+		// Check the full name
+		for ($i = 0, $j = count($stateArray); $i < $j; $i++) {
+
+			if ($stateString == $stateArray[$i]) {
+				return true;
+			}
+
+		}
+
+		// If the state was not found
+		return false;
 
 	}
 
