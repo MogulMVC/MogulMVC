@@ -12,7 +12,7 @@ define('APPLICATION_NAME', 'Application Name');
 define('APPLICATION_DESCRIPTION', 'Application Description');
 define('APPLICATION_ID', 'SomeUniqueID');
 define('APPLICATION_PASSWORD', 'mogulpass321456');
-define('APPLICATION_VERSION', '130316');
+define('APPLICATION_VERSION', '130317');
 
 // DOCTYPE
 // 'xhtml11' 'xhtml1-strict' 'xhtml1-transitional' 'xhtml1-frame' 'html5' 'html4-strict' 'html4-transitional' 'html4-frame'
@@ -53,8 +53,10 @@ define('APPLICATION_ERROR_404_CONTROLLER', 'Error_404');
 
 // Templates
 //File locations start within the APPLICATION_VIEW folder
+define('APPLICATION_HEAD', 'template/head');
 define('APPLICATION_HEADER', 'template/header');
 define('APPLICATION_FOOTER', 'template/footer');
+define('APPLICATION_FOOT', 'template/foot');
 
 // Favicon
 // File locations start within the APPLICATION_IMG folder

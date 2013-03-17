@@ -74,6 +74,18 @@ class MLoad {
 			}
 
 			//Define the sections
+			$head = '';
+			if (APPLICATION_HEAD != '') {
+
+				$head_file = dirname(APPLICATION_HEAD) . '/' . basename(APPLICATION_HEAD, '.php') . '.php';
+				
+				if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_VIEW . '/' . $head_file)) {
+					trigger_error('error - head not found.', E_USER_ERROR);
+				}
+
+				$head = SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_VIEW . '/' . $head_file;
+			}
+			
 			$header = '';
 			if (APPLICATION_HEADER != '') {
 
@@ -98,9 +110,23 @@ class MLoad {
 				$footer = SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_VIEW . '/' . $footer_file;
 			}
 
+			$foot = '';
+			if (APPLICATION_FOOT != '') {
+
+				$foot_file = dirname(APPLICATION_FOOT) . '/' . basename(APPLICATION_FOOT, '.php') . '.php';
+
+				if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_VIEW . '/' . $foot_file)) {
+					trigger_error('error - foot not found.', E_USER_ERROR);
+				}
+
+				$foot = SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_VIEW . '/' . $foot_file;
+			}
+
 			//Construst the Page
 
-			require (SERVER_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_VIEW . '/' . FRAMEWORK_HEAD);
+			if (!empty($head)) {
+				require ($head);
+			}
 
 			if (!empty($header)) {
 				require ($header);
@@ -116,7 +142,9 @@ class MLoad {
 				require ($footer);
 			}
 
-			require (SERVER_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_VIEW . '/' . FRAMEWORK_FOOT);
+			if (!empty($foot)) {
+				require ($foot);
+			}
 
 		}
 
@@ -141,8 +169,35 @@ class MLoad {
 				$page = $page . '.php';
 			}
 
+			//Define the sections
+			$head = '';
+			if (APPLICATION_HEAD != '') {
+
+				$head_file = dirname(APPLICATION_HEAD) . '/' . basename(APPLICATION_HEAD, '.php') . '.php';
+				
+				if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_VIEW . '/' . $head_file)) {
+					trigger_error('error - head not found.', E_USER_ERROR);
+				}
+
+				$head = SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_VIEW . '/' . $head_file;
+			}
+			
+			$foot = '';
+			if (APPLICATION_FOOT != '') {
+
+				$foot_file = dirname(APPLICATION_FOOT) . '/' . basename(APPLICATION_FOOT, '.php') . '.php';
+
+				if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_VIEW . '/' . $foot_file)) {
+					trigger_error('error - foot not found.', E_USER_ERROR);
+				}
+
+				$foot = SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_VIEW . '/' . $foot_file;
+			}
+
 			//Construst the Frame
-			require (SERVER_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_VIEW . '/' . FRAMEWORK_HEAD);
+			if (!empty($head)) {
+				require ($head);
+			}
 
 			if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_VIEW . '/' . $page)) {
 				trigger_error('error - ' . $page . ' not found.', E_USER_ERROR);
@@ -150,7 +205,9 @@ class MLoad {
 
 			require (SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_VIEW . '/' . $page);
 
-			require (SERVER_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_VIEW . '/' . FRAMEWORK_FOOT);
+			if (!empty($foot)) {
+				require ($foot);
+			}
 
 		}
 
