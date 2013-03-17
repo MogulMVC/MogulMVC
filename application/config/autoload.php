@@ -11,6 +11,6 @@ $GLOBALS['AUTOLOAD_CSS_FRAMEWORK'] = array('core/MIcons', 'core/MStyle', 'core/s
 $GLOBALS['AUTOLOAD_CSS_APPLICATION'] = array();
 $GLOBALS['AUTOLOAD_CSS_EXTERNAL'] = array();
 
-$GLOBALS['AUTOLOAD_JS_FRAMEWORK'] = array('3rdparty/jquery', '3rdparty/jquery-ui', 'core/MScript', 'core/script');
+$GLOBALS['AUTOLOAD_JS_FRAMEWORK'] = array('3rdparty/jquery', 'core/MScript', 'core/script');
 $GLOBALS['AUTOLOAD_JS_APPLICATION'] = array();
 $GLOBALS['AUTOLOAD_JS_EXTERNAL'] = array();
