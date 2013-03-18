@@ -5,4 +5,4 @@ if (!defined('SERVER_ROOT')) {
 }
 
 $GLOBALS['cache'] = true;
-$GLOBALS['cache_max'] = 1;
+$GLOBALS['cache_max'] = 15;
