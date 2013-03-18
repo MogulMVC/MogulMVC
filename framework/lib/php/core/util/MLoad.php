@@ -148,8 +148,6 @@ class MLoad {
 
 		}
 
-		exit();
-
 	}
 
 	public static function page($page, $data = '') {

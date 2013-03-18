@@ -20,7 +20,7 @@ define('APPLICATION_DOCTYPE', 'html4-transitional');
 
 // Environment
 // 'development' 'production'
-define('APPLICATION_ENVIRONMENT', 'development');
+define('APPLICATION_ENVIRONMENT', 'production');
 
 // URL Keywords
 define('APPLICATION_ACTION_URL', 'action');
@@ -32,14 +32,13 @@ define('APPLICATION_API', 'controller/api');
 define('APPLICATION_CACHE', 'cache');
 define('APPLICATION_COMMAND', 'command');
 define('APPLICATION_CONTROLLER', 'controller');
-define('APPLICATION_IMG', 'public/images');
+define('APPLICATION_IMG', 'public/img');
 define('APPLICATION_LIB_CSS', 'lib/css');
 define('APPLICATION_LIB_JS', 'lib/js');
 define('APPLICATION_LIB_PHP', 'lib/php');
 define('APPLICATION_MISC', 'public/misc');
 define('APPLICATION_MODEL', 'model');
 define('APPLICATION_PUBLIC', 'public');
-define('APPLICATION_PUBLIC_AS', 'public/as');
 define('APPLICATION_PUBLIC_CSS', 'public/css');
 define('APPLICATION_PUBLIC_JS', 'public/js');
 define('APPLICATION_UPLOAD', 'public/upload');

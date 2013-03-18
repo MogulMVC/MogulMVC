@@ -7,7 +7,7 @@ if (!defined('SERVER_ROOT')) {
 /********** Point of Entry **********/
 
 // Via the Web
-if (!MCLI::cli_is()) {
+if (MRequest::is_web()) {
 	
 	$URI = MString::sub_before($_SERVER['REQUEST_URI'], '?');
 	$URI_ARRAY = explode('/', $URI);
@@ -15,7 +15,7 @@ if (!MCLI::cli_is()) {
 }
 
 // Via the CLI
-elseif (MCLI::cli_is()) {
+elseif (MRequest::is_cli()) {
 	
 	$URI_ARRAY = array();
 
