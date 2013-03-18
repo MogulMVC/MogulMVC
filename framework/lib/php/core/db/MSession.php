@@ -47,7 +47,7 @@ if ($GLOBALS['SESSION_DB']) {
 		$tmp = $_SESSION;
 
 		$temp = json_decode($result['data']);
-		$_SESSION = (array) $temp;
+		$_SESSION = (array)$temp;
 
 		if (isset($_SESSION) && !empty($_SESSION) && $_SESSION != null) {
 
@@ -120,4 +120,3 @@ if ($GLOBALS['SESSION_DB']) {
 
 // Start the session
 session_start();
-

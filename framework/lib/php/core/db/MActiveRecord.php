@@ -50,7 +50,7 @@ if ($DB_HOST_COUNT > 0) {
 		$cfg -> set_model_directory(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_MODEL);
 		$cfg -> set_connections($connections);
 		
-		$cfg->set_default_connection($GLOBALS['DB_CONNECTION'][0]);
+		$cfg -> set_default_connection($GLOBALS['DB_CONNECTION'][0]);
 	});
 
 }

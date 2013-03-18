@@ -41,7 +41,7 @@ class MPDO {
 		$pass = $GLOBALS['DB'][$i]['pass'];
 
 		// Create a new pdo connection
-		$GLOBALS['MPDO'][$i] = new PDO($type . ':host=' . $host . ';port=' . $port . ';dbname=' . $name , $user, $pass);
+		$GLOBALS['MPDO'][$i] = new PDO($type . ':host=' . $host . ';port=' . $port . ';dbname=' . $name, $user, $pass);
 		$GLOBALS['MPDO'][$i] -> setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
 
 		// Return the newly created pdo connection

@@ -6,7 +6,8 @@ if (!defined('SERVER_ROOT')) {
 
 $GLOBALS['DB'] = array(
 
-	/* The following is an example of a DB connection
+	/* 
+	The following is an example of a DB connection
 
 	'connection_name' => array(
 		'type' => 'dbtype',
@@ -17,7 +18,7 @@ $GLOBALS['DB'] = array(
 		'pass' => 'dbpass'
 	)
 
-	* If you have multiple connections you should seperate them with a comma
+	If you have multiple connections you should seperate them with a comma
 	*/
 	
 );
