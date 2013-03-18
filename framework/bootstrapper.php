@@ -13,10 +13,7 @@ require_once (SERVER_ROOT . '/' . FRAMEWORK . '/core/environment.php');
 require_once (SERVER_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_LIB_PHP . '/core/util/MLoad.php');
 
 // Load needed core libraries
-// MCache needs to be loaded to check for cached pages
-MLoad::php_framework('core/util/MCache');
-
-// MString must come second
+// MString must come first
 MLoad::php_framework('core/util/MString');
 
 // The rest are alphabetical

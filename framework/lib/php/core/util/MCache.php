@@ -4,11 +4,23 @@ if (!defined('SERVER_ROOT')) {
 	exit ;
 }
 
-require_once (SERVER_ROOT . '/' . APPLICATION . '/config/cache.php');
+// Create the page if it doesn't exist
+function ob_callback() {
 
-if ($GLOBALS['cache']) {
+	$page_uuid = MCache::page_uuid();
 
-	function page_uuid() {
+	$page_location = SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_CACHE . '/' . $page_uuid;
+	$page_content = ob_get_contents();
+
+	file_put_contents($page_location, $page_content);
+
+	return false;
+
+}
+
+class MCache {
+
+	public static function page_uuid() {
 
 		$cookie_string = implode(',', $_COOKIE);
 		$env_string = implode(',', $_ENV);
@@ -28,34 +40,25 @@ if ($GLOBALS['cache']) {
 
 	}
 
-	// Serve up the page if it exists
-	$page_uuid = page_uuid();
+	public static function cache($minutes) {
 
-	if (file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_CACHE . '/' . $page_uuid)) {
+		// Serve up the page if it exists
+		$page_uuid = self::page_uuid();
 
-		$creation_time = filemtime(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_CACHE . '/' . $page_uuid);
+		if (file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_CACHE . '/' . $page_uuid)) {
 
-		if(time() - $creation_time < $GLOBALS['cache_max'] * 60){
-			echo file_get_contents(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_CACHE . '/' . $page_uuid);
-			exit();
+			$creation_time = filemtime(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_CACHE . '/' . $page_uuid);
+
+			if (time() - $creation_time < $minutes * 60) {
+				echo file_get_contents(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_CACHE . '/' . $page_uuid);
+				exit();
+			}
+
 		}
 
-	}
-
-	// Create the page if it doesn't exist
-	function ob_callback() {
-
-		$page_uuid = page_uuid();
-
-		$page_location = SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_CACHE . '/' . $page_uuid;
-		$page_content = ob_get_contents();
-
-		file_put_contents($page_location, $page_content);
-
-		return false;
+		// Create the page if it doesn't exist
+		ob_start('ob_callback');
 
 	}
-
-	ob_start('ob_callback');
 
 }

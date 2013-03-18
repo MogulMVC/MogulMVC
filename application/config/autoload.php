@@ -13,4 +13,4 @@ $GLOBALS['AUTOLOAD_CSS_EXTERNAL'] = array();
 
 $GLOBALS['AUTOLOAD_JS_FRAMEWORK'] = array('3rdparty/jquery', 'core/MScript', 'core/script');
 $GLOBALS['AUTOLOAD_JS_APPLICATION'] = array();
-$GLOBALS['AUTOLOAD_JS_EXTERNAL'] = array();
+$GLOBALS['AUTOLOAD_JS_EXTERNAL'] = array('http://code.jquery.com/mobile/1.3.0/jquery.mobile-1.3.0.min.js');

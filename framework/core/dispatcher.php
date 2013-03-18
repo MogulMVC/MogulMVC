@@ -44,8 +44,19 @@ if (!empty($URI_ARRAY[2])) {
 
 //These choices go in order of likelihood
 
+// Favicon
+if ($SEGMENT1 == 'favicon.ico') {
+	
+	header('Content-Type: image/x-icon');
+
+	echo file_get_contents(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_IMG . '/' . APPLICATION_FAVICON);
+
+	exit();
+	
+}
+
 // Action
-if ($SEGMENT1 == APPLICATION_ACTION_URL) {
+elseif ($SEGMENT1 == APPLICATION_ACTION_URL) {
 
 	//Check if the action exists
 	if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_ACTION . '/' . $SEGMENT2 . '.php')) {
@@ -55,7 +66,7 @@ if ($SEGMENT1 == APPLICATION_ACTION_URL) {
 	//Run the action
 	require_once (SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_ACTION . '/' . $SEGMENT2 . '.php');
 
-	exit ;
+	exit();
 	
 }
 
@@ -69,7 +80,7 @@ elseif ($SEGMENT1 == APPLICATION_API_URL) {
 
 	require_once (SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_API . '/' . $SEGMENT2 . '.php');
 
-	exit ;
+	exit();
 	
 }
 
@@ -90,14 +101,14 @@ elseif ($SEGMENT1 == APPLICATION_COMMAND) {
 
 	require_once (SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_COMMAND . '/' . $URI_ARRAY[3] . '.php');
 
-	exit ;
+	exit();
 	
 }
 
 // Application Manifest JSON
 elseif ($SEGMENT2 == 'index' && $SEGMENT1 == 'application.js') {
 	
-	header('Content-Type:application/json');
+	header('Content-Type: application/json');
 
 	$application = new stdClass();
 	$application -> name = APPLICATION_NAME;
@@ -108,26 +119,7 @@ elseif ($SEGMENT2 == 'index' && $SEGMENT1 == 'application.js') {
 	// Output an JSON file describing the application
 	echo json_encode($application);
 
-	exit ;
-	
-}
-
-// Application Manifest XML
-elseif ($SEGMENT2 == 'index' && $SEGMENT1 == 'application.xml') {
-	
-	header("Content-Type:text/xml");
-
-	// Output an XML file describing the application
-	// Must be written this way
-	echo '<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<application>
-	<name>' . APPLICATION_NAME . '</name>
-	<description>' . APPLICATION_DESCRIPTION . '</description>
-	<id>' . APPLICATION_ID . '</id>
-	<icon>' . MURL::base() . '/' . APPLICATION . '/' . APPLICATION_IMG . '/' . APPLICATION_ICON . '?' . APPLICATION_VERSION . '</icon>
-</application>';
-
-	exit ;
+	exit();
 	
 }
 
@@ -137,7 +129,7 @@ elseif ($SEGMENT2 == 'index' &&  $SEGMENT1 == 'robots.txt') {
 	header('Content-Type: text');
 	require (SERVER_ROOT . '/' . APPLICATION . '/config/robots.txt');
 	
-	exit ;
+	exit();
 	
 }
 

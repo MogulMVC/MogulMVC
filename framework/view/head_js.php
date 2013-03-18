@@ -30,7 +30,7 @@ if (APPLICATION_ENVIRONMENT == 'development') {
 if (APPLICATION_ENVIRONMENT == 'production') {
 
 	// Minify all JS if no cached file exists
-	if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_CACHE . '/' . 'application' . APPLICATION_VERSION . '.js')) {
+	if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_CACHE . '/' . 'main' . APPLICATION_VERSION . '.js')) {
 
 		MLoad::php_framework('3rdparty/util/jsmin');
 
@@ -56,10 +56,10 @@ if (APPLICATION_ENVIRONMENT == 'production') {
 
 		$js_file = JSMin::minify($js_file);
 
-		file_put_contents(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_CACHE . '/application' . APPLICATION_VERSION . '.js', $js_file);
+		file_put_contents(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_CACHE . '/main' . APPLICATION_VERSION . '.js', $js_file);
 	}
 
-	MLoad::js_cache('application' . APPLICATION_VERSION . '.js', 'echo');
+	MLoad::js_cache('main' . APPLICATION_VERSION . '.js', 'echo');
 
 }
 

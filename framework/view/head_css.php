@@ -30,7 +30,7 @@ if (APPLICATION_ENVIRONMENT == 'development') {
 if (APPLICATION_ENVIRONMENT == 'production') {
 
 	// Minify all JS if no cached file exists
-	if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_CACHE . '/' . 'application' . APPLICATION_VERSION . '.css')) {
+	if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_CACHE . '/' . 'main' . APPLICATION_VERSION . '.css')) {
 
 		MLoad::php_framework('3rdparty/util/cssmin');
 
@@ -56,10 +56,10 @@ if (APPLICATION_ENVIRONMENT == 'production') {
 
 		$css_file = CssMin::minify($css_file);
 
-		file_put_contents(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_CACHE . '/application' . APPLICATION_VERSION . '.css', $css_file);
+		file_put_contents(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_CACHE . '/main' . APPLICATION_VERSION . '.css', $css_file);
 	}
 
-	MLoad::css_cache('application' . APPLICATION_VERSION . '.css', 'echo');
+	MLoad::css_cache('main' . APPLICATION_VERSION . '.css', 'echo');
 
 }
 

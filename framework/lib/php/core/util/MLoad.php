@@ -395,7 +395,7 @@ class MLoad {
 
 	}
 
-	public static function js_cache($js, $useHTTP = false) {
+	public static function js_cache($js, $direction = 'return') {
 
 		if (!empty($js)) {
 
@@ -413,9 +413,6 @@ class MLoad {
 
 			// If use HTTP is true include an HTTP section
 			$src = '/' . APPLICATION . '/' . APPLICATION_CACHE . '/' . $js;
-			if ($useHTTP) {
-				$src = 'http://' . $_SERVER['SERVER_NAME'] . '/' . APPLICATION . '/' . APPLICATION_CACHE . '/' . $js;
-			}
 
 			// Echo the link
 			if ($direction == 'echo') {
@@ -561,9 +558,6 @@ class MLoad {
 
 			// If use HTTP is true include an HTTP section
 			$src = '/' . APPLICATION . '/' . APPLICATION_CACHE . '/' . $css;
-			if ($useHTTP) {
-				$src = 'http://' . $_SERVER['SERVER_NAME'] . '/' . APPLICATION . '/' . APPLICATION_CACHE . '/' . $css;
-			}
 
 			// Echo the link
 			if ($direction == 'echo') {
