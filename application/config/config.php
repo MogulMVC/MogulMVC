@@ -20,7 +20,7 @@ define('APPLICATION_DOCTYPE', 'html4-transitional');
 
 // Environment
 // 'development' 'production'
-define('APPLICATION_ENVIRONMENT', 'production');
+define('APPLICATION_ENVIRONMENT', 'development');
 
 // URL Keywords
 define('APPLICATION_ACTION_URL', 'action');
@@ -47,7 +47,7 @@ define('APPLICATION_VO', 'model/vo');
 
 // Controllers
 define('APPLICATION_DEFAULT_CONTROLLER', 'Main');
-define('APPLICATION_ERROR_404_CONTROLLER', 'Error_404');
+define('APPLICATION_ERROR_404_CONTROLLER', 'Main');
 
 // Templates
 //File locations start within the APPLICATION_VIEW folder

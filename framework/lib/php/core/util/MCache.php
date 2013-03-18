@@ -23,7 +23,7 @@ class MCache {
 	public static function page_uuid() {
 
 		$cookie_string = implode(',', $_COOKIE);
-		$env_string = implode(',', $_ENV);
+		$env_string = $_ENV['REQUEST_URI'];
 		$files_string = implode(',', $_FILES);
 		$get_string = implode(',', $_GET);
 		$post_string = implode(',', $_POST);
