@@ -29,11 +29,12 @@ define('APPLICATION_API_URL', 'api');
 // Directories
 define('APPLICATION_ACTION', 'controller/action');
 define('APPLICATION_API', 'controller/api');
+define('APPLICATION_AUDIO', 'public/audio');
 define('APPLICATION_CACHE', 'cache');
 define('APPLICATION_COMMAND', 'command');
 define('APPLICATION_CONTROLLER', 'controller');
-define('APPLICATION_DOC', 'public/doc');
-define('APPLICATION_IMG', 'public/img');
+define('APPLICATION_DOC', 'public/documents');
+define('APPLICATION_IMG', 'public/images');
 define('APPLICATION_LIB_CSS', 'lib/css');
 define('APPLICATION_LIB_JS', 'lib/js');
 define('APPLICATION_LIB_PHP', 'lib/php');
@@ -43,7 +44,7 @@ define('APPLICATION_PUBLIC_AS', 'public/as');
 define('APPLICATION_PUBLIC_CSS', 'public/css');
 define('APPLICATION_PUBLIC_JS', 'public/js');
 define('APPLICATION_UPLOAD', 'public/upload');
-define('APPLICATION_VID', 'vid');
+define('APPLICATION_VIDEO', 'public/video');
 define('APPLICATION_VIEW', 'view');
 define('APPLICATION_VO', 'model/vo');
 
