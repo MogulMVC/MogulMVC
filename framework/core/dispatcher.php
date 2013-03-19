@@ -47,10 +47,12 @@ if (!empty($URI_ARRAY[2])) {
 // Favicon
 if ($SEGMENT1 == 'favicon.ico') {
 	
-	header('Content-Type: image/x-icon');
+	//header('Content-Type: image/x-icon');
 
-	echo file_get_contents(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_IMG . '/' . APPLICATION_FAVICON);
+	//echo file_get_contents(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_IMG . '/' . APPLICATION_FAVICON);
 
+	header('Location: /' . APPLICATION . '/' . APPLICATION_IMG . '/' . APPLICATION_FAVICON);
+	
 	exit();
 	
 }
