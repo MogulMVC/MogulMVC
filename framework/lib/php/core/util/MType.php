@@ -23,6 +23,7 @@ class MType {
 	}
 
 	function array2Object($array) {
+		
 		if (!is_array($array)) {
 			return $array;
 		}
@@ -39,6 +40,7 @@ class MType {
 		} else {
 			return FALSE;
 		}
+		
 	}
 
 }
