@@ -4,19 +4,21 @@ MLoad::php_application('core/db/MPDO');
 
 class ExampleModel {
 
-	public static function create() {
+	public $table = 'example';
+
+	public function create() {
 
 	}
 
-	public static function read() {
+	public function read() {
 
 	}
 
-	public static function update() {
+	public function update() {
 
 	}
 
-	public static function delete() {
+	public function delete() {
 
 	}
 
