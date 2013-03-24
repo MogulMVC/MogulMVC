@@ -1,6 +1,6 @@
 <?php
 if (!defined('SERVER_ROOT')) {
-	header('/error_404');
+	header('Location: /error_404');
 	exit ;
 }
 ?>
