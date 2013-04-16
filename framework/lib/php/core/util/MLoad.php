@@ -656,10 +656,10 @@ class MLoad {
 		return NULL;
 	}
 
-	public static function icon_framework($icon, $direction = 'return', $useHTTP = FALSE) {
+	public static function icon_src_framework($icon, $direction = 'return', $useHTTP = FALSE) {
 
 		if (!empty($icon)) {
-			return self::img_framework('icon/' . $icon, $direction, $useHTTP);
+			return self::img_src_framework('icon/' . $icon, $direction, $useHTTP);
 		}
 
 	}

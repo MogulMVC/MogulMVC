@@ -11,7 +11,7 @@ class MRequest {
 		if (empty($_SERVER['REMOTE_ADDR'])) {
 			return TRUE;
 		} else {
-			return false;
+			return FALSE;
 		}
 	}
 
@@ -20,7 +20,7 @@ class MRequest {
 		if (!empty($_SERVER['REMOTE_ADDR'])) {
 			return TRUE;
 		} else {
-			return false;
+			return FALSE;
 		}
 	}
 
