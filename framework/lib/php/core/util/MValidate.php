@@ -16,6 +16,30 @@ class MValidate {
 
 	}
 
+	public static function declared($input) {
+
+	}
+
+	public static function optional($input) {
+
+	}
+
+	public static function required($input) {
+
+	}
+
+	public static function only_contain($input) {
+
+	}
+
+	public static function must_contain($input) {
+
+	}
+
+	public static function between($input, $rangeStart, $rangeEnd) {
+
+	}
+
 	public static function state($state) {
 
 		$stateString = strtoupper($state);

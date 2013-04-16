@@ -15,8 +15,17 @@ class MURL {
 			$protocol = 'https';
 
 		}
-		
+
 		return $protocol;
+
+	}
+
+	public static function subdomain() {
+
+		$uri = explode('.', $_SERVER['SERVER_NAME']);
+
+		$subdomain = $uri[count($uri) - 3];
+		return $subdomain;
 
 	}
 

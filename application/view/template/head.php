@@ -4,7 +4,10 @@ if (!defined('SERVER_ROOT')) {
 	exit ;
 }
 ?>
-<?php echo $GLOBALS['DOCTYPE'][APPLICATION_DOCTYPE];?>
+<?php 
+// 'xhtml11' 'xhtml1-strict' 'xhtml1-transitional' 'xhtml1-frame' 'html5' 'html4-strict' 'html4-transitional' 'html4-frame'
+echo $GLOBALS['DOCTYPE']['html4-transitional'];
+?>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 

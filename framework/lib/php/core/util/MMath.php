@@ -6,6 +6,10 @@ if (!defined('SERVER_ROOT')) {
 
 class MMath {
 
+	public static function random($min, $max) {
+		return mt_rand($min, $max);
+	}
+
 	public static function linear_regression($x, $y) {
 
 		// calculate number points

@@ -12,11 +12,7 @@ define('APPLICATION_NAME', 'Application Name');
 define('APPLICATION_DESCRIPTION', 'Application Description');
 define('APPLICATION_ID', 'SomeUniqueID');
 define('APPLICATION_PASSWORD', 'mogulpass321456');
-define('APPLICATION_VERSION', '130326');
-
-// DOCTYPE
-// 'xhtml11' 'xhtml1-strict' 'xhtml1-transitional' 'xhtml1-frame' 'html5' 'html4-strict' 'html4-transitional' 'html4-frame'
-define('APPLICATION_DOCTYPE', 'html4-transitional');
+define('APPLICATION_VERSION', '130416');
 
 // Environment
 // 'development' 'production'
