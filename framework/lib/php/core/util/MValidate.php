@@ -9,33 +9,38 @@ class MValidate {
 	public static function email($email) {
 
 		if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-			return true;
+			return TRUE;
 		}
 
-		return false;
+		return FALSE;
 
 	}
 
-	public static function declared($input) {
-
-	}
-
+	// Validates that a Variable is declared and exists in memory
+	// An empty string, 0, or false, will return true
 	public static function optional($input) {
 
 	}
 
+	// Validates that a Variable is decalred and has a value
+	// An empty string does not validate but 0 and false do
 	public static function required($input) {
 
 	}
 
+	// Validates that a Variable contains only what is in the array
+	// It can only have what is in the array
 	public static function only_contain($input) {
 
 	}
 
+	// Validates that a Variable contains what is in the array
+	// It can have other characters but must have what is in the array
 	public static function must_contain($input) {
 
 	}
 
+	// Validates that a Variable is between two numbers
 	public static function between($input, $rangeStart, $rangeEnd) {
 
 	}
@@ -51,7 +56,7 @@ class MValidate {
 		for ($i = 0, $j = count($stateAbbreviationArray); $i < $j; $i++) {
 
 			if ($stateString == $stateAbbreviationArray[$i]) {
-				return true;
+				return TRUE;
 			}
 
 		}
@@ -60,13 +65,13 @@ class MValidate {
 		for ($i = 0, $j = count($stateArray); $i < $j; $i++) {
 
 			if ($stateString == $stateArray[$i]) {
-				return true;
+				return TRUE;
 			}
 
 		}
 
 		// If the state was not found
-		return false;
+		return FALSE;
 
 	}
 

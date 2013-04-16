@@ -303,7 +303,7 @@ class MLoad {
 
 	/********** JavaScript Functions **********/
 
-	public static function js_framework($js, $direction = null, $useHTTP = false) {
+	public static function js_framework($js, $direction = null, $useHTTP = FALSE) {
 
 		if (!empty($js)) {
 
@@ -342,7 +342,7 @@ class MLoad {
 
 	}
 
-	public static function js_application($js, $direction = null, $useHTTP = false) {
+	public static function js_application($js, $direction = null, $useHTTP = FALSE) {
 
 		if (!empty($js)) {
 
@@ -449,7 +449,7 @@ class MLoad {
 
 	/********** CSS Functions **********/
 
-	public static function css_framework($css, $direction = null, $useHTTP = false) {
+	public static function css_framework($css, $direction = null, $useHTTP = FALSE) {
 
 		if (!empty($css)) {
 
@@ -488,7 +488,7 @@ class MLoad {
 
 	}
 
-	public static function css_application($css, $direction = null, $useHTTP = false) {
+	public static function css_application($css, $direction = null, $useHTTP = FALSE) {
 
 		if (!empty($css)) {
 
@@ -594,7 +594,7 @@ class MLoad {
 
 	/********** Image Functions **********/
 
-	public static function img_src_framework($img, $direction = 'return', $useHTTP = false) {
+	public static function img_src_framework($img, $direction = 'return', $useHTTP = FALSE) {
 
 		if (!empty($img)) {
 
@@ -625,7 +625,7 @@ class MLoad {
 		return NULL;
 	}
 
-	public static function img_src_application($img, $direction = 'return', $useHTTP = false) {
+	public static function img_src_application($img, $direction = 'return', $useHTTP = FALSE) {
 
 		if (!empty($img)) {
 
@@ -656,7 +656,7 @@ class MLoad {
 		return NULL;
 	}
 
-	public static function icon_framework($icon, $direction = 'return', $useHTTP = false) {
+	public static function icon_framework($icon, $direction = 'return', $useHTTP = FALSE) {
 
 		if (!empty($icon)) {
 			return self::img_framework('icon/' . $icon, $direction, $useHTTP);

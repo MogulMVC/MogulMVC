@@ -14,7 +14,7 @@ function ob_callback() {
 
 	file_put_contents($page_location, $page_content);
 
-	return false;
+	return FALSE;
 
 }
 

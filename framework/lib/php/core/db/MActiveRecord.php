@@ -13,7 +13,7 @@ $connections = array();
 // Create connection if there are connections configured
 for ($i = 0; $i < count($GLOBALS['DB']); $i++) {
 
-	$array = array_slice($GLOBALS['DB'], $i, 1, true);
+	$array = array_slice($GLOBALS['DB'], $i, 1, TRUE);
 	$key = key($array);
 
 	$type = $array[$key]['type'];
@@ -28,7 +28,7 @@ for ($i = 0; $i < count($GLOBALS['DB']); $i++) {
 
 }
 
-$default_connection = key(array_slice($GLOBALS['DB'], 0, 1, true));
+$default_connection = key(array_slice($GLOBALS['DB'], 0, 1, TRUE));
 
 // must issue a "use" statement in your closure if passing variables
 ActiveRecord\Config::initialize(function($cfg) use ($connections) {
