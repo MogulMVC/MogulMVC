@@ -35,5 +35,5 @@ require_once (SERVER_ROOT . '/' . APPLICATION . '/config/variables.php');
 require_once (SERVER_ROOT . '/' . APPLICATION . '/config/autoload.php');
 require_once (SERVER_ROOT . '/' . FRAMEWORK . '/core/autoload.php');
 
-// The dispatcher runs the selected class
-require_once (SERVER_ROOT . '/' . FRAMEWORK . '/core/dispatcher.php');
+// The router determines the controller and function to run
+require_once (SERVER_ROOT . '/' . FRAMEWORK . '/core/router.php');

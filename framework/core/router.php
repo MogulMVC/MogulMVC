@@ -107,24 +107,6 @@ elseif ($SEGMENT1 == APPLICATION_COMMAND) {
 	
 }
 
-// Application Manifest JSON
-elseif ($SEGMENT2 == 'index' && $SEGMENT1 == 'application.js') {
-	
-	header('Content-Type: application/json');
-
-	$application = new stdClass();
-	$application -> name = APPLICATION_NAME;
-	$application -> description = APPLICATION_DESCRIPTION;
-	$application -> id = APPLICATION_ID;
-	$application -> icon = MURL::base() . '/' . APPLICATION . '/' . APPLICATION_IMG . '/' . APPLICATION_ICON . '?' . APPLICATION_VERSION;
-
-	// Output an JSON file describing the application
-	echo json_encode($application);
-
-	exit();
-	
-}
-
 // Robots.txt
 elseif ($SEGMENT2 == 'index' &&  $SEGMENT1 == 'robots.txt') {
 	

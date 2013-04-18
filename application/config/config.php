@@ -10,7 +10,6 @@ date_default_timezone_set('America/New_York');
 define('APPLICATION_COMPANY', 'Application Company');
 define('APPLICATION_NAME', 'Application Name');
 define('APPLICATION_DESCRIPTION', 'Application Description');
-define('APPLICATION_ID', 'SomeUniqueID');
 define('APPLICATION_PASSWORD', 'mogulpass321456');
 define('APPLICATION_VERSION', '130418');
 
