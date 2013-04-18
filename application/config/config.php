@@ -12,7 +12,7 @@ define('APPLICATION_NAME', 'Application Name');
 define('APPLICATION_DESCRIPTION', 'Application Description');
 define('APPLICATION_ID', 'SomeUniqueID');
 define('APPLICATION_PASSWORD', 'mogulpass321456');
-define('APPLICATION_VERSION', '130416');
+define('APPLICATION_VERSION', '130418');
 
 // Environment
 // 'development' 'production'
