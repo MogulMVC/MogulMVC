@@ -11,7 +11,7 @@ if (!defined('SERVER_ROOT')) {
 	exit ;
 }
 
-define('FRAMEWORK_VERSION', '130418');
+define('FRAMEWORK_VERSION', '130421');
 
 define('FRAMEWORK_IMG', 'img');
 define('FRAMEWORK_LIB_CSS', 'lib/css');
