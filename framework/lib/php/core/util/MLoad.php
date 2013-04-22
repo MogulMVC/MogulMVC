@@ -346,43 +346,30 @@ class MLoad {
 
 		if (!empty($js)) {
 
-			// Default location is the public folder
-			$location = APPLICATION . '/' . APPLICATION_PUBLIC_JS;
-			$ext = '';
-
 			// Add extension if one doesn't exist
 			if (!substr(strrchr($js, '.'), 1)) {
 				$js = $js . '.js';
 			}
 
-			// Check if the file exists in the public folder
-			if (!file_exists(SERVER_ROOT . '/' . $location . '/' . $js)) {
-				
-				// Change the location to the lib folder
-				$location = APPLICATION . '/' . APPLICATION_LIB_JS;
-				$ext = '.php';
-				
-				// Check if the file exists in the lib folder
-				if (!file_exists(SERVER_ROOT . '/' . $location . '/' . $js . '.php')) {
-					trigger_error('error - ' . $js . ' not found in ' . $location . '.', E_USER_ERROR);
-				}
-				
+			// Check if the file exists
+			if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_LIB_JS . '/' . $js)) {
+				trigger_error('error - ' . $js . ' not found in ' . APPLICATION . '/' . APPLICATION_LIB_JS . '.', E_USER_ERROR);
 			}
 
-			$version = filemtime(SERVER_ROOT . '/' . $location . '/' . $js . $ext);
+			$version = filemtime(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_LIB_JS . '/' . $js);
 
-			$src = $location . '/' . $js . $ext;
+			$src = APPLICATION . '/' . APPLICATION_LIB_JS . '/' . $js;
 			
 			// If use HTTP is true include an HTTP section
 			if ($useHTTP) {
-				$src = 'http://' . $_SERVER['SERVER_NAME'] . '/' . $location . '/' . $js . $ext;
+				$src = 'http://' . $_SERVER['SERVER_NAME'] . '/' . APPLICATION . '/' . APPLICATION_LIB_JS . '/' . $js;
 			}
 
 			// Only include it as part of the global js
 			if ($direction == null) {
 				array_push($GLOBALS['LOAD_JS_APPLICATION'], $js);
 			}
-
+			
 			// Echo the link
 			elseif ($direction == 'echo') {
 				echo '<script src="/' . $src . '?' . $version . '"></script>';
@@ -492,42 +479,30 @@ class MLoad {
 
 		if (!empty($css)) {
 
-			// Default location is the public folder
-			$location = APPLICATION . '/' . APPLICATION_PUBLIC_CSS;
-			$ext = '';
-
 			// Add extension if one doesn't exist
 			if (!substr(strrchr($css, '.'), 1)) {
 				$css = $css . '.css';
 			}
 
 			// Check if the file exists
-			if (!file_exists(SERVER_ROOT . '/' . $location . '/' . $css)) {
-				
-				// Change the location to the lib folder
-				$location = APPLICATION . '/' . APPLICATION_LIB_CSS;
-				$ext = '.php';
-				
-				// Check if the file exists in the lib folder
-				if (!file_exists(SERVER_ROOT . '/' . $location . '/' . $css . '.php')) {
-					trigger_error('error - ' . $css . ' not found in ' . $location . '.', E_USER_ERROR);
-				}
+			if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_LIB_CSS . '/' . $css)) {
+				trigger_error('error - ' . $css . ' not found in ' . APPLICATION . '/' . APPLICATION_LIB_CSS . '.', E_USER_ERROR);
 			}
 
-			$version = filemtime(SERVER_ROOT . '/' . $location . '/' . $css . $ext);
+			$version = filemtime(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_LIB_CSS . '/' . $css);
 
-			$src = $location . '/' . $css . $ext;
+			$src = '/' . APPLICATION . '/' . APPLICATION_LIB_CSS . '/' . $css;
 
 			// If use HTTP is true include an HTTP section
 			if ($useHTTP) {
-				$src = 'http://' . $_SERVER['SERVER_NAME'] . '/' . $location . '/' . $css . $ext;
+				$src = 'http://' . $_SERVER['SERVER_NAME'] . '/' . APPLICATION . '/' . APPLICATION_LIB_CSS . '/' . $css;
 			}
 
 			// Only include it as part of the global js
 			if ($direction == null) {
 				array_push($GLOBALS['LOAD_CSS_APPLICATION'], $css);
 			}
-
+			
 			// Echo the link
 			elseif ($direction == 'echo') {
 				echo '<link href="/' . $src . '?' . $version . '" type="text/css" rel="stylesheet" />';

@@ -34,8 +34,8 @@ echo $GLOBALS['DOCTYPE']['html4-transitional'];
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
 
 	<?php
-		MLoad::template_framework('head_css');
-		MLoad::template_framework('head_js');
+		MLoad::template_framework('load_css');
+		MLoad::template_framework('load_js');
 	?>
 
 </head>

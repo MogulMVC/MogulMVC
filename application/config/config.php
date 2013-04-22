@@ -11,7 +11,7 @@ define('APPLICATION_COMPANY', 'Application Company');
 define('APPLICATION_NAME', 'Application Name');
 define('APPLICATION_DESCRIPTION', 'Application Description');
 define('APPLICATION_PASSWORD', 'mogulpass321456');
-define('APPLICATION_VERSION', '130421');
+define('APPLICATION_VERSION', '130422');
 
 // Environment
 // 'development' 'production'
@@ -34,8 +34,6 @@ define('APPLICATION_LIB_PHP', 'lib/php');
 define('APPLICATION_MISC', 'public/misc');
 define('APPLICATION_MODEL', 'model');
 define('APPLICATION_PUBLIC', 'public');
-define('APPLICATION_PUBLIC_CSS', 'public/css');
-define('APPLICATION_PUBLIC_JS', 'public/js');
 define('APPLICATION_UPLOAD', 'public/upload');
 define('APPLICATION_VIEW', 'view');
 define('APPLICATION_VO', 'model/vo');
