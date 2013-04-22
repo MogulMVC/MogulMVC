@@ -7,7 +7,7 @@ if (!defined('SERVER_ROOT')) {
 $GLOBALS['AUTOLOAD_PHP_FRAMEWORK'] = array();
 $GLOBALS['AUTOLOAD_PHP_APPLICATION'] = array();
 
-$GLOBALS['AUTOLOAD_CSS_FRAMEWORK'] = array('core/MIcons', 'core/MStyle', 'core/style');
+$GLOBALS['AUTOLOAD_CSS_FRAMEWORK'] = array('3rdparty/normalize', 'core/MIcons', 'core/MStyle', 'core/style');
 $GLOBALS['AUTOLOAD_CSS_APPLICATION'] = array();
 $GLOBALS['AUTOLOAD_CSS_EXTERNAL'] = array();
 

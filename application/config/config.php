@@ -50,12 +50,3 @@ define('APPLICATION_HEAD', 'template/head');
 define('APPLICATION_HEADER', 'template/header');
 define('APPLICATION_FOOTER', 'template/footer');
 define('APPLICATION_FOOT', 'template/foot');
-
-// Favicon
-// File locations start within the APPLICATION_IMG folder
-// 16x16 ico file
-define('APPLICATION_FAVICON', 'favicon.ico');
-
-// File locations start within the APPLICATION_IMG folder
-// 64x64 png file
-define('APPLICATION_ICON', 'icon.png');

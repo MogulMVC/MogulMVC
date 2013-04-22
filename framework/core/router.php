@@ -44,21 +44,8 @@ if (!empty($URI_ARRAY[2])) {
 
 //These choices go in order of likelihood
 
-// Favicon
-if ($SEGMENT1 == 'favicon.ico') {
-	
-	//header('Content-Type: image/x-icon');
-
-	//echo file_get_contents(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_IMG . '/' . APPLICATION_FAVICON);
-
-	header('Location: /' . APPLICATION . '/' . APPLICATION_IMG . '/' . APPLICATION_FAVICON);
-	
-	exit();
-	
-}
-
 // Action
-elseif ($SEGMENT1 == APPLICATION_ACTION_URL) {
+if ($SEGMENT1 == APPLICATION_ACTION_URL) {
 
 	//Check if the action exists
 	if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_ACTION . '/' . $SEGMENT2 . '.php')) {
@@ -103,16 +90,6 @@ elseif ($SEGMENT1 == APPLICATION_COMMAND) {
 
 	require_once (SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_COMMAND . '/' . $URI_ARRAY[3] . '.php');
 
-	exit();
-	
-}
-
-// Robots.txt
-elseif ($SEGMENT2 == 'index' &&  $SEGMENT1 == 'robots.txt') {
-	
-	header('Content-Type: text');
-	require (SERVER_ROOT . '/' . APPLICATION . '/config/robots.txt');
-	
 	exit();
 	
 }
