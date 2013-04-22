@@ -319,8 +319,9 @@ class MLoad {
 
 			$version = filemtime(SERVER_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_LIB_JS . '/' . $js);
 
-			// If use HTTP is true include an HTTP section
 			$src = '/' . FRAMEWORK . '/' . FRAMEWORK_LIB_JS . '/' . $js;
+
+			// If use HTTP is true include an HTTP section
 			if ($useHTTP) {
 				$src = 'http://' . $_SERVER['SERVER_NAME'] . '/' . FRAMEWORK . '/' . FRAMEWORK_LIB_JS . '/' . $js;
 			}
@@ -358,7 +359,7 @@ class MLoad {
 
 			$version = filemtime(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_LIB_JS . '/' . $js);
 
-			$src = APPLICATION . '/' . APPLICATION_LIB_JS . '/' . $js;
+			$src = '/' . APPLICATION . '/' . APPLICATION_LIB_JS . '/' . $js;
 			
 			// If use HTTP is true include an HTTP section
 			if ($useHTTP) {
@@ -372,11 +373,11 @@ class MLoad {
 			
 			// Echo the link
 			elseif ($direction == 'echo') {
-				echo '<script src="/' . $src . '?' . $version . '"></script>';
+				echo '<script src="' . $src . '?' . $version . '"></script>';
 			}
 
 			// Return the link
-			return '<script src="/' . $src . '?' . $version . '"></script>';
+			return '<script src="' . $src . '?' . $version . '"></script>';
 
 		}
 
@@ -398,7 +399,6 @@ class MLoad {
 
 			$version = filemtime(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_CACHE . '/' . $js);
 
-			// If use HTTP is true include an HTTP section
 			$src = '/' . APPLICATION . '/' . APPLICATION_CACHE . '/' . $js;
 
 			// Echo the link
@@ -452,8 +452,9 @@ class MLoad {
 
 			$version = filemtime(SERVER_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_LIB_CSS . '/' . $css);
 
-			// If use HTTP is true include an HTTP section
 			$src = '/' . FRAMEWORK . '/' . FRAMEWORK_LIB_CSS . '/' . $css;
+
+			// If use HTTP is true include an HTTP section
 			if ($useHTTP) {
 				$src = 'http://' . $_SERVER['SERVER_NAME'] . '/' . FRAMEWORK . '/' . FRAMEWORK_LIB_CSS . '/' . $css;
 			}
@@ -505,11 +506,11 @@ class MLoad {
 			
 			// Echo the link
 			elseif ($direction == 'echo') {
-				echo '<link href="/' . $src . '?' . $version . '" type="text/css" rel="stylesheet" />';
+				echo '<link href="' . $src . '?' . $version . '" type="text/css" rel="stylesheet" />';
 			}
 
 			// Return the link
-			return '<link href="/' . $src . '?' . $version . '" type="text/css" rel="stylesheet" />';
+			return '<link href="' . $src . '?' . $version . '" type="text/css" rel="stylesheet" />';
 
 		}
 
@@ -531,7 +532,6 @@ class MLoad {
 
 			$version = filemtime(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_CACHE . '/' . $css);
 
-			// If use HTTP is true include an HTTP section
 			$src = '/' . APPLICATION . '/' . APPLICATION_CACHE . '/' . $css;
 
 			// Echo the link
