@@ -43,4 +43,14 @@ class MMath {
 
 	}
 
+	public static function multiple_of($number, $multiple) {
+
+		if ($number % $multiple == 0) {
+			return TRUE;
+		}
+
+		return FALSE;
+
+	}
+
 }
