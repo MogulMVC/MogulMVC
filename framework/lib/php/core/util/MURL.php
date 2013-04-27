@@ -24,7 +24,7 @@ class MURL {
 
 		$uri = explode('.', $_SERVER['SERVER_NAME']);
 
-		$subdomain = $uri[count($uri) - 3];
+		$subdomain = $uri[0];
 		return $subdomain;
 
 	}
