@@ -22,12 +22,12 @@ class MURL {
 
 	public static function subdomain() {
 
-		$uri = explode('.', $_SERVER['SERVER_NAME']);
+		$url = explode('.', $_SERVER['SERVER_NAME']);
 
 		$subdomain = '';
 
-		if (isset($uri[0])) {
-			$subdomain = $uri[0];
+		if (isset($url[0])) {
+			$subdomain = $url[0];
 		}
 
 		return $subdomain;
@@ -36,10 +36,10 @@ class MURL {
 
 	public static function domain() {
 
-		$uri = explode('.', $_SERVER['SERVER_NAME']);
+		$url = explode('.', $_SERVER['SERVER_NAME']);
 
-		$ext = $uri[count($uri) - 1];
-		$domain = $uri[count($uri) - 2];
+		$ext = $url[count($url) - 1];
+		$domain = $url[count($url) - 2];
 		return $domain . '.' . $ext;
 
 	}
@@ -58,11 +58,11 @@ class MURL {
 
 	public static function segment($segment) {
 
-		$uri = explode('/', $_SERVER['REQUEST_URI']);
+		$url = explode('/', $_SERVER['REQUEST_URI']);
 
-		if (!empty($uri[$segment])) {
+		if (!empty($url[$segment])) {
 
-			return MString::sub_before($uri[$segment], '?');
+			return MString::sub_before($url[$segment], '?');
 
 		} else {
 

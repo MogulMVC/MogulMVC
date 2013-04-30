@@ -32,7 +32,7 @@ if (APPLICATION_ENVIRONMENT == 'production') {
 	// Minify all JS if no cached file exists
 	if (!file_exists(SERVER_ROOT . '/' . APPLICATION . '/' . APPLICATION_CACHE . '/' . 'main' . APPLICATION_VERSION . '.js')) {
 
-		MLoad::php_framework('3rdparty/util/jsmin');
+		MLoad::php_framework('vendor/util/jsmin');
 
 		$js_file = '';
 

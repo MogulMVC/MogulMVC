@@ -6,7 +6,7 @@ if (!defined('SERVER_ROOT')) {
 
 require_once (SERVER_ROOT . '/' . APPLICATION . '/config/database.php');
 
-MLoad::php_framework('3rdparty/db/ActiveRecord');
+MLoad::php_framework('vendor/db/ActiveRecord');
 
 $connections = array();
 
