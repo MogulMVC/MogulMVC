@@ -23,16 +23,28 @@ class MString {
 		return $string;
 	}
 
+	public function to_boolean($value) {
+
+		// Check if it's a string of true or false
+		if (is_string($value) && ($value == 'true' || $value == 'TRUE')) {
+			return TRUE;
+		}
+
+		// Check if it's a string of 1 or 0
+		if (is_string($value) && $value == '1') {
+			return TRUE;
+		}
+
+		return FALSE;
+
+	}
+
 	public static function sub_before($string, $character) {
 		if ($character_position = strpos($string, $character)) {
 			$string = substr($string, 0, $character_position);
 		}
 
 		return $string;
-	}
-
-	public static function newline_remove($string) {
-		return preg_replace('/[\n\r]/', ' ', $string);
 	}
 
 	public static function url_link($string, $nofollow = TRUE) {
@@ -48,6 +60,10 @@ class MString {
 	public static function url_title($string, $seperator = '-') {
 		$string = str_replace(' ', $seperator, $title);
 		return ($string);
+	}
+
+	public static function newline_remove($string) {
+		return preg_replace('/[\n\r]/', ' ', $string);
 	}
 
 }

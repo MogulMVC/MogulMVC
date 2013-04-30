@@ -6,10 +6,6 @@ if (!defined('SERVER_ROOT')) {
 
 class MMath {
 
-	public static function random($min, $max) {
-		return mt_rand($min, $max);
-	}
-
 	public static function linear_regression($x, $y) {
 
 		// calculate number points
@@ -40,16 +36,6 @@ class MMath {
 
 		// return result
 		return array('slope' => $m, 'intercept' => $b);
-
-	}
-
-	public static function multiple_of($number, $multiple) {
-
-		if ($number % $multiple == 0) {
-			return TRUE;
-		}
-
-		return FALSE;
 
 	}
 

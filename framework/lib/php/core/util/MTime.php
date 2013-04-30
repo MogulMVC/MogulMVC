@@ -39,18 +39,18 @@ class MTime {
 		//Output
 		//If there are hours
 		if ($hours >= 0) {
-			$hms = $hours_pad + $hours + ':' + $minutes_pad + $minutes + ':' + $seconds_pad + $seconds;
+			$hms = $hours_pad . $hours . ':' . $minutes_pad . $minutes . ':' . $seconds_pad . $seconds;
 		}
 
 		//If there are no hours but there are mins
 		if ($hours <= 0 && $minutes > 0) {
-			$hms = $minutes_pad + $minutes + ':' + $seconds_pad + $seconds;
+			$hms = $minutes_pad . $minutes . ':' . $seconds_pad . $seconds;
 		}
 
 		//If there are no hours and no minutes
 		//This will display 00 if there are 0 seconds
 		if ($hours <= 0 && $minutes <= 0) {
-			$hms = $seconds_pad + $seconds;
+			$hms = $seconds_pad . $seconds;
 		}
 
 		return $hms;

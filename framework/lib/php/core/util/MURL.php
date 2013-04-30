@@ -24,7 +24,12 @@ class MURL {
 
 		$uri = explode('.', $_SERVER['SERVER_NAME']);
 
-		$subdomain = $uri[0];
+		$subdomain = '';
+
+		if (isset($uri[0])) {
+			$subdomain = $uri[0];
+		}
+
 		return $subdomain;
 
 	}
@@ -39,7 +44,7 @@ class MURL {
 
 	}
 
-	public static function base() {
+	public static function canonical() {
 
 		return self::protocol() . '://' . $_SERVER['SERVER_NAME'];
 
@@ -61,7 +66,7 @@ class MURL {
 
 		} else {
 
-			return NULL;
+			return '';
 
 		}
 

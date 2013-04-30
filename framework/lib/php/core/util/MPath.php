@@ -1,4 +1,8 @@
 <?php
+if (!defined('SERVER_ROOT')) {
+	header('Location: /error_404');
+	exit ;
+}
 
 class MPath {
 
@@ -79,6 +83,14 @@ class MPath {
 	/********** Other Functions **********/
 
 	public static function command() {
+
+	}
+
+	public static function public_upload() {
+
+	}
+
+	public static function public_misc() {
 
 	}
 

@@ -30,18 +30,34 @@ class MValidate {
 
 	// Validates that a Variable contains only what is in the array
 	// It can only have what is in the array
-	public static function only_contain($input) {
+	public static function only_contain($input, $array) {
 
 	}
 
 	// Validates that a Variable contains what is in the array
 	// It can have other characters but must have what is in the array
-	public static function must_contain($input) {
+	public static function must_contain($input, $array) {
 
 	}
 
 	// Validates that a Variable is between two numbers
-	public static function between($input, $rangeStart, $rangeEnd) {
+	public static function between($value, $min, $max) {
+
+		if ($value > $min && $value < $max) {
+			return TRUE;
+		}
+
+		return FALSE;
+
+	}
+
+	public static function multiple_of($number, $multiple) {
+
+		if ($number % $multiple == 0) {
+			return TRUE;
+		}
+
+		return FALSE;
 
 	}
 

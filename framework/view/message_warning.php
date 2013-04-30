@@ -5,6 +5,12 @@ if (!defined('SERVER_ROOT')) {
 }
 ?>
 
+<?php
+if (!isset($bg)) {
+	$bg = '';
+}
+?>
+
 <div class="MHoverMessage">  
   <div class="MIconWarning150x150 left"/></div>
   <h3 id="warning_title" class="bold red"><?php echo $title; ?></h3>
