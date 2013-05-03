@@ -2,12 +2,12 @@
 
 echo 'This is from the default action';
 
-echo "GET\n";
-if(!empty($_GET)){
+if (!empty($_GET)) {
+	echo '<br /><br />GET Variables<br />';
 	var_dump($_GET);
 }
 
-echo "POST\n";
-if(!empty($_POST)){
+if (!empty($_POST)) {
+	echo '<br /><br />POST Variables<br />';
 	var_dump($_POST);
 }

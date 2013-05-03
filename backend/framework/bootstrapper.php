@@ -9,8 +9,6 @@ require_once (BACKEND_ROOT . '/' . FRAMEWORK . '/core/config.php');
 require_once (BACKEND_ROOT . '/' . APPLICATION . '/config/config.php');
 require_once (BACKEND_ROOT . '/' . FRAMEWORK . '/core/environment.php');
 
-echo BACKEND_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_PHP . '/core/util/MLoad.php';
-
 // Used to load all the other libraries
 require_once (BACKEND_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_PHP . '/core/util/MLoad.php');
 

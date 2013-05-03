@@ -274,11 +274,11 @@ class MLoad {
 				$library = $library . '.php';
 			}
 
-			if (!file_exists(BACKEND_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_LIB_PHP . '/' . $library)) {
+			if (!file_exists(BACKEND_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_PHP . '/' . $library)) {
 				trigger_error('error - ' . $library . ' not found.', E_USER_ERROR);
 			}
 
-			require_once (BACKEND_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_LIB_PHP . '/' . $library);
+			require_once (BACKEND_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_PHP . '/' . $library);
 		}
 
 	}
@@ -292,11 +292,11 @@ class MLoad {
 				$library = $library . '.php';
 			}
 
-			if (!file_exists(BACKEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_LIB_PHP . '/' . $library)) {
+			if (!file_exists(BACKEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_PHP . '/' . $library)) {
 				trigger_error('error - ' . $library . ' not found.', E_USER_ERROR);
 			}
 
-			require_once (BACKEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_LIB_PHP . '/' . $library);
+			require_once (BACKEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_PHP . '/' . $library);
 		}
 
 	}
@@ -313,17 +313,17 @@ class MLoad {
 			}
 
 			// Check if the file exists
-			if (!file_exists(BACKEND_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_LIB_JS . '/' . $js)) {
-				trigger_error('error - ' . $js . ' not found in ' . FRAMEWORK . '/' . FRAMEWORK_LIB_JS . '.', E_USER_ERROR);
+			if (!file_exists(FRONTEND_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_JS . '/' . $js)) {
+				trigger_error('error - ' . $js . ' not found in ' . FRAMEWORK . '/' . FRAMEWORK_JS . '.', E_USER_ERROR);
 			}
 
-			$version = filemtime(BACKEND_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_LIB_JS . '/' . $js);
+			$version = filemtime(FRONTEND_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_JS . '/' . $js);
 
-			$src = '/' . FRAMEWORK . '/' . FRAMEWORK_LIB_JS . '/' . $js;
+			$src = '/' . FRAMEWORK . '/' . FRAMEWORK_JS . '/' . $js;
 
 			// If use HTTP is true include an HTTP section
 			if ($useHTTP) {
-				$src = 'http://' . $_SERVER['SERVER_NAME'] . '/' . FRAMEWORK . '/' . FRAMEWORK_LIB_JS . '/' . $js;
+				$src = 'http://' . $_SERVER['SERVER_NAME'] . '/' . FRAMEWORK . '/' . FRAMEWORK_JS . '/' . $js;
 			}
 
 			// Only include it as part of the global js
@@ -353,17 +353,17 @@ class MLoad {
 			}
 
 			// Check if the file exists
-			if (!file_exists(BACKEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_LIB_JS . '/' . $js)) {
-				trigger_error('error - ' . $js . ' not found in ' . APPLICATION . '/' . APPLICATION_LIB_JS . '.', E_USER_ERROR);
+			if (!file_exists(FRONTEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_JS . '/' . $js)) {
+				trigger_error('error - ' . $js . ' not found in ' . APPLICATION . '/' . APPLICATION_JS . '.', E_USER_ERROR);
 			}
 
-			$version = filemtime(BACKEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_LIB_JS . '/' . $js);
+			$version = filemtime(FRONTEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_JS . '/' . $js);
 
-			$src = '/' . APPLICATION . '/' . APPLICATION_LIB_JS . '/' . $js;
+			$src = '/' . APPLICATION . '/' . APPLICATION_JS . '/' . $js;
 			
 			// If use HTTP is true include an HTTP section
 			if ($useHTTP) {
-				$src = 'http://' . $_SERVER['SERVER_NAME'] . '/' . APPLICATION . '/' . APPLICATION_LIB_JS . '/' . $js;
+				$src = 'http://' . $_SERVER['SERVER_NAME'] . '/' . APPLICATION . '/' . APPLICATION_JS . '/' . $js;
 			}
 
 			// Only include it as part of the global js
@@ -393,11 +393,11 @@ class MLoad {
 			}
 
 			// Check if the file exists
-			if (!file_exists(BACKEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_CACHE . '/' . $js)) {
+			if (!file_exists(FRONTEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_CACHE . '/' . $js)) {
 				trigger_error('error - ' . $js . ' not found in ' . APPLICATION . '/' . APPLICATION_CACHE . '.', E_USER_ERROR);
 			}
 
-			$version = filemtime(BACKEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_CACHE . '/' . $js);
+			$version = filemtime(FRONTEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_CACHE . '/' . $js);
 
 			$src = '/' . APPLICATION . '/' . APPLICATION_CACHE . '/' . $js;
 
@@ -446,17 +446,17 @@ class MLoad {
 			}
 
 			// Check if the file exists
-			if (!file_exists(BACKEND_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_LIB_CSS . '/' . $css)) {
-				trigger_error('error - ' . $css . ' not found in ' . FRAMEWORK . '/' . FRAMEWORK_LIB_CSS . '.', E_USER_ERROR);
+			if (!file_exists(FRONTEND_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_CSS . '/' . $css)) {
+				trigger_error('error - ' . $css . ' not found in ' . FRAMEWORK . '/' . FRAMEWORK_CSS . '.', E_USER_ERROR);
 			}
 
-			$version = filemtime(BACKEND_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_LIB_CSS . '/' . $css);
+			$version = filemtime(FRONTEND_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_CSS . '/' . $css);
 
-			$src = '/' . FRAMEWORK . '/' . FRAMEWORK_LIB_CSS . '/' . $css;
+			$src = '/' . FRAMEWORK . '/' . FRAMEWORK_CSS . '/' . $css;
 
 			// If use HTTP is true include an HTTP section
 			if ($useHTTP) {
-				$src = 'http://' . $_SERVER['SERVER_NAME'] . '/' . FRAMEWORK . '/' . FRAMEWORK_LIB_CSS . '/' . $css;
+				$src = 'http://' . $_SERVER['SERVER_NAME'] . '/' . FRAMEWORK . '/' . FRAMEWORK_CSS . '/' . $css;
 			}
 
 			// Only include it as part of the global js
@@ -486,17 +486,17 @@ class MLoad {
 			}
 
 			// Check if the file exists
-			if (!file_exists(BACKEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_LIB_CSS . '/' . $css)) {
-				trigger_error('error - ' . $css . ' not found in ' . APPLICATION . '/' . APPLICATION_LIB_CSS . '.', E_USER_ERROR);
+			if (!file_exists(FRONTEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_CSS . '/' . $css)) {
+				trigger_error('error - ' . $css . ' not found in ' . APPLICATION . '/' . APPLICATION_CSS . '.', E_USER_ERROR);
 			}
 
-			$version = filemtime(BACKEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_LIB_CSS . '/' . $css);
+			$version = filemtime(FRONTEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_CSS . '/' . $css);
 
-			$src = '/' . APPLICATION . '/' . APPLICATION_LIB_CSS . '/' . $css;
+			$src = '/' . APPLICATION . '/' . APPLICATION_CSS . '/' . $css;
 
 			// If use HTTP is true include an HTTP section
 			if ($useHTTP) {
-				$src = 'http://' . $_SERVER['SERVER_NAME'] . '/' . APPLICATION . '/' . APPLICATION_LIB_CSS . '/' . $css;
+				$src = 'http://' . $_SERVER['SERVER_NAME'] . '/' . APPLICATION . '/' . APPLICATION_CSS . '/' . $css;
 			}
 
 			// Only include it as part of the global js
@@ -526,11 +526,11 @@ class MLoad {
 			}
 
 			// Check if the file exists
-			if (!file_exists(BACKEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_CACHE . '/' . $css)) {
+			if (!file_exists(FRONTEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_CACHE . '/' . $css)) {
 				trigger_error('error - ' . $css . ' not found in ' . APPLICATION . '/' . APPLICATION_CACHE . '.', E_USER_ERROR);
 			}
 
-			$version = filemtime(BACKEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_CACHE . '/' . $css);
+			$version = filemtime(FRONTEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_CACHE . '/' . $css);
 
 			$src = '/' . APPLICATION . '/' . APPLICATION_CACHE . '/' . $css;
 
@@ -574,11 +574,11 @@ class MLoad {
 		if (!empty($img)) {
 
 			// Check if the file exists
-			if (!file_exists(BACKEND_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_IMG . '/' . $img)) {
-				trigger_error('error - image ' . $img . ' not found in '. FRAMEWORK . '/' . FRAMEWORK_IMG .'.', E_USER_ERROR);
+			if (!file_exists(FRONTEND_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_IMG . '/' . $img)) {
+				echo 'error - image ' . $img . ' not found in '. FRAMEWORK . '/' . FRAMEWORK_IMG .'.';
 			}
 
-			$version = filemtime(BACKEND_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_IMG . '/' . $img);
+			$version = filemtime(FRONTEND_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_IMG . '/' . $img);
 
 			$src = '/' . FRAMEWORK . '/' . FRAMEWORK_IMG . '/' . $img . '?' . $version;
 			
@@ -605,11 +605,11 @@ class MLoad {
 		if (!empty($img)) {
 
 			// Check if the file exists
-			if (!file_exists(BACKEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_IMG . '/' . $img)) {
-				trigger_error('error - image ' . $img . ' not found in '. APPLICATION . '/' . APPLICATION_IMG .'.', E_USER_ERROR);
+			if (!file_exists(FRONTEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_IMG . '/' . $img)) {
+				echo 'error - image ' . $img . ' not found in '. APPLICATION . '/' . APPLICATION_IMG .'.';
 			}
 
-			$version = filemtime(BACKEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_IMG . '/' . $img);
+			$version = filemtime(FRONTEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_IMG . '/' . $img);
 
 			$src = '/' . APPLICATION . '/' . APPLICATION_IMG . '/' . $img . '?' . $version;
 			

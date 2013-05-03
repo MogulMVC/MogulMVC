@@ -23,18 +23,20 @@ for ($i = 0; $i < count($GLOBALS['DB']); $i++) {
 	$user = $array[$key]['user'];
 	$pass = $array[$key]['pass'];
 
-	$value = $type . '://' . $user . ':' . $pass . '@' . $host . '[:' . $port . ']/' . $name;
+	$value = $type . '://' . $user . ':' . $pass . '@' . $host . ':' . $port . '/' . $name;
 	$connections[$key] = $value;
 
 }
 
-$default_connection = key(array_slice($GLOBALS['DB'], 0, 1, TRUE));
-
 // must issue a "use" statement in your closure if passing variables
 ActiveRecord\Config::initialize(function($cfg) use ($connections) {
+
+	$default_connection = key(array_slice($GLOBALS['DB'], 0, 1, TRUE));
+
 	$cfg -> set_model_directory(BACKEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_MODEL);
 	$cfg -> set_connections($connections);
 	$cfg -> set_default_connection($default_connection);
+
 });
 
 // Create the base class

@@ -12,7 +12,7 @@ class MString {
 		$string = '';
 
 		for ($i = 0; $i < $length; $i++) {
-			$random_number = rand(0, count($possible_characters));
+			$random_number = rand(0, count($possible_characters) - 1);
 
 			$random_character = $possible_characters[$random_number];
 

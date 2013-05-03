@@ -9,19 +9,34 @@ require (BACKEND_ROOT . '/' . APPLICATION . '/config/autoload.php');
 // Development
 if (APPLICATION_ENVIRONMENT == 'development') {
 
+	if (count($GLOBALS['AUTOLOAD_JS_FRAMEWORK'])) {
+		echo "\n" . '<!-- Load JS Framework -->' . "\n";
+	}
+
 	// Autoload Framework JavaScript
 	foreach ($GLOBALS['AUTOLOAD_JS_FRAMEWORK'] as $JS) {
 		MLoad::js_framework($JS, 'echo');
+		echo "\n";
+	}
+
+	if (count($GLOBALS['AUTOLOAD_JS_APPLICATION'])) {
+		echo "\n" . '<!-- Load JS Application -->' . "\n";
 	}
 
 	// Autoload Application JavaScript
 	foreach ($GLOBALS['AUTOLOAD_JS_APPLICATION'] as $JS) {
 		MLoad::js_application($JS, 'echo');
+		echo "\n";
 	}
-	
+
+	if (count($GLOBALS['AUTOLOAD_JS_EXTERNAL'])) {
+		echo "\n" . '<!-- Load JS External -->' . "\n";
+	}
+
 	// Autoload External JavaScript
 	foreach ($GLOBALS['AUTOLOAD_JS_EXTERNAL'] as $JS) {
 		MLoad::js_external($JS, 'echo');
+		echo "\n";
 	}
 
 }
@@ -42,7 +57,7 @@ if (APPLICATION_ENVIRONMENT == 'production') {
 			if (!substr(strrchr($JS, '.'), 1)) {
 				$JS = $JS . '.js';
 			}
-			$js_file .= JSMin::minify(file_get_contents(BACKEND_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_LIB_JS . '/' . $JS));
+			$js_file .= JSMin::minify(file_get_contents(BACKEND_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_JS . '/' . $JS));
 		}
 
 		// Minify the application js
@@ -51,7 +66,7 @@ if (APPLICATION_ENVIRONMENT == 'production') {
 			if (!substr(strrchr($JS, '.'), 1)) {
 				$JS = $JS . '.js';
 			}
-			$js_file .= JSMin::minify(file_get_contents(BACKEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_LIB_JS . '/' . $JS));
+			$js_file .= JSMin::minify(file_get_contents(BACKEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_JS . '/' . $JS));
 		}
 
 		$js_file = JSMin::minify($js_file);
