@@ -15,7 +15,7 @@ define('APPLICATION_VERSION', '130504');
 
 // Environment
 // 'development' 'production'
-define('APPLICATION_ENVIRONMENT', 'development');
+define('APPLICATION_ENVIRONMENT', 'production');
 
 // URL Keywords
 define('APPLICATION_ACTION_URL', 'action');

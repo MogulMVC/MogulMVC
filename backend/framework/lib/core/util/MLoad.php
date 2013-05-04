@@ -393,13 +393,13 @@ class MLoad {
 			}
 
 			// Check if the file exists
-			if (!file_exists(FRONTEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_CACHE . '/' . $js)) {
-				trigger_error('error - ' . $js . ' not found in ' . APPLICATION . '/' . APPLICATION_CACHE . '.', E_USER_ERROR);
+			if (!file_exists(FRONTEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_FRONTEND_CACHE . '/' . $js)) {
+				trigger_error('error - ' . $js . ' not found in ' . APPLICATION . '/' . APPLICATION_FRONTEND_CACHE . '.', E_USER_ERROR);
 			}
 
-			$version = filemtime(FRONTEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_CACHE . '/' . $js);
+			$version = filemtime(FRONTEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_FRONTEND_CACHE . '/' . $js);
 
-			$src = '/' . APPLICATION . '/' . APPLICATION_CACHE . '/' . $js;
+			$src = '/' . APPLICATION . '/' . APPLICATION_FRONTEND_CACHE . '/' . $js;
 
 			// Echo the link
 			if ($direction == 'echo') {
@@ -526,13 +526,13 @@ class MLoad {
 			}
 
 			// Check if the file exists
-			if (!file_exists(FRONTEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_CACHE . '/' . $css)) {
-				trigger_error('error - ' . $css . ' not found in ' . APPLICATION . '/' . APPLICATION_CACHE . '.', E_USER_ERROR);
+			if (!file_exists(FRONTEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_FRONTEND_CACHE . '/' . $css)) {
+				trigger_error('error - ' . $css . ' not found in ' . APPLICATION . '/' . APPLICATION_FRONTEND_CACHE . '.', E_USER_ERROR);
 			}
 
-			$version = filemtime(FRONTEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_CACHE . '/' . $css);
+			$version = filemtime(FRONTEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_FRONTEND_CACHE . '/' . $css);
 
-			$src = '/' . APPLICATION . '/' . APPLICATION_CACHE . '/' . $css;
+			$src = '/' . APPLICATION . '/' . APPLICATION_FRONTEND_CACHE . '/' . $css;
 
 			// Echo the link
 			if ($direction == 'echo') {
