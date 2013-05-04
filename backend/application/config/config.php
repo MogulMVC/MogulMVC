@@ -11,7 +11,11 @@ define('APPLICATION_COMPANY', 'Application Company');
 define('APPLICATION_NAME', 'Application Name');
 define('APPLICATION_DESCRIPTION', 'Application Description');
 define('APPLICATION_PASSWORD', 'mogulpass321456');
+<<<<<<< HEAD
 define('APPLICATION_VERSION', '130504');
+=======
+define('APPLICATION_VERSION', '130503');
+>>>>>>> fb19e6e9cb926214ce2af4789bf65aa2b201c353
 
 // Environment
 // 'development' 'production'
