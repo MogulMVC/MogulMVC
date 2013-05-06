@@ -1,9 +1,3 @@
-<?php
-if (!defined('BACKEND_ROOT')) {
-	header('/error_404');
-	exit ;
-}
-?>
 <?php 
 // 'xhtml11' 'xhtml1-strict' 'xhtml1-transitional' 'xhtml1-frame' 'html5' 'html4-strict' 'html4-transitional' 'html4-frame'
 echo $GLOBALS['DOCTYPE']['html4-transitional'];

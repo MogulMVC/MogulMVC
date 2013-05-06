@@ -1,9 +1,3 @@
-<?php
-if (!defined('BACKEND_ROOT')) {
-	header('/error_404');
-	exit ;
-}
-?>
 </div><!--MMainWindow-->
 
 <footer id="MFooter">

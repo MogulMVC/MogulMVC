@@ -1,9 +1,3 @@
-<?php
-if (!defined('BACKEND_ROOT')) {
-	header('/error_404');
-	exit ;
-}
-?>
 <div id="MMainWindow">
 
 	<div id="MHeaderPlaceholder"></div>

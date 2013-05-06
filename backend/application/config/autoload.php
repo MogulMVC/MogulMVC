@@ -7,7 +7,7 @@ if (!defined('BACKEND_ROOT')) {
 $GLOBALS['AUTOLOAD_PHP_FRAMEWORK'] = array();
 $GLOBALS['AUTOLOAD_PHP_APPLICATION'] = array();
 
-$GLOBALS['AUTOLOAD_CSS_FRAMEWORK'] = array('vendor/normalize', 'core/MStyle', 'core/MIcons', 'core/style');
+$GLOBALS['AUTOLOAD_CSS_FRAMEWORK'] = array('vendor/normalize', 'core/MIcons', 'core/MStyle', 'core/style');
 $GLOBALS['AUTOLOAD_CSS_APPLICATION'] = array('core/style');
 $GLOBALS['AUTOLOAD_CSS_EXTERNAL'] = array();
 

@@ -1,9 +1,3 @@
-<?php
-if (!defined('BACKEND_ROOT')) {
-	header('/error_404');
-	exit ;
-}
-?>
 	<!--[if lt IE 8]>
 		<?php MLoad::template_framework('message_warning', array('title' => 'Upgrade Internet Explorer', 'description' => APPLICATION_NAME . ' is not supported on Internet Explorer 7 or below. Please upgrade to Internet Explorer 8 or above.')); ?>
 	<![endif]-->
