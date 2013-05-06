@@ -12,6 +12,9 @@ function ob_callback() {
 	$page_location = BACKEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_BACKEND_CACHE . '/' . $page_uuid;
 	$page_content = ob_get_contents();
 
+	// Remove whitespace
+	$page_content = preg_replace('!\s+!smi', ' ', $page_content);
+	
 	file_put_contents($page_location, $page_content);
 
 	return FALSE;
