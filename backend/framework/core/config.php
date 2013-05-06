@@ -2,11 +2,7 @@
 
 /*
  * Mogul MVC by Alan James
-<<<<<<< HEAD
- * version 130504
-=======
- * version 130503
->>>>>>> fb19e6e9cb926214ce2af4789bf65aa2b201c353
+ * version 130506
  * recommended PHP version 5.3
  */
 
@@ -15,7 +11,7 @@ if (!defined('BACKEND_ROOT')) {
 	exit ;
 }
 
-define('FRAMEWORK_VERSION', '130504');
+define('FRAMEWORK_VERSION', '130506');
 
 // Backend Framework Directories
 define('FRAMEWORK_PHP', 'lib');
