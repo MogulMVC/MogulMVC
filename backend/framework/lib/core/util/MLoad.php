@@ -25,11 +25,11 @@ class MLoad {
 				$model = $model . '.php';
 			}
 
-			if (!file_exists(BACKEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_MODEL . '/' . $model)) {
+			if (!file_exists(BACKEND_ROOT . '/' . APPLICATION_MODEL . '/' . $model)) {
 				trigger_error('error - ' . $model . ' not found.');
 			}
 
-			require_once (BACKEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_MODEL . '/' . $model);
+			require_once (BACKEND_ROOT . '/' . APPLICATION_MODEL . '/' . $model);
 
 		}
 
@@ -44,11 +44,11 @@ class MLoad {
 				$vo = $vo . '.php';
 			}
 
-			if (!file_exists(BACKEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_VO . '/' . $vo)) {
+			if (!file_exists(BACKEND_ROOT . '/' . APPLICATION_VO . '/' . $vo)) {
 				trigger_error('error - ' . $vo . ' not found.', E_USER_ERROR);
 			}
 
-			require_once (BACKEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_VO . '/' . $vo);
+			require_once (BACKEND_ROOT . '/' . APPLICATION_VO . '/' . $vo);
 
 		}
 
@@ -79,11 +79,11 @@ class MLoad {
 
 				$head_file = dirname(APPLICATION_HEAD) . '/' . basename(APPLICATION_HEAD, '.php') . '.php';
 				
-				if (!file_exists(BACKEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_VIEW . '/' . $head_file)) {
+				if (!file_exists(BACKEND_ROOT . '/' . APPLICATION_VIEW . '/' . $head_file)) {
 					trigger_error('error - head not found.', E_USER_ERROR);
 				}
 
-				$head = BACKEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_VIEW . '/' . $head_file;
+				$head = BACKEND_ROOT . '/' . APPLICATION_VIEW . '/' . $head_file;
 			}
 			
 			$header = '';
@@ -91,11 +91,11 @@ class MLoad {
 
 				$header_file = dirname(APPLICATION_HEADER) . '/' . basename(APPLICATION_HEADER, '.php') . '.php';
 				
-				if (!file_exists(BACKEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_VIEW . '/' . $header_file)) {
+				if (!file_exists(BACKEND_ROOT . '/' . APPLICATION_VIEW . '/' . $header_file)) {
 					trigger_error('error - header not found.', E_USER_ERROR);
 				}
 
-				$header = BACKEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_VIEW . '/' . $header_file;
+				$header = BACKEND_ROOT . '/' . APPLICATION_VIEW . '/' . $header_file;
 			}
 
 			$footer = '';
@@ -103,11 +103,11 @@ class MLoad {
 
 				$footer_file = dirname(APPLICATION_FOOTER) . '/' . basename(APPLICATION_FOOTER, '.php') . '.php';
 
-				if (!file_exists(BACKEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_VIEW . '/' . $footer_file)) {
+				if (!file_exists(BACKEND_ROOT . '/' . APPLICATION_VIEW . '/' . $footer_file)) {
 					trigger_error('error - footer not found.', E_USER_ERROR);
 				}
 
-				$footer = BACKEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_VIEW . '/' . $footer_file;
+				$footer = BACKEND_ROOT . '/' . APPLICATION_VIEW . '/' . $footer_file;
 			}
 
 			$foot = '';
@@ -115,11 +115,11 @@ class MLoad {
 
 				$foot_file = dirname(APPLICATION_FOOT) . '/' . basename(APPLICATION_FOOT, '.php') . '.php';
 
-				if (!file_exists(BACKEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_VIEW . '/' . $foot_file)) {
+				if (!file_exists(BACKEND_ROOT . '/' . APPLICATION_VIEW . '/' . $foot_file)) {
 					trigger_error('error - foot not found.', E_USER_ERROR);
 				}
 
-				$foot = BACKEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_VIEW . '/' . $foot_file;
+				$foot = BACKEND_ROOT . '/' . APPLICATION_VIEW . '/' . $foot_file;
 			}
 
 			//Construst the Page
@@ -132,11 +132,11 @@ class MLoad {
 				require ($header);
 			}
 
-			if (!file_exists(BACKEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_VIEW . '/' . $view)) {
+			if (!file_exists(BACKEND_ROOT . '/' . APPLICATION_VIEW . '/' . $view)) {
 				trigger_error('error - ' . $view . ' not found.', E_USER_ERROR);
 			}
 
-			require (BACKEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_VIEW . '/' . $view);
+			require (BACKEND_ROOT . '/' . APPLICATION_VIEW . '/' . $view);
 
 			if (!empty($footer)) {
 				require ($footer);
@@ -173,11 +173,11 @@ class MLoad {
 
 				$head_file = dirname(APPLICATION_HEAD) . '/' . basename(APPLICATION_HEAD, '.php') . '.php';
 				
-				if (!file_exists(BACKEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_VIEW . '/' . $head_file)) {
+				if (!file_exists(BACKEND_ROOT . '/' . APPLICATION_VIEW . '/' . $head_file)) {
 					trigger_error('error - head not found.', E_USER_ERROR);
 				}
 
-				$head = BACKEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_VIEW . '/' . $head_file;
+				$head = BACKEND_ROOT . '/' . APPLICATION_VIEW . '/' . $head_file;
 			}
 			
 			$foot = '';
@@ -185,11 +185,11 @@ class MLoad {
 
 				$foot_file = dirname(APPLICATION_FOOT) . '/' . basename(APPLICATION_FOOT, '.php') . '.php';
 
-				if (!file_exists(BACKEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_VIEW . '/' . $foot_file)) {
+				if (!file_exists(BACKEND_ROOT . '/' . APPLICATION_VIEW . '/' . $foot_file)) {
 					trigger_error('error - foot not found.', E_USER_ERROR);
 				}
 
-				$foot = BACKEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_VIEW . '/' . $foot_file;
+				$foot = BACKEND_ROOT . '/' . APPLICATION_VIEW . '/' . $foot_file;
 			}
 
 			//Construst the Frame
@@ -197,11 +197,11 @@ class MLoad {
 				require ($head);
 			}
 
-			if (!file_exists(BACKEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_VIEW . '/' . $page)) {
+			if (!file_exists(BACKEND_ROOT . '/' . APPLICATION_VIEW . '/' . $page)) {
 				trigger_error('error - ' . $page . ' not found.', E_USER_ERROR);
 			}
 
-			require (BACKEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_VIEW . '/' . $page);
+			require (BACKEND_ROOT . '/' . APPLICATION_VIEW . '/' . $page);
 
 			if (!empty($foot)) {
 				require ($foot);
@@ -254,11 +254,11 @@ class MLoad {
 				$template = $template . '.php';
 			}
 
-			if (!file_exists(BACKEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_VIEW . '/' . $template)) {
+			if (!file_exists(BACKEND_ROOT . '/' . APPLICATION_VIEW . '/' . $template)) {
 				trigger_error('error - ' . $template . ' not found.', E_USER_ERROR);
 			}
 
-			require (BACKEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_VIEW . '/' . $template);
+			require (BACKEND_ROOT . '/' . APPLICATION_VIEW . '/' . $template);
 		}
 
 	}
@@ -292,11 +292,11 @@ class MLoad {
 				$library = $library . '.php';
 			}
 
-			if (!file_exists(BACKEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_PHP . '/' . $library)) {
+			if (!file_exists(BACKEND_ROOT . '/' . APPLICATION_PHP . '/' . $library)) {
 				trigger_error('error - ' . $library . ' not found.', E_USER_ERROR);
 			}
 
-			require_once (BACKEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_PHP . '/' . $library);
+			require_once (BACKEND_ROOT . '/' . APPLICATION_PHP . '/' . $library);
 		}
 
 	}
@@ -353,17 +353,17 @@ class MLoad {
 			}
 
 			// Check if the file exists
-			if (!file_exists(FRONTEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_JS . '/' . $js)) {
-				trigger_error('error - ' . $js . ' not found in ' . APPLICATION . '/' . APPLICATION_JS . '.', E_USER_ERROR);
+			if (!file_exists(FRONTEND_ROOT . '/' . APPLICATION_JS . '/' . $js)) {
+				trigger_error('error - ' . $js . ' not found in ' . '/' . APPLICATION_JS . '.', E_USER_ERROR);
 			}
 
-			$version = filemtime(FRONTEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_JS . '/' . $js);
+			$version = filemtime(FRONTEND_ROOT . '/' . APPLICATION_JS . '/' . $js);
 
-			$src = '/' . APPLICATION . '/' . APPLICATION_JS . '/' . $js;
+			$src = '/' . APPLICATION_JS . '/' . $js;
 			
 			// If use HTTP is true include an HTTP section
 			if ($useHTTP) {
-				$src = 'http://' . $_SERVER['SERVER_NAME'] . '/' . APPLICATION . '/' . APPLICATION_JS . '/' . $js;
+				$src = 'http://' . $_SERVER['SERVER_NAME'] . '/' . APPLICATION_JS . '/' . $js;
 			}
 
 			// Only include it as part of the global js
@@ -393,13 +393,13 @@ class MLoad {
 			}
 
 			// Check if the file exists
-			if (!file_exists(FRONTEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_FRONTEND_CACHE . '/' . $js)) {
-				trigger_error('error - ' . $js . ' not found in ' . APPLICATION . '/' . APPLICATION_FRONTEND_CACHE . '.', E_USER_ERROR);
+			if (!file_exists(FRONTEND_ROOT . '/' . APPLICATION_FRONTEND_CACHE . '/' . $js)) {
+				trigger_error('error - ' . $js . ' not found in ' . '/' . APPLICATION_FRONTEND_CACHE . '.', E_USER_ERROR);
 			}
 
-			$version = filemtime(FRONTEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_FRONTEND_CACHE . '/' . $js);
+			$version = filemtime(FRONTEND_ROOT . '/' . APPLICATION_FRONTEND_CACHE . '/' . $js);
 
-			$src = '/' . APPLICATION . '/' . APPLICATION_FRONTEND_CACHE . '/' . $js;
+			$src = '/' . APPLICATION_FRONTEND_CACHE . '/' . $js;
 
 			// Echo the link
 			if ($direction == 'echo') {
@@ -486,17 +486,17 @@ class MLoad {
 			}
 
 			// Check if the file exists
-			if (!file_exists(FRONTEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_CSS . '/' . $css)) {
-				trigger_error('error - ' . $css . ' not found in ' . APPLICATION . '/' . APPLICATION_CSS . '.', E_USER_ERROR);
+			if (!file_exists(FRONTEND_ROOT . '/' . APPLICATION_CSS . '/' . $css)) {
+				trigger_error('error - ' . $css . ' not found in ' . '/' . APPLICATION_CSS . '.', E_USER_ERROR);
 			}
 
-			$version = filemtime(FRONTEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_CSS . '/' . $css);
+			$version = filemtime(FRONTEND_ROOT . '/' . APPLICATION_CSS . '/' . $css);
 
-			$src = '/' . APPLICATION . '/' . APPLICATION_CSS . '/' . $css;
+			$src = '/' . APPLICATION_CSS . '/' . $css;
 
 			// If use HTTP is true include an HTTP section
 			if ($useHTTP) {
-				$src = 'http://' . $_SERVER['SERVER_NAME'] . '/' . APPLICATION . '/' . APPLICATION_CSS . '/' . $css;
+				$src = 'http://' . $_SERVER['SERVER_NAME'] . '/' . APPLICATION_CSS . '/' . $css;
 			}
 
 			// Only include it as part of the global js
@@ -526,13 +526,13 @@ class MLoad {
 			}
 
 			// Check if the file exists
-			if (!file_exists(FRONTEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_FRONTEND_CACHE . '/' . $css)) {
-				trigger_error('error - ' . $css . ' not found in ' . APPLICATION . '/' . APPLICATION_FRONTEND_CACHE . '.', E_USER_ERROR);
+			if (!file_exists(FRONTEND_ROOT . '/' . APPLICATION_FRONTEND_CACHE . '/' . $css)) {
+				trigger_error('error - ' . $css . ' not found in ' . '/' . APPLICATION_FRONTEND_CACHE . '.', E_USER_ERROR);
 			}
 
-			$version = filemtime(FRONTEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_FRONTEND_CACHE . '/' . $css);
+			$version = filemtime(FRONTEND_ROOT . '/' . APPLICATION_FRONTEND_CACHE . '/' . $css);
 
-			$src = '/' . APPLICATION . '/' . APPLICATION_FRONTEND_CACHE . '/' . $css;
+			$src = '/' . APPLICATION_FRONTEND_CACHE . '/' . $css;
 
 			// Echo the link
 			if ($direction == 'echo') {
@@ -605,26 +605,26 @@ class MLoad {
 		if (!empty($img)) {
 
 			// Check if the file exists
-			if (!file_exists(FRONTEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_IMG . '/' . $img)) {
-				echo 'error - image ' . $img . ' not found in '. APPLICATION . '/' . APPLICATION_IMG .'.';
+			if (!file_exists(FRONTEND_ROOT . '/' . APPLICATION_IMG . '/' . $img)) {
+				echo 'error - image ' . $img . ' not found in ' . '/' . APPLICATION_IMG .'.';
 			}
 
-			$version = filemtime(FRONTEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_IMG . '/' . $img);
+			$version = filemtime(FRONTEND_ROOT . '/' . APPLICATION_IMG . '/' . $img);
 
-			$src = '/' . APPLICATION . '/' . APPLICATION_IMG . '/' . $img . '?' . $version;
+			$src = '/' . APPLICATION_IMG . '/' . $img . '?' . $version;
 			
 			// If use HTTP is true include an HTTP section
 			if ($useHTTP) {
-				$src = 'http://' . $_SERVER['SERVER_NAME'] . '/' . APPLICATION . '/' . APPLICATION_IMG . '/' . $img . '?' . $version;
+				$src = 'http://' . $_SERVER['SERVER_NAME'] . '/' . APPLICATION_IMG . '/' . $img . '?' . $version;
 			}
 
 			// Echo the link
 			if ($direction == 'echo') {
-				echo '/' . APPLICATION . '/' . APPLICATION_IMG . '/' . $img . '?' . $version;
+				echo '/' . APPLICATION_IMG . '/' . $img . '?' . $version;
 			}
 
 			// Return the link
-			return '/' . APPLICATION . '/' . APPLICATION_IMG . '/' . $img . '?' . $version;
+			return '/' . APPLICATION_IMG . '/' . $img . '?' . $version;
 
 		}
 

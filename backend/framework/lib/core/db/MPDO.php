@@ -4,7 +4,7 @@ if (!defined('BACKEND_ROOT')) {
 	exit ;
 }
 
-require_once (BACKEND_ROOT . '/' . APPLICATION . '/config/database.php');
+require_once (BACKEND_ROOT . '/config/database.php');
 
 $GLOBALS['MPDO'] = array();
 

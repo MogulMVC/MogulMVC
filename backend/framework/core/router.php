@@ -48,12 +48,12 @@ if (!empty($URI_ARRAY[2])) {
 if ($SEGMENT1 == APPLICATION_ACTION_URL) {
 
 	//Check if the action exists
-	if (!file_exists(BACKEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_ACTION . '/' . $SEGMENT2 . '.php')) {
+	if (!file_exists(BACKEND_ROOT . '/' . APPLICATION_ACTION . '/' . $SEGMENT2 . '.php')) {
 		MError::error_404();
 	}
 
 	//Run the action
-	require_once (BACKEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_ACTION . '/' . $SEGMENT2 . '.php');
+	require_once (BACKEND_ROOT . '/' . APPLICATION_ACTION . '/' . $SEGMENT2 . '.php');
 
 	exit();
 	
@@ -63,11 +63,11 @@ if ($SEGMENT1 == APPLICATION_ACTION_URL) {
 elseif ($SEGMENT1 == APPLICATION_API_URL) {
 
 	// Check if the api exists
-	if (!file_exists(BACKEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_API . '/' . $SEGMENT2 . '.php')) {
+	if (!file_exists(BACKEND_ROOT . '/' . APPLICATION_API . '/' . $SEGMENT2 . '.php')) {
 		MError::error_404();
 	}
 
-	require_once (BACKEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_API . '/' . $SEGMENT2 . '.php');
+	require_once (BACKEND_ROOT . '/' . APPLICATION_API . '/' . $SEGMENT2 . '.php');
 
 	exit();
 	
@@ -84,11 +84,11 @@ elseif ($SEGMENT1 == APPLICATION_COMMAND) {
 
 	// Check if the command exists
 	// Using $URI_ARRAY[3] because password is number 2
-	if (!file_exists(BACKEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_COMMAND . '/' . $URI_ARRAY[3] . '.php')) {
+	if (!file_exists(BACKEND_ROOT . '/' . APPLICATION_COMMAND . '/' . $URI_ARRAY[3] . '.php')) {
 		MError::error_404();
 	}
 
-	require_once (BACKEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_COMMAND . '/' . $URI_ARRAY[3] . '.php');
+	require_once (BACKEND_ROOT . '/' . APPLICATION_COMMAND . '/' . $URI_ARRAY[3] . '.php');
 
 	exit();
 	
@@ -97,7 +97,7 @@ elseif ($SEGMENT1 == APPLICATION_COMMAND) {
 // Controller
 else {
 
-	require_once (BACKEND_ROOT . '/' . APPLICATION . '/config/routes.php');
+	require_once (BACKEND_ROOT . '/config/routes.php');
 
 	if (!empty($ROUTE)) {
 
@@ -142,12 +142,12 @@ else {
 	$SEGMENT1 = ucfirst($SEGMENT1);
 
 	// Check if the controller exist
-	if (!file_exists(BACKEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_CONTROLLER . '/' . $SEGMENT1 . '.php')) {
+	if (!file_exists(BACKEND_ROOT . '/' . APPLICATION_CONTROLLER . '/' . $SEGMENT1 . '.php')) {
 		MError::error_404();
 	}
 
 	// Instantiate the controller object
-	require_once (BACKEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_CONTROLLER . '/' . $SEGMENT1 . '.php');
+	require_once (BACKEND_ROOT . '/' . APPLICATION_CONTROLLER . '/' . $SEGMENT1 . '.php');
 
 	$OBJECT = new $SEGMENT1();
 

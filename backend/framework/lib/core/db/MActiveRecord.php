@@ -4,7 +4,7 @@ if (!defined('BACKEND_ROOT')) {
 	exit ;
 }
 
-require_once (BACKEND_ROOT . '/' . APPLICATION . '/config/database.php');
+require_once (BACKEND_ROOT . '/config/database.php');
 
 MLoad::php_framework('vendor/db/ActiveRecord');
 
@@ -33,7 +33,7 @@ ActiveRecord\Config::initialize(function($cfg) use ($connections) {
 
 	$default_connection = key(array_slice($GLOBALS['DB'], 0, 1, TRUE));
 
-	$cfg -> set_model_directory(BACKEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_MODEL);
+	$cfg -> set_model_directory(BACKEND_ROOT . '/' . APPLICATION_MODEL);
 	$cfg -> set_connections($connections);
 	$cfg -> set_default_connection($default_connection);
 

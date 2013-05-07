@@ -9,7 +9,7 @@ function ob_callback() {
 
 	$page_uuid = MCache::page_uuid();
 
-	$page_location = BACKEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_BACKEND_CACHE . '/' . $page_uuid;
+	$page_location = BACKEND_ROOT . '/' . APPLICATION_BACKEND_CACHE . '/' . $page_uuid;
 	$page_content = ob_get_contents();
 
 	// Remove whitespace
@@ -48,12 +48,12 @@ class MCache {
 		// Serve up the page if it exists
 		$page_uuid = self::page_uuid();
 
-		if (file_exists(BACKEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_BACKEND_CACHE . '/' . $page_uuid)) {
+		if (file_exists(BACKEND_ROOT . '/' . APPLICATION_BACKEND_CACHE . '/' . $page_uuid)) {
 
-			$creation_time = filemtime(BACKEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_BACKEND_CACHE . '/' . $page_uuid);
+			$creation_time = filemtime(BACKEND_ROOT . '/' . APPLICATION_BACKEND_CACHE . '/' . $page_uuid);
 
 			if (time() - $creation_time < $minutes * 60) {
-				echo file_get_contents(BACKEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_BACKEND_CACHE . '/' . $page_uuid);
+				echo file_get_contents(BACKEND_ROOT . '/' . APPLICATION_BACKEND_CACHE . '/' . $page_uuid);
 				exit();
 			}
 

@@ -4,7 +4,7 @@ if (!defined('BACKEND_ROOT')) {
 	exit ;
 }
 
-require (BACKEND_ROOT . '/' . APPLICATION . '/config/autoload.php');
+require (BACKEND_ROOT . '/config/autoload.php');
 
 // Development
 if (APPLICATION_ENVIRONMENT == 'development') {
@@ -45,7 +45,7 @@ if (APPLICATION_ENVIRONMENT == 'development') {
 if (APPLICATION_ENVIRONMENT == 'production') {
 
 	// Minify all JS if no cached file exists
-	if (!file_exists(FRONTEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_FRONTEND_CACHE . '/' . 'main' . APPLICATION_VERSION . '.js')) {
+	if (!file_exists(FRONTEND_ROOT . '/' . APPLICATION_FRONTEND_CACHE . '/' . 'main' . APPLICATION_VERSION . '.js')) {
 
 		MLoad::php_framework('vendor/util/jsmin');
 
@@ -66,12 +66,12 @@ if (APPLICATION_ENVIRONMENT == 'production') {
 			if (!substr(strrchr($JS, '.'), 1)) {
 				$JS = $JS . '.js';
 			}
-			$js_file .= JSMin::minify(file_get_contents(FRONTEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_JS . '/' . $JS));
+			$js_file .= JSMin::minify(file_get_contents(FRONTEND_ROOT . '/' . APPLICATION_JS . '/' . $JS));
 		}
 
 		$js_file = JSMin::minify($js_file);
 
-		file_put_contents(FRONTEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_FRONTEND_CACHE . '/main' . APPLICATION_VERSION . '.js', $js_file);
+		file_put_contents(FRONTEND_ROOT . '/' . APPLICATION_FRONTEND_CACHE . '/main' . APPLICATION_VERSION . '.js', $js_file);
 	}
 
 	MLoad::js_cache('main' . APPLICATION_VERSION . '.js', 'echo');

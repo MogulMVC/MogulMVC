@@ -12,7 +12,7 @@ class MError {
 
 		$error_404_file = basename(APPLICATION_ERROR_404_CONTROLLER, '.php') . '.php';
 
-		require_once (BACKEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_CONTROLLER . '/' . $error_404_file);
+		require_once (BACKEND_ROOT . '/' . APPLICATION_CONTROLLER . '/' . $error_404_file);
 
 		$error_404_class = basename(APPLICATION_ERROR_404_CONTROLLER, '.php');
 

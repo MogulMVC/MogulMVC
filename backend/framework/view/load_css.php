@@ -4,7 +4,7 @@ if (!defined('BACKEND_ROOT')) {
 	exit ;
 }
 
-require (BACKEND_ROOT . '/' . APPLICATION . '/config/autoload.php');
+require (BACKEND_ROOT . '/config/autoload.php');
 
 // Development
 if (APPLICATION_ENVIRONMENT == 'development') {
@@ -45,7 +45,7 @@ if (APPLICATION_ENVIRONMENT == 'development') {
 if (APPLICATION_ENVIRONMENT == 'production') {
 
 	// Minify all JS if no cached file exists
-	if (!file_exists(FRONTEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_FRONTEND_CACHE . '/' . 'main' . APPLICATION_VERSION . '.css')) {
+	if (!file_exists(FRONTEND_ROOT . '/' . APPLICATION_FRONTEND_CACHE . '/' . 'main' . APPLICATION_VERSION . '.css')) {
 
 		MLoad::php_framework('vendor/util/cssmin');
 
@@ -71,13 +71,13 @@ if (APPLICATION_ENVIRONMENT == 'production') {
 				$CSS = $CSS . '.css';
 			}
 			
-			$css_file .= CssMin::minify(file_get_contents(FRONTEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_CSS . '/' . $CSS));
+			$css_file .= CssMin::minify(file_get_contents(FRONTEND_ROOT . '/' . APPLICATION_CSS . '/' . $CSS));
 			
 		}
 
 		$css_file = CssMin::minify($css_file);
 
-		file_put_contents(FRONTEND_ROOT . '/' . APPLICATION . '/' . APPLICATION_FRONTEND_CACHE . '/main' . APPLICATION_VERSION . '.css', $css_file);
+		file_put_contents(FRONTEND_ROOT . '/' . APPLICATION_FRONTEND_CACHE . '/main' . APPLICATION_VERSION . '.css', $css_file);
 	}
 
 	MLoad::css_cache('main' . APPLICATION_VERSION . '.css', 'echo');

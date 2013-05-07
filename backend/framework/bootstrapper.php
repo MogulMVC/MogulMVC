@@ -6,7 +6,7 @@ if (!defined('BACKEND_ROOT')) {
 
 // Application config must come after framework config
 require_once (BACKEND_ROOT . '/' . FRAMEWORK . '/core/config.php');
-require_once (BACKEND_ROOT . '/' . APPLICATION . '/config/config.php');
+require_once (BACKEND_ROOT . '/config/config.php');
 require_once (BACKEND_ROOT . '/' . FRAMEWORK . '/core/environment.php');
 
 // Used to load all the other libraries
@@ -24,15 +24,15 @@ MLoad::php_framework('core/util/MURL');
 
 // Application constants must come after framework constants
 require_once (BACKEND_ROOT . '/' . FRAMEWORK . '/core/constants.php');
-require_once (BACKEND_ROOT . '/' . APPLICATION . '/config/constants.php');
+require_once (BACKEND_ROOT . '/config/constants.php');
 
 // Application variables
 require_once (BACKEND_ROOT . '/' . FRAMEWORK . '/core/variables.php');
-require_once (BACKEND_ROOT . '/' . APPLICATION . '/config/variables.php');
+require_once (BACKEND_ROOT . '/config/variables.php');
 
 // Application autoload list the libraries to be loaded
 // Framework autoload loads them
-require_once (BACKEND_ROOT . '/' . APPLICATION . '/config/autoload.php');
+require_once (BACKEND_ROOT . '/config/autoload.php');
 require_once (BACKEND_ROOT . '/' . FRAMEWORK . '/core/autoload.php');
 
 // The router determines the controller and function to run

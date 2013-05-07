@@ -8,7 +8,7 @@ if (!defined('BACKEND_ROOT')) {
 // ini_set('session.gc_probability', 100);
 // ini_set('session.gc_divisor', 100);
 
-require_once (BACKEND_ROOT . '/' . APPLICATION . '/config/session.php');
+require_once (BACKEND_ROOT . '/config/session.php');
 
 // Check if a database is being used to store session data
 if ($GLOBALS['SESSION_DB']) {
