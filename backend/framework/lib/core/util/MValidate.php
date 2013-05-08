@@ -16,34 +16,52 @@ class MValidate {
 
 	}
 
-	// Validates that a Variable is declared and exists in memory
-	// An empty string, 0, or false, will return true
+	// Validates that a variable is declared, exists in memory, and has some value.
+	// "", " ", [], {}, 0, FALSE will return TRUE as they are declared variables.
+	// An undeclared variable or NULL will return FALSE.
 	public static function optional($input) {
 
 	}
 
-	// Validates that a Variable is decalred and has a value
-	// An empty string does not validate but 0 and false do
+	// Validates that a variable is decalred and has a non empty value.
+	// 0, FALSE will return TRUE.
+	// "", " ", [], {}, an undeclared variable, and NULL will return FALSE.
 	public static function required($input) {
 
 	}
 
-	// Validates that a Variable contains only what is in the array
-	// It can only have what is in the array
-	public static function only_contain($input, $array) {
+	// Validates that a variable contains only the values is in the array.
+	// The input can not have any values other than what is in the array.
+	public static function only_contain($input, $choices) {
 
 	}
 
-	// Validates that a Variable contains what is in the array
-	// It can have other characters but must have what is in the array
-	public static function must_contain($input, $array) {
+	// Validates that a variable contains every value in the array.
+	// It can have other characters but must have what is in the array.
+	public static function must_contain($input, $choices) {
+
+	}
+	
+	// Validates that a variable does not contain what is in the array.
+	// It can have other characters but must not have what is in the array.
+	public static function cant_contain($input, $choices) {
+
+	}
+	
+	// Validates that a variable is in a list of choices.
+	public static function included_in($input, $choices) {
+
+	}
+	
+	// Validates that a variable is not in a list of choices.
+	public static function excluded_in($input, $choices) {
 
 	}
 
-	// Validates that a Variable is between two numbers
-	public static function between($value, $min, $max) {
+	// Validates that a Variable is between two numbers.
+	public static function between($input, $min, $max) {
 
-		if ($value > $min && $value < $max) {
+		if ($input > $min && $input < $max) {
 			return TRUE;
 		}
 
@@ -51,9 +69,32 @@ class MValidate {
 
 	}
 
-	public static function multiple_of($number, $multiple) {
+	// Validates that an input is a multiple of a number.
+	public static function multiple_of($input, $multiple) {
 
-		if ($number % $multiple == 0) {
+		if ($input % $multiple == 0) {
+			return TRUE;
+		}
+
+		return FALSE;
+
+	}
+	
+	// Validates that an input is an even number.
+	public static function even($input) {
+
+		if ($input % 2 == 0) {
+			return TRUE;
+		}
+
+		return FALSE;
+
+	}
+	
+	// Validates that an input is an odd number.
+	public static function odd($input) {
+
+		if ($input % 2 != 0) {
 			return TRUE;
 		}
 
@@ -61,6 +102,9 @@ class MValidate {
 
 	}
 
+	// Validates that a state or abbriation for a state is a valid state.
+	// Washington DC is considered a state to this function.
+	// This function is case insensitive.
 	public static function state($state) {
 
 		$stateString = strtolower($state);
