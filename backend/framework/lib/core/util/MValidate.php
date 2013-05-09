@@ -6,6 +6,7 @@ if (!defined('BACKEND_ROOT')) {
 
 class MValidate {
 
+	// The email function uses regular expressions to check the validity of an e-mail address.
 	public static function email($email) {
 
 		if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
@@ -17,22 +18,72 @@ class MValidate {
 	}
 
 	// Validates that a variable is declared, exists in memory, and has some value.
-	// "", " ", [], {}, 0, FALSE will return TRUE as they are declared variables.
+	// "", " ", array(), 0, FALSE will return TRUE as they are declared variables.
 	// An undeclared variable or NULL will return FALSE.
-	public static function optional($input) {
-
+	public static function optional(&$input) {
+		return isset($input);
 	}
 
 	// Validates that a variable is decalred and has a non empty value.
 	// 0, FALSE will return TRUE.
-	// "", " ", [], {}, an undeclared variable, and NULL will return FALSE.
-	public static function required($input) {
+	// "", " ", array(), an undeclared variable, and NULL will return FALSE.
+	public static function required(&$input) {
 
+		if ($input === 0 || $input === FALSE) {
+			return TRUE;
+		}
+
+		// Strip the whitespace
+		$input = str_replace(' ', '', $input);
+
+		if (!empty($input)) {
+			return TRUE;
+		}
+
+		return FALSE;
 	}
 
-	// Validates that a variable contains only the values is in the array.
+	// Validates that a variable contains only the values in the array.
 	// The input can not have any values other than what is in the array.
 	public static function only_contain($input, $choices) {
+
+		// Set a default valid
+		// The loop will change this to FALSE if it isn't valid
+		$valid = TRUE;
+
+		// If input is a string convert it to an array
+		if(is_string($input)){
+			$input = str_split($input);
+		}
+		
+		// Loop over the input
+		foreach ($input as $value) {
+			
+			$loop_valid = FALSE;
+			
+			// Loop over the choices
+			foreach ($choices as $choice) {
+				
+				// If the item is in the choice make the loop true and break the loop
+				if($value == $choice){
+					$loop_valid = TRUE;
+					break;
+				}
+				
+			}
+			
+			// Break the loop if the loop is invalid
+			// The input can only contain whats in the array
+			// So if any section of the input is invalid the entire input is invalid
+			if(!$loop_valid){
+				$valid = FALSE;
+				break;
+			}
+			
+			
+		}
+		
+		return $valid;
 
 	}
 
@@ -41,20 +92,40 @@ class MValidate {
 	public static function must_contain($input, $choices) {
 
 	}
-	
+
 	// Validates that a variable does not contain what is in the array.
 	// It can have other characters but must not have what is in the array.
 	public static function cant_contain($input, $choices) {
 
 	}
-	
+
 	// Validates that a variable is in a list of choices.
 	public static function included_in($input, $choices) {
 
+		$valid = FALSE;
+
+		foreach ($choices as $choice) {
+			if ($input == $choice) {
+				$valid = TRUE;
+			}
+		}
+
+		return $valid;
+
 	}
-	
+
 	// Validates that a variable is not in a list of choices.
-	public static function excluded_in($input, $choices) {
+	public static function excluded_from($input, $choices) {
+
+		$valid = TRUE;
+
+		foreach ($choices as $choice) {
+			if ($input == $choice) {
+				$valid = FALSE;
+			}
+		}
+
+		return $valid;
 
 	}
 
@@ -79,7 +150,7 @@ class MValidate {
 		return FALSE;
 
 	}
-	
+
 	// Validates that an input is an even number.
 	public static function even($input) {
 
@@ -90,7 +161,7 @@ class MValidate {
 		return FALSE;
 
 	}
-	
+
 	// Validates that an input is an odd number.
 	public static function odd($input) {
 
