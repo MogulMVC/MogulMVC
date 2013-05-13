@@ -52,37 +52,36 @@ class MValidate {
 		$valid = TRUE;
 
 		// If input is a string convert it to an array
-		if(is_string($input)){
+		if (is_string($input)) {
 			$input = str_split($input);
 		}
-		
+
 		// Loop over the input
 		foreach ($input as $value) {
-			
+
 			$loop_valid = FALSE;
-			
+
 			// Loop over the choices
 			foreach ($choices as $choice) {
-				
+
 				// If the item is in the choice make the loop true and break the loop
-				if($value == $choice){
+				if ($value == $choice) {
 					$loop_valid = TRUE;
 					break;
 				}
-				
+
 			}
-			
+
 			// Break the loop if the loop is invalid
 			// The input can only contain whats in the array
 			// So if any section of the input is invalid the entire input is invalid
-			if(!$loop_valid){
+			if (!$loop_valid) {
 				$valid = FALSE;
 				break;
 			}
-			
-			
+
 		}
-		
+
 		return $valid;
 
 	}
@@ -90,6 +89,44 @@ class MValidate {
 	// Validates that a variable contains every value in the array.
 	// It can have other characters but must have what is in the array.
 	public static function must_contain($input, $choices) {
+
+		// If input is a string convert it to an array
+		if (is_string($input)) {
+			$input = str_split($input);
+		}
+
+		// Create an array to check matches against
+		$matches = array();
+
+		for ($i = 0; $i < count($choices); $i++) {
+			$matches[$i] = false;
+		}
+
+		// Loop over the choices array checking if each choice is found in the input array
+		for ($i = 0; $i < count($choices); $i++) {
+
+			for ($j = 0; $j < count($input); $j++) {
+
+				// Check for a match
+				if ($input[$j] == $choices[$i]) {
+					$matches[$i] = true;
+				}
+
+			}
+
+		}
+
+		// The following loop needs to assume they are valid
+		$valid = true;
+
+		for ($i = 0; $i < count($matches); $i++) {
+			// If any match is found to be false valid is false
+			if (!$matches[$i]) {
+				$valid = false;
+			}
+		}
+
+		return $valid;
 
 	}
 
