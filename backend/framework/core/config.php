@@ -11,7 +11,7 @@ if (!defined('BACKEND_ROOT')) {
 	exit ;
 }
 
-define('FRAMEWORK_VERSION', '130513');
+define('FRAMEWORK_VERSION', '130515');
 
 // Backend Framework Directories
 define('FRAMEWORK_PHP', 'lib');
