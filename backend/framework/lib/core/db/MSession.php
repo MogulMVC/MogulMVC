@@ -7,6 +7,7 @@ if (!defined('BACKEND_ROOT')) {
 // I might add this later
 // ini_set('session.gc_probability', 100);
 // ini_set('session.gc_divisor', 100);
+ini_set('session.cookie_lifetime', 60 * 60 * 24 * 365);
 
 require_once (BACKEND_ROOT . '/config/session.php');
 

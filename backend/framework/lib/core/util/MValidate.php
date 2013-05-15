@@ -134,6 +134,28 @@ class MValidate {
 	// It can have other characters but must not have what is in the array.
 	public static function cant_contain($input, $choices) {
 
+		// If input is a string convert it to an array
+		if (is_string($input)) {
+			$input = str_split($input);
+		}
+		
+		// Loop over the choices array checking if each choice is found in the input array
+		for ($i = 0; $i < count($choices); $i++) {
+
+			for ($j = 0; $j < count($input); $j++) {
+
+				// Check for a match
+				if ($input[$j] == $choices[$i]) {
+					return FALSE;
+				}
+
+			}
+
+		}
+		
+		// If no match was found return true
+		return TRUE;
+
 	}
 
 	// Validates that a variable is in a list of choices.
