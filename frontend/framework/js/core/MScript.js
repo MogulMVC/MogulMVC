@@ -233,8 +233,11 @@ $(window).resize(function() {
 	MSystemMessageContainer.position();
 });
 $(document).ready(function() {
-	$('.MTabWidget').MTab();
-}); $(document).ready(function() {
+	$('.MTabWidget').MTab({
+		'updateHash' : false
+	});
+});
+$(document).ready(function() {
 
 	$('[data-mtip=n], [data-mtip=N], [data-mtip=b], [data-mtip=B]').MTip({
 		gravity : 'N',
