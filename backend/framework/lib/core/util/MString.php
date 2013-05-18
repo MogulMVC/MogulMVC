@@ -26,8 +26,11 @@ class MString {
 	public function to_boolean($value) {
 
 		// Check if it's a string of true or false
-		if (is_string($value) && ($value == 'true' || $value == 'TRUE')) {
-			return TRUE;
+		if (is_string($value)) {
+			$value = strtolower($value);
+			if ($value == 'true') {
+				return TRUE;
+			}
 		}
 
 		// Check if it's a string of 1 or 0
@@ -58,8 +61,9 @@ class MString {
 	}
 
 	public static function url_title($string, $seperator = '-') {
-		$string = str_replace(' ', $seperator, $title);
-		return ($string);
+		$string = strtolower($string);
+		$string = str_replace(' ', $seperator, $string);
+		return $string;
 	}
 
 	public static function newline_remove($string) {
