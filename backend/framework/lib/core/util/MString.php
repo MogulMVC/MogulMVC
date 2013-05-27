@@ -51,10 +51,13 @@ class MString {
 	}
 
 	public static function url_link($string, $nofollow = TRUE) {
+
+		$exp = '/(http:\/\/[^\s]+)/';
+
 		if ($nofollow) {
-			$string = preg_replace('/(http:\/\/[^\s]+)/', '<a href=\'$1\' rel=\'nofollow\'>$1</a>', $string);
+			$string = preg_replace($exp, '<a href=\'$1\' rel=\'nofollow\'>$1</a>', $string);
 		} else {
-			$string = preg_replace('/(http:\/\/[^\s]+)/', '<a href=\'$1\'>$1</a>', $string);
+			$string = preg_replace($exp, '<a href=\'$1\'>$1</a>', $string);
 		}
 
 		return $string;
