@@ -7,11 +7,11 @@
  *
  */
 
-// The location of each folder with no trailing slash
+// The location of each directory with no trailing slash
 define('BACKEND_ROOT', dirname(__FILE__) . '/../backend');
 define('FRONTEND_ROOT', dirname(__FILE__));
 
-// The names of the framework and application folders
+// The names of the framework and application directories
 // These should be the same for the backend and frontend
 define('FRAMEWORK', 'framework');
 

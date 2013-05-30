@@ -26,7 +26,7 @@ define('APPLICATION_DEFAULT_CONTROLLER', 'Main');
 define('APPLICATION_ERROR_404_CONTROLLER', 'Error_404');
 
 // Templates
-//File locations start within the application view folder
+//File locations start within the application view directory
 define('APPLICATION_HEAD', 'template/head');
 define('APPLICATION_HEADER', 'template/header');
 define('APPLICATION_FOOTER', 'template/footer');
