@@ -34,9 +34,9 @@ class MValidate {
 		}
 
 		// Strip the whitespace
-		$input = str_replace(' ', '', $input);
+		$inputNew = str_replace(' ', '', $input);
 
-		if (!empty($input)) {
+		if (!empty($inputNew)) {
 			return TRUE;
 		}
 
