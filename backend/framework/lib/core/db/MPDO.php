@@ -18,7 +18,7 @@ class MPDO {
 		}
 
 		// Check if $connection is a valid index
-		elseif ($connection < count($GLOBALS['DB'])) {
+		elseif ($connection <= count($GLOBALS['DB'])) {
 			$indices = array_keys($GLOBALS['DB']);
 			$i = $indices[$connection];
 		}
