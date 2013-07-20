@@ -8,6 +8,10 @@ class MURL {
 
 	public static function protocol() {
 
+		if (MRequest::is_cli()) {
+			return '';
+		}
+
 		$protocol = 'http';
 
 		if (isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] == 'on') {
@@ -21,6 +25,10 @@ class MURL {
 	}
 
 	public static function subdomain() {
+
+		if (MRequest::is_cli()) {
+			return '';
+		}
 
 		$url = explode('.', $_SERVER['SERVER_NAME']);
 
@@ -36,6 +44,10 @@ class MURL {
 
 	public static function domain() {
 
+		if (MRequest::is_cli()) {
+			return '';
+		}
+
 		$url = explode('.', $_SERVER['SERVER_NAME']);
 
 		$ext = $url[count($url) - 1];
@@ -46,17 +58,29 @@ class MURL {
 
 	public static function canonical() {
 
+		if (MRequest::is_cli()) {
+			return '';
+		}
+
 		return self::protocol() . '://' . $_SERVER['SERVER_NAME'];
 
 	}
 
 	public static function current() {
 
+		if (MRequest::is_cli()) {
+			return '';
+		}
+
 		return self::protocol() . '://' . $_SERVER['SERVER_NAME'] . $_SERVER['REQUEST_URI'];
 
 	}
 
 	public static function segment($segment) {
+
+		if (MRequest::is_cli()) {
+			return '';
+		}
 
 		$url = explode('/', $_SERVER['REQUEST_URI']);
 

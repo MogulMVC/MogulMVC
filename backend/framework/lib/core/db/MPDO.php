@@ -13,13 +13,13 @@ class MPDO {
 	public static function connection($connection) {
 
 		// Check if $connection is a valid connection
-		if (!is_numeric($connection) && array_key_exists($connection, $GLOBALS['DB'])) {
+		if (!is_numeric($connection) && array_key_exists($connection, $GLOBALS['MDB'])) {
 			$i = $connection;
 		}
 
 		// Check if $connection is a valid index
-		elseif ($connection <= count($GLOBALS['DB'])) {
-			$indices = array_keys($GLOBALS['DB']);
+		elseif ($connection <= count($GLOBALS['MDB'])) {
+			$indices = array_keys($GLOBALS['MDB']);
 			$i = $indices[$connection];
 		}
 
@@ -33,12 +33,12 @@ class MPDO {
 			return $GLOBALS['MPDO'][$i];
 		}
 
-		$type = $GLOBALS['DB'][$i]['type'];
-		$host = $GLOBALS['DB'][$i]['host'];
-		$port = $GLOBALS['DB'][$i]['port'];
-		$name = $GLOBALS['DB'][$i]['name'];
-		$user = $GLOBALS['DB'][$i]['user'];
-		$pass = $GLOBALS['DB'][$i]['pass'];
+		$type = $GLOBALS['MDB'][$i]['type'];
+		$host = $GLOBALS['MDB'][$i]['host'];
+		$port = $GLOBALS['MDB'][$i]['port'];
+		$name = $GLOBALS['MDB'][$i]['name'];
+		$user = $GLOBALS['MDB'][$i]['user'];
+		$pass = $GLOBALS['MDB'][$i]['pass'];
 
 		// Create a new pdo connection
 		$GLOBALS['MPDO'][$i] = new PDO($type . ':host=' . $host . ';port=' . $port . ';dbname=' . $name, $user, $pass);

@@ -34,13 +34,13 @@ if ($GLOBALS['SESSION_DB']) {
 
 	function MSessionRead($id) {
 
-		$DB = new PDO($GLOBALS['SESSION']['type'] . ':host=' . $GLOBALS['SESSION']['host'] . ';dbname=' . $GLOBALS['SESSION']['name'], $GLOBALS['SESSION']['user'], $GLOBALS['SESSION']['pass']);
+		$db_connection = new PDO($GLOBALS['SESSION']['type'] . ':host=' . $GLOBALS['SESSION']['host'] . ';dbname=' . $GLOBALS['SESSION']['name'], $GLOBALS['SESSION']['user'], $GLOBALS['SESSION']['pass']);
 
-		$query = $DB -> prepare('SELECT * from ' . $GLOBALS['SESSION']['table'] . ' WHERE id = ?');
+		$query = $db_connection -> prepare('SELECT * from ' . $GLOBALS['SESSION']['table'] . ' WHERE id = ?');
 		$query -> execute(array($id));
 		$result = $query -> fetch();
 
-		$DB = null;
+		$db_connection = null;
 
 		// I don't understand the following code yet
 		// but it works with JSON in the database
@@ -82,23 +82,23 @@ if ($GLOBALS['SESSION_DB']) {
 		// Create an access time
 		$access = time();
 
-		$DB = new PDO($GLOBALS['SESSION']['type'] . ':host=' . $GLOBALS['SESSION']['host'] . ';dbname=' . $GLOBALS['SESSION']['name'], $GLOBALS['SESSION']['user'], $GLOBALS['SESSION']['pass']);
+		$db_connection = new PDO($GLOBALS['SESSION']['type'] . ':host=' . $GLOBALS['SESSION']['host'] . ';dbname=' . $GLOBALS['SESSION']['name'], $GLOBALS['SESSION']['user'], $GLOBALS['SESSION']['pass']);
 
-		$query = $DB -> prepare('REPLACE INTO ' . $GLOBALS['SESSION']['table'] . ' VALUES  (?, ?, ?)');
+		$query = $db_connection -> prepare('REPLACE INTO ' . $GLOBALS['SESSION']['table'] . ' VALUES  (?, ?, ?)');
 		$query -> execute(array($id, $access, $data));
 
-		$DB = null;
+		$db_connection = null;
 
 	}
 
 	function MSessionDestroy($id) {
 
-		$DB = new PDO($GLOBALS['SESSION']['type'] . ':host=' . $GLOBALS['SESSION']['host'] . ';dbname=' . $GLOBALS['SESSION']['name'], $GLOBALS['SESSION']['user'], $GLOBALS['SESSION']['pass']);
+		$db_connection = new PDO($GLOBALS['SESSION']['type'] . ':host=' . $GLOBALS['SESSION']['host'] . ';dbname=' . $GLOBALS['SESSION']['name'], $GLOBALS['SESSION']['user'], $GLOBALS['SESSION']['pass']);
 
-		$query = $DB -> prepare('DELETE from ' . $GLOBALS['SESSION_TABLE'] . ' WHERE id = ?');
+		$query = $db_connection -> prepare('DELETE from ' . $GLOBALS['SESSION_TABLE'] . ' WHERE id = ?');
 		$query -> execute(array($id));
 
-		$DB = null;
+		$db_connection = null;
 
 	}
 
@@ -106,12 +106,12 @@ if ($GLOBALS['SESSION_DB']) {
 
 		$old = time() - $max;
 
-		$DB = new PDO($GLOBALS['SESSION']['type'] . ':host=' . $GLOBALS['SESSION']['host'] . ';dbname=' . $GLOBALS['SESSION']['name'], $GLOBALS['SESSION']['user'], $GLOBALS['SESSION']['pass']);
+		$db_connection = new PDO($GLOBALS['SESSION']['type'] . ':host=' . $GLOBALS['SESSION']['host'] . ';dbname=' . $GLOBALS['SESSION']['name'], $GLOBALS['SESSION']['user'], $GLOBALS['SESSION']['pass']);
 
-		$query = $DB -> prepare('DELETE from ' . $GLOBALS['SESSION']['table'] . ' WHERE  access < ?');
+		$query = $db_connection -> prepare('DELETE from ' . $GLOBALS['SESSION']['table'] . ' WHERE  access < ?');
 		$query -> execute(array($old));
 
-		$DB = null;
+		$db_connection = null;
 
 	}
 

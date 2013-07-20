@@ -6,9 +6,9 @@ if (!defined('BACKEND_ROOT')) {
 
 MLoad::php_framework('core/db/MPDO');
 
-$DB = $GLOBALS['MPDO'][0];
+$db_connection = $GLOBALS['MPDO'][0];
 
-$query = $DB -> prepare('CREATE TABLE IF NOT EXISTS tableName (
+$query = $db_connection -> prepare('CREATE TABLE IF NOT EXISTS tableName (
   id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
   
   created DATETIME,

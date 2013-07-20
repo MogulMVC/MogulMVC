@@ -4,7 +4,7 @@ if (!defined('BACKEND_ROOT')) {
 	exit ;
 }
 
-$GLOBALS['DB'] = array(
+$GLOBALS['MDB'] = array(
 
 	/* 
 	The following is an example of a DB connection
