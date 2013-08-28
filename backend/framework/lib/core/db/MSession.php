@@ -95,7 +95,7 @@ if ($GLOBALS['SESSION_DB']) {
 
 		$db_connection = new PDO($GLOBALS['SESSION']['type'] . ':host=' . $GLOBALS['SESSION']['host'] . ';dbname=' . $GLOBALS['SESSION']['name'], $GLOBALS['SESSION']['user'], $GLOBALS['SESSION']['pass']);
 
-		$query = $db_connection -> prepare('DELETE from ' . $GLOBALS['SESSION_TABLE'] . ' WHERE id = ?');
+		$query = $db_connection -> prepare('DELETE from ' . $GLOBALS['SESSION']['table'] . ' WHERE id = ?');
 		$query -> execute(array($id));
 
 		$db_connection = null;
