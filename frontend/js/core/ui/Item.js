@@ -3,8 +3,8 @@ var Item = (function() {
 	function Item(object) {
 
 		// validate variables
-		if (object.property == undefined) {
-			object.property = '';
+		if (!data.hasOwnProperty('property')) {
+			data.property = '';
 		}
 		
 		// adjust variables
