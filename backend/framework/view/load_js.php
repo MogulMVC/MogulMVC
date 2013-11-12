@@ -1,8 +1,4 @@
 <?php
-if (!defined('BACKEND_ROOT')) {
-	header('Location: /error_404');
-	exit ;
-}
 
 require (BACKEND_ROOT . '/config/autoload.php');
 

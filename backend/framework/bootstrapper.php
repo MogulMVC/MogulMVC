@@ -1,8 +1,4 @@
 <?php
-if (!defined('BACKEND_ROOT')) {
-	header('Location: /error_404');
-	exit ;
-}
 
 // Application config must come after framework config
 require_once (BACKEND_ROOT . '/' . FRAMEWORK . '/core/config.php');

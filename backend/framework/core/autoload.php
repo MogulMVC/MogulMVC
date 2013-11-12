@@ -1,8 +1,4 @@
 <?php
-if (!defined('BACKEND_ROOT')) {
-	header('Location: /error_404');
-	exit ;
-}
 
 foreach ($GLOBALS['AUTOLOAD_PHP_FRAMEWORK'] as $php_framework) {
 	MLoad::php_framework($php_framework);

@@ -1,8 +1,4 @@
 <?php
-if (!defined('BACKEND_ROOT')) {
-	header('Location: /error_404');
-	exit ;
-}
 
 if (APPLICATION_ENVIRONMENT == 'development') {
 	error_reporting(E_ALL);

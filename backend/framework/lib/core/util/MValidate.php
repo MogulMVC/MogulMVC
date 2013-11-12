@@ -1,8 +1,4 @@
 <?php
-if (!defined('BACKEND_ROOT')) {
-	header('Location: /error_404');
-	exit ;
-}
 
 class MValidate {
 
@@ -138,7 +134,7 @@ class MValidate {
 		if (is_string($input)) {
 			$input = str_split($input);
 		}
-		
+
 		// Loop over the choices array checking if each choice is found in the input array
 		for ($i = 0; $i < count($choices); $i++) {
 
@@ -152,7 +148,7 @@ class MValidate {
 			}
 
 		}
-		
+
 		// If no match was found return true
 		return TRUE;
 

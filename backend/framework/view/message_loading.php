@@ -1,11 +1,4 @@
 <?php
-if (!defined('BACKEND_ROOT')) {
-	header('Location: /error_404');
-	exit ;
-}
-?>
-
-<?php
 if (!isset($bg)) {
 	$bg = '';
 }

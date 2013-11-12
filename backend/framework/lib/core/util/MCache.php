@@ -1,8 +1,4 @@
 <?php
-if (!defined('BACKEND_ROOT')) {
-	header('Location: /error_404');
-	exit ;
-}
 
 // Create the page if it doesn't exist
 function ob_callback() {
@@ -14,7 +10,7 @@ function ob_callback() {
 
 	// Remove whitespace
 	$page_content = preg_replace('!\s+!smi', ' ', $page_content);
-	
+
 	file_put_contents($page_location, $page_content);
 
 	return FALSE;
@@ -61,6 +57,24 @@ class MCache {
 
 		// Create the page if it doesn't exist
 		ob_start('ob_callback');
+
+	}
+
+	public static function clear() {
+
+		// delete backend directory
+		$file_array = glob(BACKEND_ROOT . '/' . APPLICATION_BACKEND_CACHE . '/*');
+
+		foreach ($file_array as $file) {
+			unlink($file);
+		}
+		
+		// delete frontend directory
+		$file_array = glob(FRONTEND_ROOT . '/' . APPLICATION_FRONTEND_CACHE . '/*');
+
+		foreach ($file_array as $file) {
+			unlink($file);
+		}
 
 	}
 

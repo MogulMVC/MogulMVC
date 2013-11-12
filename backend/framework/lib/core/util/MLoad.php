@@ -1,8 +1,4 @@
 <?php
-if (!defined('BACKEND_ROOT')) {
-	header('Location: /error_404');
-	exit ;
-}
 
 $GLOBALS['LOAD_CSS_FRAMEWORK'] = array();
 $GLOBALS['LOAD_CSS_APPLICATION'] = array();
