@@ -11,10 +11,10 @@ class MNumber {
 
 		// Check if it's a string of true or false
 		if (is_numeric($value) && $value >= 1) {
-			return TRUE;
+			return true;
 		}
 
-		return FALSE;
+		return false;
 
 	}
 

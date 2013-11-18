@@ -1,6 +1,6 @@
 <?php
 
-$GLOBALS['SESSION_DB'] = FALSE;
+$GLOBALS['SESSION_DB'] = false;
 
 $GLOBALS['SESSION'] = array(
 

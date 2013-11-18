@@ -6,37 +6,37 @@ class MValidate {
 	public static function email($email) {
 
 		if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-			return TRUE;
+			return true;
 		}
 
-		return FALSE;
+		return false;
 
 	}
 
 	// Validates that a variable is declared, exists in memory, and has some value.
-	// "", " ", array(), 0, FALSE will return TRUE as they are declared variables.
-	// An undeclared variable or NULL will return FALSE.
+	// "", " ", array(), 0, false will return true as they are declared variables.
+	// An undeclared variable or NULL will return false.
 	public static function optional(&$input) {
 		return isset($input);
 	}
 
 	// Validates that a variable is decalred and has a non empty value.
-	// 0, FALSE will return TRUE.
-	// "", " ", array(), an undeclared variable, and NULL will return FALSE.
+	// 0, false will return true.
+	// "", " ", array(), an undeclared variable, and NULL will return false.
 	public static function required(&$input) {
 
-		if ($input === 0 || $input === FALSE) {
-			return TRUE;
+		if ($input === 0 || $input === false) {
+			return true;
 		}
 
 		// Strip the whitespace
 		$inputNew = str_replace(' ', '', $input);
 
 		if (!empty($inputNew)) {
-			return TRUE;
+			return true;
 		}
 
-		return FALSE;
+		return false;
 	}
 
 	// Validates that a variable contains only the values in the array.
@@ -44,8 +44,8 @@ class MValidate {
 	public static function only_contain($input, $choices) {
 
 		// Set a default valid
-		// The loop will change this to FALSE if it isn't valid
-		$valid = TRUE;
+		// The loop will change this to false if it isn't valid
+		$valid = true;
 
 		// If input is a string convert it to an array
 		if (is_string($input)) {
@@ -55,14 +55,14 @@ class MValidate {
 		// Loop over the input
 		foreach ($input as $value) {
 
-			$loop_valid = FALSE;
+			$loop_valid = false;
 
 			// Loop over the choices
 			foreach ($choices as $choice) {
 
 				// If the item is in the choice make the loop true and break the loop
 				if ($value == $choice) {
-					$loop_valid = TRUE;
+					$loop_valid = true;
 					break;
 				}
 
@@ -72,7 +72,7 @@ class MValidate {
 			// The input can only contain whats in the array
 			// So if any section of the input is invalid the entire input is invalid
 			if (!$loop_valid) {
-				$valid = FALSE;
+				$valid = false;
 				break;
 			}
 
@@ -142,7 +142,7 @@ class MValidate {
 
 				// Check for a match
 				if ($input[$j] == $choices[$i]) {
-					return FALSE;
+					return false;
 				}
 
 			}
@@ -150,18 +150,18 @@ class MValidate {
 		}
 
 		// If no match was found return true
-		return TRUE;
+		return true;
 
 	}
 
 	// Validates that a variable is in a list of choices.
 	public static function included_in($input, $choices) {
 
-		$valid = FALSE;
+		$valid = false;
 
 		foreach ($choices as $choice) {
 			if ($input == $choice) {
-				$valid = TRUE;
+				$valid = true;
 			}
 		}
 
@@ -172,11 +172,11 @@ class MValidate {
 	// Validates that a variable is not in a list of choices.
 	public static function excluded_from($input, $choices) {
 
-		$valid = TRUE;
+		$valid = true;
 
 		foreach ($choices as $choice) {
 			if ($input == $choice) {
-				$valid = FALSE;
+				$valid = false;
 			}
 		}
 
@@ -188,10 +188,10 @@ class MValidate {
 	public static function between($input, $min, $max) {
 
 		if ($input > $min && $input < $max) {
-			return TRUE;
+			return true;
 		}
 
-		return FALSE;
+		return false;
 
 	}
 
@@ -199,10 +199,10 @@ class MValidate {
 	public static function multiple_of($input, $multiple) {
 
 		if ($input % $multiple == 0) {
-			return TRUE;
+			return true;
 		}
 
-		return FALSE;
+		return false;
 
 	}
 
@@ -210,10 +210,10 @@ class MValidate {
 	public static function even($input) {
 
 		if ($input % 2 == 0) {
-			return TRUE;
+			return true;
 		}
 
-		return FALSE;
+		return false;
 
 	}
 
@@ -221,10 +221,10 @@ class MValidate {
 	public static function odd($input) {
 
 		if ($input % 2 != 0) {
-			return TRUE;
+			return true;
 		}
 
-		return FALSE;
+		return false;
 
 	}
 
@@ -242,7 +242,7 @@ class MValidate {
 		for ($i = 0, $j = count($stateAbbreviationArray); $i < $j; $i++) {
 
 			if ($stateString == $stateAbbreviationArray[$i]) {
-				return TRUE;
+				return true;
 			}
 
 		}
@@ -251,13 +251,13 @@ class MValidate {
 		for ($i = 0, $j = count($stateArray); $i < $j; $i++) {
 
 			if ($stateString == $stateArray[$i]) {
-				return TRUE;
+				return true;
 			}
 
 		}
 
 		// If the state was not found
-		return FALSE;
+		return false;
 
 	}
 

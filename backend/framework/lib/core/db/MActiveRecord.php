@@ -9,7 +9,7 @@ $connections = array();
 // Create connection if there are connections configured
 for ($i = 0; $i < count($GLOBALS['MDB']); $i++) {
 
-	$array = array_slice($GLOBALS['MDB'], $i, 1, TRUE);
+	$array = array_slice($GLOBALS['MDB'], $i, 1, true);
 	$key = key($array);
 
 	$type = $array[$key]['type'];
@@ -27,7 +27,7 @@ for ($i = 0; $i < count($GLOBALS['MDB']); $i++) {
 // must issue a "use" statement in your closure if passing variables
 ActiveRecord\Config::initialize(function($cfg) use ($connections) {
 
-	$default_connection = key(array_slice($GLOBALS['MDB'], 0, 1, TRUE));
+	$default_connection = key(array_slice($GLOBALS['MDB'], 0, 1, true));
 
 	$cfg -> set_model_directory(BACKEND_ROOT . '/' . APPLICATION_MODEL);
 	$cfg -> set_connections($connections);

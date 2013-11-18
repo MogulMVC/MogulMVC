@@ -25,16 +25,16 @@ class MString {
 		if (is_string($value)) {
 			$value = strtolower($value);
 			if ($value == 'true') {
-				return TRUE;
+				return true;
 			}
 		}
 
 		// Check if it's a string of 1 or 0
 		if (is_string($value) && $value == '1') {
-			return TRUE;
+			return true;
 		}
 
-		return FALSE;
+		return false;
 
 	}
 
@@ -46,7 +46,7 @@ class MString {
 		return $string;
 	}
 
-	public static function url_link($string, $nofollow = TRUE) {
+	public static function url_link($string, $nofollow = true) {
 
 		$exp = '/(http:\/\/[^\s]+)/';
 

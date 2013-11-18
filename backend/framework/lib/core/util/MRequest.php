@@ -5,18 +5,18 @@ class MRequest {
 	public static function is_cli() {
 		// if the remote addr is empty it is run by the cli or cron
 		if (empty($_SERVER['REMOTE_ADDR'])) {
-			return TRUE;
+			return true;
 		} else {
-			return FALSE;
+			return false;
 		}
 	}
 
 	public static function is_web() {
 		// if the remote addr is empty it is run by the cli or cron
 		if (!empty($_SERVER['REMOTE_ADDR'])) {
-			return TRUE;
+			return true;
 		} else {
-			return FALSE;
+			return false;
 		}
 	}
 
