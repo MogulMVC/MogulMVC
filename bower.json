@@ -10,11 +10,10 @@
 			"email": "alanjames1987@gmail.com"
 		}
 	],
-	"require": {
-		"php": ">=5.3.2",
-		"predis/predis": "dev-master"
-	},
-	"config": {
-		"vendor-dir": "backend/lib/vendor"
+	"dependencies": {
+		"modernizr": "latest",
+		"bootstrap": "latest",
+		"jquery": "latest",
+		"jquery-ui": "latest"
 	}
 }

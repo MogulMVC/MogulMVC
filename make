@@ -19,6 +19,3 @@ cd /mnt/documents-smb/Alan\'s\ Server/Projects/Software/Web/Mogul\ Frameworks/Mo
 ./make
 rm /mnt/documents-smb/Alan\'s\ Server/Projects/Software/Web/Mogul\ Frameworks/Mogul\ MVC/Framework/frontend/framework/js/core/M*
 cp /mnt/documents-smb/Alan\'s\ Server/Projects/Software/Web/Mogul\ Frameworks/Mogul\ JS/bin/* /mnt/documents-smb/Alan\'s\ Server/Projects/Software/Web/Mogul\ Frameworks/Mogul\ MVC/Framework/frontend/framework/js/core/
-
-#Composer
-curl -s getcomposer.org/installer | php -d detect_unicode=Off
