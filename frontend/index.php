@@ -2,7 +2,7 @@
 
 /**
  *
- * Start the application compilation process
+ * Start the application process
  * @Author Alan James - alanjames1987@gmail.com
  *
  */
