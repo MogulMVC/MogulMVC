@@ -3,7 +3,7 @@
 class Main {
 
 	function index() {
-		MLoad::view('main');
+		MLoad::view('main/index');
 	}
 
 }
