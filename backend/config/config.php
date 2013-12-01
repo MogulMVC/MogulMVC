@@ -7,7 +7,7 @@ define('APPLICATION_COMPANY', 'Application Company');
 define('APPLICATION_NAME', 'Application Name');
 define('APPLICATION_DESCRIPTION', 'Application Description');
 define('APPLICATION_PASSWORD', 'mogulpass321456');
-define('APPLICATION_VERSION', '131112');
+define('APPLICATION_VERSION', '131123');
 
 // Environment
 // 'development' 'production'
@@ -23,7 +23,7 @@ define('APPLICATION_ERROR_404_CONTROLLER', 'Error_404');
 
 // Templates
 //File locations start within the application view directory
-define('APPLICATION_HEAD', 'template/head');
-define('APPLICATION_HEADER', 'template/header');
-define('APPLICATION_FOOTER', 'template/footer');
-define('APPLICATION_FOOT', 'template/foot');
+define('APPLICATION_HEAD', '_template/head');
+define('APPLICATION_HEADER', '_template/header');
+define('APPLICATION_FOOTER', '_template/footer');
+define('APPLICATION_FOOT', '_template/foot');
