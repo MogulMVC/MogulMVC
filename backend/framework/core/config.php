@@ -1,7 +1,7 @@
 <?php
 
 /*
- * Mogul MVC by Alan James
+ * MogulPHP by Alan James
  * version 1.0.0
  * recommended PHP version 5.3
  */
