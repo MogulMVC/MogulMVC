@@ -19,3 +19,5 @@ rm frontend/framework/js/core/M*
 mv temp/js/bin/M* frontend/framework/js/core/
 
 rm -rf temp
+
+tar cfvz versions/1.0.0.tar.gz backend/ frontend/ .htaccess
