@@ -21,17 +21,14 @@ class MString {
 
 	public function to_boolean($value) {
 
-		// Check if it's a string of true or false
 		if (is_string($value)) {
+			
 			$value = strtolower($value);
-			if ($value == 'true') {
+			
+			if ($value != '' && ($value == '1' || $value == 'on' || $value == 'true')) {
 				return true;
 			}
-		}
-
-		// Check if it's a string of 1 or 0
-		if (is_string($value) && $value == '1') {
-			return true;
+			
 		}
 
 		return false;
