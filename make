@@ -1,21 +1,23 @@
 #!/bin/bash
 
-#CSS
-cd /mnt/documents-smb/Alan\'s\ Server/Projects/Software/Web/Mogul\ Frameworks/Mogul\ CSS/
-./make
-rm /mnt/documents-smb/Alan\'s\ Server/Projects/Software/Web/Mogul\ Frameworks/Mogul\ MVC/Framework/frontend/framework/css/core/M*
-cp /mnt/documents-smb/Alan\'s\ Server/Projects/Software/Web/Mogul\ Frameworks/Mogul\ CSS/bin/* /mnt/documents-smb/Alan\'s\ Server/Projects/Software/Web/Mogul\ Frameworks/Mogul\ MVC/Framework/frontend/framework/css/core/
+mkdir temp
 
-#Icons
-cd /mnt/documents-smb/Alan\'s\ Server/Projects/Software/Web/Mogul\ Frameworks/Mogul\ Icons/
-./make
-rm /mnt/documents-smb/Alan\'s\ Server/Projects/Software/Web/Mogul\ Frameworks/Mogul\ MVC/Framework/frontend/framework/img/icon/*
-cp /mnt/documents-smb/Alan\'s\ Server/Projects/Software/Web/Mogul\ Frameworks/Mogul\ Icons/img/* /mnt/documents-smb/Alan\'s\ Server/Projects/Software/Web/Mogul\ Frameworks/Mogul\ MVC/Framework/frontend/framework/img/icon/
-#rm /mnt/documents-smb/Alan\'s\ Server/Projects/Software/Web/Mogul\ Frameworks/Mogul\ MVC/Framework/framework/lib/css/core/MIcons*
-cp /mnt/documents-smb/Alan\'s\ Server/Projects/Software/Web/Mogul\ Frameworks/Mogul\ Icons/bin/* /mnt/documents-smb/Alan\'s\ Server/Projects/Software/Web/Mogul\ Frameworks/Mogul\ MVC/Framework/frontend/framework/css/core/
+git clone https://github.com/MogulMVC/MogulCSS.git temp/css
 
-#JS
-cd /mnt/documents-smb/Alan\'s\ Server/Projects/Software/Web/Mogul\ Frameworks/Mogul\ JS/
-./make
-rm /mnt/documents-smb/Alan\'s\ Server/Projects/Software/Web/Mogul\ Frameworks/Mogul\ MVC/Framework/frontend/framework/js/core/M*
-cp /mnt/documents-smb/Alan\'s\ Server/Projects/Software/Web/Mogul\ Frameworks/Mogul\ JS/bin/* /mnt/documents-smb/Alan\'s\ Server/Projects/Software/Web/Mogul\ Frameworks/Mogul\ MVC/Framework/frontend/framework/js/core/
+git clone https://github.com/MogulMVC/MogulIcons.git temp/icons
+
+git clone https://github.com/MogulMVC/MogulJS.git temp/js
+
+rm frontend/framework/css/core/M*
+mv temp/css/bin/M* frontend/framework/css/core/
+
+rm frontend/framework/img/icon/*
+mv temp/icons/bin/M* frontend/framework/css/core/
+mv temp/icons/img/* frontend/framework/img/icon/
+
+rm frontend/framework/js/core/M*
+mv temp/js/bin/M* frontend/framework/js/core/
+
+rm -rf temp
+
+tar cfvz versions/1.0.0.tar.gz backend/ frontend/ .bowerrc .htaccess bower.json composer.json

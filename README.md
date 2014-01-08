@@ -1,1 +1,1 @@
-Mogul MVC is an MVC framework and UI library written in PHP, jQuery, and Sass.
+MogulPHP is an MVC framework and UI library written in PHP, jQuery, and Sass.

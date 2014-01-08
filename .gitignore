@@ -6,4 +6,5 @@
 Icon?
 ehthumbs.db
 Thumbs.db
-make
+frontend/component/*
+versions/
