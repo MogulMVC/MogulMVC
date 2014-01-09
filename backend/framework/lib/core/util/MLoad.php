@@ -303,7 +303,7 @@ class MLoad {
 
 	public static function component($component, $direction = null, $useHTTP = false) {
 
-		if (!empty($js)) {
+		if (!empty($component)) {
 
 			// Check if the file exists
 			if (!file_exists(FRONTEND_ROOT . '/' . APPLICATION_COMPONENT . '/' . $component)) {

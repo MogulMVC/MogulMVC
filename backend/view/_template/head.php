@@ -34,6 +34,7 @@ echo $GLOBALS['DOCTYPE']['html4-transitional'];
 	<link rel="apple-touch-icon" sizes="144x144" href="<?php echo '/' . APPLICATION_IMG; ?>/apple-touch-icon-144x144-precomposed.png" />
 
 	<?php
+	MLoad::template_framework('load_component');
 	MLoad::template_framework('load_css');
 	MLoad::template_framework('load_js');
 	?>
