@@ -1,7 +1,7 @@
 {
-	"name": "MogulPHP",
-	"version": "1.0.0",
-	"description": "The MogulPHP framework",
+	"name": "MogulMVC",
+	"version": "1.1.0",
+	"description": "The MogulMVC framework",
 	"keywords": ["framework"],
 	"homepage": "http://mogulmvc.com",
 	"authors": [
