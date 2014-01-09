@@ -2,11 +2,11 @@
 
 /*
  * MogulMVC by Alan James
- * version 1.1.2
+ * version 1.1.3
  * recommended PHP version 5.3
  */
 
-define('FRAMEWORK_VERSION', '1.1.2');
+define('FRAMEWORK_VERSION', '1.1.3');
 
 // Backend Framework Directories
 define('FRAMEWORK_PHP', 'lib');

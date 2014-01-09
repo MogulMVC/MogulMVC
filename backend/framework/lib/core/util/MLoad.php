@@ -310,6 +310,8 @@ class MLoad {
 				trigger_error('error - ' . $component . ' not found in ' . '/' . APPLICATION_COMPONENT . '.', E_USER_ERROR);
 			}
 
+			$extension = substr($component, -3); 
+
 			$version = filemtime(FRONTEND_ROOT . '/' . APPLICATION_COMPONENT . '/' . $component);
 
 			$src = '/' . APPLICATION_COMPONENT . '/' . $component;
@@ -326,11 +328,26 @@ class MLoad {
 
 			// Echo the link
 			elseif ($direction == 'echo') {
-				echo '<script src="' . $src . '?' . $version . '"></script>';
+				
+				if($extension == 'css'){
+					echo '<link href="' . $src . '?' . $version . '" type="text/css" rel="stylesheet" />';
+				}
+				
+				if($extension == '.js'){
+					echo '<script src="' . $src . '?' . $version . '"></script>';
+				}
+				
 			}
 
 			// Return the link
-			return '<script src="' . $src . '?' . $version . '"></script>';
+			
+			if($extension == 'css'){
+				return '<link href="' . $src . '?' . $version . '" type="text/css" rel="stylesheet" />';
+			}
+				
+			if($extension == '.js'){
+				return '<script src="' . $src . '?' . $version . '"></script>';
+			}
 
 		}
 
