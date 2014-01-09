@@ -1,6 +1,6 @@
 {
 	"name": "MogulMVC",
-	"version": "1.0.1",
+	"version": "1.1.0",
 	"description": "The MogulMVC framework",
 	"keywords": ["framework"],
 	"homepage": "http://mogulmvc.com",
@@ -11,9 +11,12 @@
 		}
 	],
 	"dependencies": {
-		"modernizr": "latest",
 		"bootstrap": "latest",
 		"jquery": "latest",
-		"jquery-ui": "latest"
+		"jquery-ui": "latest",
+		"modernizr": "latest",
+		"mogul-css": "1.x",
+		"mogul-icons": "1.x",
+		"mogul-js": "1.x"
 	}
 }

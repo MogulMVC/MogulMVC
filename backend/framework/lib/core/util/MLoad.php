@@ -1,5 +1,7 @@
 <?php
 
+$GLOBALS['LOAD_COMPONENT'] = array();
+
 $GLOBALS['LOAD_CSS_FRAMEWORK'] = array();
 $GLOBALS['LOAD_CSS_APPLICATION'] = array();
 $GLOBALS['LOAD_CSS_EXTERNAL'] = array();
@@ -74,19 +76,19 @@ class MLoad {
 			if (APPLICATION_HEAD != '') {
 
 				$head_file = dirname(APPLICATION_HEAD) . '/' . basename(APPLICATION_HEAD, '.php') . '.php';
-				
+
 				if (!file_exists(BACKEND_ROOT . '/' . APPLICATION_VIEW . '/' . $head_file)) {
 					trigger_error('error - head not found.', E_USER_ERROR);
 				}
 
 				$head = BACKEND_ROOT . '/' . APPLICATION_VIEW . '/' . $head_file;
 			}
-			
+
 			$header = '';
 			if (APPLICATION_HEADER != '') {
 
 				$header_file = dirname(APPLICATION_HEADER) . '/' . basename(APPLICATION_HEADER, '.php') . '.php';
-				
+
 				if (!file_exists(BACKEND_ROOT . '/' . APPLICATION_VIEW . '/' . $header_file)) {
 					trigger_error('error - header not found.', E_USER_ERROR);
 				}
@@ -168,14 +170,14 @@ class MLoad {
 			if (APPLICATION_HEAD != '') {
 
 				$head_file = dirname(APPLICATION_HEAD) . '/' . basename(APPLICATION_HEAD, '.php') . '.php';
-				
+
 				if (!file_exists(BACKEND_ROOT . '/' . APPLICATION_VIEW . '/' . $head_file)) {
 					trigger_error('error - head not found.', E_USER_ERROR);
 				}
 
 				$head = BACKEND_ROOT . '/' . APPLICATION_VIEW . '/' . $head_file;
 			}
-			
+
 			$foot = '';
 			if (APPLICATION_FOOT != '') {
 
@@ -297,6 +299,43 @@ class MLoad {
 
 	}
 
+	/********* Component Functions **********/
+
+	public static function component($component, $direction = null, $useHTTP = false) {
+
+		if (!empty($js)) {
+
+			// Check if the file exists
+			if (!file_exists(FRONTEND_ROOT . '/' . APPLICATION_COMPONENT . '/' . $component)) {
+				trigger_error('error - ' . $component . ' not found in ' . '/' . APPLICATION_COMPONENT . '.', E_USER_ERROR);
+			}
+
+			$version = filemtime(FRONTEND_ROOT . '/' . APPLICATION_COMPONENT . '/' . $component);
+
+			$src = '/' . APPLICATION_COMPONENT . '/' . $component;
+
+			// If use HTTP is true include an HTTP section
+			if ($useHTTP) {
+				$src = 'http://' . $_SERVER['SERVER_NAME'] . '/' . APPLICATION_COMPONENT . '/' . $component;
+			}
+
+			// Only include it as part of the global js
+			if ($direction == null) {
+				array_push($GLOBALS['LOAD_COMPONENT'], $component);
+			}
+
+			// Echo the link
+			elseif ($direction == 'echo') {
+				echo '<script src="' . $src . '?' . $version . '"></script>';
+			}
+
+			// Return the link
+			return '<script src="' . $src . '?' . $version . '"></script>';
+
+		}
+
+	}
+
 	/********** JavaScript Functions **********/
 
 	public static function js_framework($js, $direction = null, $useHTTP = false) {
@@ -356,7 +395,7 @@ class MLoad {
 			$version = filemtime(FRONTEND_ROOT . '/' . APPLICATION_JS . '/' . $js);
 
 			$src = '/' . APPLICATION_JS . '/' . $js;
-			
+
 			// If use HTTP is true include an HTTP section
 			if ($useHTTP) {
 				$src = 'http://' . $_SERVER['SERVER_NAME'] . '/' . APPLICATION_JS . '/' . $js;
@@ -366,7 +405,7 @@ class MLoad {
 			if ($direction == null) {
 				array_push($GLOBALS['LOAD_JS_APPLICATION'], $js);
 			}
-			
+
 			// Echo the link
 			elseif ($direction == 'echo') {
 				echo '<script src="' . $src . '?' . $version . '"></script>';
@@ -408,7 +447,7 @@ class MLoad {
 		}
 
 	}
-	
+
 	public static function js_external($js, $direction = null) {
 
 		if (!empty($js)) {
@@ -499,7 +538,7 @@ class MLoad {
 			if ($direction == null) {
 				array_push($GLOBALS['LOAD_CSS_APPLICATION'], $css);
 			}
-			
+
 			// Echo the link
 			elseif ($direction == 'echo') {
 				echo '<link href="' . $src . '?' . $version . '" type="text/css" rel="stylesheet" />';
@@ -541,7 +580,7 @@ class MLoad {
 		}
 
 	}
-	
+
 	public static function css_external($css, $direction = null) {
 
 		if (!empty($css)) {
@@ -571,13 +610,13 @@ class MLoad {
 
 			// Check if the file exists
 			if (!file_exists(FRONTEND_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_IMG . '/' . $img)) {
-				echo 'error - image ' . $img . ' not found in '. FRAMEWORK . '/' . FRAMEWORK_IMG .'.';
+				echo 'error - image ' . $img . ' not found in ' . FRAMEWORK . '/' . FRAMEWORK_IMG . '.';
 			}
 
 			$version = filemtime(FRONTEND_ROOT . '/' . FRAMEWORK . '/' . FRAMEWORK_IMG . '/' . $img);
 
 			$src = '/' . FRAMEWORK . '/' . FRAMEWORK_IMG . '/' . $img . '?' . $version;
-			
+
 			// If use HTTP is true include an HTTP section
 			if ($useHTTP) {
 				$src = 'http://' . $_SERVER['SERVER_NAME'] . '/' . FRAMEWORK . '/' . FRAMEWORK_IMG . '/' . $img . '?' . $version;
@@ -602,13 +641,13 @@ class MLoad {
 
 			// Check if the file exists
 			if (!file_exists(FRONTEND_ROOT . '/' . APPLICATION_IMG . '/' . $img)) {
-				echo 'error - image ' . $img . ' not found in ' . '/' . APPLICATION_IMG .'.';
+				echo 'error - image ' . $img . ' not found in ' . '/' . APPLICATION_IMG . '.';
 			}
 
 			$version = filemtime(FRONTEND_ROOT . '/' . APPLICATION_IMG . '/' . $img);
 
 			$src = '/' . APPLICATION_IMG . '/' . $img . '?' . $version;
-			
+
 			// If use HTTP is true include an HTTP section
 			if ($useHTTP) {
 				$src = 'http://' . $_SERVER['SERVER_NAME'] . '/' . APPLICATION_IMG . '/' . $img . '?' . $version;
