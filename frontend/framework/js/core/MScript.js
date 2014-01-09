@@ -1,6 +1,6 @@
 /*
  * MScript.js by Alan James
- * version 1.0.0
+ * version 1.0.5
  * recommended jQuery version 1.9.0
  */
 
@@ -8,7 +8,7 @@
 
 	var MConfig = {};
 
-	MConfig.version = '1.0.0';
+	MConfig.version = '1.0.5';
 
 	// Speed
 	MConfig.speedFast = 125;
@@ -110,12 +110,16 @@ $(document).ready(function() {
 });
 $(document).ready(function() {
 
+	$(document).on('click', '.MModal, .MModalBG, .MModalBGBlack, .MModalBGWhite', function() {
+		$(this).closest('.MPopupContainer').hide();
+	});
+
 	$(document).on('click', '.MPopup .MIconClose', function() {
 		$(this).closest('.MPopupContainer').hide();
 	});
-	
+
 	$(document).keyup(function(e) {
-		if(e.keyCode == 27){
+		if (e.keyCode == 27) {
 			$('.MPopupContainer').hide();
 		};
 	});
@@ -2028,14 +2032,14 @@ var MToolBar = (function() {
 			}
 
 			return string;
+			
 		},
 		toBoolean : function(value) {
 
-			if (value != '' && (value == 'true' || value == 'TRUE')) {
-				return true;
-			}
+			value = value.toString();
+			value = value.toLowerCase();
 
-			if (value != '' && (value == '1')) {
+			if (value != '' && (value == '1' || value == 'on' || value == 'true')) {
 				return true;
 			}
 
@@ -2043,7 +2047,11 @@ var MToolBar = (function() {
 
 		},
 		subBefore : function(string, character) {
+			
+			string = string.toString();
+			character = character.toString();
 			return string.substr(0, string.indexOf(character));
+			
 		},
 		urlLink : function(string, noFollow) {
 
@@ -2074,6 +2082,7 @@ var MToolBar = (function() {
 
 		},
 		escapeHtml : function(unsafe) {
+			unsafe = unsafe.toString();
 			return unsafe.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#039;");
 		},
 		firstToUpperCase : function(str) {
@@ -2171,10 +2180,14 @@ var MToolBar = (function() {
 
 	var MURL = {
 		protocol : function() {
-			return location.protocol;
-		},
 
+			var protocol = location.protocol;
+			protocol = protocol.substring(0, str.length - 1);
+			return protocol;
+
+		},
 		subdomain : function() {
+
 			var url = document.domain.split('.');
 
 			var subdomain = '';
@@ -2184,38 +2197,44 @@ var MToolBar = (function() {
 			}
 
 			return subdomain;
+
 		},
 		domain : function() {
+
 			var url = document.domain.split('.');
 
 			var ext = url[url.length - 1];
 			var domain = url[url.length - 2];
 			return domain + '.' + ext;
+
 		},
 		canonical : function() {
-			return location.protocol + '://' + document.domain;
+			return location.protocol + '//' + document.domain;
 		},
 		current : function() {
-			return currentURL = location.protocol + '://' + location.host + location.pathname;
+			return currentURL = location.protocol + '//' + location.host + location.pathname;
 		},
 		segment : function(segement) {
+
 			var pathArray = location.pathname.split('/');
 			secondLevelLocation = pathArray[segement];
 
 			if (secondLevelLocation != undefined) {
-				return secondLevelLocation
+				return secondLevelLocation;
 			} else {
 				return '';
 			}
 
 		},
 		reset : function() {
+
 			var answer = confirm('All your changes will be disgarded.\nAre you sure you want to reset?');
 
 			if (answer) {
 				location.reload(true);
-				return true
-			};
+				return true;
+			}
+
 		}
 	};
 
