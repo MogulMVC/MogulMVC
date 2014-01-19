@@ -1,4 +1,4 @@
-MogulMVC Site
+MogulMVC
 ----
 
 MogulMVC is an MVC framework and UI library written in PHP, jQuery, and Sass.
