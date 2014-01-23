@@ -15,8 +15,8 @@
 		"jquery": "latest",
 		"jquery-ui": "latest",
 		"modernizr": "latest",
-		"mogul-css": "1.x",
-		"mogul-icons": "1.x",
-		"mogul-js": "1.x"
+		"mogul-css": "latest",
+		"mogul-icons": "latest",
+		"mogul-js": "latest"
 	}
 }
